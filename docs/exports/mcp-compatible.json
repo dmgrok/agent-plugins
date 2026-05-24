@@ -1,8 +1,8 @@
 {
   "name": "MCP-Compatible Skills",
   "description": "Skills with MCP integration support, filtered from Agent Skills Directory",
-  "version": "2026.05.23",
-  "generated_at": "2026-05-23T08:29:15.553171+00:00",
+  "version": "2026.05.24",
+  "generated_at": "2026-05-24T08:41:54.162530+00:00",
   "source": "https://github.com/dmgrok/agent_skills_directory",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json",
   "website": "https://dmgrok.github.io/agent_skills_directory/",
@@ -22,7 +22,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "engineering/demo-video/skills/demo-video",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/demo-video/skills/demo-video/SKILL.md",
-        "commit_sha": "bd3d06056596d345dd7fdff3d961d2f6a8e60ea2"
+        "commit_sha": "de6f5a4eb621ffd65538fbdbc7e552548366d3f9"
       },
       "has_scripts": false,
       "has_references": true,
@@ -37,12 +37,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 20,
+      "days_since_update": 21,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 15942
+      "github_stars": 16040
     },
     {
       "id": "nginity/dossier",
@@ -63,7 +63,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "research/dossier/skills/dossier",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/research/dossier/skills/dossier/SKILL.md",
-        "commit_sha": "bd3d06056596d345dd7fdff3d961d2f6a8e60ea2"
+        "commit_sha": "de6f5a4eb621ffd65538fbdbc7e552548366d3f9"
       },
       "has_scripts": true,
       "has_references": true,
@@ -84,12 +84,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 7,
+      "days_since_update": 8,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 15942
+      "github_stars": 16040
     },
     {
       "id": "nginity/engineering-advanced-skills",
@@ -105,7 +105,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "engineering/skills/engineering-advanced-skills",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/engineering-advanced-skills/SKILL.md",
-        "commit_sha": "bd3d06056596d345dd7fdff3d961d2f6a8e60ea2"
+        "commit_sha": "de6f5a4eb621ffd65538fbdbc7e552548366d3f9"
       },
       "has_scripts": false,
       "has_references": false,
@@ -124,12 +124,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 20,
+      "days_since_update": 21,
       "maintenance_status": "active",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 15942
+      "github_stars": 16040
     },
     {
       "id": "nginity/mcp-server-builder",
@@ -145,7 +145,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "engineering/skills/mcp-server-builder",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/mcp-server-builder/SKILL.md",
-        "commit_sha": "bd3d06056596d345dd7fdff3d961d2f6a8e60ea2"
+        "commit_sha": "de6f5a4eb621ffd65538fbdbc7e552548366d3f9"
       },
       "has_scripts": true,
       "has_references": true,
@@ -162,12 +162,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 9,
+      "days_since_update": 10,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 15942
+      "github_stars": 16040
     },
     {
       "id": "nginity/pm-skills",
@@ -183,7 +183,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "project-management/skills/pm-skills",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/project-management/skills/pm-skills/SKILL.md",
-        "commit_sha": "bd3d06056596d345dd7fdff3d961d2f6a8e60ea2"
+        "commit_sha": "de6f5a4eb621ffd65538fbdbc7e552548366d3f9"
       },
       "has_scripts": false,
       "has_references": false,
@@ -198,12 +198,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 20,
+      "days_since_update": 21,
       "maintenance_status": "active",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 15942
+      "github_stars": 16040
     },
     {
       "id": "supabase/supabase",

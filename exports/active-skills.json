@@ -1,8 +1,8 @@
 {
   "name": "Active Skills",
   "description": "Recently maintained skills from Agent Skills Directory (updated within 6 months)",
-  "version": "2026.05.30",
-  "generated_at": "2026-05-30T08:34:33.352129+00:00",
+  "version": "2026.05.31",
+  "generated_at": "2026-05-31T08:54:29.578445+00:00",
   "source": "https://github.com/dmgrok/agent_skills_directory",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json",
   "website": "https://dmgrok.github.io/agent_skills_directory/",
@@ -22,7 +22,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/hf-cli",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/hf-cli/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": false,
@@ -36,12 +36,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 1,
+      "days_since_update": 2,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-best",
@@ -57,7 +57,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-best",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-best/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": false,
@@ -72,12 +72,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 37,
+      "days_since_update": 38,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-community-evals",
@@ -93,7 +93,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-community-evals",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-community-evals/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": true,
       "has_references": false,
@@ -108,12 +108,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 67,
+      "days_since_update": 68,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-datasets",
@@ -129,7 +129,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-datasets",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-datasets/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": false,
@@ -143,12 +143,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 31,
+      "days_since_update": 32,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-gradio",
@@ -164,7 +164,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-gradio",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-gradio/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": false,
@@ -177,12 +177,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 66,
+      "days_since_update": 67,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-llm-trainer",
@@ -198,7 +198,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-llm-trainer",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-llm-trainer/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": true,
       "has_references": true,
@@ -213,12 +213,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 50,
+      "days_since_update": 51,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-local-models",
@@ -234,7 +234,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-local-models",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-local-models/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": true,
@@ -248,12 +248,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 38,
+      "days_since_update": 39,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-paper-publisher",
@@ -269,7 +269,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-paper-publisher",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-paper-publisher/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": true,
       "has_references": true,
@@ -285,12 +285,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 67,
+      "days_since_update": 68,
       "maintenance_status": "maintained",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-papers",
@@ -306,7 +306,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-papers",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-papers/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": false,
@@ -323,12 +323,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 67,
+      "days_since_update": 68,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-tool-builder",
@@ -344,7 +344,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-tool-builder",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-tool-builder/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": true,
@@ -361,12 +361,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 58,
+      "days_since_update": 59,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-trackio",
@@ -382,7 +382,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-trackio",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-trackio/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": true,
@@ -400,12 +400,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 67,
+      "days_since_update": 68,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-vision-trainer",
@@ -421,7 +421,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-vision-trainer",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-vision-trainer/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": true,
       "has_references": true,
@@ -436,12 +436,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 67,
+      "days_since_update": 68,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/huggingface-zerogpu",
@@ -457,7 +457,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/huggingface-zerogpu",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-zerogpu/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": true,
@@ -472,12 +472,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 9,
+      "days_since_update": 10,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/train-sentence-transformers",
@@ -493,7 +493,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/train-sentence-transformers",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/train-sentence-transformers/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": true,
       "has_references": true,
@@ -507,12 +507,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 22,
+      "days_since_update": 23,
       "maintenance_status": "active",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "huggingface/transformers-js",
@@ -533,7 +533,7 @@
         "repo": "https://github.com/huggingface/skills",
         "path": "skills/transformers-js",
         "skill_md_url": "https://raw.githubusercontent.com/huggingface/skills/main/skills/transformers-js/SKILL.md",
-        "commit_sha": "c471b5e941d69fc4a99cdbc09497d5b338f07a0e"
+        "commit_sha": "49abf82b2ef2ff2bcc6ca072aac0fe8627390a1d"
       },
       "has_scripts": false,
       "has_references": true,
@@ -547,12 +547,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 49,
+      "days_since_update": 50,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 10590
+      "github_stars": 10599
     },
     {
       "id": "obra-superpowers/brainstorming",

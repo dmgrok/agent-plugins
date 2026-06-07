@@ -1,8 +1,8 @@
 {
   "name": "Active Skills",
   "description": "Recently maintained skills from Agent Skills Directory (updated within 6 months)",
-  "version": "2026.06.06",
-  "generated_at": "2026-06-06T08:42:56.814432+00:00",
+  "version": "2026.06.07",
+  "generated_at": "2026-06-07T09:24:26.104195+00:00",
   "source": "https://github.com/dmgrok/agent_skills_directory",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json",
   "website": "https://dmgrok.github.io/agent_skills_directory/",

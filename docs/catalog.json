@@ -1,23 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/schema/catalog-schema.json",
-  "version": "2026.06.12",
-  "generated_at": "2026-06-12T10:27:43.602624+00:00",
-  "total_skills": 1078,
+  "version": "2026.06.13",
+  "generated_at": "2026-06-13T09:25:05.438248+00:00",
+  "total_skills": 1081,
   "providers": {
-    "github": {
-      "name": "GitHub",
-      "repo": "https://github.com/github/awesome-copilot",
-      "skills_count": 370,
-      "stars": 34885,
-      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot."
-    },
-    "huggingface": {
-      "name": "HuggingFace",
-      "repo": "https://github.com/huggingface/skills",
-      "skills_count": 19,
-      "stars": 10654,
-      "description": "Give your agents the power of the Hugging Face ecosystem"
-    },
     "stripe": {
       "name": "Stripe",
       "repo": "https://github.com/stripe/ai",
@@ -25,152 +11,26 @@
       "stars": 1603,
       "description": "One-stop shop for building AI-powered products and businesses with Stripe."
     },
-    "cloudflare": {
-      "name": "Cloudflare",
-      "repo": "https://github.com/cloudflare/skills",
-      "skills_count": 9,
-      "stars": 1759,
-      "description": "Skills for teaching agents how to build on Cloudflare."
-    },
     "expo": {
       "name": "Expo",
       "repo": "https://github.com/expo/skills",
       "skills_count": 15,
-      "stars": 2058,
+      "stars": 2066,
       "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
     },
     "neondatabase": {
       "name": "Neon Database",
       "repo": "https://github.com/neondatabase/agent-skills",
-      "skills_count": 5,
-      "stars": 68,
+      "skills_count": 8,
+      "stars": 69,
       "description": "Agent Skills for Neon Severless Postgres"
     },
-    "nginity": {
-      "name": "nginity Enterprise",
-      "repo": "https://github.com/alirezarezvani/claude-skills",
-      "skills_count": 342,
-      "stars": 17884,
-      "description": "337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
-    },
-    "obsidian-plugin": {
-      "name": "Obsidian Plugin Development",
-      "repo": "https://github.com/gapmiss/obsidian-plugin-skill",
-      "skills_count": 0,
-      "stars": 150,
-      "description": "Agent SKILL for Obsidian.md plugin development"
-    },
-    "ipsw-skill": {
-      "name": "IPSW iOS Firmware",
-      "repo": "https://github.com/blacktop/ipsw-skill",
-      "skills_count": 0,
-      "stars": 55,
-      "description": "A SKILL.md for ipsw"
-    },
-    "fal-ai": {
-      "name": "fal.ai",
-      "repo": "https://github.com/fal-ai-community/skills",
-      "skills_count": 16,
-      "stars": 186,
-      "description": null
-    },
-    "getsentry": {
-      "name": "Sentry",
-      "repo": "https://github.com/getsentry/skills",
-      "skills_count": 28,
-      "stars": 777,
-      "description": "Agent Skills used by the Sentry team for development."
-    },
-    "ffuf-skill": {
-      "name": "FFUF Web Fuzzing",
-      "repo": "https://github.com/jthack/ffuf_claude_skill",
+    "playwright-skill": {
+      "name": "Playwright Automation",
+      "repo": "https://github.com/lackeyjb/playwright-skill",
       "skills_count": 1,
-      "stars": 121,
-      "description": "This is a \"skill\" for claude to use FFUF."
-    },
-    "remotion": {
-      "name": "Remotion",
-      "repo": "https://github.com/remotion-dev/skills",
-      "skills_count": 1,
-      "stars": 3252,
-      "description": "Agent Skills"
-    },
-    "claude-marketplace-engineering": {
-      "name": "Claude Marketplace (Engineering)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 441,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "sanjay-ai-skills": {
-      "name": "Sanjay AI Skills",
-      "repo": "https://github.com/sanjay3290/ai-skills",
-      "skills_count": 20,
-      "stars": 208,
-      "description": "Collection of agent skills for AI coding assistants"
-    },
-    "skillcreatorai": {
-      "name": "SkillCreator.ai",
-      "repo": "https://github.com/skillcreatorai/Ai-Agent-Skills",
-      "skills_count": 17,
-      "stars": 1059,
-      "description": "my curated agent skills library "
-    },
-    "pypict-skill": {
-      "name": "PICT Test Cases",
-      "repo": "https://github.com/omkamal/pypict-claude-skill",
-      "skills_count": 1,
-      "stars": 57,
-      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
-    },
-    "better-auth": {
-      "name": "Better Auth",
-      "repo": "https://github.com/better-auth/skills",
-      "skills_count": 5,
-      "stars": 144,
-      "description": null
-    },
-    "csv-summarizer-skill": {
-      "name": "CSV Data Summarizer",
-      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
-      "skills_count": 1,
-      "stars": 276,
-      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
-    },
-    "visionos-agents": {
-      "name": "visionOS Development",
-      "repo": "https://github.com/tomkrikorian/visionOSAgents",
-      "skills_count": 11,
-      "stars": 54,
-      "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
-    },
-    "aiqualitylab": {
-      "name": "AI Quality Lab",
-      "repo": "https://github.com/aiqualitylab/agent-skills",
-      "skills_count": 2,
-      "stars": 1,
-      "description": "AI-powered testing skills for automation frameworks"
-    },
-    "trailofbits": {
-      "name": "Trail of Bits Security",
-      "repo": "https://github.com/trailofbits/skills",
-      "skills_count": 74,
-      "stars": 5654,
-      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
-    },
-    "tinybird": {
-      "name": "Tinybird",
-      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
-      "skills_count": 4,
-      "stars": 18,
-      "description": null
-    },
-    "notebooklm-skill": {
-      "name": "NotebookLM Integration",
-      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
-      "skills_count": 1,
-      "stars": 4163,
-      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
+      "stars": 1889,
+      "description": "Claude Code Skill for browser automation with Playwright. Model-invoked - Claude autonomously writes and executes custom automation for testing and validation."
     },
     "openai": {
       "name": "OpenAI",
@@ -179,10 +39,164 @@
       "stars": 20864,
       "description": "Skills Catalog for Codex"
     },
-    "claude-marketplace-productivity": {
-      "name": "Claude Marketplace (Productivity)",
+    "google-labs-stitch": {
+      "name": "Google Labs Stitch",
+      "repo": "https://github.com/google-labs-code/stitch-skills",
+      "skills_count": 0,
+      "stars": 5902,
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
+    },
+    "pypict-skill": {
+      "name": "PICT Test Cases",
+      "repo": "https://github.com/omkamal/pypict-claude-skill",
+      "skills_count": 1,
+      "stars": 57,
+      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
+    },
+    "trailofbits": {
+      "name": "Trail of Bits Security",
+      "repo": "https://github.com/trailofbits/skills",
+      "skills_count": 74,
+      "stars": 5654,
+      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
+    },
+    "tapestry": {
+      "name": "Tapestry Skills",
+      "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
+      "skills_count": 7,
+      "stars": 276,
+      "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
+    },
+    "fal-ai": {
+      "name": "fal.ai",
+      "repo": "https://github.com/fal-ai-community/skills",
+      "skills_count": 16,
+      "stars": 186,
+      "description": null
+    },
+    "huggingface": {
+      "name": "HuggingFace",
+      "repo": "https://github.com/huggingface/skills",
+      "skills_count": 19,
+      "stars": 10654,
+      "description": "Give your agents the power of the Hugging Face ecosystem"
+    },
+    "d3js-skill": {
+      "name": "D3.js Visualization",
+      "repo": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
+      "skills_count": 1,
+      "stars": 125,
+      "description": "A Claude skill for d3.js."
+    },
+    "vercel": {
+      "name": "Vercel",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "skills_count": 9,
+      "stars": 27814,
+      "description": "Vercel's official collection of agent skills"
+    },
+    "visionos-agents": {
+      "name": "visionOS Development",
+      "repo": "https://github.com/tomkrikorian/visionOSAgents",
+      "skills_count": 11,
+      "stars": 54,
+      "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
+    },
+    "claude-marketplace-visual": {
+      "name": "Claude Marketplace (Visual)",
       "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 441,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "aiqualitylab": {
+      "name": "AI Quality Lab",
+      "repo": "https://github.com/aiqualitylab/agent-skills",
+      "skills_count": 2,
+      "stars": 1,
+      "description": "AI-powered testing skills for automation frameworks"
+    },
+    "ffuf-skill": {
+      "name": "FFUF Web Fuzzing",
+      "repo": "https://github.com/jthack/ffuf_claude_skill",
+      "skills_count": 1,
+      "stars": 121,
+      "description": "This is a \"skill\" for claude to use FFUF."
+    },
+    "tinybird": {
+      "name": "Tinybird",
+      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
       "skills_count": 4,
+      "stars": 18,
+      "description": null
+    },
+    "emblemcompany": {
+      "name": "EmblemAI",
+      "repo": "https://github.com/EmblemCompany/Agent-skills",
+      "skills_count": 9,
+      "stars": 10,
+      "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
+    },
+    "notebooklm-skill": {
+      "name": "NotebookLM Integration",
+      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
+      "skills_count": 1,
+      "stars": 4163,
+      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
+    },
+    "aws-skills": {
+      "name": "AWS Skills",
+      "repo": "https://github.com/zxkane/aws-skills",
+      "skills_count": 5,
+      "stars": 256,
+      "description": "Claude Code plugins and agent skills for AWS development \u2014 CDK, serverless, cost ops, and Bedrock AgentCore"
+    },
+    "ipsw-skill": {
+      "name": "IPSW iOS Firmware",
+      "repo": "https://github.com/blacktop/ipsw-skill",
+      "skills_count": 0,
+      "stars": 55,
+      "description": "A SKILL.md for ipsw"
+    },
+    "obsidian-plugin": {
+      "name": "Obsidian Plugin Development",
+      "repo": "https://github.com/gapmiss/obsidian-plugin-skill",
+      "skills_count": 0,
+      "stars": 150,
+      "description": "Agent SKILL for Obsidian.md plugin development"
+    },
+    "csv-summarizer-skill": {
+      "name": "CSV Data Summarizer",
+      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+      "skills_count": 1,
+      "stars": 276,
+      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
+    },
+    "sanjay-ai-skills": {
+      "name": "Sanjay AI Skills",
+      "repo": "https://github.com/sanjay3290/ai-skills",
+      "skills_count": 20,
+      "stars": 208,
+      "description": "Collection of agent skills for AI coding assistants"
+    },
+    "better-auth": {
+      "name": "Better Auth",
+      "repo": "https://github.com/better-auth/skills",
+      "skills_count": 5,
+      "stars": 144,
+      "description": null
+    },
+    "move-quality-skill": {
+      "name": "Move Code Quality",
+      "repo": "https://github.com/1NickPappas/move-code-quality-skill",
+      "skills_count": 1,
+      "stars": 16,
+      "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
+    },
+    "claude-marketplace-engineering": {
+      "name": "Claude Marketplace (Engineering)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
       "stars": 441,
       "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
     },
@@ -193,55 +207,6 @@
       "stars": 83,
       "description": "A Claude Skill for converting markdown documents, chat summaries, or research reports into a downloadable epub file that can be sent to kindle"
     },
-    "obra-superpowers": {
-      "name": "Obra Superpowers",
-      "repo": "https://github.com/obra/superpowers",
-      "skills_count": 14,
-      "stars": 212520,
-      "description": "An agentic skills framework & software development methodology that works."
-    },
-    "anthropics": {
-      "name": "Anthropic",
-      "repo": "https://github.com/anthropics/skills",
-      "skills_count": 17,
-      "stars": 148787,
-      "description": "Public repository for Agent Skills"
-    },
-    "aws-skills": {
-      "name": "AWS Skills",
-      "repo": "https://github.com/zxkane/aws-skills",
-      "skills_count": 5,
-      "stars": 256,
-      "description": "Claude Code plugins and agent skills for AWS development \u2014 CDK, serverless, cost ops, and Bedrock AgentCore"
-    },
-    "playwright-skill": {
-      "name": "Playwright Automation",
-      "repo": "https://github.com/lackeyjb/playwright-skill",
-      "skills_count": 1,
-      "stars": 1889,
-      "description": "Claude Code Skill for browser automation with Playwright. Model-invoked - Claude autonomously writes and executes custom automation for testing and validation."
-    },
-    "vercel": {
-      "name": "Vercel",
-      "repo": "https://github.com/vercel-labs/agent-skills",
-      "skills_count": 9,
-      "stars": 27814,
-      "description": "Vercel's official collection of agent skills"
-    },
-    "stream-coding": {
-      "name": "Stream Coding Methodology",
-      "repo": "https://github.com/frmoretto/stream-coding",
-      "skills_count": 1,
-      "stars": 60,
-      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
-    },
-    "d3js-skill": {
-      "name": "D3.js Visualization",
-      "repo": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
-      "skills_count": 1,
-      "stars": 125,
-      "description": "A Claude skill for d3.js."
-    },
     "ios-simulator-skill": {
       "name": "iOS Simulator",
       "repo": "https://github.com/conorluddy/ios-simulator-skill",
@@ -249,33 +214,26 @@
       "stars": 1048,
       "description": "An IOS Simulator Skill for ClaudeCode. Use it to optimise Claude's ability to build, run and interact with your apps. I mainly use it as an xcodebuild wrapper to save context."
     },
-    "emblemcompany": {
-      "name": "EmblemAI",
-      "repo": "https://github.com/EmblemCompany/Agent-skills",
-      "skills_count": 9,
-      "stars": 10,
-      "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
+    "obra-superpowers": {
+      "name": "Obra Superpowers",
+      "repo": "https://github.com/obra/superpowers",
+      "skills_count": 14,
+      "stars": 212520,
+      "description": "An agentic skills framework & software development methodology that works."
     },
-    "family-history-skill": {
-      "name": "Family History Research",
-      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
-      "skills_count": 1,
-      "stars": 44,
-      "description": "A Claude Skill to assist with family history and genealogy research planning."
-    },
-    "google-labs-stitch": {
-      "name": "Google Labs Stitch",
-      "repo": "https://github.com/google-labs-code/stitch-skills",
-      "skills_count": 0,
-      "stars": 5902,
-      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
-    },
-    "claude-marketplace-visual": {
-      "name": "Claude Marketplace (Visual)",
+    "claude-marketplace-productivity": {
+      "name": "Claude Marketplace (Productivity)",
       "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
+      "skills_count": 4,
       "stars": 441,
       "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "getsentry": {
+      "name": "Sentry",
+      "repo": "https://github.com/getsentry/skills",
+      "skills_count": 28,
+      "stars": 777,
+      "description": "Agent Skills used by the Sentry team for development."
     },
     "supabase": {
       "name": "Supabase",
@@ -284,12 +242,47 @@
       "stars": 2199,
       "description": "Agent Skills to help developers using AI agents with Supabase"
     },
-    "move-quality-skill": {
-      "name": "Move Code Quality",
-      "repo": "https://github.com/1NickPappas/move-code-quality-skill",
+    "skillcreatorai": {
+      "name": "SkillCreator.ai",
+      "repo": "https://github.com/skillcreatorai/Ai-Agent-Skills",
+      "skills_count": 17,
+      "stars": 1059,
+      "description": "my curated agent skills library "
+    },
+    "github": {
+      "name": "GitHub",
+      "repo": "https://github.com/github/awesome-copilot",
+      "skills_count": 370,
+      "stars": 34885,
+      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot."
+    },
+    "stream-coding": {
+      "name": "Stream Coding Methodology",
+      "repo": "https://github.com/frmoretto/stream-coding",
       "skills_count": 1,
-      "stars": 16,
-      "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
+      "stars": 60,
+      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
+    },
+    "nginity": {
+      "name": "nginity Enterprise",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "skills_count": 342,
+      "stars": 17884,
+      "description": "337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
+    },
+    "remotion": {
+      "name": "Remotion",
+      "repo": "https://github.com/remotion-dev/skills",
+      "skills_count": 1,
+      "stars": 3252,
+      "description": "Agent Skills"
+    },
+    "cloudflare": {
+      "name": "Cloudflare",
+      "repo": "https://github.com/cloudflare/skills",
+      "skills_count": 9,
+      "stars": 1759,
+      "description": "Skills for teaching agents how to build on Cloudflare."
     },
     "claude-marketplace-code": {
       "name": "Claude Marketplace (Code Ops)",
@@ -298,31 +291,1012 @@
       "stars": 441,
       "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
     },
-    "tapestry": {
-      "name": "Tapestry Skills",
-      "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
-      "skills_count": 7,
-      "stars": 276,
-      "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
+    "anthropics": {
+      "name": "Anthropic",
+      "repo": "https://github.com/anthropics/skills",
+      "skills_count": 17,
+      "stars": 148787,
+      "description": "Public repository for Agent Skills"
+    },
+    "family-history-skill": {
+      "name": "Family History Research",
+      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
+      "skills_count": 1,
+      "stars": 44,
+      "description": "A Claude Skill to assist with family history and genealogy research planning."
     }
   },
   "categories": [
-    "cloud",
     "creative",
     "data",
     "development",
-    "devops",
-    "documents",
-    "enterprise",
     "integrations",
     "ml-ai",
-    "mobile",
-    "other",
-    "security",
-    "testing",
-    "web"
+    "mobile"
   ],
   "skills": [
+    {
+      "id": "expo/add-app-clip",
+      "name": "add-app-clip",
+      "description": "Add an iOS App Clip target to an Expo app. Use when the user mentions App Clip, AASA, apple-app-site-association, appclips, smart app banner, or wants to ship a lightweight iOS Clip invoked from a URL alongside their parent app.",
+      "provider": "expo",
+      "category": "mobile",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-21T16:23:47Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/add-app-clip",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/add-app-clip/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "ci",
+        "cli",
+        "art",
+        "add",
+        "app",
+        "clip"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 22,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/building-native-ui",
+      "name": "building-native-ui",
+      "description": "Complete guide for building beautiful apps with Expo Router. Covers fundamentals, styling, components, navigation, animations, patterns, and native tabs.",
+      "provider": "expo",
+      "category": "development",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-06-10T15:03:26Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/building-native-ui",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/building-native-ui/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "building",
+        "native"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/eas-update-insights",
+      "name": "eas-update-insights",
+      "description": "Check the health of published EAS Updates: crash rates, install/launch counts, unique users, payload size, and the split between embedded and OTA users per channel. Use when the user asks how an update is performing, whether a rollout is healthy, how many users are on the embedded build vs OTA, or wants to gate CI on update health.",
+      "provider": "expo",
+      "category": "development",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-05-27T07:21:03Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/eas-update-insights",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-update-insights/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "ci",
+        "eas",
+        "update",
+        "insights"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 17,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-api-routes",
+      "name": "expo-api-routes",
+      "description": "Guidelines for creating API routes in Expo Router with EAS Hosting",
+      "provider": "expo",
+      "category": "integrations",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-03-13T17:37:13Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-api-routes",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-api-routes/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "expo",
+        "routes"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 91,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-brownfield",
+      "name": "expo-brownfield",
+      "description": "Integrate Expo and React Native into an existing native iOS or Android app. Use when the user mentions brownfield, embedding React Native in a native app, AAR/XCFramework, or adding Expo to an existing Kotlin/Swift project. Covers both the isolated approach and the integrated approach.",
+      "provider": "expo",
+      "category": "mobile",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-19T12:10:44Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-brownfield",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-brownfield/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "expo",
+        "brownfield"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 24,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-cicd-workflows",
+      "name": "expo-cicd-workflows",
+      "description": "Helps understand and write EAS workflow YAML files for Expo projects. Use this skill when the user asks about CI/CD or workflows in an Expo or EAS context, mentions .eas/workflows/, or wants help with EAS build pipelines or deployment automation.",
+      "provider": "expo",
+      "category": "development",
+      "license": "MIT License",
+      "compatibility": null,
+      "last_updated_at": "2026-06-10T15:03:26Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-cicd-workflows",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-cicd-workflows/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "yaml",
+        "pr",
+        "ci",
+        "cd",
+        "expo",
+        "cicd",
+        "workflows"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-deployment",
+      "name": "expo-deployment",
+      "description": "Deploying Expo apps to iOS App Store, Android Play Store, web hosting, and API routes",
+      "provider": "expo",
+      "category": "mobile",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-03-13T17:37:13Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-deployment",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-deployment/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "expo",
+        "deployment"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 91,
+      "maintenance_status": "maintained",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-dev-client",
+      "name": "expo-dev-client",
+      "description": "Build and distribute Expo development clients locally or via TestFlight",
+      "provider": "expo",
+      "category": "development",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-03-13T17:37:13Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-dev-client",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-dev-client/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "test",
+        "cli",
+        "expo",
+        "dev",
+        "client"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 91,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-module",
+      "name": "expo-module",
+      "description": "Guide for creating and writing Expo native modules and views using the Expo Modules API (Swift, Kotlin, TypeScript). Covers module definition DSL, native views, shared objects, config plugins, lifecycle hooks, autolinking, and type system. Use when building or modifying native modules for Expo.",
+      "provider": "expo",
+      "category": "mobile",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-05-27T07:21:03Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-module",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-module/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "expo",
+        "module"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 17,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-observe",
+      "name": "expo-observe",
+      "description": "Use for anything related to EAS Observe \u2014 adding `expo-observe` to an Expo project (AppMetricsRoot/ObserveRoot HOC, markInteractive, the useObserve hook, and the Expo Router / React Navigation integrations for per-route metrics), querying via the EAS CLI (`eas observe:metrics-summary`, `observe:metrics`, `observe:routes`, `observe:events`, `observe:versions`), or interpreting the resulting metrics (cold/warm launch, TTR, TTI, navigation cold/warm TTR, update download, and the TTI frameRate params for triaging slow startups).",
+      "provider": "expo",
+      "category": "creative",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-05-28T23:57:45Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-observe",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-observe/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "cli",
+        "art",
+        "expo",
+        "observe"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 15,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-tailwind-setup",
+      "name": "expo-tailwind-setup",
+      "description": "Set up Tailwind CSS v4 in Expo with react-native-css and NativeWind v5 for universal styling",
+      "provider": "expo",
+      "category": "mobile",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-03-13T17:37:13Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-tailwind-setup",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-tailwind-setup/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "expo",
+        "tailwind",
+        "setup"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 91,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/expo-ui",
+      "name": "expo-ui",
+      "description": "Build native UI with the @expo/ui package: real SwiftUI on iOS and Jetpack Compose on Android rendered from React in an Expo or React Native app. Covers universal cross-platform components (Host, Column, Row, Button, Text, List, and more imported from @expo/ui), drop-in replacements for popular React Native community libraries (BottomSheet, DateTimePicker, Slider, Menu, etc.), and platform-specific SwiftUI (@expo/ui/swift-ui) and Jetpack Compose (@expo/ui/jetpack-compose) trees and modifiers. Use when adding or reviewing @expo/ui Host/RNHostView trees, building native-feeling UI where standard React Native components fall short (lists with swipe actions and sections, settings forms with toggles, menus, sheets, pickers, sliders), choosing between universal and platform-specific components, or replacing an RN community UI library with a native @expo/ui equivalent. Not for custom native modules, Expo Router navigation, Reanimated, or data fetching.",
+      "provider": "expo",
+      "category": "mobile",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-06-11T19:12:23Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-ui",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-ui/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "ci",
+        "expo"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 1,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/native-data-fetching",
+      "name": "native-data-fetching",
+      "description": "Use when implementing or debugging ANY network request, API call, or data fetching. Covers fetch API, React Query, SWR, error handling, caching, offline support, and Expo Router data loaders (`useLoaderData`).",
+      "provider": "expo",
+      "category": "development",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-03-25T06:17:13Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/native-data-fetching",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/native-data-fetching/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "native",
+        "data",
+        "fetching"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 80,
+      "maintenance_status": "maintained",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/upgrading-expo",
+      "name": "upgrading-expo",
+      "description": "Guidelines for upgrading Expo SDK versions and fixing dependency issues",
+      "provider": "expo",
+      "category": "mobile",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-05-05T18:25:48Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/upgrading-expo",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/upgrading-expo/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "upgrading",
+        "expo"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 38,
+      "maintenance_status": "maintained",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "expo/use-dom",
+      "name": "use-dom",
+      "description": "Use Expo DOM components to run web code in a webview on native and as-is on web. Migrate web code to native incrementally.",
+      "provider": "expo",
+      "category": "development",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-03-13T17:37:13Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/use-dom",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/use-dom/SKILL.md",
+        "commit_sha": "39d50f0caeacec8a17588534bb32aa962c677a3d"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "use",
+        "dom"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 91,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 2066
+    },
+    {
+      "id": "neondatabase/claimable-postgres",
+      "name": "claimable-postgres",
+      "description": "Provision instant temporary Postgres databases via Claimable Postgres by Neon (neon.new) with no login, signup, or credit card. Supports REST API, CLI, and SDK. Use when users ask for a quick Postgres environment, a throwaway DATABASE_URL for prototyping/tests, or \"just give me a DB now\". Triggers include: \"quick postgres\", \"temporary postgres\", \"no signup database\", \"no credit card database\", \"instant DATABASE_URL\", \"npx neon-new\", \"neon.new\", \"neon.new API\", \"claimable postgres API\".",
+      "provider": "neondatabase",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-14T11:44:17Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/claimable-postgres",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/claimable-postgres/SKILL.md",
+        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "test",
+        "api",
+        "cli",
+        "claimable",
+        "postgres"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 59,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 69
+    },
+    {
+      "id": "neondatabase/neon",
+      "name": "neon",
+      "description": "Overview of the Neon platform for apps and agents, spanning Postgres, Auth, Data API, and the new services: Object Storage, Compute Functions, and AI Gateway. Use whenever \"Neon\" is mentioned for an overview of how to work with Neon and how to get started. Otherwise, the individual capabilities are the triggers: \"object storage\" or \"S3-compatible storage\", \"serverless functions\", \"background jobs\", or \"run code near my database\", \"AI gateway\", \"LLM proxy\", \"model routing\", or \"call an LLM\" \u2192 AI Gateway; \"database\", \"Postgres\", or \"authentication\" \u2192 Postgres and Auth.",
+      "provider": "neondatabase",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-13T04:16:55Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon/SKILL.md",
+        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "art",
+        "neon"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 69
+    },
+    {
+      "id": "neondatabase/neon-ai-gateway",
+      "name": "neon-ai-gateway",
+      "description": "One API and one credential for frontier and open-source LLMs, built into your Neon branch and powered by Databricks. Use when a user wants to call an LLM, add AI/chat/an agent to their app, route between model providers (OpenAI, Anthropic, Google/Gemini, Meta, Alibaba, DeepSeek), or avoid juggling separate provider API keys and accounts \u2014 especially when they already use Neon and want AI requests to branch with their project. Works with the OpenAI SDK, Anthropic SDK, google-genai, the Vercel AI SDK, and Mastra by changing only the base URL. Triggers include \"call an LLM\", \"add AI to my app\", \"chat completion\", \"model routing\", \"LLM proxy/gateway\", \"one API for all models\", \"use Claude/GPT/Gemini\", \"AI SDK\", \"Mastra agent\", \"Neon AI Gateway\", and \"log/rate-limit AI calls\".",
+      "provider": "neondatabase",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-12T14:50:34Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-ai-gateway",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-ai-gateway/SKILL.md",
+        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "neon",
+        "gateway"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 69
+    },
+    {
+      "id": "neondatabase/neon-functions",
+      "name": "neon-functions",
+      "description": "Long-running, serverless Node.js HTTP functions deployed onto your Neon branch, with DATABASE_URL injected automatically and compute that runs next to your data. Use when a user wants to host an API, an AI agent with long streaming responses, a WebSocket or server-sent-events (SSE) server, a webhook handler, a Discord bot, or any request/response workload that risks timing out on short, lambda-style serverless functions \u2014 and wants it to branch with their database. Triggers include \"serverless function\", \"deploy an API\", \"long-running function\", \"streaming agent\", \"SSE server\", \"WebSocket server\", \"webhook handler\", \"run code next to my database\", \"function that won't time out\", \"Neon Functions\", and \"Neon Compute\".",
+      "provider": "neondatabase",
+      "category": "integrations",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-13T04:16:55Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-functions",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-functions/SKILL.md",
+        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "neon",
+        "functions"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 69
+    },
+    {
+      "id": "neondatabase/neon-object-storage",
+      "name": "neon-object-storage",
+      "description": "S3-compatible object storage that branches with your Neon project, so files and the database stay in sync across every branch. Use when a user wants object storage, a bucket, blob/file storage, or somewhere to put uploads, images, documents, avatars, or user-generated files for their app or agent \u2014 especially when they already use (or are setting up) Neon Postgres and don't want to add a separate storage provider like AWS S3, Cloudflare R2, or Supabase Storage. Triggers include \"object storage\", \"bucket\", \"blob storage\", \"file storage\", \"store uploads/images/files\", \"S3-compatible storage\", \"presigned URL\", \"where do I put files\", \"Neon Object Storage\", \"Neon Storage\", and \"storage that branches with my database\".",
+      "provider": "neondatabase",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-12T14:29:17Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-object-storage",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-object-storage/SKILL.md",
+        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "document",
+        "neon",
+        "object",
+        "storage"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 69
+    },
+    {
+      "id": "neondatabase/neon-postgres",
+      "name": "neon-postgres",
+      "description": "Guides and best practices for working with Neon Serverless Postgres. Covers setup, connection methods, branching, autoscaling, scale-to-zero, read replicas, connection pooling, Neon Auth, and the Neon CLI, MCP server, REST API, TypeScript SDK, and Python SDK. Use when users ask about \"Neon setup\", \"connect to Neon\", \"Neon project\", \"DATABASE_URL\", \"serverless Postgres\", \"Neon CLI\", \"neonctl\", \"Neon MCP\", \"Neon Auth\", \"@neondatabase/serverless\", \"@neondatabase/neon-js\", \"scale to zero\", \"Neon autoscaling\", \"Neon read replica\", or \"Neon connection pooling\".",
+      "provider": "neondatabase",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-21T18:23:47Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
+        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "mcp",
+        "cli",
+        "neon",
+        "postgres"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 22,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 69
+    },
+    {
+      "id": "neondatabase/neon-postgres-branches",
+      "name": "neon-postgres-branches",
+      "description": "Choose and create the right Neon branch type for testing and development. Use when users ask about Neon branching, migration testing with real data, isolated test environments, schema-only branch workflows for sensitive data, or branch creation via Neon CLI or Neon MCP. Triggers include \"Neon branch\", \"test migrations safely\", \"branch production data\", \"schema-only branch\", \"reset branch\" and \"sensitive data testing\".",
+      "provider": "neondatabase",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-16T18:30:41Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres-branches",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
+        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "test",
+        "mcp",
+        "cli",
+        "neon",
+        "postgres",
+        "branches"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 27,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 69
+    },
+    {
+      "id": "neondatabase/neon-postgres-egress-optimizer",
+      "name": "neon-postgres-egress-optimizer",
+      "description": "Diagnose and fix excessive Postgres egress (network data transfer) in a codebase. Use when a user mentions high database bills, unexpected data transfer costs, network transfer charges, egress spikes, \"why is my Neon bill so high\", \"database costs jumped\", SELECT * optimization, query overfetching, reduce Neon costs, optimize database usage, or wants to reduce data sent from their database to their application. Also use when reviewing query patterns for cost efficiency, even if the user doesn't explicitly mention egress or data transfer.",
+      "provider": "neondatabase",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-03-13T16:58:48Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres-egress-optimizer",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-egress-optimizer/SKILL.md",
+        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "ci",
+        "neon",
+        "postgres",
+        "egress",
+        "optimizer"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 91,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 69
+    },
+    {
+      "id": "stripe/stripe-best-practices",
+      "name": "stripe-best-practices",
+      "description": "Guides Stripe integration decisions \u2014 API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, Treasury financial accounts, integration surfaces (Checkout, Payment Element), migrating from deprecated Stripe APIs, and security best practices (API key management, restricted keys, webhooks, OAuth). Use when building, modifying, or reviewing any Stripe integration \u2014 including accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, creating connected accounts, or implementing secure key handling.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-12T01:19:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-best-practices",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
+        "commit_sha": "ea0ad2373fdb687c247aac4f4100dc04154bf687"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "stripe",
+        "best",
+        "practices"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 1,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 1603
+    },
+    {
+      "id": "stripe/stripe-directory",
+      "name": "stripe-directory",
+      "description": "Use when the user wants to find businesses, software, service providers, or partners for a specific industry, workflow, pain point, capability, or job to be done. Also use when the agent needs to programmatically purchase or consume a service. Use Stripe Directory to build a short relevant shortlist, even if the user does not mention Stripe Directory explicitly.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-13T01:17:02Z",
+      "metadata": {
+        "short-description": "Find (and optionally purchase from) vendors or partners"
+      },
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-directory",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-directory/SKILL.md",
+        "commit_sha": "ea0ad2373fdb687c247aac4f4100dc04154bf687"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "art",
+        "stripe",
+        "directory"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1603
+    },
+    {
+      "id": "stripe/stripe-projects",
+      "name": "stripe-projects",
+      "description": "Use when the user wants to provision infrastructure or third-party services using Stripe Projects. Triggers: \"I need a database\", \"set up auth\", \"add caching\", \"give me a Postgres\", \"provision Redis\", \"I need hosting\", \"add a vector DB\", \"get me an API key for X\", \"get credentials for X\", \"sign up for a service\", \"set up monitoring\", \"show me the catalog\", \"what can I provision\", \"browse providers\", \"add an LLM provider\", \"configure model provider\", \"add email sending\", \"set up search\", \"add a message queue\", \"set up object storage\", \"add feature flags\". Also trigger when the user asks how to get an API key or credentials for any third-party service \u2014 don't tell them to sign up manually; check the Projects catalog first. Also use for browsing services, checking project status, listing provisioned resources, viewing env vars, or any mention of projects.dev or adding/provisioning/connecting a cloud service.\n",
+      "provider": "stripe",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-02T01:17:25Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-projects",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
+        "commit_sha": "ea0ad2373fdb687c247aac4f4100dc04154bf687"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "art",
+        "email",
+        "stripe",
+        "projects"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 11,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1603
+    },
+    {
+      "id": "stripe/upgrade-stripe",
+      "name": "upgrade-stripe",
+      "description": "Guide for upgrading Stripe API versions and SDKs",
+      "provider": "stripe",
+      "category": "integrations",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-28T01:03:54Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/upgrade-stripe",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
+        "commit_sha": "ea0ad2373fdb687c247aac4f4100dc04154bf687"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "upgrade",
+        "stripe"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 16,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1603
+    },
     {
       "id": "cloudflare/agents-sdk",
       "name": "agents-sdk",
@@ -654,540 +1628,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 1759
-    },
-    {
-      "id": "expo/add-app-clip",
-      "name": "add-app-clip",
-      "description": "Add an iOS App Clip target to an Expo app. Use when the user mentions App Clip, AASA, apple-app-site-association, appclips, smart app banner, or wants to ship a lightweight iOS Clip invoked from a URL alongside their parent app.",
-      "provider": "expo",
-      "category": "mobile",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-21T16:23:47Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/add-app-clip",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/add-app-clip/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "ci",
-        "cli",
-        "art",
-        "add",
-        "app",
-        "clip"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 21,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/building-native-ui",
-      "name": "building-native-ui",
-      "description": "Complete guide for building beautiful apps with Expo Router. Covers fundamentals, styling, components, navigation, animations, patterns, and native tabs.",
-      "provider": "expo",
-      "category": "development",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-06-10T15:03:26Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/building-native-ui",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/building-native-ui/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "building",
-        "native"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/eas-update-insights",
-      "name": "eas-update-insights",
-      "description": "Check the health of published EAS Updates: crash rates, install/launch counts, unique users, payload size, and the split between embedded and OTA users per channel. Use when the user asks how an update is performing, whether a rollout is healthy, how many users are on the embedded build vs OTA, or wants to gate CI on update health.",
-      "provider": "expo",
-      "category": "development",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-05-27T07:21:03Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/eas-update-insights",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-update-insights/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "ci",
-        "eas",
-        "update",
-        "insights"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 16,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-api-routes",
-      "name": "expo-api-routes",
-      "description": "Guidelines for creating API routes in Expo Router with EAS Hosting",
-      "provider": "expo",
-      "category": "integrations",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-03-13T17:37:13Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-api-routes",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-api-routes/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "expo",
-        "routes"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 90,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-brownfield",
-      "name": "expo-brownfield",
-      "description": "Integrate Expo and React Native into an existing native iOS or Android app. Use when the user mentions brownfield, embedding React Native in a native app, AAR/XCFramework, or adding Expo to an existing Kotlin/Swift project. Covers both the isolated approach and the integrated approach.",
-      "provider": "expo",
-      "category": "mobile",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-19T12:10:44Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-brownfield",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-brownfield/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "expo",
-        "brownfield"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 23,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-cicd-workflows",
-      "name": "expo-cicd-workflows",
-      "description": "Helps understand and write EAS workflow YAML files for Expo projects. Use this skill when the user asks about CI/CD or workflows in an Expo or EAS context, mentions .eas/workflows/, or wants help with EAS build pipelines or deployment automation.",
-      "provider": "expo",
-      "category": "development",
-      "license": "MIT License",
-      "compatibility": null,
-      "last_updated_at": "2026-06-10T15:03:26Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-cicd-workflows",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-cicd-workflows/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "yaml",
-        "pr",
-        "ci",
-        "cd",
-        "expo",
-        "cicd",
-        "workflows"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-deployment",
-      "name": "expo-deployment",
-      "description": "Deploying Expo apps to iOS App Store, Android Play Store, web hosting, and API routes",
-      "provider": "expo",
-      "category": "mobile",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-03-13T17:37:13Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-deployment",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-deployment/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "expo",
-        "deployment"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 90,
-      "maintenance_status": "maintained",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-dev-client",
-      "name": "expo-dev-client",
-      "description": "Build and distribute Expo development clients locally or via TestFlight",
-      "provider": "expo",
-      "category": "development",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-03-13T17:37:13Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-dev-client",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-dev-client/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "test",
-        "cli",
-        "expo",
-        "dev",
-        "client"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 90,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-module",
-      "name": "expo-module",
-      "description": "Guide for creating and writing Expo native modules and views using the Expo Modules API (Swift, Kotlin, TypeScript). Covers module definition DSL, native views, shared objects, config plugins, lifecycle hooks, autolinking, and type system. Use when building or modifying native modules for Expo.",
-      "provider": "expo",
-      "category": "mobile",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-05-27T07:21:03Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-module",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-module/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "expo",
-        "module"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 16,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-observe",
-      "name": "expo-observe",
-      "description": "Use for anything related to EAS Observe \u2014 adding `expo-observe` to an Expo project (AppMetricsRoot/ObserveRoot HOC, markInteractive, the useObserve hook, and the Expo Router / React Navigation integrations for per-route metrics), querying via the EAS CLI (`eas observe:metrics-summary`, `observe:metrics`, `observe:routes`, `observe:events`, `observe:versions`), or interpreting the resulting metrics (cold/warm launch, TTR, TTI, navigation cold/warm TTR, update download, and the TTI frameRate params for triaging slow startups).",
-      "provider": "expo",
-      "category": "creative",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-05-28T23:57:45Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-observe",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-observe/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "cli",
-        "art",
-        "expo",
-        "observe"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 14,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-tailwind-setup",
-      "name": "expo-tailwind-setup",
-      "description": "Set up Tailwind CSS v4 in Expo with react-native-css and NativeWind v5 for universal styling",
-      "provider": "expo",
-      "category": "mobile",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-03-13T17:37:13Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-tailwind-setup",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-tailwind-setup/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "expo",
-        "tailwind",
-        "setup"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 90,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/expo-ui",
-      "name": "expo-ui",
-      "description": "Build native UI with the @expo/ui package: real SwiftUI on iOS and Jetpack Compose on Android rendered from React in an Expo or React Native app. Covers universal cross-platform components (Host, Column, Row, Button, Text, List, and more imported from @expo/ui), drop-in replacements for popular React Native community libraries (BottomSheet, DateTimePicker, Slider, Menu, etc.), and platform-specific SwiftUI (@expo/ui/swift-ui) and Jetpack Compose (@expo/ui/jetpack-compose) trees and modifiers. Use when adding or reviewing @expo/ui Host/RNHostView trees, building native-feeling UI where standard React Native components fall short (lists with swipe actions and sections, settings forms with toggles, menus, sheets, pickers, sliders), choosing between universal and platform-specific components, or replacing an RN community UI library with a native @expo/ui equivalent. Not for custom native modules, Expo Router navigation, Reanimated, or data fetching.",
-      "provider": "expo",
-      "category": "mobile",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-06-11T19:12:23Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-ui",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-ui/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "ci",
-        "expo"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/native-data-fetching",
-      "name": "native-data-fetching",
-      "description": "Use when implementing or debugging ANY network request, API call, or data fetching. Covers fetch API, React Query, SWR, error handling, caching, offline support, and Expo Router data loaders (`useLoaderData`).",
-      "provider": "expo",
-      "category": "development",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-03-25T06:17:13Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/native-data-fetching",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/native-data-fetching/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "native",
-        "data",
-        "fetching"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 79,
-      "maintenance_status": "maintained",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/upgrading-expo",
-      "name": "upgrading-expo",
-      "description": "Guidelines for upgrading Expo SDK versions and fixing dependency issues",
-      "provider": "expo",
-      "category": "mobile",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-05-05T18:25:48Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/upgrading-expo",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/upgrading-expo/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "upgrading",
-        "expo"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 37,
-      "maintenance_status": "maintained",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
-    },
-    {
-      "id": "expo/use-dom",
-      "name": "use-dom",
-      "description": "Use Expo DOM components to run web code in a webview on native and as-is on web. Migrate web code to native incrementally.",
-      "provider": "expo",
-      "category": "development",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-03-13T17:37:13Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/use-dom",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/use-dom/SKILL.md",
-        "commit_sha": "bba3c55d7e75f62cbfc937150b4b4ed3873e3b0d"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "use",
-        "dom"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 90,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2058
     },
     {
       "id": "github/acquire-codebase-knowledge",
@@ -15720,194 +16160,6 @@
       "github_stars": 10654
     },
     {
-      "id": "neondatabase/claimable-postgres",
-      "name": "claimable-postgres",
-      "description": "Provision instant temporary Postgres databases via Claimable Postgres by Neon (neon.new) with no login, signup, or credit card. Supports REST API, CLI, and SDK. Use when users ask for a quick Postgres environment, a throwaway DATABASE_URL for prototyping/tests, or \"just give me a DB now\". Triggers include: \"quick postgres\", \"temporary postgres\", \"no signup database\", \"no credit card database\", \"instant DATABASE_URL\", \"npx neon-new\", \"neon.new\", \"neon.new API\", \"claimable postgres API\".",
-      "provider": "neondatabase",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-14T11:44:17Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/claimable-postgres",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/claimable-postgres/SKILL.md",
-        "commit_sha": "654f914a925ac88d53cee8a2351f28bdb08f1e42"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "test",
-        "api",
-        "cli",
-        "claimable",
-        "postgres"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 58,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 68
-    },
-    {
-      "id": "neondatabase/neon",
-      "name": "neon",
-      "description": "Overview of the Neon platform for apps and agents, spanning Postgres, Auth, Data API, and the new services: Object Storage, Compute Functions, and AI Gateway. Use whenever \"Neon\" is mentioned for an overview of how to work with Neon and how to get started. Otherwise, the individual capabilities are the triggers: \"object storage\" or \"S3-compatible storage\", \"serverless functions\", \"background jobs\", or \"run code near my database\", \"AI gateway\", \"LLM proxy\", \"model routing\", or \"call an LLM\" \u2192 AI Gateway; \"database\", \"Postgres\", or \"authentication\" \u2192 Postgres and Auth.",
-      "provider": "neondatabase",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-10T14:47:09Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon/SKILL.md",
-        "commit_sha": "654f914a925ac88d53cee8a2351f28bdb08f1e42"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "art",
-        "neon"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 68
-    },
-    {
-      "id": "neondatabase/neon-postgres",
-      "name": "neon-postgres",
-      "description": "Guides and best practices for working with Neon Serverless Postgres. Covers setup, connection methods, branching, autoscaling, scale-to-zero, read replicas, connection pooling, Neon Auth, and the Neon CLI, MCP server, REST API, TypeScript SDK, and Python SDK. Use when users ask about \"Neon setup\", \"connect to Neon\", \"Neon project\", \"DATABASE_URL\", \"serverless Postgres\", \"Neon CLI\", \"neonctl\", \"Neon MCP\", \"Neon Auth\", \"@neondatabase/serverless\", \"@neondatabase/neon-js\", \"scale to zero\", \"Neon autoscaling\", \"Neon read replica\", or \"Neon connection pooling\".",
-      "provider": "neondatabase",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-21T18:23:47Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
-        "commit_sha": "654f914a925ac88d53cee8a2351f28bdb08f1e42"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "mcp",
-        "cli",
-        "neon",
-        "postgres"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 21,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 68
-    },
-    {
-      "id": "neondatabase/neon-postgres-branches",
-      "name": "neon-postgres-branches",
-      "description": "Choose and create the right Neon branch type for testing and development. Use when users ask about Neon branching, migration testing with real data, isolated test environments, schema-only branch workflows for sensitive data, or branch creation via Neon CLI or Neon MCP. Triggers include \"Neon branch\", \"test migrations safely\", \"branch production data\", \"schema-only branch\", \"reset branch\" and \"sensitive data testing\".",
-      "provider": "neondatabase",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-16T18:30:41Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres-branches",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
-        "commit_sha": "654f914a925ac88d53cee8a2351f28bdb08f1e42"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "test",
-        "mcp",
-        "cli",
-        "neon",
-        "postgres",
-        "branches"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 26,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 68
-    },
-    {
-      "id": "neondatabase/neon-postgres-egress-optimizer",
-      "name": "neon-postgres-egress-optimizer",
-      "description": "Diagnose and fix excessive Postgres egress (network data transfer) in a codebase. Use when a user mentions high database bills, unexpected data transfer costs, network transfer charges, egress spikes, \"why is my Neon bill so high\", \"database costs jumped\", SELECT * optimization, query overfetching, reduce Neon costs, optimize database usage, or wants to reduce data sent from their database to their application. Also use when reviewing query patterns for cost efficiency, even if the user doesn't explicitly mention egress or data transfer.",
-      "provider": "neondatabase",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-03-13T16:58:48Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres-egress-optimizer",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-egress-optimizer/SKILL.md",
-        "commit_sha": "654f914a925ac88d53cee8a2351f28bdb08f1e42"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "ci",
-        "neon",
-        "postgres",
-        "egress",
-        "optimizer"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 90,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 68
-    },
-    {
       "id": "nginity/a11y-audit",
       "name": "a11y-audit",
       "description": "Accessibility audit skill for scanning, fixing, and verifying WCAG 2.2 Level A and AA compliance across React, Next.js, Vue, Angular, Svelte, and plain HTML codebases. Use when auditing accessibility, fixing a11y violations, checking color contrast, generating compliance reports, or integrating accessibility checks into CI/CD pipelines.",
@@ -29395,156 +29647,6 @@
       "github_stars": 17884
     },
     {
-      "id": "stripe/stripe-best-practices",
-      "name": "stripe-best-practices",
-      "description": "Guides Stripe integration decisions \u2014 API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, Treasury financial accounts, integration surfaces (Checkout, Payment Element), migrating from deprecated Stripe APIs, and security best practices (API key management, restricted keys, webhooks, OAuth). Use when building, modifying, or reviewing any Stripe integration \u2014 including accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, creating connected accounts, or implementing secure key handling.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-12T01:19:06Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-best-practices",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
-        "commit_sha": "2b60be10f6f838a739b0d4faa5eb3583cc7cec81"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "stripe",
-        "best",
-        "practices"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 1603
-    },
-    {
-      "id": "stripe/stripe-directory",
-      "name": "stripe-directory",
-      "description": "Use when the user wants to find businesses, software, service providers, or partners for a specific industry, workflow, pain point, capability, or job to be done. Also use when the agent needs to programmatically purchase or consume a service. Use Stripe Directory to build a short relevant shortlist, even if the user does not mention Stripe Directory explicitly.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-10T01:14:27Z",
-      "metadata": {
-        "short-description": "Find (and optionally purchase from) vendors or partners"
-      },
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-directory",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-directory/SKILL.md",
-        "commit_sha": "2b60be10f6f838a739b0d4faa5eb3583cc7cec81"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "art",
-        "stripe",
-        "directory"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 2,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1603
-    },
-    {
-      "id": "stripe/stripe-projects",
-      "name": "stripe-projects",
-      "description": "Use when the user wants to provision infrastructure or third-party services using Stripe Projects. Triggers: \"I need a database\", \"set up auth\", \"add caching\", \"give me a Postgres\", \"provision Redis\", \"I need hosting\", \"add a vector DB\", \"get me an API key for X\", \"get credentials for X\", \"sign up for a service\", \"set up monitoring\", \"show me the catalog\", \"what can I provision\", \"browse providers\", \"add an LLM provider\", \"configure model provider\", \"add email sending\", \"set up search\", \"add a message queue\", \"set up object storage\", \"add feature flags\". Also trigger when the user asks how to get an API key or credentials for any third-party service \u2014 don't tell them to sign up manually; check the Projects catalog first. Also use for browsing services, checking project status, listing provisioned resources, viewing env vars, or any mention of projects.dev or adding/provisioning/connecting a cloud service.\n",
-      "provider": "stripe",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-02T01:17:25Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-projects",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
-        "commit_sha": "2b60be10f6f838a739b0d4faa5eb3583cc7cec81"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "art",
-        "email",
-        "stripe",
-        "projects"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 10,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1603
-    },
-    {
-      "id": "stripe/upgrade-stripe",
-      "name": "upgrade-stripe",
-      "description": "Guide for upgrading Stripe API versions and SDKs",
-      "provider": "stripe",
-      "category": "integrations",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-28T01:03:54Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/upgrade-stripe",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
-        "commit_sha": "2b60be10f6f838a739b0d4faa5eb3583cc7cec81"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "upgrade",
-        "stripe"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 15,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1603
-    },
-    {
       "id": "trailofbits/address-sanitizer",
       "name": "address-sanitizer",
       "description": "AddressSanitizer detects memory errors during fuzzing. Use when fuzzing C/C++ code to find buffer overflows and use-after-free bugs.",
@@ -41188,21 +41290,21 @@
     }
   ],
   "duplicate_summary": {
-    "total_annotated": 11,
-    "mirrors": 11,
+    "total_annotated": 0,
+    "mirrors": 0,
     "probable_duplicates": 0
   },
   "maintenance_summary": {
-    "active": 309,
-    "maintained": 455,
+    "active": 18,
+    "maintained": 9,
     "stale": 0,
     "abandoned": 0,
     "unknown": 0,
-    "active_percentage": 40.4,
+    "active_percentage": 66.7,
     "maintained_percentage": 100.0
   },
   "skill_type_summary": {
-    "full": 764,
+    "full": 27,
     "integration": 0
   }
 }

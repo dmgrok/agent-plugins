@@ -1,8 +1,8 @@
 {
   "name": "MCP-Compatible Skills",
   "description": "Skills with MCP integration support, filtered from Agent Skills Directory",
-  "version": "2026.06.13",
-  "generated_at": "2026-06-13T09:25:05.438248+00:00",
+  "version": "2026.06.14",
+  "generated_at": "2026-06-14T09:45:59.300403+00:00",
   "source": "https://github.com/dmgrok/agent_skills_directory",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json",
   "website": "https://dmgrok.github.io/agent_skills_directory/",
@@ -16,13 +16,13 @@
       "category": "data",
       "license": null,
       "compatibility": null,
-      "last_updated_at": "2026-05-21T18:23:47Z",
+      "last_updated_at": "2026-06-14T03:39:04Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/neondatabase/agent-skills",
         "path": "skills/neon-postgres",
         "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
-        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+        "commit_sha": "6d454c6d36481fffb50dfe46f4b8abb6f2de632f"
       },
       "has_scripts": false,
       "has_references": false,
@@ -39,7 +39,7 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 22,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
@@ -54,13 +54,13 @@
       "category": "development",
       "license": null,
       "compatibility": null,
-      "last_updated_at": "2026-05-16T18:30:41Z",
+      "last_updated_at": "2026-06-14T03:39:04Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/neondatabase/agent-skills",
         "path": "skills/neon-postgres-branches",
         "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
-        "commit_sha": "03fbe5722552e3d43fa69891cc38005aafca3c96"
+        "commit_sha": "6d454c6d36481fffb50dfe46f4b8abb6f2de632f"
       },
       "has_scripts": false,
       "has_references": false,
@@ -78,7 +78,7 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 27,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",

@@ -1,9 +1,23 @@
 {
   "$schema": "https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/schema/catalog-schema.json",
-  "version": "2026.06.20",
-  "generated_at": "2026-06-20T09:27:49.381116+00:00",
+  "version": "2026.06.21",
+  "generated_at": "2026-06-21T09:57:47.505438+00:00",
   "total_skills": 1104,
   "providers": {
+    "neondatabase": {
+      "name": "Neon Database",
+      "repo": "https://github.com/neondatabase/agent-skills",
+      "skills_count": 8,
+      "stars": 71,
+      "description": "Agent Skills for Neon Severless Postgres"
+    },
+    "playwright-skill": {
+      "name": "Playwright Automation",
+      "repo": "https://github.com/lackeyjb/playwright-skill",
+      "skills_count": 1,
+      "stars": 1889,
+      "description": "Claude Code Skill for browser automation with Playwright. Model-invoked - Claude autonomously writes and executes custom automation for testing and validation."
+    },
     "huggingface": {
       "name": "HuggingFace",
       "repo": "https://github.com/huggingface/skills",
@@ -11,68 +25,12 @@
       "stars": 10698,
       "description": "Give your agents the power of the Hugging Face ecosystem"
     },
-    "visionos-agents": {
-      "name": "visionOS Development",
-      "repo": "https://github.com/tomkrikorian/visionOSAgents",
-      "skills_count": 22,
-      "stars": 56,
-      "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
-    },
-    "move-quality-skill": {
-      "name": "Move Code Quality",
-      "repo": "https://github.com/1NickPappas/move-code-quality-skill",
-      "skills_count": 1,
-      "stars": 16,
-      "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
-    },
-    "tapestry": {
-      "name": "Tapestry Skills",
-      "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
-      "skills_count": 7,
-      "stars": 276,
-      "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
-    },
-    "notebooklm-skill": {
-      "name": "NotebookLM Integration",
-      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
-      "skills_count": 1,
-      "stars": 4163,
-      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
-    },
-    "claude-marketplace-visual": {
-      "name": "Claude Marketplace (Visual)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 441,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "cloudflare": {
-      "name": "Cloudflare",
-      "repo": "https://github.com/cloudflare/skills",
-      "skills_count": 11,
-      "stars": 1835,
-      "description": "Skills for teaching agents how to build on Cloudflare."
-    },
-    "fal-ai": {
-      "name": "fal.ai",
-      "repo": "https://github.com/fal-ai-community/skills",
-      "skills_count": 16,
-      "stars": 186,
-      "description": null
-    },
-    "claude-marketplace-engineering": {
-      "name": "Claude Marketplace (Engineering)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 441,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "stripe": {
-      "name": "Stripe",
-      "repo": "https://github.com/stripe/ai",
+    "tinybird": {
+      "name": "Tinybird",
+      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
       "skills_count": 4,
-      "stars": 1613,
-      "description": "One-stop shop for building AI-powered products and businesses with Stripe."
+      "stars": 20,
+      "description": null
     },
     "obsidian-plugin": {
       "name": "Obsidian Plugin Development",
@@ -81,12 +39,54 @@
       "stars": 150,
       "description": "Agent SKILL for Obsidian.md plugin development"
     },
-    "google-labs-stitch": {
-      "name": "Google Labs Stitch",
-      "repo": "https://github.com/google-labs-code/stitch-skills",
+    "expo": {
+      "name": "Expo",
+      "repo": "https://github.com/expo/skills",
+      "skills_count": 16,
+      "stars": 2082,
+      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
+    },
+    "ipsw-skill": {
+      "name": "IPSW iOS Firmware",
+      "repo": "https://github.com/blacktop/ipsw-skill",
       "skills_count": 0,
-      "stars": 6060,
-      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
+      "stars": 55,
+      "description": "A SKILL.md for ipsw"
+    },
+    "tapestry": {
+      "name": "Tapestry Skills",
+      "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
+      "skills_count": 7,
+      "stars": 276,
+      "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
+    },
+    "fal-ai": {
+      "name": "fal.ai",
+      "repo": "https://github.com/fal-ai-community/skills",
+      "skills_count": 16,
+      "stars": 186,
+      "description": null
+    },
+    "ios-simulator-skill": {
+      "name": "iOS Simulator",
+      "repo": "https://github.com/conorluddy/ios-simulator-skill",
+      "skills_count": 1,
+      "stars": 1090,
+      "description": "An IOS Simulator Skill for ClaudeCode. Use it to optimise Claude's ability to build, run and interact with your apps. I mainly use it as an xcodebuild wrapper to save context."
+    },
+    "claude-marketplace-code": {
+      "name": "Claude Marketplace (Code Ops)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 4,
+      "stars": 441,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "notebooklm-skill": {
+      "name": "NotebookLM Integration",
+      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
+      "skills_count": 1,
+      "stars": 4163,
+      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
     },
     "ffuf-skill": {
       "name": "FFUF Web Fuzzing",
@@ -102,48 +102,6 @@
       "stars": 208,
       "description": "Collection of agent skills for AI coding assistants"
     },
-    "nginity": {
-      "name": "nginity Enterprise",
-      "repo": "https://github.com/alirezarezvani/claude-skills",
-      "skills_count": 342,
-      "stars": 17884,
-      "description": "337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
-    },
-    "emblemcompany": {
-      "name": "EmblemAI",
-      "repo": "https://github.com/EmblemCompany/Agent-skills",
-      "skills_count": 9,
-      "stars": 10,
-      "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
-    },
-    "playwright-skill": {
-      "name": "Playwright Automation",
-      "repo": "https://github.com/lackeyjb/playwright-skill",
-      "skills_count": 1,
-      "stars": 1889,
-      "description": "Claude Code Skill for browser automation with Playwright. Model-invoked - Claude autonomously writes and executes custom automation for testing and validation."
-    },
-    "neondatabase": {
-      "name": "Neon Database",
-      "repo": "https://github.com/neondatabase/agent-skills",
-      "skills_count": 8,
-      "stars": 70,
-      "description": "Agent Skills for Neon Severless Postgres"
-    },
-    "csv-summarizer-skill": {
-      "name": "CSV Data Summarizer",
-      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
-      "skills_count": 1,
-      "stars": 276,
-      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
-    },
-    "family-history-skill": {
-      "name": "Family History Research",
-      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
-      "skills_count": 1,
-      "stars": 44,
-      "description": "A Claude Skill to assist with family history and genealogy research planning."
-    },
     "github": {
       "name": "GitHub",
       "repo": "https://github.com/github/awesome-copilot",
@@ -158,19 +116,12 @@
       "stars": 1,
       "description": "AI-powered testing skills for automation frameworks"
     },
-    "trailofbits": {
-      "name": "Trail of Bits Security",
-      "repo": "https://github.com/trailofbits/skills",
-      "skills_count": 74,
-      "stars": 5654,
-      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
-    },
-    "expo": {
-      "name": "Expo",
-      "repo": "https://github.com/expo/skills",
-      "skills_count": 16,
-      "stars": 2082,
-      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
+    "claude-marketplace-productivity": {
+      "name": "Claude Marketplace (Productivity)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 4,
+      "stars": 441,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
     },
     "epub-skill": {
       "name": "EPUB Converter",
@@ -179,54 +130,12 @@
       "stars": 83,
       "description": "A Claude Skill for converting markdown documents, chat summaries, or research reports into a downloadable epub file that can be sent to kindle"
     },
-    "ipsw-skill": {
-      "name": "IPSW iOS Firmware",
-      "repo": "https://github.com/blacktop/ipsw-skill",
-      "skills_count": 0,
-      "stars": 55,
-      "description": "A SKILL.md for ipsw"
-    },
-    "ios-simulator-skill": {
-      "name": "iOS Simulator",
-      "repo": "https://github.com/conorluddy/ios-simulator-skill",
-      "skills_count": 1,
-      "stars": 1090,
-      "description": "An IOS Simulator Skill for ClaudeCode. Use it to optimise Claude's ability to build, run and interact with your apps. I mainly use it as an xcodebuild wrapper to save context."
-    },
-    "tinybird": {
-      "name": "Tinybird",
-      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
-      "skills_count": 4,
-      "stars": 20,
-      "description": null
-    },
-    "vercel": {
-      "name": "Vercel",
-      "repo": "https://github.com/vercel-labs/agent-skills",
-      "skills_count": 9,
-      "stars": 27814,
-      "description": "Vercel's official collection of agent skills"
-    },
-    "openai": {
-      "name": "OpenAI",
-      "repo": "https://github.com/openai/skills",
-      "skills_count": 44,
-      "stars": 22457,
-      "description": "Skills Catalog for Codex"
-    },
-    "claude-marketplace-productivity": {
-      "name": "Claude Marketplace (Productivity)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 4,
-      "stars": 441,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "claude-marketplace-code": {
-      "name": "Claude Marketplace (Code Ops)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 4,
-      "stars": 441,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    "skillcreatorai": {
+      "name": "SkillCreator.ai",
+      "repo": "https://github.com/skillcreatorai/Ai-Agent-Skills",
+      "skills_count": 17,
+      "stars": 1059,
+      "description": "my curated agent skills library "
     },
     "d3js-skill": {
       "name": "D3.js Visualization",
@@ -235,12 +144,12 @@
       "stars": 125,
       "description": "A Claude skill for d3.js."
     },
-    "better-auth": {
-      "name": "Better Auth",
-      "repo": "https://github.com/better-auth/skills",
-      "skills_count": 5,
-      "stars": 144,
-      "description": null
+    "stream-coding": {
+      "name": "Stream Coding Methodology",
+      "repo": "https://github.com/frmoretto/stream-coding",
+      "skills_count": 1,
+      "stars": 60,
+      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
     },
     "aws-skills": {
       "name": "AWS Skills",
@@ -256,19 +165,68 @@
       "stars": 2199,
       "description": "Agent Skills to help developers using AI agents with Supabase"
     },
-    "anthropics": {
-      "name": "Anthropic",
-      "repo": "https://github.com/anthropics/skills",
-      "skills_count": 17,
-      "stars": 148787,
-      "description": "Public repository for Agent Skills"
+    "csv-summarizer-skill": {
+      "name": "CSV Data Summarizer",
+      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+      "skills_count": 1,
+      "stars": 276,
+      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
     },
-    "obra-superpowers": {
-      "name": "Obra Superpowers",
-      "repo": "https://github.com/obra/superpowers",
-      "skills_count": 14,
-      "stars": 232858,
-      "description": "An agentic skills framework & software development methodology that works."
+    "google-labs-stitch": {
+      "name": "Google Labs Stitch",
+      "repo": "https://github.com/google-labs-code/stitch-skills",
+      "skills_count": 0,
+      "stars": 6060,
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
+    },
+    "family-history-skill": {
+      "name": "Family History Research",
+      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
+      "skills_count": 1,
+      "stars": 44,
+      "description": "A Claude Skill to assist with family history and genealogy research planning."
+    },
+    "nginity": {
+      "name": "nginity Enterprise",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "skills_count": 342,
+      "stars": 17884,
+      "description": "337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
+    },
+    "visionos-agents": {
+      "name": "visionOS Development",
+      "repo": "https://github.com/tomkrikorian/visionOSAgents",
+      "skills_count": 22,
+      "stars": 56,
+      "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
+    },
+    "claude-marketplace-visual": {
+      "name": "Claude Marketplace (Visual)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 441,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "claude-marketplace-engineering": {
+      "name": "Claude Marketplace (Engineering)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 441,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "better-auth": {
+      "name": "Better Auth",
+      "repo": "https://github.com/better-auth/skills",
+      "skills_count": 5,
+      "stars": 144,
+      "description": null
+    },
+    "emblemcompany": {
+      "name": "EmblemAI",
+      "repo": "https://github.com/EmblemCompany/Agent-skills",
+      "skills_count": 9,
+      "stars": 10,
+      "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
     },
     "getsentry": {
       "name": "Sentry",
@@ -277,12 +235,61 @@
       "stars": 777,
       "description": "Agent Skills used by the Sentry team for development."
     },
-    "skillcreatorai": {
-      "name": "SkillCreator.ai",
-      "repo": "https://github.com/skillcreatorai/Ai-Agent-Skills",
+    "anthropics": {
+      "name": "Anthropic",
+      "repo": "https://github.com/anthropics/skills",
       "skills_count": 17,
-      "stars": 1059,
-      "description": "my curated agent skills library "
+      "stars": 148787,
+      "description": "Public repository for Agent Skills"
+    },
+    "cloudflare": {
+      "name": "Cloudflare",
+      "repo": "https://github.com/cloudflare/skills",
+      "skills_count": 11,
+      "stars": 1835,
+      "description": "Skills for teaching agents how to build on Cloudflare."
+    },
+    "obra-superpowers": {
+      "name": "Obra Superpowers",
+      "repo": "https://github.com/obra/superpowers",
+      "skills_count": 14,
+      "stars": 232858,
+      "description": "An agentic skills framework & software development methodology that works."
+    },
+    "trailofbits": {
+      "name": "Trail of Bits Security",
+      "repo": "https://github.com/trailofbits/skills",
+      "skills_count": 74,
+      "stars": 5654,
+      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
+    },
+    "vercel": {
+      "name": "Vercel",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "skills_count": 9,
+      "stars": 27814,
+      "description": "Vercel's official collection of agent skills"
+    },
+    "pypict-skill": {
+      "name": "PICT Test Cases",
+      "repo": "https://github.com/omkamal/pypict-claude-skill",
+      "skills_count": 1,
+      "stars": 57,
+      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
+    },
+    "stripe": {
+      "name": "Stripe",
+      "repo": "https://github.com/stripe/ai",
+      "skills_count": 4,
+      "stars": 1613,
+      "description": "One-stop shop for building AI-powered products and businesses with Stripe."
+    },
+    "move-quality-skill": {
+      "name": "Move Code Quality",
+      "repo": "https://github.com/1NickPappas/move-code-quality-skill",
+      "skills_count": 1,
+      "stars": 16,
+      "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
     },
     "remotion": {
       "name": "Remotion",
@@ -291,31 +298,319 @@
       "stars": 3252,
       "description": "Agent Skills"
     },
-    "stream-coding": {
-      "name": "Stream Coding Methodology",
-      "repo": "https://github.com/frmoretto/stream-coding",
-      "skills_count": 1,
-      "stars": 60,
-      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
-    },
-    "pypict-skill": {
-      "name": "PICT Test Cases",
-      "repo": "https://github.com/omkamal/pypict-claude-skill",
-      "skills_count": 1,
-      "stars": 57,
-      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
+    "openai": {
+      "name": "OpenAI",
+      "repo": "https://github.com/openai/skills",
+      "skills_count": 44,
+      "stars": 22457,
+      "description": "Skills Catalog for Codex"
     }
   },
   "categories": [
-    "creative",
+    "data",
     "development",
-    "documents",
     "integrations",
-    "ml-ai",
-    "mobile",
-    "security"
+    "ml-ai"
   ],
   "skills": [
+    {
+      "id": "neondatabase/claimable-postgres",
+      "name": "claimable-postgres",
+      "description": "Provision instant temporary Postgres databases via Claimable Postgres by Neon (neon.new) with no login, signup, or credit card. Supports REST API, CLI, and SDK. Use when users ask for a quick Postgres environment, a throwaway DATABASE_URL for prototyping/tests, or \"just give me a DB now\". Triggers include: \"quick postgres\", \"temporary postgres\", \"no signup database\", \"no credit card database\", \"instant DATABASE_URL\", \"npx neon-new\", \"neon.new\", \"neon.new API\", \"claimable postgres API\".",
+      "provider": "neondatabase",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-14T03:39:04Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/claimable-postgres",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/claimable-postgres/SKILL.md",
+        "commit_sha": "a67ffaf22d93ffd9275aba5d7bdb7fbf94461796"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "test",
+        "api",
+        "cli",
+        "claimable",
+        "postgres"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 7,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 71
+    },
+    {
+      "id": "neondatabase/neon",
+      "name": "neon",
+      "description": "Overview of the Neon platform for apps and agents, spanning Postgres, Auth, Data API, and the new services: Object Storage, Compute Functions, and AI Gateway. Use whenever \"Neon\" is mentioned for an overview of how to work with Neon and how to get started. Otherwise, the individual capabilities are the triggers: \"object storage\" or \"S3-compatible storage\", \"serverless functions\", \"background jobs\", or \"run code near my database\", \"AI gateway\", \"LLM proxy\", \"model routing\", or \"call an LLM\" \u2192 AI Gateway; \"database\", \"Postgres\", or \"authentication\" \u2192 Postgres and Auth.",
+      "provider": "neondatabase",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-14T17:31:18Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon/SKILL.md",
+        "commit_sha": "a67ffaf22d93ffd9275aba5d7bdb7fbf94461796"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "art",
+        "neon"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 71
+    },
+    {
+      "id": "neondatabase/neon-ai-gateway",
+      "name": "neon-ai-gateway",
+      "description": "One API and one credential for frontier and open-source LLMs, built into your Neon branch and powered by Databricks. Use when a user wants to call an LLM, add AI/chat/an agent to their app, route between model providers (OpenAI, Anthropic, Google/Gemini, Meta, Alibaba, DeepSeek), or avoid juggling separate provider API keys and accounts \u2014 especially when they already use Neon and want AI requests to branch with their project. Works with the OpenAI SDK, Anthropic SDK, google-genai, the Vercel AI SDK, and Mastra by changing only the base URL. Triggers include \"call an LLM\", \"add AI to my app\", \"chat completion\", \"model routing\", \"LLM proxy/gateway\", \"one API for all models\", \"use Claude/GPT/Gemini\", \"AI SDK\", \"Mastra agent\", \"Neon AI Gateway\", and \"log/rate-limit AI calls\".",
+      "provider": "neondatabase",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-14T17:31:18Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-ai-gateway",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-ai-gateway/SKILL.md",
+        "commit_sha": "a67ffaf22d93ffd9275aba5d7bdb7fbf94461796"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "neon",
+        "gateway"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 71
+    },
+    {
+      "id": "neondatabase/neon-functions",
+      "name": "neon-functions",
+      "description": "Long-running, serverless Node.js HTTP functions deployed onto your Neon branch, with DATABASE_URL injected automatically and compute that runs next to your data. Use when a user wants to host an API, an AI agent with long streaming responses, a WebSocket or server-sent-events (SSE) server, a webhook handler, a Discord bot, or any request/response workload that risks timing out on short, lambda-style serverless functions \u2014 and wants it to branch with their database. Triggers include \"serverless function\", \"deploy an API\", \"long-running function\", \"streaming agent\", \"SSE server\", \"WebSocket server\", \"webhook handler\", \"run code next to my database\", \"function that won't time out\", \"Neon Functions\", and \"Neon Compute\".",
+      "provider": "neondatabase",
+      "category": "integrations",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-21T04:12:48Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-functions",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-functions/SKILL.md",
+        "commit_sha": "a67ffaf22d93ffd9275aba5d7bdb7fbf94461796"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "neon",
+        "functions"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 71
+    },
+    {
+      "id": "neondatabase/neon-object-storage",
+      "name": "neon-object-storage",
+      "description": "S3-compatible object storage that branches with your Neon project, so files and the database stay in sync across every branch. Use when a user wants object storage, a bucket, blob/file storage, or somewhere to put uploads, images, documents, avatars, or user-generated files for their app or agent \u2014 especially when they already use (or are setting up) Neon Postgres and don't want to add a separate storage provider like AWS S3, Cloudflare R2, or Supabase Storage. Triggers include \"object storage\", \"bucket\", \"blob storage\", \"file storage\", \"store uploads/images/files\", \"S3-compatible storage\", \"presigned URL\", \"where do I put files\", \"Neon Object Storage\", \"Neon Storage\", and \"storage that branches with my database\".",
+      "provider": "neondatabase",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-14T17:31:18Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-object-storage",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-object-storage/SKILL.md",
+        "commit_sha": "a67ffaf22d93ffd9275aba5d7bdb7fbf94461796"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "document",
+        "neon",
+        "object",
+        "storage"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 71
+    },
+    {
+      "id": "neondatabase/neon-postgres",
+      "name": "neon-postgres",
+      "description": "Guides and best practices for working with Neon Serverless Postgres. Covers setup, connection methods, branching, autoscaling, scale-to-zero, read replicas, connection pooling, Neon Auth, and the Neon CLI, MCP server, REST API, TypeScript SDK, and Python SDK. Use when users ask about \"Neon setup\", \"connect to Neon\", \"Neon project\", \"DATABASE_URL\", \"serverless Postgres\", \"Neon CLI\", \"neonctl\", \"Neon MCP\", \"Neon Auth\", \"@neondatabase/serverless\", \"@neondatabase/neon-js\", \"scale to zero\", \"Neon autoscaling\", \"Neon read replica\", or \"Neon connection pooling\".",
+      "provider": "neondatabase",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-14T17:31:18Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
+        "commit_sha": "a67ffaf22d93ffd9275aba5d7bdb7fbf94461796"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "mcp",
+        "cli",
+        "neon",
+        "postgres"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 71
+    },
+    {
+      "id": "neondatabase/neon-postgres-branches",
+      "name": "neon-postgres-branches",
+      "description": "Choose and create the right Neon branch type for testing and development. Use when users ask about Neon branching, migration testing with real data, isolated test environments, schema-only branch workflows for sensitive data, or branch creation via Neon CLI or Neon MCP. Triggers include \"Neon branch\", \"test migrations safely\", \"branch production data\", \"schema-only branch\", \"reset branch\" and \"sensitive data testing\".",
+      "provider": "neondatabase",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-14T03:39:04Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres-branches",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
+        "commit_sha": "a67ffaf22d93ffd9275aba5d7bdb7fbf94461796"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "test",
+        "mcp",
+        "cli",
+        "neon",
+        "postgres",
+        "branches"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 7,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 71
+    },
+    {
+      "id": "neondatabase/neon-postgres-egress-optimizer",
+      "name": "neon-postgres-egress-optimizer",
+      "description": "Diagnose and fix excessive Postgres egress (network data transfer) in a codebase. Use when a user mentions high database bills, unexpected data transfer costs, network transfer charges, egress spikes, \"why is my Neon bill so high\", \"database costs jumped\", SELECT * optimization, query overfetching, reduce Neon costs, optimize database usage, or wants to reduce data sent from their database to their application. Also use when reviewing query patterns for cost efficiency, even if the user doesn't explicitly mention egress or data transfer.",
+      "provider": "neondatabase",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-14T03:39:04Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres-egress-optimizer",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-egress-optimizer/SKILL.md",
+        "commit_sha": "a67ffaf22d93ffd9275aba5d7bdb7fbf94461796"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "ci",
+        "neon",
+        "postgres",
+        "egress",
+        "optimizer"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 7,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 71
+    },
     {
       "id": "huggingface/hf-cli",
       "name": "hf-cli",
@@ -19608,304 +19903,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 309
-    },
-    {
-      "id": "neondatabase/claimable-postgres",
-      "name": "claimable-postgres",
-      "description": "Provision instant temporary Postgres databases via Claimable Postgres by Neon (neon.new) with no login, signup, or credit card. Supports REST API, CLI, and SDK. Use when users ask for a quick Postgres environment, a throwaway DATABASE_URL for prototyping/tests, or \"just give me a DB now\". Triggers include: \"quick postgres\", \"temporary postgres\", \"no signup database\", \"no credit card database\", \"instant DATABASE_URL\", \"npx neon-new\", \"neon.new\", \"neon.new API\", \"claimable postgres API\".",
-      "provider": "neondatabase",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T03:39:04Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/claimable-postgres",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/claimable-postgres/SKILL.md",
-        "commit_sha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "test",
-        "api",
-        "cli",
-        "claimable",
-        "postgres"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 70
-    },
-    {
-      "id": "neondatabase/neon",
-      "name": "neon",
-      "description": "Overview of the Neon platform for apps and agents, spanning Postgres, Auth, Data API, and the new services: Object Storage, Compute Functions, and AI Gateway. Use whenever \"Neon\" is mentioned for an overview of how to work with Neon and how to get started. Otherwise, the individual capabilities are the triggers: \"object storage\" or \"S3-compatible storage\", \"serverless functions\", \"background jobs\", or \"run code near my database\", \"AI gateway\", \"LLM proxy\", \"model routing\", or \"call an LLM\" \u2192 AI Gateway; \"database\", \"Postgres\", or \"authentication\" \u2192 Postgres and Auth.",
-      "provider": "neondatabase",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T17:31:18Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon/SKILL.md",
-        "commit_sha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "art",
-        "neon"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 70
-    },
-    {
-      "id": "neondatabase/neon-ai-gateway",
-      "name": "neon-ai-gateway",
-      "description": "One API and one credential for frontier and open-source LLMs, built into your Neon branch and powered by Databricks. Use when a user wants to call an LLM, add AI/chat/an agent to their app, route between model providers (OpenAI, Anthropic, Google/Gemini, Meta, Alibaba, DeepSeek), or avoid juggling separate provider API keys and accounts \u2014 especially when they already use Neon and want AI requests to branch with their project. Works with the OpenAI SDK, Anthropic SDK, google-genai, the Vercel AI SDK, and Mastra by changing only the base URL. Triggers include \"call an LLM\", \"add AI to my app\", \"chat completion\", \"model routing\", \"LLM proxy/gateway\", \"one API for all models\", \"use Claude/GPT/Gemini\", \"AI SDK\", \"Mastra agent\", \"Neon AI Gateway\", and \"log/rate-limit AI calls\".",
-      "provider": "neondatabase",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T17:31:18Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-ai-gateway",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-ai-gateway/SKILL.md",
-        "commit_sha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "neon",
-        "gateway"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 70
-    },
-    {
-      "id": "neondatabase/neon-functions",
-      "name": "neon-functions",
-      "description": "Long-running, serverless Node.js HTTP functions deployed onto your Neon branch, with DATABASE_URL injected automatically and compute that runs next to your data. Use when a user wants to host an API, an AI agent with long streaming responses, a WebSocket or server-sent-events (SSE) server, a webhook handler, a Discord bot, or any request/response workload that risks timing out on short, lambda-style serverless functions \u2014 and wants it to branch with their database. Triggers include \"serverless function\", \"deploy an API\", \"long-running function\", \"streaming agent\", \"SSE server\", \"WebSocket server\", \"webhook handler\", \"run code next to my database\", \"function that won't time out\", \"Neon Functions\", and \"Neon Compute\".",
-      "provider": "neondatabase",
-      "category": "integrations",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T17:31:18Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-functions",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-functions/SKILL.md",
-        "commit_sha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "neon",
-        "functions"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 70
-    },
-    {
-      "id": "neondatabase/neon-object-storage",
-      "name": "neon-object-storage",
-      "description": "S3-compatible object storage that branches with your Neon project, so files and the database stay in sync across every branch. Use when a user wants object storage, a bucket, blob/file storage, or somewhere to put uploads, images, documents, avatars, or user-generated files for their app or agent \u2014 especially when they already use (or are setting up) Neon Postgres and don't want to add a separate storage provider like AWS S3, Cloudflare R2, or Supabase Storage. Triggers include \"object storage\", \"bucket\", \"blob storage\", \"file storage\", \"store uploads/images/files\", \"S3-compatible storage\", \"presigned URL\", \"where do I put files\", \"Neon Object Storage\", \"Neon Storage\", and \"storage that branches with my database\".",
-      "provider": "neondatabase",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T17:31:18Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-object-storage",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-object-storage/SKILL.md",
-        "commit_sha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "document",
-        "neon",
-        "object",
-        "storage"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 70
-    },
-    {
-      "id": "neondatabase/neon-postgres",
-      "name": "neon-postgres",
-      "description": "Guides and best practices for working with Neon Serverless Postgres. Covers setup, connection methods, branching, autoscaling, scale-to-zero, read replicas, connection pooling, Neon Auth, and the Neon CLI, MCP server, REST API, TypeScript SDK, and Python SDK. Use when users ask about \"Neon setup\", \"connect to Neon\", \"Neon project\", \"DATABASE_URL\", \"serverless Postgres\", \"Neon CLI\", \"neonctl\", \"Neon MCP\", \"Neon Auth\", \"@neondatabase/serverless\", \"@neondatabase/neon-js\", \"scale to zero\", \"Neon autoscaling\", \"Neon read replica\", or \"Neon connection pooling\".",
-      "provider": "neondatabase",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T17:31:18Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
-        "commit_sha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "mcp",
-        "cli",
-        "neon",
-        "postgres"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 70
-    },
-    {
-      "id": "neondatabase/neon-postgres-branches",
-      "name": "neon-postgres-branches",
-      "description": "Choose and create the right Neon branch type for testing and development. Use when users ask about Neon branching, migration testing with real data, isolated test environments, schema-only branch workflows for sensitive data, or branch creation via Neon CLI or Neon MCP. Triggers include \"Neon branch\", \"test migrations safely\", \"branch production data\", \"schema-only branch\", \"reset branch\" and \"sensitive data testing\".",
-      "provider": "neondatabase",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T03:39:04Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres-branches",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
-        "commit_sha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "test",
-        "mcp",
-        "cli",
-        "neon",
-        "postgres",
-        "branches"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 70
-    },
-    {
-      "id": "neondatabase/neon-postgres-egress-optimizer",
-      "name": "neon-postgres-egress-optimizer",
-      "description": "Diagnose and fix excessive Postgres egress (network data transfer) in a codebase. Use when a user mentions high database bills, unexpected data transfer costs, network transfer charges, egress spikes, \"why is my Neon bill so high\", \"database costs jumped\", SELECT * optimization, query overfetching, reduce Neon costs, optimize database usage, or wants to reduce data sent from their database to their application. Also use when reviewing query patterns for cost efficiency, even if the user doesn't explicitly mention egress or data transfer.",
-      "provider": "neondatabase",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T03:39:04Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres-egress-optimizer",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-egress-optimizer/SKILL.md",
-        "commit_sha": "e09dafdc62a11fc8a20134afcb70dc2aab2feb88"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "ci",
-        "neon",
-        "postgres",
-        "egress",
-        "optimizer"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 70
     },
     {
       "id": "nginity/a11y-audit",
@@ -42138,16 +42135,16 @@
     "probable_duplicates": 0
   },
   "maintenance_summary": {
-    "active": 25,
-    "maintained": 16,
+    "active": 8,
+    "maintained": 0,
     "stale": 0,
     "abandoned": 0,
     "unknown": 0,
-    "active_percentage": 61.0,
+    "active_percentage": 100.0,
     "maintained_percentage": 100.0
   },
   "skill_type_summary": {
-    "full": 41,
+    "full": 8,
     "integration": 0
   }
 }

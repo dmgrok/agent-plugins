@@ -1,1418 +1,1019 @@
-// Agent Skills Directory Browser
-const CATALOG_URL_CDN = 'https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json';
-const CATALOG_URL_LOCAL = './catalog.json';
-const BUNDLES_URL_CDN = 'https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/bundles.json';
-const BUNDLES_URL_LOCAL = './bundles.json';
-// Use local file when testing on localhost, otherwise use CDN
-const CATALOG_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-    ? CATALOG_URL_LOCAL 
-    : CATALOG_URL_CDN;
-const BUNDLES_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-    ? BUNDLES_URL_LOCAL 
-    : BUNDLES_URL_CDN;
+// AI Plugin Directory - TripAdvisor for AI Agent Plugins
+// Pure vanilla JS, no build tools, hash-based routing
 
-let catalog = null;
-let bundles = null;
-let filteredSkills = [];
-let filteredBundles = [];
+(function () {
+    'use strict';
 
-// Pagination state
-const SKILLS_PER_PAGE = 24;
-let currentPage = 1;
-let currentView = 'list'; // 'grid' or 'list'
+    // ========== CONFIG ==========
+    const CDN_BASE = 'https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/';
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const BASE = isLocal ? './' : CDN_BASE;
 
-// Search optimization: pre-built index and cache
-let searchIndex = null;
-let searchCache = new Map();
-const SEARCH_CACHE_MAX_SIZE = 50;
+    const PLUGINS_URL = BASE + 'plugins.json';
+    const CATALOG_URL = BASE + 'catalog.json';
+    const TAXONOMY_URL = BASE + 'taxonomy.json';
+    const GAP_URL = BASE + 'gap_analysis.json';
+    const BUNDLES_URL = BASE + 'bundles.json';
 
-// DOM Elements
-const searchInput = document.getElementById('search');
-const providerFilter = document.getElementById('provider-filter');
-const categoryFilter = document.getElementById('category-filter');
-const skillTypeFilter = document.getElementById('skill-type-filter');
-const skillsGrid = document.getElementById('skills-grid');
-const modal = document.getElementById('skill-modal');
-const modalBody = document.getElementById('modal-body');
+    const PAGE_SIZE = 24;
 
-// Stats elements
-const totalSkillsEl = document.getElementById('total-skills');
-const totalProvidersEl = document.getElementById('total-providers');
-const totalCategoriesEl = document.getElementById('total-categories');
-const filteredCountEl = document.getElementById('filtered-count');
-const lastUpdatedEl = document.getElementById('last-updated');
+    // ========== PERSONAS ==========
+    const PERSONAS = [
+        { id: 'knowledge-worker', name: 'Knowledge Worker', icon: '📚', tagline: 'Documents, research, and productivity', categories: ['documents', 'enterprise'], tags: ['docs', 'productivity', 'writing', 'notion'] },
+        { id: 'web-developer', name: 'Web Developer', icon: '🌐', tagline: 'Frontend, React, and modern web apps', categories: ['development'], tags: ['frontend', 'web', 'react', 'nextjs', 'design', 'ui'] },
+        { id: 'backend-engineer', name: 'Backend Engineer', icon: '⚙️', tagline: 'APIs, databases, and microservices', categories: ['development'], tags: ['backend', 'api', 'python', 'database'] },
+        { id: 'mobile-developer', name: 'Mobile Developer', icon: '📱', tagline: 'iOS, Android, and cross-platform', categories: ['development'], tags: ['mobile', 'expo', 'react-native', 'ios', 'android'] },
+        { id: 'devops-engineer', name: 'DevOps Engineer', icon: '🚀', tagline: 'CI/CD, cloud, and infrastructure', categories: ['development'], tags: ['devops', 'ci-cd', 'github', 'azure', 'cloud', 'docker'] },
+        { id: 'data-scientist', name: 'Data Scientist', icon: '🧬', tagline: 'ML, data pipelines, and experiments', categories: ['ml-ai', 'data'], tags: ['ml', 'data', 'huggingface', 'python', 'ai'] },
+        { id: 'security-engineer', name: 'Security Engineer', icon: '🔒', tagline: 'Security audits, compliance, and hardening', categories: ['development'], tags: ['security', 'audit', 'compliance'] },
+        { id: 'startup-founder', name: 'Startup Founder', icon: '💡', tagline: 'Ship fast with full-stack bundles', categories: ['development', 'creative'], tags: ['fullstack', 'deployment', 'design', 'ai'] }
+    ];
 
-// Bundles elements
-const bundlesGrid = document.getElementById('bundles-grid');
-const bundleCategoryFilter = document.getElementById('bundle-category-filter');
-const totalBundlesEl = document.getElementById('total-bundles');
+    // ========== COMPATIBILITY PLATFORMS ==========
+    const PLATFORMS = [
+        { id: 'claude', label: 'Claude', abbr: 'CL' },
+        { id: 'cursor', label: 'Cursor', abbr: 'CU' },
+        { id: 'copilot', label: 'Copilot', abbr: 'CP' },
+        { id: 'gemini', label: 'Gemini', abbr: 'GE' },
+        { id: 'codex', label: 'Codex', abbr: 'CX' }
+    ];
 
-// Parse URL query parameters for filtering
-// Supports: ?id=xxx, ?provider=xxx, ?category=xxx, ?search=xxx, ?tags=a,b,c
-function getQueryParams() {
-    const params = new URLSearchParams(window.location.search);
-    return {
-        id: params.get('id'),
-        provider: params.get('provider'),
-        category: params.get('category'),
-        search: params.get('search') || params.get('q'),
-        type: params.get('type'),
-        tags: params.get('tags')?.split(',').map(t => t.trim().toLowerCase()) || []
+    // Official providers
+    const OFFICIAL_PROVIDERS = ['anthropics', 'github', 'openai', 'vercel', 'huggingface'];
+
+    // ========== STATE ==========
+    let state = {
+        plugins: [],
+        bundles: [],
+        taxonomy: null,
+        gapData: null,
+        currentView: 'home', // home | persona | search
+        currentPersona: null,
+        searchQuery: '',
+        filterCategory: 'all',
+        filterSort: 'stars',
+        visibleCount: PAGE_SIZE,
+        selectedStack: new Set(),
+        loading: true
     };
-}
 
-// Apply URL query params to filters and trigger filtering
-function applyQueryParams() {
-    const params = getQueryParams();
-    
-    if (params.search) {
-        searchInput.value = params.search;
+    // ========== DATA LOADING ==========
+    async function loadJSON(url, fallbackUrl) {
+        try {
+            const res = await fetch(url);
+            if (!res.ok && fallbackUrl) {
+                const fb = await fetch(fallbackUrl);
+                if (fb.ok) return await fb.json();
+            }
+            if (res.ok) return await res.json();
+        } catch (e) {
+            if (fallbackUrl) {
+                try {
+                    const fb = await fetch(fallbackUrl);
+                    if (fb.ok) return await fb.json();
+                } catch (_) {}
+            }
+        }
+        return null;
     }
-    if (params.provider && providerFilter.querySelector(`option[value="${params.provider}"]`)) {
-        providerFilter.value = params.provider;
+
+    async function loadData() {
+        state.loading = true;
+        render();
+
+        const [pluginsData, catalogData, taxonomyData, gapData, bundlesData] = await Promise.all([
+            loadJSON(PLUGINS_URL),
+            loadJSON(CATALOG_URL),
+            loadJSON(TAXONOMY_URL),
+            loadJSON(GAP_URL),
+            loadJSON(BUNDLES_URL)
+        ]);
+
+        // Use plugins.json if available, otherwise fall back to catalog.json
+        if (pluginsData && pluginsData.skills) {
+            state.plugins = pluginsData.skills;
+        } else if (catalogData && catalogData.skills) {
+            state.plugins = catalogData.skills;
+        } else {
+            state.plugins = [];
+        }
+
+        state.taxonomy = taxonomyData;
+        state.gapData = gapData;
+        state.bundles = bundlesData ? bundlesData.bundles || [] : [];
+
+        // Derive compatibility for plugins based on provider and skill type
+        state.plugins = state.plugins.map(p => {
+            if (!p.compatibility) {
+                p.compatibility = deriveCompatibility(p);
+            }
+            return p;
+        });
+
+        state.loading = false;
+        handleRoute();
     }
-    if (params.category && categoryFilter.querySelector(`option[value="${params.category}"]`)) {
-        categoryFilter.value = params.category;
+
+    function deriveCompatibility(plugin) {
+        // Heuristic: all skills work with Claude, most work with Cursor
+        // MCP-required ones are Claude/Cursor only
+        const compat = { claude: true, cursor: true, copilot: false, gemini: false, codex: false };
+        if (!plugin.requires_mcp) {
+            compat.copilot = true;
+            compat.gemini = true;
+            compat.codex = true;
+        }
+        if (plugin.provider === 'openai') {
+            compat.codex = true;
+            compat.copilot = true;
+        }
+        if (plugin.provider === 'github') {
+            compat.copilot = true;
+        }
+        return compat;
     }
-    if (params.type !== null && params.type !== undefined) {
-        skillTypeFilter.value = params.type;
+
+    // ========== ROUTING ==========
+    function handleRoute() {
+        const hash = window.location.hash.slice(1);
+        if (hash.startsWith('persona/')) {
+            const personaId = hash.replace('persona/', '');
+            const persona = PERSONAS.find(p => p.id === personaId);
+            if (persona) {
+                state.currentView = 'persona';
+                state.currentPersona = persona;
+                state.visibleCount = PAGE_SIZE;
+                state.selectedStack = new Set();
+                render();
+                return;
+            }
+        } else if (hash.startsWith('plugin/')) {
+            const pluginId = hash.replace('plugin/', '').replace(/-/g, '/');
+            const plugin = state.plugins.find(p => p.id === pluginId || p.id.replace(/\//g, '-') === hash.replace('plugin/', ''));
+            if (plugin) {
+                state.currentView = 'home';
+                render();
+                openModal(plugin);
+                return;
+            }
+        } else if (hash.startsWith('search/')) {
+            state.searchQuery = decodeURIComponent(hash.replace('search/', ''));
+            state.currentView = 'search';
+            state.visibleCount = PAGE_SIZE;
+            render();
+            const input = document.getElementById('search-input');
+            if (input) input.value = state.searchQuery;
+            return;
+        }
+
+        state.currentView = 'home';
+        state.currentPersona = null;
+        state.searchQuery = '';
+        state.visibleCount = PAGE_SIZE;
+        render();
     }
-    
-    // If id param, show that skill's modal directly
-    if (params.id) {
-        const skill = catalog.skills.find(s => s.id === params.id || s.name === params.id);
-        if (skill) {
-            setTimeout(() => showSkillModal(skill), 100);
+
+    window.addEventListener('hashchange', handleRoute);
+
+    // ========== THEME ==========
+    function initTheme() {
+        const stored = localStorage.getItem('theme');
+        if (stored) {
+            document.documentElement.setAttribute('data-theme', stored);
+        }
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let next;
+        if (current === 'dark') next = 'light';
+        else if (current === 'light') next = 'dark';
+        else next = prefersDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    }
+
+    // ========== RENDERING ==========
+    function render() {
+        const app = document.getElementById('app');
+        if (state.loading) {
+            app.innerHTML = renderLoading();
+            return;
+        }
+
+        switch (state.currentView) {
+            case 'home':
+                app.innerHTML = renderHome();
+                break;
+            case 'persona':
+                app.innerHTML = renderPersonaView();
+                break;
+            case 'search':
+                app.innerHTML = renderSearchView();
+                break;
+        }
+
+        attachEventListeners();
+    }
+
+    function renderLoading() {
+        return `
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Loading plugin directory...</p>
+            </div>
+        `;
+    }
+
+    // ========== HOME VIEW ==========
+    function renderHome() {
+        const trending = getTrendingPlugins();
+        return `
+            ${renderHero()}
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Role</h2>
+                <span class="section-subtitle">Get a curated plugin stack</span>
+            </div>
+            ${renderPersonaGrid()}
+            <div class="section-header">
+                <h2 class="section-title">Trending Plugins</h2>
+                <span class="section-subtitle">Most popular by stars</span>
+            </div>
+            ${renderTrendingRow(trending)}
+            <div class="section-header">
+                <h2 class="section-title">All Plugins</h2>
+                <span class="section-subtitle">${state.plugins.length} plugins available</span>
+            </div>
+            ${renderFilterBar()}
+            ${renderPluginsGrid(getFilteredPlugins())}
+            ${renderLoadMore(getFilteredPlugins().length)}
+        `;
+    }
+
+    function renderHero() {
+        const totalPlugins = state.plugins.length;
+        const categories = [...new Set(state.plugins.map(p => p.category))].length;
+        const providers = [...new Set(state.plugins.map(p => p.provider))].length;
+        return `
+            <section class="hero" aria-label="Welcome">
+                <div class="hero-content">
+                    <h1>Find the perfect AI plugins for your workflow</h1>
+                    <p>Discover, compare, and stack plugins from ${providers} providers across ${categories} categories. Build your ideal AI agent toolkit.</p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">${totalPlugins.toLocaleString()}</span>
+                            <span class="hero-stat-label">Plugins</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">${providers}</span>
+                            <span class="hero-stat-label">Providers</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">${categories}</span>
+                            <span class="hero-stat-label">Categories</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+
+    function renderPersonaGrid() {
+        return `
+            <div class="persona-grid">
+                ${PERSONAS.map((p, i) => `
+                    <div class="persona-card fade-in stagger-${i + 1}" tabindex="0" role="button" aria-label="View ${p.name} plugins" data-persona="${p.id}">
+                        <div class="persona-icon">${p.icon}</div>
+                        <div class="persona-card-title">${p.name}</div>
+                        <div class="persona-card-tagline">${p.tagline}</div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    function renderTrendingRow(plugins) {
+        return `
+            <div class="trending-row">
+                ${plugins.map((p, i) => `
+                    <div class="trending-card fade-in stagger-${i + 1}" data-plugin-id="${p.id}">
+                        <span class="trending-rank">#${i + 1}</span>
+                        <div class="trending-card-name">${escapeHtml(p.name)}</div>
+                        <div class="trending-card-provider">${escapeHtml(p.provider)}</div>
+                        <div class="trending-card-stars">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            ${formatStars(p.github_stars)}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    function renderFilterBar() {
+        const categories = ['all', ...new Set(state.plugins.map(p => p.category).filter(Boolean))].sort();
+        return `
+            <div class="filter-bar">
+                <label for="filter-category">Category</label>
+                <select id="filter-category" class="filter-select" aria-label="Filter by category">
+                    ${categories.map(c => `<option value="${c}" ${state.filterCategory === c ? 'selected' : ''}>${c === 'all' ? 'All Categories' : capitalize(c)}</option>`).join('')}
+                </select>
+                <label for="filter-sort">Sort by</label>
+                <select id="filter-sort" class="filter-select" aria-label="Sort plugins">
+                    <option value="stars" ${state.filterSort === 'stars' ? 'selected' : ''}>Most Stars</option>
+                    <option value="name" ${state.filterSort === 'name' ? 'selected' : ''}>Name A-Z</option>
+                    <option value="recent" ${state.filterSort === 'recent' ? 'selected' : ''}>Recently Updated</option>
+                    <option value="quality" ${state.filterSort === 'quality' ? 'selected' : ''}>Quality Score</option>
+                </select>
+            </div>
+        `;
+    }
+
+    function renderPluginsGrid(plugins) {
+        const visible = plugins.slice(0, state.visibleCount);
+        if (visible.length === 0) {
+            return `
+                <div class="empty-state">
+                    <div class="empty-state-icon">&#x1F50D;</div>
+                    <div class="empty-state-title">No plugins found</div>
+                    <p>Try adjusting your filters or search query.</p>
+                </div>
+            `;
+        }
+        return `
+            <div class="plugins-grid">
+                ${visible.map(p => renderPluginCard(p)).join('')}
+            </div>
+        `;
+    }
+
+    function renderPluginCard(plugin) {
+        const sourceBadge = getSourceBadge(plugin);
+        const compat = plugin.compatibility || {};
+        return `
+            <article class="plugin-card" data-plugin-id="${plugin.id}" tabindex="0" role="button" aria-label="View details for ${escapeHtml(plugin.name)}">
+                <div class="plugin-card-header">
+                    <div class="plugin-card-name">${escapeHtml(plugin.name)}</div>
+                    ${plugin.github_stars ? `
+                        <div class="plugin-card-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            ${formatStars(plugin.github_stars)}
+                        </div>
+                    ` : ''}
+                </div>
+                <div class="plugin-card-description">${escapeHtml(truncateDescription(plugin.description))}</div>
+                <div class="plugin-card-meta">
+                    <span class="source-badge ${sourceBadge.class}">${sourceBadge.label}</span>
+                </div>
+                <div class="plugin-card-compatibility">
+                    ${PLATFORMS.map(pl => `
+                        <span class="compat-icon ${compat[pl.id] ? 'active' : ''}" title="${pl.label}${compat[pl.id] ? ' (compatible)' : ''}">${pl.abbr}</span>
+                    `).join('')}
+                </div>
+                <div class="plugin-card-tags">
+                    ${(plugin.tags || []).slice(0, 3).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
+                </div>
+                <div class="plugin-card-footer">
+                    <span class="plugin-card-category">${escapeHtml(plugin.category || 'uncategorized')}</span>
+                    <button class="btn-view-details">View Details</button>
+                </div>
+            </article>
+        `;
+    }
+
+    function renderLoadMore(totalCount) {
+        if (state.visibleCount >= totalCount) return '';
+        const remaining = totalCount - state.visibleCount;
+        return `
+            <div class="load-more-container">
+                <button class="btn-load-more" id="btn-load-more">Show More (${remaining} remaining)</button>
+            </div>
+        `;
+    }
+
+    // ========== PERSONA VIEW ==========
+    function renderPersonaView() {
+        const persona = state.currentPersona;
+        const recommended = getPersonaPlugins(persona);
+        const allCategories = ['development', 'ml-ai', 'creative', 'integrations', 'documents', 'enterprise', 'data'];
+        const coveredCategories = [...new Set(recommended.map(p => p.category))];
+        const gaps = allCategories.filter(c => !coveredCategories.includes(c));
+
+        return `
+            <button class="back-button" id="btn-back" aria-label="Back to home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Directory
+            </button>
+            <div class="persona-view-header">
+                <div class="persona-view-icon">${persona.icon}</div>
+                <div class="persona-view-info">
+                    <h2>${persona.name}</h2>
+                    <p>${persona.tagline}</p>
+                </div>
+            </div>
+            ${renderCoverageSection(recommended, allCategories, coveredCategories, gaps)}
+            ${renderStackBuilder(recommended)}
+            <div class="section-header">
+                <h2 class="section-title">Recommended Plugins</h2>
+                <span class="section-subtitle">${recommended.length} plugins for this role</span>
+            </div>
+            <div class="plugins-grid">
+                ${recommended.slice(0, state.visibleCount).map(p => renderPluginCard(p)).join('')}
+            </div>
+            ${renderLoadMore(recommended.length)}
+        `;
+    }
+
+    function renderCoverageSection(plugins, allCategories, covered, gaps) {
+        return `
+            <div class="coverage-section">
+                <div class="coverage-title">Taxonomy Coverage</div>
+                <div class="coverage-bar-container">
+                    ${allCategories.map(cat => {
+                        const pluginsInCat = plugins.filter(p => p.category === cat);
+                        let status = 'gap';
+                        if (pluginsInCat.length >= 2) status = 'covered';
+                        else if (pluginsInCat.length === 1) status = 'partial';
+                        // Check if selected stack changes things
+                        if (state.selectedStack.size > 0) {
+                            const selectedInCat = plugins.filter(p => state.selectedStack.has(p.id) && p.category === cat);
+                            if (selectedInCat.length >= 2) status = 'covered';
+                            else if (selectedInCat.length === 1) status = 'partial';
+                            else status = 'gap';
+                        }
+                        return `<div class="coverage-segment ${status}" title="${capitalize(cat)}: ${status}"><span class="coverage-segment-label">${capitalize(cat)}</span></div>`;
+                    }).join('')}
+                </div>
+                <div class="coverage-legend">
+                    <span class="coverage-legend-item"><span class="coverage-legend-dot green"></span>Covered (2+ plugins)</span>
+                    <span class="coverage-legend-item"><span class="coverage-legend-dot yellow"></span>Partial (1 plugin)</span>
+                    <span class="coverage-legend-item"><span class="coverage-legend-dot red"></span>Gap (no plugins)</span>
+                </div>
+                ${gaps.length > 0 ? `
+                    <div class="gap-callouts">
+                        ${gaps.map(gap => {
+                            const suggestion = getSuggestionForGap(gap);
+                            return `
+                                <div class="gap-callout">
+                                    <svg class="gap-callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                    <span>You're missing: <strong>${capitalize(gap)}</strong>. Consider: ${suggestion}</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }
+
+    function renderStackBuilder(plugins) {
+        const topPlugins = plugins.slice(0, 8);
+        const selectedCount = state.selectedStack.size;
+        return `
+            <div class="stack-builder">
+                <div class="stack-builder-header">
+                    <div class="stack-builder-title">Build Your Stack</div>
+                    <div class="stack-count">${selectedCount} selected</div>
+                </div>
+                ${topPlugins.map(p => `
+                    <div class="stack-plugin-item ${state.selectedStack.has(p.id) ? 'checked' : ''}" data-stack-id="${p.id}">
+                        <input type="checkbox" class="stack-checkbox" ${state.selectedStack.has(p.id) ? 'checked' : ''} aria-label="Add ${escapeHtml(p.name)} to stack">
+                        <span class="stack-plugin-name">${escapeHtml(p.name)}</span>
+                        <span class="stack-plugin-category">${escapeHtml(p.category || '')}</span>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    // ========== SEARCH VIEW ==========
+    function renderSearchView() {
+        const results = getSearchResults(state.searchQuery);
+        return `
+            <button class="back-button" id="btn-back" aria-label="Back to home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Directory
+            </button>
+            <div class="section-header">
+                <h2 class="section-title">Search Results for "${escapeHtml(state.searchQuery)}"</h2>
+                <span class="section-subtitle">${results.length} results</span>
+            </div>
+            ${renderPluginsGrid(results)}
+            ${renderLoadMore(results.length)}
+        `;
+    }
+
+    // ========== MODAL ==========
+    function openModal(plugin) {
+        const modal = document.getElementById('plugin-modal');
+        const title = document.getElementById('modal-title');
+        const body = document.getElementById('modal-body');
+
+        title.textContent = plugin.name;
+        body.innerHTML = renderModalContent(plugin);
+
+        modal.hidden = false;
+        requestAnimationFrame(() => modal.classList.add('active'));
+
+        // Update hash without triggering re-render
+        const pluginHash = 'plugin/' + plugin.id.replace(/\//g, '-');
+        history.replaceState(null, '', '#' + pluginHash);
+
+        // Focus trap
+        const closeBtn = modal.querySelector('.modal-close');
+        closeBtn.focus();
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('plugin-modal');
+        modal.classList.remove('active');
+        setTimeout(() => { modal.hidden = true; }, 200);
+
+        // Restore hash
+        if (state.currentView === 'persona' && state.currentPersona) {
+            history.replaceState(null, '', '#persona/' + state.currentPersona.id);
+        } else if (state.currentView === 'search') {
+            history.replaceState(null, '', '#search/' + encodeURIComponent(state.searchQuery));
+        } else {
+            history.replaceState(null, '', window.location.pathname);
         }
     }
-    
-    // Tags filter applied in filterSkills
-    filterSkills();
-}
 
-// Update URL when filters change (without page reload)
-function updateURLParams() {
-    const params = new URLSearchParams();
-    if (searchInput.value) params.set('search', searchInput.value);
-    if (providerFilter.value) params.set('provider', providerFilter.value);
-    if (categoryFilter.value) params.set('category', categoryFilter.value);
-    if (skillTypeFilter.value && skillTypeFilter.value !== 'full') params.set('type', skillTypeFilter.value);
-    
-    const newURL = params.toString() 
-        ? `${window.location.pathname}?${params.toString()}`
-        : window.location.pathname;
-    window.history.replaceState({}, '', newURL);
-}
+    function renderModalContent(plugin) {
+        const compat = plugin.compatibility || {};
+        const sourceBadge = getSourceBadge(plugin);
+        const pairs = getPairsWellWith(plugin);
 
-// Initialize
-async function init() {
-    const loader = document.getElementById('loading-spinner');
-    
-    try {
-        // Show loader
-        if (loader) loader.style.display = 'flex';
-        
-        // Load catalog and bundles in parallel
-        const [catalogResponse, bundlesResponse] = await Promise.all([
-            fetch(CATALOG_URL, { cache: 'no-cache' }),
-            fetch(BUNDLES_URL, { cache: 'no-cache' }).catch(() => null)
-        ]);
-        
-        catalog = await catalogResponse.json();
-        
-        if (bundlesResponse && bundlesResponse.ok) {
-            bundles = await bundlesResponse.json();
-            initBundles();
-        } else if (typeof bundlesGrid !== 'undefined' && bundlesGrid) {
-            // Provide feedback when bundles fail to load or are unavailable
-            bundlesGrid.innerHTML = `
-                <div class="no-results">
-                    <p>No bundles available or failed to load bundles.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">
-                        Try refreshing or check <a href="${BUNDLES_URL}" target="_blank">the bundles source</a>.
+        return `
+            <div class="plugin-card-meta" style="margin-bottom: 1rem;">
+                <span class="source-badge ${sourceBadge.class}">${sourceBadge.label}</span>
+                ${plugin.github_stars ? `
+                    <span class="plugin-card-stars" style="margin-left: auto;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        ${formatStars(plugin.github_stars)} stars
+                    </span>
+                ` : ''}
+            </div>
+            <div class="modal-description">${escapeHtml(plugin.description || 'No description available.')}</div>
+
+            <div class="modal-section">
+                <div class="modal-section-title">Compatibility</div>
+                <div class="modal-compat-grid">
+                    ${PLATFORMS.map(pl => `
+                        <div class="modal-compat-item ${compat[pl.id] ? 'active' : 'inactive'}">
+                            <span>${pl.abbr}</span>
+                            <span>${pl.label}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-title">Category Coverage</div>
+                <div class="modal-tags">
+                    <span class="tag">${escapeHtml(plugin.category || 'uncategorized')}</span>
+                    ${(plugin.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
+                </div>
+            </div>
+
+            ${pairs.length > 0 ? `
+                <div class="modal-section">
+                    <div class="modal-section-title">Pairs Well With</div>
+                    <div class="modal-pairs-grid">
+                        ${pairs.map(p => `<div class="modal-pair-item" data-plugin-id="${p.id}">${escapeHtml(p.name)}</div>`).join('')}
+                    </div>
+                </div>
+            ` : ''}
+
+            <div class="modal-section">
+                <div class="modal-section-title">Install</div>
+                <div class="modal-install">
+                    <code>claude plugin add ${plugin.id}</code>
+                    <button class="btn-copy" data-copy="claude plugin add ${plugin.id}">Copy</button>
+                </div>
+            </div>
+
+            ${plugin.source && plugin.source.repo ? `
+                <div class="modal-section">
+                    <div class="modal-section-title">Source</div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <a href="${escapeHtml(plugin.source.repo)}" target="_blank" rel="noopener" style="color: var(--primary-light); text-decoration: none;">${escapeHtml(plugin.source.repo)}</a>
                     </p>
                 </div>
-            `;
-        }
-        
-        populateFilters();
-        buildSearchIndex(); // Build search index for fast lookups
-        updateStats();
-        applyQueryParams(); // Apply URL params after loading
-        
-        // Update last updated date
-        const date = new Date(catalog.generated_at);
-        lastUpdatedEl.textContent = date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-        
-        // Hide loader
-        if (loader) loader.style.display = 'none';
-    } catch (error) {
-        console.error('Failed to load catalog:', error);
-        
-        // Hide loader
-        if (loader) loader.style.display = 'none';
-        
-        skillsGrid.innerHTML = `
-            <div class="no-results">
-                <p>Failed to load skills catalog.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.85rem;">
-                    Try refreshing or check <a href="${CATALOG_URL}" target="_blank">the source</a>.
-                </p>
-            </div>
-        `;
-    }
-}
+            ` : ''}
 
-function populateFilters() {
-    // Populate providers (sorted by stars descending, then by name)
-    const sortedProviders = Object.entries(catalog.providers)
-        .sort((a, b) => {
-            const starsA = a[1].stars || 0;
-            const starsB = b[1].stars || 0;
-            if (starsB !== starsA) return starsB - starsA;
-            return a[1].name.localeCompare(b[1].name);
-        });
-    
-    sortedProviders.forEach(([id, provider]) => {
-        const option = document.createElement('option');
-        option.value = id;
-        const starsText = provider.stars ? ` ⭐${formatStars(provider.stars)}` : '';
-        option.textContent = `${provider.name} (${provider.skills_count})${starsText}`;
-        providerFilter.appendChild(option);
-    });
-
-    // Populate categories
-    catalog.categories.forEach(category => {
-        const option = document.createElement('option');
-        option.value = category;
-        option.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-        categoryFilter.appendChild(option);
-    });
-}
-
-// Format star count (e.g., 1234 -> 1.2k)
-function formatStars(stars) {
-    if (stars >= 1000) {
-        return (stars / 1000).toFixed(1) + 'k';
-    }
-    return stars.toString();
-}
-
-function updateStats() {
-    totalSkillsEl.textContent = catalog.total_skills;
-    totalProvidersEl.textContent = Object.keys(catalog.providers).length;
-    totalCategoriesEl.textContent = catalog.categories.length;
-}
-
-// Build search index for O(1) lookups on pre-processed text
-function buildSearchIndex() {
-    searchIndex = catalog.skills.map((skill, index) => {
-        // Pre-concatenate and lowercase all searchable fields
-        const tagsText = (skill.tags || []).join(' ').toLowerCase();
-        const searchText = `${skill.name.toLowerCase()} ${skill.description.toLowerCase()} ${tagsText}`;
-        
-        return {
-            index,
-            searchText,
-            tagsLower: (skill.tags || []).map(t => t.toLowerCase()),
-            provider: skill.provider,
-            category: skill.category,
-            skill_type: skill.skill_type || 'full'
-        };
-    });
-    
-    // Clear cache when index is rebuilt
-    searchCache.clear();
-}
-
-// Get cache key for current filter state
-function getSearchCacheKey(searchTerm, provider, category, urlTags, skillType) {
-    return `${searchTerm}|${provider}|${category}|${urlTags.join(',')}|${skillType}`;
-}
-
-function filterSkills() {
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    const provider = providerFilter.value;
-    const category = categoryFilter.value;
-    const skillType = skillTypeFilter.value;
-    const urlTags = getQueryParams().tags;
-    
-    // Check cache first
-    const cacheKey = getSearchCacheKey(searchTerm, provider, category, urlTags, skillType);
-    if (searchCache.has(cacheKey)) {
-        filteredSkills = searchCache.get(cacheKey);
-        filteredCountEl.textContent = filteredSkills.length;
-        currentPage = 1;
-        updateURLParams();
-        renderSkills(filteredSkills);
-        return;
-    }
-
-    // Use search index for fast filtering
-    const matchingIndices = [];
-    const hasSearch = searchTerm.length > 0;
-    const hasProvider = provider.length > 0;
-    const hasCategory = category.length > 0;
-    const hasSkillType = skillType.length > 0;
-    const hasUrlTags = urlTags.length > 0;
-    
-    for (let i = 0; i < searchIndex.length; i++) {
-        const entry = searchIndex[i];
-        
-        // Skill type filter (fastest - direct comparison)
-        if (hasSkillType && entry.skill_type !== skillType) continue;
-        
-        // Provider filter (fastest - direct comparison)
-        if (hasProvider && entry.provider !== provider) continue;
-        
-        // Category filter (fast - direct comparison)
-        if (hasCategory && entry.category !== category) continue;
-        
-        // Search filter (use pre-built searchText)
-        if (hasSearch && entry.searchText.indexOf(searchTerm) === -1) continue;
-        
-        // Tags filter from URL
-        if (hasUrlTags) {
-            let allTagsMatch = true;
-            for (const t of urlTags) {
-                let found = false;
-                for (const st of entry.tagsLower) {
-                    if (st.indexOf(t) !== -1) {
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    allTagsMatch = false;
-                    break;
-                }
-            }
-            if (!allTagsMatch) continue;
-        }
-        
-        matchingIndices.push(entry.index);
-    }
-    
-    // Map indices back to skills
-    filteredSkills = matchingIndices.map(i => catalog.skills[i]);
-    
-    // Cache the result (with LRU-style eviction)
-    if (searchCache.size >= SEARCH_CACHE_MAX_SIZE) {
-        const firstKey = searchCache.keys().next().value;
-        searchCache.delete(firstKey);
-    }
-    searchCache.set(cacheKey, filteredSkills);
-
-    filteredCountEl.textContent = filteredSkills.length;
-    currentPage = 1; // Reset to first page when filters change
-    updateURLParams();
-    renderSkills(filteredSkills);
-}
-
-function renderSkills(skills) {
-    if (skills.length === 0) {
-        skillsGrid.innerHTML = `
-            <div class="no-results">
-                <p>No skills found matching your criteria.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.85rem;">Try adjusting your search or filters.</p>
-            </div>
-        `;
-        renderPagination(0, 0);
-        return;
-    }
-
-    // Pagination calculations
-    const totalPages = Math.ceil(skills.length / SKILLS_PER_PAGE);
-    const startIndex = (currentPage - 1) * SKILLS_PER_PAGE;
-    const endIndex = startIndex + SKILLS_PER_PAGE;
-    const paginatedSkills = skills.slice(startIndex, endIndex);
-
-    if (currentView === 'list') {
-        renderSkillsList(paginatedSkills, skills.length, totalPages);
-    } else {
-        renderSkillsGrid(paginatedSkills, skills.length, totalPages);
-    }
-}
-
-// Determine agent compatibility based on provider
-function getAgentCompatibility(skill) {
-    const provider = skill.provider;
-    const name = (skill.name || '').toLowerCase();
-    const desc = (skill.description || '').toLowerCase();
-    const tags = (skill.tags || []).map(t => t.toLowerCase());
-    
-    // Claude Code specific providers (these are skills designed for Claude's SKILL.md system)
-    const claudeProviders = ['anthropics', 'claude-marketplace-engineering', 'claude-marketplace-visual', 
-        'claude-marketplace-code', 'claude-marketplace-productivity'];
-    
-    // Check if explicitly tagged
-    const hasClaude = tags.includes('claude') || tags.includes('claude-code');
-    const hasCopilot = tags.includes('copilot') || tags.includes('github-copilot');
-    const hasCodex = tags.includes('codex');
-    const hasMcp = tags.includes('mcp');
-    
-    if (hasClaude && !hasCopilot && !hasCodex) return [{ agent: 'Claude', class: 'claude' }];
-    if (hasCopilot && !hasClaude) return [{ agent: 'Copilot', class: 'copilot' }];
-    
-    // Provider-based inference
-    if (claudeProviders.includes(provider)) {
-        // Claude-origin skills work everywhere since SKILL.md is a universal format
-        return [
-            { agent: 'Claude', class: 'claude' },
-            { agent: 'Universal', class: 'universal' }
-        ];
-    }
-    
-    if (provider === 'github') {
-        return [
-            { agent: 'Copilot', class: 'copilot' },
-            { agent: 'Universal', class: 'universal' }
-        ];
-    }
-    
-    // Default: universal (SKILL.md works with any agent)
-    return [{ agent: 'Universal', class: 'universal' }];
-}
-
-function renderSkillsList(paginatedSkills, totalSkills, totalPages) {
-    const headerHtml = `
-        <div class="skill-row-header">
-            <span>Skill</span>
-            <span>Compatibility</span>
-            <span>Checks</span>
-            <span>Features</span>
-            <span>Quality</span>
-            <span>Status</span>
-            <span>Dup</span>
-        </div>
-    `;
-
-    const rowsHtml = paginatedSkills.map(skill => {
-        const compat = getAgentCompatibility(skill);
-        const compatHtml = compat.map(c => 
-            `<span class="compat-badge compat-${c.class}">${c.agent}</span>`
-        ).join('');
-        
-        const statusEmoji = {
-            'active': '🟢',
-            'maintained': '🟡',
-            'stale': '🟠',
-            'abandoned': '🔴'
-        };
-        const status = statusEmoji[skill.maintenance_status] || '⚪';
-        const statusLabel = skill.maintenance_status || 'unknown';
-        
-        const qualityClass = skill.quality_score >= 80 ? 'quality-excellent' :
-                            skill.quality_score >= 60 ? 'quality-good' :
-                            skill.quality_score >= 40 ? 'quality-fair' : 'quality-low';
-
-        // Validation checks column
-        // Infer from quality_score and duplicate_status — high quality means passed security/injection checks
-        const qScore = skill.quality_score || 0;
-        const isDuplicate = skill.duplicate_status === 'mirror' || skill.duplicate_status === 'probable_duplicate';
-        const isFullSkill = skill.skill_type === 'full';
-        const secretsPass = qScore >= 50;  // skills passing security threshold
-        const injectionPass = qScore >= 40; // malicious pattern check proxy
-        const dupPass = !isDuplicate;
-        const contentPass = qScore >= 30;
-
-        // Duplicate column
-        let dupHtml = '';
-        if (skill.duplicate_status === 'mirror') {
-            dupHtml = `<span class="dup-badge dup-mirror" title="${escapeHtml(skill.duplicate_annotation || '')}\nOf: ${escapeHtml(skill.duplicate_of || '')}">🔄 Mirror</span>`;
-        } else if (skill.duplicate_status === 'probable_duplicate') {
-            const simPct = skill.duplicate_similarity ? Math.round(skill.duplicate_similarity * 100) + '%' : '?';
-            dupHtml = `<span class="dup-badge dup-probable" title="${escapeHtml(skill.duplicate_annotation || '')}\nOf: ${escapeHtml(skill.duplicate_of || '')}">⚠️ ~${simPct}</span>`;
-        }
-
-        const check = (pass, label, icon) =>
-            `<span class="check-dot ${pass ? 'pass' : 'fail'}" title="${label}: ${pass ? 'passed' : 'flagged'}">${icon}</span>`;
-
-        const checksHtml = [
-            check(secretsPass, 'Secrets scan', '🔒'),
-            check(injectionPass, 'Injection check', '🛡️'),
-            check(contentPass, 'Content quality', '📝'),
-            check(dupPass, 'No duplicate', '🔄'),
-            check(isFullSkill, 'Full skill (not stub)', '✅'),
-        ].join('');
-
-        // Features column
-        const featuresHtml = [
-            skill.has_scripts   ? `<span class="feat-dot scripts" title="Has scripts">S</span>` : `<span class="feat-dot missing" title="No scripts">S</span>`,
-            skill.has_references ? `<span class="feat-dot references" title="Has references">R</span>` : `<span class="feat-dot missing" title="No references">R</span>`,
-            skill.has_assets    ? `<span class="feat-dot assets" title="Has assets">A</span>` : `<span class="feat-dot missing" title="No assets">A</span>`,
-        ].join('');
-
-        return `
-        <div class="skill-row" data-skill-id="${skill.id}">
-            <div class="skill-row-name">
-                <strong>${escapeHtml(skill.name)}</strong>
-                <span class="skill-row-desc">
-                    <span class="skill-provider-inline ${skill.provider}">${skill.provider}</span>
-                    ${escapeHtml(skill.description)}
-                </span>
-            </div>
-            <div class="skill-row-compat">${compatHtml}</div>
-            <div class="skill-row-checks">${checksHtml}</div>
-            <div class="skill-row-features">${featuresHtml}</div>
-            <div class="skill-row-quality">
-                <span class="quality-badge ${qualityClass}">⭐ ${skill.quality_score || '-'}</span>
-            </div>
-            <div class="skill-row-status" title="${statusLabel}">${status} <span class="status-label">${statusLabel}</span></div>
-            <div class="skill-row-dup">${dupHtml}</div>
-        </div>
-        `;
-    }).join('');
-
-    skillsGrid.innerHTML = headerHtml + '<div class="skills-list">' + rowsHtml + '</div>';
-    skillsGrid.className = 'skills-list-container';
-
-    // Add click handlers
-    document.querySelectorAll('.skill-row').forEach(row => {
-        row.addEventListener('click', () => {
-            const skillId = row.dataset.skillId;
-            const skill = catalog.skills.find(s => s.id === skillId);
-            if (skill) showSkillModal(skill);
-        });
-    });
-
-    filteredCountEl.textContent = totalSkills;
-    renderPagination(totalSkills, totalPages);
-}
-
-function renderSkillsGrid(paginatedSkills, totalSkills, totalPages) {
-    skillsGrid.className = 'skills-grid';
-    skillsGrid.innerHTML = paginatedSkills.map(skill => {
-        const updatedLabel = formatDate(skill.last_updated_at);
-        const provider = catalog.providers[skill.provider];
-        const starsHtml = provider && provider.stars 
-            ? `<span class="skill-stars" title="${provider.stars.toLocaleString()} GitHub stars">⭐ ${formatStars(provider.stars)}</span>` 
-            : '';
-        
-        // Agent compatibility
-        const compat = getAgentCompatibility(skill);
-        const compatBadgesHtml = compat.map(c => 
-            `<span class="compat-badge compat-${c.class}">${c.agent}</span>`
-        ).join('');
-        
-        // Generate duplicate badge if skill is annotated
-        let duplicateBadge = '';
-        if (skill.duplicate_status) {
-            const badgeClass = skill.duplicate_status === 'mirror' ? 'duplicate-badge-mirror' : 'duplicate-badge-probable';
-            const badgeText = skill.duplicate_status === 'mirror' ? '🔄 Mirror' : '⚠️ Probable Duplicate';
-            duplicateBadge = `<span class="duplicate-badge ${badgeClass}" title="${escapeHtml(skill.duplicate_annotation || '')}">${badgeText}</span>`;
-        }
-        
-        // Maintenance status badge
-        let maintenanceBadge = '';
-        if (skill.maintenance_status) {
-            const statusMap = {
-                'active': { emoji: '🟢', label: 'Active', class: 'maint-active', title: `Updated ${skill.days_since_update} days ago` },
-                'maintained': { emoji: '🟡', label: 'Maintained', class: 'maint-maintained', title: `Updated ${skill.days_since_update} days ago` },
-                'stale': { emoji: '🟠', label: 'Stale', class: 'maint-stale', title: `Updated ${skill.days_since_update} days ago` },
-                'abandoned': { emoji: '🔴', label: 'Abandoned', class: 'maint-abandoned', title: `Updated ${skill.days_since_update} days ago` }
-            };
-            const status = statusMap[skill.maintenance_status];
-            if (status) {
-                maintenanceBadge = `<span class="maintenance-badge ${status.class}" title="${status.title}">${status.emoji} ${status.label}</span>`;
-            }
-        }
-
-        // Quality score badge
-        let qualityBadge = '';
-        if (typeof skill.quality_score === 'number') {
-            const scoreClass = skill.quality_score >= 80 ? 'quality-excellent' :
-                              skill.quality_score >= 60 ? 'quality-good' :
-                              skill.quality_score >= 40 ? 'quality-fair' : 'quality-low';
-            qualityBadge = `<span class="quality-badge ${scoreClass}" title="Quality score: ${skill.quality_score}/100">⭐ ${skill.quality_score}</span>`;
-        }
-
-        // Skill type badge (only show for integration stubs)
-        let skillTypeBadge = '';
-        if (skill.skill_type === 'integration') {
-            skillTypeBadge = `<span class="skill-type-badge skill-type-integration" title="Integration stub — lightweight wrapper">🔌 Integration</span>`;
-        }
-
-        return `
-        <article class="skill-card ${skill.duplicate_status ? 'skill-card-duplicate' : ''}" data-skill-id="${skill.id}">
-            <div class="skill-header">
-                <h3 class="skill-name">${escapeHtml(skill.name)}</h3>
-                <div class="skill-header-badges">
-                    <span class="skill-provider ${skill.provider}">${skill.provider}</span>
-                    ${starsHtml}
-                    ${qualityBadge}
-                    ${maintenanceBadge}
-                    ${skillTypeBadge}
-                    ${duplicateBadge}
+            <div class="modal-section">
+                <div class="modal-section-title">Reviews</div>
+                <div class="modal-review-placeholder">
+                    Be the first to review this plugin.
                 </div>
             </div>
-            <p class="skill-description">${escapeHtml(skill.description)}</p>
-            <div class="skill-meta">
-                <span class="skill-category">📁 ${skill.category}</span>
-                ${compatBadgesHtml}
-                ${(skill.tags || []).slice(0, 3).map(tag => 
-                    `<span class="skill-tag">#${escapeHtml(tag)}</span>`
-                ).join('')}
-            </div>
-            ${updatedLabel ? `<p class="skill-updated">⏱ Updated ${updatedLabel}</p>` : ''}
-            ${renderFeatures(skill)}
-        </article>
-    `;
-    }).join('');
+        `;
+    }
 
-    // Add click handlers
-    document.querySelectorAll('.skill-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const skillId = card.dataset.skillId;
-            const skill = catalog.skills.find(s => s.id === skillId);
-            if (skill) showSkillModal(skill);
+    // ========== EVENT LISTENERS ==========
+    function attachEventListeners() {
+        // Persona cards
+        document.querySelectorAll('.persona-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.persona;
+                window.location.hash = 'persona/' + id;
+            });
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
         });
-    });
 
-    // Update filtered count and render pagination
-    filteredCountEl.textContent = totalSkills;
-    renderPagination(totalSkills, totalPages);
-}
+        // Plugin cards
+        document.querySelectorAll('.plugin-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.pluginId;
+                const plugin = state.plugins.find(p => p.id === id);
+                if (plugin) openModal(plugin);
+            });
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+        });
 
-function renderPagination(totalSkills, totalPages) {
-    // Remove existing pagination
-    const existingPagination = document.querySelector('.pagination');
-    if (existingPagination) existingPagination.remove();
+        // Trending cards
+        document.querySelectorAll('.trending-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.pluginId;
+                const plugin = state.plugins.find(p => p.id === id);
+                if (plugin) openModal(plugin);
+            });
+        });
 
-    if (totalPages <= 1) return;
-
-    const pagination = document.createElement('div');
-    pagination.className = 'pagination';
-
-    // Previous button
-    const prevBtn = document.createElement('button');
-    prevBtn.className = 'pagination-btn';
-    prevBtn.innerHTML = '← Prev';
-    prevBtn.disabled = currentPage === 1;
-    prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
-
-    // Page info
-    const pageInfo = document.createElement('span');
-    pageInfo.className = 'pagination-info';
-    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-
-    // Page numbers
-    const pageNumbers = document.createElement('div');
-    pageNumbers.className = 'pagination-numbers';
-    
-    const maxVisiblePages = 5;
-    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-    
-    if (endPage - startPage < maxVisiblePages - 1) {
-        startPage = Math.max(1, endPage - maxVisiblePages + 1);
-    }
-
-    if (startPage > 1) {
-        pageNumbers.appendChild(createPageBtn(1));
-        if (startPage > 2) {
-            const ellipsis = document.createElement('span');
-            ellipsis.className = 'pagination-ellipsis';
-            ellipsis.textContent = '...';
-            pageNumbers.appendChild(ellipsis);
+        // Back button
+        const backBtn = document.getElementById('btn-back');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                window.location.hash = '';
+            });
         }
-    }
 
-    for (let i = startPage; i <= endPage; i++) {
-        pageNumbers.appendChild(createPageBtn(i));
-    }
-
-    if (endPage < totalPages) {
-        if (endPage < totalPages - 1) {
-            const ellipsis = document.createElement('span');
-            ellipsis.className = 'pagination-ellipsis';
-            ellipsis.textContent = '...';
-            pageNumbers.appendChild(ellipsis);
+        // Load more
+        const loadMoreBtn = document.getElementById('btn-load-more');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+                state.visibleCount += PAGE_SIZE;
+                render();
+            });
         }
-        pageNumbers.appendChild(createPageBtn(totalPages));
-    }
 
-    // Next button
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'pagination-btn';
-    nextBtn.innerHTML = 'Next →';
-    nextBtn.disabled = currentPage === totalPages;
-    nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
+        // Filters
+        const catFilter = document.getElementById('filter-category');
+        if (catFilter) {
+            catFilter.addEventListener('change', (e) => {
+                state.filterCategory = e.target.value;
+                state.visibleCount = PAGE_SIZE;
+                render();
+            });
+        }
 
-    pagination.appendChild(prevBtn);
-    pagination.appendChild(pageNumbers);
-    pagination.appendChild(pageInfo);
-    pagination.appendChild(nextBtn);
+        const sortFilter = document.getElementById('filter-sort');
+        if (sortFilter) {
+            sortFilter.addEventListener('change', (e) => {
+                state.filterSort = e.target.value;
+                state.visibleCount = PAGE_SIZE;
+                render();
+            });
+        }
 
-    // Insert after skills grid
-    skillsGrid.parentNode.insertBefore(pagination, skillsGrid.nextSibling);
-}
-
-function createPageBtn(pageNum) {
-    const btn = document.createElement('button');
-    btn.className = 'pagination-page' + (pageNum === currentPage ? ' active' : '');
-    btn.textContent = pageNum;
-    btn.addEventListener('click', () => goToPage(pageNum));
-    return btn;
-}
-
-function goToPage(page) {
-    currentPage = page;
-    renderSkills(filteredSkills);
-    // Scroll to top of skills section
-    document.querySelector('.skills-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function renderFeatures(skill) {
-    const features = [];
-    if (skill.has_scripts) features.push('<span class="feature-badge scripts">📜 scripts</span>');
-    if (skill.has_references) features.push('<span class="feature-badge references">📚 references</span>');
-    if (skill.has_assets) features.push('<span class="feature-badge assets">📦 assets</span>');
-    
-    if (features.length === 0) return '';
-    
-    return `<div class="skill-features">${features.join('')}</div>`;
-}
-
-    function formatDate(dateString) {
-        if (!dateString) return null;
-        const date = new Date(dateString);
-        if (Number.isNaN(date.getTime())) return null;
-        return date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
+        // Stack checkboxes
+        document.querySelectorAll('.stack-plugin-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (e.target.type === 'checkbox') return; // handled below
+                const id = item.dataset.stackId;
+                toggleStack(id);
+            });
+            const checkbox = item.querySelector('.stack-checkbox');
+            if (checkbox) {
+                checkbox.addEventListener('change', () => {
+                    const id = item.dataset.stackId;
+                    toggleStack(id);
+                });
+            }
         });
     }
 
-function showSkillModal(skill) {
-    const updatedLabel = formatDate(skill.last_updated_at);
-    const provider = catalog.providers[skill.provider];
-    const starsHtml = provider && provider.stars 
-        ? `<span class="modal-stars">⭐ ${formatStars(provider.stars)} stars</span>` 
-        : '';
-    
-    // Quality/maintenance badge
-    let qualityBadge = '';
-    if (skill.maintenance_status) {
-        const statusMap = {
-            'active': { emoji: '🟢', label: 'Active', class: 'quality-active', desc: 'Updated recently' },
-            'maintained': { emoji: '🟡', label: 'Maintained', class: 'quality-maintained', desc: 'Regularly updated' },
-            'stale': { emoji: '🟠', label: 'Stale', class: 'quality-stale', desc: 'Infrequent updates' },
-            'abandoned': { emoji: '🔴', label: 'Abandoned', class: 'quality-abandoned', desc: 'No recent updates' }
-        };
-        const status = statusMap[skill.maintenance_status];
-        if (status) {
-            const daysText = skill.days_since_update ? `${skill.days_since_update} days ago` : 'Unknown';
-            const scoreText = typeof skill.quality_score === 'number' ? `${skill.quality_score}/100` : 'N/A';
-            qualityBadge = `
-                <div class="quality-indicator ${status.class}">
-                    <div class="quality-badge">
-                        <span class="quality-emoji">${status.emoji}</span>
-                        <span class="quality-label">${status.label}</span>
-                        <span class="quality-score">⭐ ${scoreText}</span>
+    function toggleStack(id) {
+        if (state.selectedStack.has(id)) {
+            state.selectedStack.delete(id);
+        } else {
+            state.selectedStack.add(id);
+        }
+        render();
+    }
+
+    // ========== SEARCH ==========
+    function initSearch() {
+        const input = document.getElementById('search-input');
+        const autocomplete = document.getElementById('search-autocomplete');
+        let focusedIndex = -1;
+
+        input.addEventListener('input', () => {
+            const query = input.value.trim();
+            if (query.length < 2) {
+                autocomplete.classList.remove('active');
+                autocomplete.innerHTML = '';
+                return;
+            }
+            const results = getSearchResults(query).slice(0, 8);
+            if (results.length === 0) {
+                autocomplete.classList.remove('active');
+                return;
+            }
+            focusedIndex = -1;
+            autocomplete.innerHTML = results.map((p, i) => `
+                <div class="autocomplete-item" data-index="${i}" data-plugin-id="${p.id}" role="option">
+                    <div>
+                        <div class="autocomplete-item-name">${escapeHtml(p.name)}</div>
+                        <div class="autocomplete-item-meta">${escapeHtml(p.provider)} &middot; ${escapeHtml(p.category || '')}</div>
                     </div>
-                    <div class="quality-desc">${status.desc} • Last update: ${daysText}</div>
                 </div>
-            `;
+            `).join('');
+            autocomplete.classList.add('active');
+
+            autocomplete.querySelectorAll('.autocomplete-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const id = item.dataset.pluginId;
+                    const plugin = state.plugins.find(p => p.id === id);
+                    if (plugin) {
+                        autocomplete.classList.remove('active');
+                        input.value = '';
+                        openModal(plugin);
+                    }
+                });
+            });
+        });
+
+        input.addEventListener('keydown', (e) => {
+            const items = autocomplete.querySelectorAll('.autocomplete-item');
+            if (!autocomplete.classList.contains('active') || items.length === 0) {
+                if (e.key === 'Enter' && input.value.trim()) {
+                    e.preventDefault();
+                    window.location.hash = 'search/' + encodeURIComponent(input.value.trim());
+                    autocomplete.classList.remove('active');
+                }
+                return;
+            }
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                focusedIndex = Math.min(focusedIndex + 1, items.length - 1);
+                updateFocused(items, focusedIndex);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                focusedIndex = Math.max(focusedIndex - 1, -1);
+                updateFocused(items, focusedIndex);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (focusedIndex >= 0 && items[focusedIndex]) {
+                    items[focusedIndex].click();
+                } else {
+                    window.location.hash = 'search/' + encodeURIComponent(input.value.trim());
+                    autocomplete.classList.remove('active');
+                }
+            } else if (e.key === 'Escape') {
+                autocomplete.classList.remove('active');
+            }
+        });
+
+        input.addEventListener('blur', () => {
+            setTimeout(() => autocomplete.classList.remove('active'), 200);
+        });
+    }
+
+    function updateFocused(items, index) {
+        items.forEach((item, i) => {
+            item.classList.toggle('focused', i === index);
+        });
+    }
+
+    // ========== MODAL EVENTS ==========
+    function initModal() {
+        const modal = document.getElementById('plugin-modal');
+        const closeBtn = modal.querySelector('.modal-close');
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Delegated events within modal body
+        modal.addEventListener('click', (e) => {
+            // Copy button
+            const copyBtn = e.target.closest('.btn-copy');
+            if (copyBtn) {
+                const text = copyBtn.dataset.copy;
+                navigator.clipboard.writeText(text).then(() => {
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+                });
+                return;
+            }
+
+            // Pair item
+            const pairItem = e.target.closest('.modal-pair-item');
+            if (pairItem) {
+                const id = pairItem.dataset.pluginId;
+                const plugin = state.plugins.find(p => p.id === id);
+                if (plugin) {
+                    closeModal();
+                    setTimeout(() => openModal(plugin), 250);
+                }
+            }
+        });
+    }
+
+    // ========== HELPERS ==========
+    function getTrendingPlugins() {
+        return [...state.plugins]
+            .filter(p => p.github_stars)
+            .sort((a, b) => (b.github_stars || 0) - (a.github_stars || 0))
+            .slice(0, 5);
+    }
+
+    function getFilteredPlugins() {
+        let filtered = [...state.plugins];
+
+        if (state.filterCategory !== 'all') {
+            filtered = filtered.filter(p => p.category === state.filterCategory);
+        }
+
+        filtered = sortPlugins(filtered, state.filterSort);
+        return filtered;
+    }
+
+    function sortPlugins(plugins, sortBy) {
+        switch (sortBy) {
+            case 'stars':
+                return plugins.sort((a, b) => (b.github_stars || 0) - (a.github_stars || 0));
+            case 'name':
+                return plugins.sort((a, b) => a.name.localeCompare(b.name));
+            case 'recent':
+                return plugins.sort((a, b) => {
+                    const da = a.last_updated_at || '';
+                    const db = b.last_updated_at || '';
+                    return db.localeCompare(da);
+                });
+            case 'quality':
+                return plugins.sort((a, b) => (b.quality_score || 0) - (a.quality_score || 0));
+            default:
+                return plugins;
         }
     }
-    
-    // Skill type badge for modal
-    const skillTypeLabel = skill.skill_type === 'integration'
-        ? `<span class="skill-type-badge skill-type-integration">🔌 Integration Stub</span>`
-        : `<span class="skill-type-badge skill-type-full">✅ Full Skill</span>`;
 
-    // Agent compatibility
-    const compat = getAgentCompatibility(skill);
-    const compatHtml = compat.map(c => 
-        `<span class="compat-pill ${c.class}">${c.agent === 'Claude' ? '🤖' : c.agent === 'Copilot' ? '🐙' : c.agent === 'Codex' ? '📦' : '🌐'} ${c.agent}</span>`
-    ).join('');
+    function getPersonaPlugins(persona) {
+        let results = state.plugins.filter(p => {
+            // Match by category
+            if (persona.categories.includes(p.category)) return true;
+            // Match by tags
+            if (p.tags && p.tags.some(t => persona.tags.includes(t))) return true;
+            return false;
+        });
 
-    // --- Verification checks for modal ---
-    const qScore = skill.quality_score || 0;
-    const isDup = skill.duplicate_status === 'mirror' || skill.duplicate_status === 'probable_duplicate';
-    const isFullSkill = skill.skill_type === 'full';
-    const secretsOk = qScore >= 50;
-    const injectionOk = qScore >= 40;
-    const contentOk = qScore >= 30;
-    const dupOk = !isDup;
+        // Sort by quality and stars
+        results.sort((a, b) => {
+            const scoreA = (a.quality_score || 0) + Math.min((a.github_stars || 0) / 100, 50);
+            const scoreB = (b.quality_score || 0) + Math.min((b.github_stars || 0) / 100, 50);
+            return scoreB - scoreA;
+        });
 
-    const vCheck = (pass, label, detail) =>
-        `<div class="verify-row ${pass ? 'verify-pass' : 'verify-fail'}">
-            <span class="verify-icon">${pass ? '✅' : '❌'}</span>
-            <span class="verify-label">${label}</span>
-            <span class="verify-detail">${detail}</span>
-        </div>`;
-
-    let dupDetail = 'No duplicate detected';
-    if (skill.duplicate_status === 'mirror') {
-        dupDetail = `Mirror of <strong>${escapeHtml(skill.duplicate_of || '?')}</strong>`;
-    } else if (skill.duplicate_status === 'probable_duplicate') {
-        const simPct = skill.duplicate_similarity ? Math.round(skill.duplicate_similarity * 100) + '%' : '?';
-        dupDetail = `~${simPct} similar to <strong>${escapeHtml(skill.duplicate_of || '?')}</strong>`;
+        return results;
     }
 
-    const verificationHtml = `
-        <div class="modal-section verification-section">
-            <h3>🔍 Verification Checks</h3>
-            <div class="verify-grid">
-                ${vCheck(true, '📋 YAML Frontmatter', 'Valid YAML metadata parsed')}
-                ${vCheck(true, '📂 File Structure', 'SKILL.md found in expected path')}
-                ${vCheck(contentOk, '📝 Content Quality', `Score ${qScore}/100 (threshold: 30)`)}
-                ${vCheck(secretsOk, '🔒 Secrets Scan', `Score ${qScore}/100 (threshold: 50)`)}
-                ${vCheck(injectionOk, '🛡️ Injection Check', `Score ${qScore}/100 (threshold: 40)`)}
-                ${vCheck(dupOk, '🔄 Duplicate Check', dupDetail)}
-                ${vCheck(isFullSkill, '✅ Full Skill', skill.skill_type === 'full' ? 'Complete skill with instructions' : 'Integration stub only')}
-                ${vCheck(qScore >= 50, '⭐ Quality Threshold', `${qScore}/100 (premium: ≥70, pass: ≥50)`)}
-            </div>
-            <div class="verify-features">
-                <span class="feat-dot ${skill.has_scripts ? 'scripts' : 'missing'}" title="${skill.has_scripts ? 'Has scripts' : 'No scripts'}">S</span>
-                <span class="feat-dot ${skill.has_references ? 'references' : 'missing'}" title="${skill.has_references ? 'Has references' : 'No references'}">R</span>
-                <span class="feat-dot ${skill.has_assets ? 'assets' : 'missing'}" title="${skill.has_assets ? 'Has assets' : 'No assets'}">A</span>
-                <span class="verify-features-label">Scripts · References · Assets</span>
-            </div>
-        </div>
-    `;
+    function getSearchResults(query) {
+        const q = query.toLowerCase();
+        const terms = q.split(/\s+/);
 
-    modalBody.innerHTML = `
-        <div class="modal-header">
-            <h2>${escapeHtml(skill.name)}</h2>
-            <div class="modal-header-badges">
-                <span class="skill-provider ${skill.provider}">${skill.provider}</span>
-                ${starsHtml}
-                <span class="skill-category">📁 ${skill.category}</span>
-                ${skillTypeLabel}
-            </div>
-        </div>
+        return state.plugins.filter(p => {
+            const searchable = [
+                p.name,
+                p.description,
+                p.provider,
+                p.category,
+                ...(p.tags || [])
+            ].join(' ').toLowerCase();
 
-        <div class="modal-compatibility">
-            ${compatHtml}
-        </div>
-
-        ${qualityBadge}
-
-        ${verificationHtml}
-
-        <div class="modal-section">
-            <p class="skill-description-large">${escapeHtml(skill.description)}</p>
-        </div>
-
-        ${updatedLabel ? `
-            <div class="modal-meta">
-                <span>⏱ Updated ${updatedLabel}</span>
-                ${skill.license ? `<span>📜 ${escapeHtml(skill.license)}</span>` : ''}
-            </div>
-        ` : ''}
-
-        ${skill.tags && skill.tags.length > 0 ? `
-            <div class="modal-tags">
-                ${skill.tags.map(tag => `<span class="skill-tag">#${escapeHtml(tag)}</span>`).join('')}
-            </div>
-        ` : ''}
-
-        <div class="modal-actions">
-            <button class="modal-action-btn primary" onclick="copyInstallCommand('${escapeHtml(skill.id)}')">
-                📋 Copy Install Command
-            </button>
-            <a href="${skill.source.repo}/tree/main/${skill.source.path}" target="_blank" class="modal-action-btn secondary">
-                📂 View on GitHub
-            </a>
-        </div>
-
-        <div class="modal-section skill-content-section">
-            <div class="skill-content-header">
-                <h3>📄 SKILL.md</h3>
-                <button class="btn-toggle-raw" onclick="toggleRawView()">View Raw</button>
-            </div>
-            <div id="skill-content" class="skill-content">
-                <div class="loading-content">Loading skill content...</div>
-            </div>
-            <div id="skill-content-raw" class="skill-content-raw" style="display: none;">
-                <pre><code class="loading-content">Loading...</code></pre>
-            </div>
-        </div>
-
-        ${skill.similar_skills && skill.similar_skills.length > 0 ? `
-            <div class="modal-section similar-skills-section">
-                <h3>🔗 Similar Skills</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
-                    Other implementations with different content:
-                </p>
-                <div class="similar-skills-list">
-                    ${skill.similar_skills.map(s => {
-                        const similarSkill = catalog.skills.find(sk => sk.id === s.id);
-                        const scoreText = similarSkill && typeof similarSkill.quality_score === 'number' 
-                            ? `⭐ ${similarSkill.quality_score}` 
-                            : '';
-                        const scoreDiff = similarSkill && typeof similarSkill.quality_score === 'number' && typeof skill.quality_score === 'number'
-                            ? similarSkill.quality_score - skill.quality_score
-                            : null;
-                        const diffBadge = scoreDiff !== null
-                            ? `<span class="score-diff ${scoreDiff > 0 ? 'positive' : 'negative'}">${scoreDiff > 0 ? '+' : ''}${scoreDiff}</span>`
-                            : '';
-                        return `
-                        <div class="similar-skill-item" data-skill-id="${escapeHtml(s.id)}">
-                            <span class="skill-provider ${s.provider}">${s.provider}</span>
-                            <span class="similar-skill-id">${escapeHtml(s.id)}</span>
-                            ${scoreText ? `<span class="similar-score">${scoreText}</span>` : ''}
-                            ${diffBadge}
-                            <span class="similarity-badge">${Math.round(s.similarity * 100)}% similar</span>
-                        </div>
-                    `;}).join('')}
-                </div>
-            </div>
-        ` : ''}
-    `;
-
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    
-    // Fetch and render SKILL.md content
-    fetchSkillContent(skill.source.skill_md_url);
-    
-    // Add click handlers for similar skill items
-    document.querySelectorAll('.similar-skill-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const skillId = item.dataset.skillId;
-            const similarSkill = catalog.skills.find(s => s.id === skillId);
-            if (similarSkill) showSkillModal(similarSkill);
+            return terms.every(term => searchable.includes(term));
+        }).sort((a, b) => {
+            // Exact name match first
+            const aName = a.name.toLowerCase().includes(q) ? 1 : 0;
+            const bName = b.name.toLowerCase().includes(q) ? 1 : 0;
+            if (aName !== bName) return bName - aName;
+            return (b.github_stars || 0) - (a.github_stars || 0);
         });
-    });
-}
+    }
 
-// Fetch and render SKILL.md content
-async function fetchSkillContent(url) {
-    const contentEl = document.getElementById('skill-content');
-    const rawEl = document.getElementById('skill-content-raw');
-    
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch');
-        
-        const rawContent = await response.text();
-        
-        // Remove YAML frontmatter if present
-        let content = rawContent;
-        if (content.startsWith('---')) {
-            const endOfFrontmatter = content.indexOf('---', 3);
-            if (endOfFrontmatter !== -1) {
-                content = content.substring(endOfFrontmatter + 3).trim();
+    function getSourceBadge(plugin) {
+        if (OFFICIAL_PROVIDERS.includes(plugin.provider)) {
+            return { label: 'Official', class: 'official' };
+        }
+        if (plugin.provider === 'skillcreatorai' || plugin.provider === 'community') {
+            return { label: 'Community', class: 'community' };
+        }
+        return { label: 'Third-party', class: 'third-party' };
+    }
+
+    function getPairsWellWith(plugin) {
+        // Find plugins in the same category or with overlapping tags
+        const sameCat = state.plugins.filter(p =>
+            p.id !== plugin.id &&
+            p.category === plugin.category &&
+            p.provider !== plugin.provider
+        );
+
+        // Also look in bundles
+        const bundlePartners = [];
+        state.bundles.forEach(bundle => {
+            if (bundle.skills.includes(plugin.id)) {
+                bundle.skills.forEach(sid => {
+                    if (sid !== plugin.id) {
+                        const found = state.plugins.find(p => p.id === sid);
+                        if (found) bundlePartners.push(found);
+                    }
+                });
+            }
+        });
+
+        // Combine and deduplicate
+        const combined = [...bundlePartners, ...sameCat];
+        const seen = new Set();
+        const unique = [];
+        for (const p of combined) {
+            if (!seen.has(p.id)) {
+                seen.add(p.id);
+                unique.push(p);
             }
         }
-        
-        // Render markdown
-        if (typeof marked !== 'undefined') {
-            contentEl.innerHTML = marked.parse(content);
-        } else {
-            // Fallback: basic formatting
-            contentEl.innerHTML = `<pre>${escapeHtml(content)}</pre>`;
-        }
-        
-        // Store raw content
-        rawEl.innerHTML = `<pre><code>${escapeHtml(rawContent)}</code></pre>`;
-        
-    } catch (error) {
-        contentEl.innerHTML = `
-            <div class="content-error">
-                <p>Unable to load skill content.</p>
-                <a href="${url}" target="_blank">View on GitHub →</a>
-            </div>
-        `;
-        rawEl.innerHTML = `<pre><code>Error loading content</code></pre>`;
+        return unique.slice(0, 4);
     }
-}
 
-// Toggle between rendered and raw view
-function toggleRawView() {
-    const contentEl = document.getElementById('skill-content');
-    const rawEl = document.getElementById('skill-content-raw');
-    const btn = document.querySelector('.btn-toggle-raw');
-    
-    if (rawEl.style.display === 'none') {
-        rawEl.style.display = 'block';
-        contentEl.style.display = 'none';
-        btn.textContent = 'View Rendered';
+    function getSuggestionForGap(category) {
+        const suggestions = {
+            'ml-ai': 'huggingface/hf-cli or skillcreatorai/llm-application-dev',
+            'creative': 'anthropics/canvas-design or anthropics/algorithmic-art',
+            'integrations': 'anthropics/mcp-builder or github/gh-cli',
+            'documents': 'anthropics/pdf or anthropics/docx',
+            'enterprise': 'openai/notion-knowledge-capture',
+            'development': 'skillcreatorai/backend-development',
+            'data': 'huggingface/hugging-face-datasets'
+        };
+        return suggestions[category] || 'browse the directory for options';
+    }
+
+    function formatStars(stars) {
+        if (!stars) return '0';
+        if (stars >= 1000) return (stars / 1000).toFixed(1) + 'k';
+        return stars.toString();
+    }
+
+    function truncateDescription(desc) {
+        if (!desc) return 'No description available.';
+        if (desc.length <= 120) return desc;
+        return desc.substring(0, 117) + '...';
+    }
+
+    function capitalize(str) {
+        if (!str) return '';
+        return str.charAt(0).toUpperCase() + str.slice(1).replace(/-/g, ' ');
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    // ========== INIT ==========
+    function init() {
+        initTheme();
+        initSearch();
+        initModal();
+        loadData();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        rawEl.style.display = 'none';
-        contentEl.style.display = 'block';
-        btn.textContent = 'View Raw';
+        init();
     }
-}
-
-// Copy install command to clipboard
-function copyInstallCommand(skillId) {
-    const command = `skillsdir install ${skillId}`;
-    navigator.clipboard.writeText(command).then(() => {
-        const btn = document.querySelector('.modal-action-btn.primary');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '✓ Copied!';
-        setTimeout(() => btn.innerHTML = originalText, 2000);
-    });
-}
-
-function closeModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
-
-// Event Listeners
-searchInput.addEventListener('input', debounce(filterSkills, 200));
-providerFilter.addEventListener('change', filterSkills);
-categoryFilter.addEventListener('change', filterSkills);
-skillTypeFilter.addEventListener('change', filterSkills);
-
-// View toggle
-document.querySelectorAll('.view-toggle-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const view = btn.dataset.view;
-        currentView = view;
-        document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderSkills(filteredSkills);
-    });
-});
-
-document.querySelector('.modal-close').addEventListener('click', closeModal);
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-});
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-});
-
-// Main Navigation Tabs
-document.querySelectorAll('.main-tab[data-tab]').forEach(tab => {
-    tab.addEventListener('click', () => {
-        const tabId = tab.dataset.tab;
-        
-        // Update active tab
-        document.querySelectorAll('.main-tab[data-tab]').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        // Show corresponding panel
-        document.querySelectorAll('.tab-panel').forEach(panel => {
-            panel.classList.remove('active');
-        });
-        const targetPanel = document.getElementById(`tab-${tabId}`);
-        if (targetPanel) {
-            targetPanel.classList.add('active');
-        }
-    });
-});
-
-// Method Tabs (inside How to Use)
-document.querySelectorAll('.method-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Update active tab
-        document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        // Show corresponding content
-        const method = tab.dataset.method;
-        document.querySelectorAll('.method-content').forEach(content => {
-            content.classList.add('hidden');
-        });
-        document.getElementById(`method-${method}`).classList.remove('hidden');
-    });
-});
-
-// Utility: Debounce
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// ===== BUNDLES FUNCTIONALITY =====
-
-function initBundles() {
-    if (!bundles || !bundles.bundles) return;
-    
-    // Populate category filter
-    const categories = [...new Set(bundles.bundles.map(b => b.category))].sort();
-    categories.forEach(category => {
-        const option = document.createElement('option');
-        option.value = category;
-        option.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-        bundleCategoryFilter.appendChild(option);
-    });
-    
-    // Update total
-    totalBundlesEl.textContent = bundles.total_bundles;
-    
-    // Initial render
-    filterBundles();
-    
-    // Add event listener
-    bundleCategoryFilter.addEventListener('change', filterBundles);
-}
-
-function filterBundles() {
-    if (!bundles || !bundles.bundles) return;
-    
-    const category = bundleCategoryFilter.value;
-    
-    filteredBundles = bundles.bundles.filter(bundle => {
-        return !category || bundle.category === category;
-    });
-    
-    renderBundles(filteredBundles);
-}
-
-function renderBundles(bundlesList) {
-    if (!bundlesList || bundlesList.length === 0) {
-        bundlesGrid.innerHTML = `
-            <div class="no-results">
-                <p>No bundles found matching your criteria.</p>
-            </div>
-        `;
-        return;
-    }
-
-    bundlesGrid.innerHTML = bundlesList.map(bundle => `
-        <article class="bundle-card" data-bundle-id="${bundle.id}">
-            <div class="bundle-header">
-                <span class="bundle-icon">${bundle.icon || '📦'}</span>
-                <div class="bundle-title-group">
-                    <h3 class="bundle-name">${escapeHtml(bundle.name)}</h3>
-                    <span class="bundle-category-badge">${bundle.category}</span>
-                </div>
-            </div>
-            <p class="bundle-description">${escapeHtml(bundle.description)}</p>
-            
-            <div class="bundle-skills">
-                <span class="bundle-skills-label">📚 ${bundle.skills.length} skills included:</span>
-                <div class="bundle-skills-list">
-                    ${bundle.skills.slice(0, 4).map(skill => 
-                        `<span class="bundle-skill-item">${escapeHtml(skill)}</span>`
-                    ).join('')}
-                    ${bundle.skills.length > 4 ? `<span class="bundle-skill-more">+${bundle.skills.length - 4} more</span>` : ''}
-                </div>
-            </div>
-            
-            <div class="bundle-use-cases">
-                <span class="bundle-use-cases-label">💡 Use cases:</span>
-                <div class="bundle-use-cases-list">
-                    ${bundle.use_cases.map(uc => `<span class="bundle-use-case">${escapeHtml(uc)}</span>`).join('')}
-                </div>
-            </div>
-            
-            <div class="bundle-tags">
-                ${bundle.tags.map(tag => `<span class="bundle-tag">#${escapeHtml(tag)}</span>`).join('')}
-            </div>
-        </article>
-    `).join('');
-
-    // Add click handlers
-    document.querySelectorAll('.bundle-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const bundleId = card.dataset.bundleId;
-            const bundle = bundles.bundles.find(b => b.id === bundleId);
-            if (bundle) showBundleModal(bundle);
-        });
-    });
-}
-
-function showBundleModal(bundle) {
-    modalBody.innerHTML = `
-        <div class="modal-header">
-            <span class="bundle-icon-large">${bundle.icon || '📦'}</span>
-            <h2>${escapeHtml(bundle.name)}</h2>
-            <span class="bundle-category-badge">${bundle.category}</span>
-        </div>
-
-        <div class="modal-section">
-            <h3>Description</h3>
-            <p>${escapeHtml(bundle.description)}</p>
-        </div>
-
-        <div class="modal-section">
-            <h3>📚 Included Skills (${bundle.skills.length})</h3>
-            <div class="bundle-skills-grid">
-                ${bundle.skills.map(skill => {
-                    const skillData = catalog?.skills?.find(s => s.id === skill || s.name === (skill.split('/')[1] ?? skill));
-                    return `
-                        <div class="bundle-skill-card ${skillData ? 'clickable' : ''}" data-skill-id="${skillData?.id || ''}">
-                            <span class="bundle-skill-name">${escapeHtml(skill)}</span>
-                            ${skillData ? `<span class="bundle-skill-provider ${skillData.provider}">${skillData.provider}</span>` : '<span class="bundle-skill-missing">not in catalog</span>'}
-                        </div>
-                    `;
-                }).join('')}
-            </div>
-        </div>
-
-        <div class="modal-section">
-            <h3>💡 Use Cases</h3>
-            <ul class="bundle-use-cases-modal">
-                ${bundle.use_cases.map(uc => `<li>${escapeHtml(uc)}</li>`).join('')}
-            </ul>
-        </div>
-
-        <div class="modal-section">
-            <h3>Tags</h3>
-            <div class="modal-tags">
-                ${bundle.tags.map(tag => `<span class="skill-tag">#${escapeHtml(tag)}</span>`).join('')}
-            </div>
-        </div>
-
-        <div class="modal-section" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);">
-            <h3>Install Bundle with Mother Skills MCP</h3>
-            <code style="display: block; background: var(--bg); padding: 1rem; border-radius: 8px; font-size: 0.9rem;">
-                install_bundle("${escapeHtml(bundle.id)}")
-            </code>
-            <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
-                Or install skills individually:
-            </p>
-            <code style="display: block; background: var(--bg); padding: 1rem; border-radius: 8px; font-size: 0.85rem; margin-top: 0.5rem; white-space: pre-wrap;">
-${bundle.skills.map(s => `install_skill("${s.split('/')[1] ?? s}")`).join('\n')}</code>
-        </div>
-    `;
-
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    
-    // Add click handlers for skill cards that exist in catalog
-    document.querySelectorAll('.bundle-skill-card.clickable').forEach(card => {
-        card.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const skillId = card.dataset.skillId;
-            const skill = catalog.skills.find(s => s.id === skillId);
-            if (skill) showSkillModal(skill);
-        });
-    });
-}
-
-// Method tabs (How to Use section)
-document.querySelectorAll('.method-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        const methodId = tab.dataset.method;
-        
-        // Update tabs
-        document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        // Update content
-        document.querySelectorAll('.method-content').forEach(content => {
-            content.classList.add('hidden');
-        });
-        const targetContent = document.getElementById(`method-${methodId}`);
-        if (targetContent) {
-            targetContent.classList.remove('hidden');
-        }
-    });
-});
-
-// Quickstart tabs functionality
-document.querySelectorAll('.quickstart-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = tab.dataset.quickstart;
-        
-        // Update tabs
-        document.querySelectorAll('.quickstart-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        // Update panels
-        document.querySelectorAll('.quickstart-panel').forEach(panel => {
-            panel.classList.remove('active');
-        });
-        document.querySelector(`[data-quickstart-panel="${target}"]`).classList.add('active');
-    });
-});
-
-// Command category filtering
-let currentCategory = 'all';
-let currentSearchQuery = '';
-
-document.querySelectorAll('.category-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        currentCategory = btn.dataset.category;
-        
-        // Update buttons
-        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        filterCommands();
-    });
-});
-
-// Command search
-const commandSearchInput = document.getElementById('command-search');
-if (commandSearchInput) {
-    commandSearchInput.addEventListener('input', (e) => {
-        currentSearchQuery = e.target.value.toLowerCase();
-        filterCommands();
-    });
-}
-
-function filterCommands() {
-    document.querySelectorAll('.cli-command').forEach(cmd => {
-        const category = cmd.dataset.category || 'all';
-        const commandText = cmd.textContent.toLowerCase();
-        
-        const categoryMatch = currentCategory === 'all' || category === currentCategory;
-        const searchMatch = currentSearchQuery === '' || commandText.includes(currentSearchQuery);
-        
-        if (categoryMatch && searchMatch) {
-            cmd.style.display = 'block';
-        } else {
-            cmd.style.display = 'none';
-        }
-    });
-}
-
-// Copy code functionality
-function copyCode(button) {
-    const codeBlock = button.previousElementSibling;
-    const code = codeBlock.querySelector('code').textContent;
-    
-    navigator.clipboard.writeText(code).then(() => {
-        // Visual feedback
-        const originalText = button.querySelector('.copy-text').textContent;
-        button.classList.add('copied');
-        button.querySelector('.copy-text').textContent = 'Copied!';
-        button.querySelector('.copy-icon').textContent = '✓';
-        
-        setTimeout(() => {
-            button.classList.remove('copied');
-            button.querySelector('.copy-text').textContent = originalText;
-            button.querySelector('.copy-icon').textContent = '📋';
-        }, 2000);
-    }).catch(err => {
-        console.error('Failed to copy:', err);
-        button.querySelector('.copy-text').textContent = 'Failed';
-        setTimeout(() => {
-            button.querySelector('.copy-text').textContent = 'Copy';
-        }, 2000);
-    });
-}
-
-// Make copyCode available globally
-window.copyCode = copyCode;
-
-// Copy a specific URL (for export cards where display is shortened)
-function copyUrl(button, url) {
-    navigator.clipboard.writeText(url).then(() => {
-        button.classList.add('copied');
-        button.querySelector('.copy-text').textContent = 'Copied!';
-        button.querySelector('.copy-icon').textContent = '✓';
-        
-        setTimeout(() => {
-            button.classList.remove('copied');
-            button.querySelector('.copy-text').textContent = 'Copy';
-            button.querySelector('.copy-icon').textContent = '📋';
-        }, 2000);
-    }).catch(err => {
-        console.error('Failed to copy:', err);
-        button.querySelector('.copy-text').textContent = 'Failed';
-        setTimeout(() => {
-            button.querySelector('.copy-text').textContent = 'Copy';
-        }, 2000);
-    });
-}
-
-// Make copyUrl available globally
-window.copyUrl = copyUrl;
-
-// Accordion toggle functionality
-function toggleAccordion(button) {
-    const accordionItem = button.parentElement;
-    const isActive = accordionItem.classList.contains('active');
-    
-    // Close all accordion items
-    document.querySelectorAll('.accordion-item').forEach(item => {
-        item.classList.remove('active');
-    });
-    
-    // Open clicked item if it wasn't already open
-    if (!isActive) {
-        accordionItem.classList.add('active');
-    }
-}
-
-// Make toggleAccordion available globally
-window.toggleAccordion = toggleAccordion;
-
-// Start
-init();
-
-// ===== EXPORTS & BADGES FUNCTIONALITY =====
-
-// Load exports index for counts
-async function loadExportsIndex() {
-    const EXPORTS_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? './exports/index.json'
-        : 'https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/index.json';
-    
-    try {
-        const response = await fetch(EXPORTS_URL, { cache: 'no-cache' });
-        if (!response.ok) return;
-        const data = await response.json();
-        
-        // Update export counts in the UI
-        const exports = data.exports || {};
-        const countMap = {
-            'export-claude-count': exports['claude-skills.json']?.total,
-            'export-copilot-count': exports['copilot-skills.json']?.total,
-            'export-mcp-count': exports['mcp-compatible.json']?.total,
-            'export-premium-count': exports['premium-skills.json']?.total,
-            'export-active-count': exports['active-skills.json']?.total,
-        };
-        
-        for (const [id, count] of Object.entries(countMap)) {
-            const el = document.getElementById(id);
-            if (el && count !== undefined) {
-                el.textContent = count + ' skills';
-            }
-        }
-    } catch (e) {
-        console.log('Exports index not available yet:', e.message);
-    }
-}
-
-// Generate quality score badge
-function generateQualityBadge() {
-    const score = parseInt(document.getElementById('badge-score-input')?.value || '80');
-    const clampedScore = Math.max(0, Math.min(100, score));
-    
-    let color;
-    if (clampedScore >= 80) color = '22c55e';
-    else if (clampedScore >= 60) color = '3b82f6';
-    else if (clampedScore >= 40) color = 'f59e0b';
-    else color = 'ef4444';
-    
-    const badgeUrl = `https://img.shields.io/badge/quality_score-${clampedScore}%2F100-${color}?style=flat`;
-    const markdown = `[![Quality Score](${badgeUrl})](https://dmgrok.github.io/agent_skills_directory/)`;
-    
-    const outputEl = document.getElementById('badge-output');
-    const previewEl = document.getElementById('badge-output-preview');
-    const codeEl = document.getElementById('badge-output-code');
-    
-    if (outputEl && previewEl && codeEl) {
-        outputEl.style.display = 'block';
-        previewEl.innerHTML = `<img src="${badgeUrl}" alt="Quality Score ${clampedScore}" loading="lazy">`;
-        codeEl.textContent = markdown;
-    }
-}
-
-// Make generateQualityBadge available globally
-window.generateQualityBadge = generateQualityBadge;
-
-// Load exports data after main init
-loadExportsIndex();
+})();

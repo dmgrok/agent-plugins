@@ -1,0 +1,565 @@
+{
+  "taxonomy": {
+    "version": "1.0.0",
+    "description": "Capability taxonomy for AI agent plugins — used to categorize, score, and recommend plugins across the ecosystem",
+    "categories": [
+      {
+        "id": "code-generation",
+        "name": "Code Generation & Editing",
+        "description": "Writing, refactoring, and transforming source code across languages and frameworks",
+        "subcategories": [
+          {
+            "id": "scaffolding",
+            "name": "Project Scaffolding",
+            "description": "Generating boilerplate, project structures, and starter templates from specifications"
+          },
+          {
+            "id": "refactoring",
+            "name": "Code Refactoring",
+            "description": "Restructuring existing code for clarity, performance, or maintainability without changing behavior"
+          },
+          {
+            "id": "code-completion",
+            "name": "Code Completion & Suggestion",
+            "description": "Inline completions, snippet generation, and context-aware code suggestions"
+          },
+          {
+            "id": "code-translation",
+            "name": "Language Translation",
+            "description": "Converting code between programming languages or framework migrations"
+          },
+          {
+            "id": "code-review-assist",
+            "name": "Review & Style Enforcement",
+            "description": "Automated code review, linting rules, and style guide enforcement"
+          }
+        ]
+      },
+      {
+        "id": "testing-quality",
+        "name": "Testing & Quality",
+        "description": "Automated testing, coverage analysis, and code quality assurance tooling",
+        "subcategories": [
+          {
+            "id": "unit-testing",
+            "name": "Unit Test Generation",
+            "description": "Generating unit tests, test fixtures, and assertions from source code"
+          },
+          {
+            "id": "integration-testing",
+            "name": "Integration & E2E Testing",
+            "description": "End-to-end test orchestration, browser automation, and API contract testing"
+          },
+          {
+            "id": "coverage-analysis",
+            "name": "Coverage & Gap Analysis",
+            "description": "Identifying untested paths, dead code, and coverage improvement opportunities"
+          },
+          {
+            "id": "mutation-testing",
+            "name": "Mutation & Property Testing",
+            "description": "Mutation testing, fuzz testing, and property-based test generation"
+          },
+          {
+            "id": "performance-testing",
+            "name": "Performance & Load Testing",
+            "description": "Benchmarking, profiling, load generation, and regression detection"
+          }
+        ]
+      },
+      {
+        "id": "devops-deployment",
+        "name": "DevOps & Deployment",
+        "description": "CI/CD pipelines, build systems, deployment automation, and release management",
+        "subcategories": [
+          {
+            "id": "ci-cd",
+            "name": "CI/CD Pipeline Management",
+            "description": "Configuring, optimizing, and troubleshooting continuous integration and delivery pipelines"
+          },
+          {
+            "id": "containerization",
+            "name": "Containerization & Orchestration",
+            "description": "Docker, Kubernetes, and container orchestration configuration and management"
+          },
+          {
+            "id": "release-management",
+            "name": "Release & Versioning",
+            "description": "Semantic versioning, changelog generation, and release automation"
+          },
+          {
+            "id": "environment-management",
+            "name": "Environment Management",
+            "description": "Managing dev/staging/prod environments, feature flags, and configuration drift"
+          },
+          {
+            "id": "monitoring-observability",
+            "name": "Monitoring & Observability",
+            "description": "Log aggregation, alerting, distributed tracing, and incident response automation"
+          }
+        ]
+      },
+      {
+        "id": "documentation-knowledge",
+        "name": "Documentation & Knowledge",
+        "description": "Generating, maintaining, and querying documentation and knowledge bases",
+        "subcategories": [
+          {
+            "id": "api-docs",
+            "name": "API Documentation",
+            "description": "OpenAPI spec generation, endpoint documentation, and SDK reference generation"
+          },
+          {
+            "id": "code-docs",
+            "name": "Code Documentation",
+            "description": "Inline comments, docstrings, and architectural decision records"
+          },
+          {
+            "id": "knowledge-management",
+            "name": "Knowledge Management",
+            "description": "Wiki maintenance, note organization, and institutional knowledge capture"
+          },
+          {
+            "id": "content-generation",
+            "name": "Content & Writing",
+            "description": "Technical writing, blog posts, tutorials, and copywriting assistance"
+          },
+          {
+            "id": "research-synthesis",
+            "name": "Research & Synthesis",
+            "description": "Literature review, source aggregation, fact-checking, and report generation"
+          }
+        ]
+      },
+      {
+        "id": "ai-llm-integration",
+        "name": "AI & LLM Integration",
+        "description": "Building, orchestrating, and managing AI-powered features and agent systems",
+        "subcategories": [
+          {
+            "id": "prompt-engineering",
+            "name": "Prompt Engineering",
+            "description": "Prompt design, optimization, testing, and version management"
+          },
+          {
+            "id": "agent-orchestration",
+            "name": "Agent Orchestration",
+            "description": "Multi-agent systems, tool routing, and agent workflow composition"
+          },
+          {
+            "id": "rag-retrieval",
+            "name": "RAG & Retrieval",
+            "description": "Retrieval-augmented generation pipelines, embedding management, and vector search"
+          },
+          {
+            "id": "model-management",
+            "name": "Model Selection & Management",
+            "description": "Model routing, cost optimization, fallback strategies, and provider abstraction"
+          },
+          {
+            "id": "mcp-tools",
+            "name": "MCP & Tool Integration",
+            "description": "Model Context Protocol servers, tool definitions, and capability exposure"
+          }
+        ]
+      },
+      {
+        "id": "data-analytics",
+        "name": "Data & Analytics",
+        "description": "Data processing, analysis, visualization, and pipeline management",
+        "subcategories": [
+          {
+            "id": "data-transformation",
+            "name": "Data Transformation & ETL",
+            "description": "Data cleaning, normalization, schema mapping, and pipeline orchestration"
+          },
+          {
+            "id": "visualization",
+            "name": "Visualization & Dashboards",
+            "description": "Chart generation, dashboard creation, and interactive data exploration"
+          },
+          {
+            "id": "sql-databases",
+            "name": "SQL & Database Operations",
+            "description": "Query generation, schema design, migration management, and database optimization"
+          },
+          {
+            "id": "ml-modeling",
+            "name": "ML Modeling & Training",
+            "description": "Model training, hyperparameter tuning, experiment tracking, and evaluation"
+          },
+          {
+            "id": "data-quality",
+            "name": "Data Quality & Validation",
+            "description": "Schema validation, anomaly detection, data profiling, and lineage tracking"
+          }
+        ]
+      },
+      {
+        "id": "security-compliance",
+        "name": "Security & Compliance",
+        "description": "Vulnerability detection, access control, audit trails, and regulatory compliance",
+        "subcategories": [
+          {
+            "id": "vulnerability-scanning",
+            "name": "Vulnerability Scanning",
+            "description": "Static analysis, dependency auditing, CVE detection, and exploit assessment"
+          },
+          {
+            "id": "secrets-management",
+            "name": "Secrets & Credential Management",
+            "description": "Secret detection, rotation, vault integration, and credential lifecycle management"
+          },
+          {
+            "id": "compliance-audit",
+            "name": "Compliance & Audit",
+            "description": "SOC2, GDPR, HIPAA compliance checking, evidence collection, and audit trail generation"
+          },
+          {
+            "id": "access-control",
+            "name": "Access Control & IAM",
+            "description": "Permission management, role-based access, policy-as-code, and least-privilege enforcement"
+          },
+          {
+            "id": "pen-testing",
+            "name": "Penetration Testing",
+            "description": "Automated penetration testing, attack surface mapping, and security posture assessment"
+          }
+        ]
+      },
+      {
+        "id": "productivity-workflow",
+        "name": "Productivity & Workflow",
+        "description": "Task management, automation, and developer workflow optimization",
+        "subcategories": [
+          {
+            "id": "task-management",
+            "name": "Task & Project Management",
+            "description": "Issue tracking, sprint planning, and project coordination automation"
+          },
+          {
+            "id": "git-workflow",
+            "name": "Git & Version Control",
+            "description": "Branch management, merge conflict resolution, commit message generation, and PR automation"
+          },
+          {
+            "id": "automation",
+            "name": "Workflow Automation",
+            "description": "Repetitive task automation, macro recording, and custom command creation"
+          },
+          {
+            "id": "search-navigation",
+            "name": "Code Search & Navigation",
+            "description": "Semantic code search, symbol navigation, dependency graph exploration"
+          },
+          {
+            "id": "time-management",
+            "name": "Time & Focus Management",
+            "description": "Time tracking, pomodoro integration, meeting management, and context switching reduction"
+          }
+        ]
+      },
+      {
+        "id": "design-frontend",
+        "name": "Design & Frontend",
+        "description": "UI/UX design, component development, and visual interface tooling",
+        "subcategories": [
+          {
+            "id": "component-generation",
+            "name": "Component Generation",
+            "description": "UI component scaffolding, design system implementation, and pattern library management"
+          },
+          {
+            "id": "design-to-code",
+            "name": "Design-to-Code",
+            "description": "Converting Figma/Sketch designs to implementation, screenshot-to-code generation"
+          },
+          {
+            "id": "styling",
+            "name": "Styling & Theming",
+            "description": "CSS generation, design token management, responsive design, and accessibility styling"
+          },
+          {
+            "id": "animation",
+            "name": "Animation & Interaction",
+            "description": "Motion design, transition generation, and interactive prototype creation"
+          },
+          {
+            "id": "accessibility",
+            "name": "Accessibility & A11y",
+            "description": "WCAG compliance checking, screen reader optimization, and inclusive design patterns"
+          }
+        ]
+      },
+      {
+        "id": "communication-collaboration",
+        "name": "Communication & Collaboration",
+        "description": "Team communication, async collaboration, and information sharing tools",
+        "subcategories": [
+          {
+            "id": "messaging-integration",
+            "name": "Messaging & Chat Integration",
+            "description": "Slack, Teams, Discord integration and message automation"
+          },
+          {
+            "id": "code-collaboration",
+            "name": "Code Collaboration",
+            "description": "Pair programming, code sharing, live collaboration, and review coordination"
+          },
+          {
+            "id": "email-communication",
+            "name": "Email & Communication",
+            "description": "Email drafting, template management, and communication workflow automation"
+          },
+          {
+            "id": "meeting-management",
+            "name": "Meeting & Scheduling",
+            "description": "Meeting notes, transcript summarization, action item extraction, and calendar management"
+          },
+          {
+            "id": "notifications",
+            "name": "Notifications & Alerts",
+            "description": "Smart notification routing, priority filtering, and alert aggregation"
+          }
+        ]
+      },
+      {
+        "id": "cloud-infrastructure",
+        "name": "Cloud & Infrastructure",
+        "description": "Cloud provider management, infrastructure as code, and resource optimization",
+        "subcategories": [
+          {
+            "id": "iac",
+            "name": "Infrastructure as Code",
+            "description": "Terraform, Pulumi, CloudFormation authoring, planning, and drift detection"
+          },
+          {
+            "id": "cloud-management",
+            "name": "Cloud Resource Management",
+            "description": "AWS, GCP, Azure resource provisioning, cost management, and optimization"
+          },
+          {
+            "id": "networking",
+            "name": "Networking & DNS",
+            "description": "VPC configuration, load balancing, DNS management, and network policy"
+          },
+          {
+            "id": "serverless",
+            "name": "Serverless & Edge",
+            "description": "Lambda, CloudFlare Workers, edge function development and deployment"
+          },
+          {
+            "id": "cost-optimization",
+            "name": "Cost Optimization",
+            "description": "Cloud spend analysis, right-sizing recommendations, and reserved capacity planning"
+          }
+        ]
+      },
+      {
+        "id": "mobile-crossplatform",
+        "name": "Mobile & Cross-Platform",
+        "description": "Native and cross-platform mobile development, app distribution, and device testing",
+        "subcategories": [
+          {
+            "id": "react-native",
+            "name": "React Native & Expo",
+            "description": "React Native component development, Expo workflows, and native module bridging"
+          },
+          {
+            "id": "flutter",
+            "name": "Flutter & Dart",
+            "description": "Flutter widget development, state management, and platform channel integration"
+          },
+          {
+            "id": "native-ios",
+            "name": "Native iOS (Swift/SwiftUI)",
+            "description": "Swift development, SwiftUI layouts, and iOS platform API integration"
+          },
+          {
+            "id": "native-android",
+            "name": "Native Android (Kotlin)",
+            "description": "Kotlin development, Jetpack Compose, and Android platform API integration"
+          },
+          {
+            "id": "app-distribution",
+            "name": "App Distribution & Testing",
+            "description": "App store submission, beta distribution, device testing, and crash reporting"
+          }
+        ]
+      }
+    ]
+  },
+  "personas": [
+    {
+      "id": "knowledge-worker",
+      "name": "Knowledge Worker",
+      "tagline": "Second brain & productivity",
+      "description": "Non-developer using AI for docs, research, and organization. Values simplicity, clear outputs, and minimal technical overhead.",
+      "priority_categories": ["documentation-knowledge", "productivity-workflow", "communication-collaboration"],
+      "example_needs": ["Note-taking and organization", "Meeting summaries and action items", "Document generation and templates", "Research synthesis and fact-checking", "Email drafting and communication"],
+      "icon": "🧠"
+    },
+    {
+      "id": "web-developer",
+      "name": "Web Developer",
+      "tagline": "Full-stack web apps & modern frameworks",
+      "description": "Full-stack developer building web applications with React, Next.js, Vue, or similar. Needs fast component generation, API integration, and deployment tooling.",
+      "priority_categories": ["code-generation", "design-frontend", "testing-quality", "devops-deployment"],
+      "example_needs": ["React/Next.js component scaffolding", "API route generation", "CSS and responsive design assistance", "Database schema and ORM setup", "Deployment to Vercel/Netlify/AWS"],
+      "icon": "🌐"
+    },
+    {
+      "id": "backend-engineer",
+      "name": "Backend Engineer",
+      "tagline": "APIs, databases & microservices",
+      "description": "Backend-focused engineer designing APIs, managing databases, and building scalable distributed systems. Values correctness, performance, and clean architecture.",
+      "priority_categories": ["code-generation", "data-analytics", "testing-quality", "cloud-infrastructure"],
+      "example_needs": ["REST/GraphQL API scaffolding", "Database migration management", "Microservice boilerplate generation", "Performance profiling and optimization", "Message queue and event-driven patterns"],
+      "icon": "⚙️"
+    },
+    {
+      "id": "mobile-developer",
+      "name": "Mobile Developer",
+      "tagline": "iOS, Android & cross-platform",
+      "description": "Mobile developer building native or cross-platform apps. Needs platform-specific code generation, device testing support, and app store workflow automation.",
+      "priority_categories": ["mobile-crossplatform", "design-frontend", "testing-quality", "code-generation"],
+      "example_needs": ["React Native / Flutter component generation", "Platform-specific API bridging", "App store submission automation", "Device-specific UI adaptation", "Offline-first data synchronization patterns"],
+      "icon": "📱"
+    },
+    {
+      "id": "devops-engineer",
+      "name": "DevOps Engineer",
+      "tagline": "CI/CD, cloud & infrastructure",
+      "description": "Infrastructure and platform engineer focused on reliability, automation, and deployment velocity. Values declarative configuration, observability, and cost control.",
+      "priority_categories": ["devops-deployment", "cloud-infrastructure", "security-compliance", "monitoring-observability"],
+      "example_needs": ["Terraform/Pulumi module generation", "CI/CD pipeline optimization", "Kubernetes manifest authoring", "Incident response runbook creation", "Cloud cost analysis and right-sizing"],
+      "icon": "🚀"
+    },
+    {
+      "id": "data-scientist",
+      "name": "Data Scientist",
+      "tagline": "ML, analytics & datasets",
+      "description": "Data professional working with machine learning models, statistical analysis, and data pipelines. Needs notebook integration, visualization tools, and experiment management.",
+      "priority_categories": ["data-analytics", "ai-llm-integration", "documentation-knowledge", "testing-quality"],
+      "example_needs": ["Jupyter notebook assistance", "SQL query generation and optimization", "Data visualization and charting", "ML experiment tracking", "Dataset profiling and cleaning"],
+      "icon": "📊"
+    },
+    {
+      "id": "security-engineer",
+      "name": "Security Engineer",
+      "tagline": "Auditing, compliance & pen testing",
+      "description": "Security professional focused on identifying vulnerabilities, ensuring compliance, and hardening systems. Values thoroughness, audit trails, and defense-in-depth.",
+      "priority_categories": ["security-compliance", "cloud-infrastructure", "testing-quality", "devops-deployment"],
+      "example_needs": ["Dependency vulnerability scanning", "SAST/DAST automation", "Compliance evidence collection", "IAM policy review and least-privilege enforcement", "Penetration test scripting"],
+      "icon": "🔒"
+    },
+    {
+      "id": "startup-founder",
+      "name": "Startup Founder",
+      "tagline": "MVP building & rapid prototyping",
+      "description": "Technical founder or solo developer shipping fast. Needs breadth over depth — full-stack scaffolding, quick deployment, and tools that reduce time-to-market across every layer.",
+      "priority_categories": ["code-generation", "devops-deployment", "design-frontend", "productivity-workflow", "ai-llm-integration"],
+      "example_needs": ["Full-stack MVP scaffolding", "Landing page generation", "Payment integration boilerplate", "Rapid API prototyping", "One-command deployment setup", "User auth and onboarding flows"],
+      "icon": "⚡"
+    }
+  ],
+  "compatibility": {
+    "description": "AI coding tools and their plugin format specifications for cross-platform portability tracking",
+    "tools": [
+      {
+        "id": "claude-code",
+        "name": "Claude Code",
+        "vendor": "Anthropic",
+        "plugin_format": ".claude/commands/",
+        "config_files": ["CLAUDE.md", ".claude/settings.json", ".claude/commands/*.md"],
+        "supports_mcp": true,
+        "description": "Anthropic's CLI agent with slash commands, MCP integration, and project-level instructions"
+      },
+      {
+        "id": "cursor",
+        "name": "Cursor",
+        "vendor": "Anysphere",
+        "plugin_format": ".cursorrules",
+        "config_files": [".cursorrules", ".cursor/rules/*.mdc"],
+        "supports_mcp": true,
+        "description": "AI-native code editor with rules-based customization and multi-file editing"
+      },
+      {
+        "id": "github-copilot",
+        "name": "GitHub Copilot",
+        "vendor": "GitHub/Microsoft",
+        "plugin_format": ".github/copilot-instructions.md",
+        "config_files": [".github/copilot-instructions.md", ".github/copilot-chat.yml"],
+        "supports_mcp": false,
+        "description": "GitHub's AI pair programmer with instruction-based customization"
+      },
+      {
+        "id": "gemini-cli",
+        "name": "Gemini CLI",
+        "vendor": "Google",
+        "plugin_format": "GEMINI.md",
+        "config_files": ["GEMINI.md"],
+        "supports_mcp": true,
+        "description": "Google's CLI agent with Markdown-based project instructions"
+      },
+      {
+        "id": "codex",
+        "name": "OpenAI Codex CLI",
+        "vendor": "OpenAI",
+        "plugin_format": "AGENTS.md",
+        "config_files": ["AGENTS.md"],
+        "supports_mcp": false,
+        "description": "OpenAI's sandboxed coding agent with Markdown-based agent instructions"
+      },
+      {
+        "id": "windsurf",
+        "name": "Windsurf",
+        "vendor": "Codeium",
+        "plugin_format": ".windsurfrules",
+        "config_files": [".windsurfrules"],
+        "supports_mcp": true,
+        "description": "Codeium's AI IDE with cascade-style editing and rules-based customization"
+      },
+      {
+        "id": "aider",
+        "name": "Aider",
+        "vendor": "Paul Gauthier",
+        "plugin_format": ".aider.conf.yml",
+        "config_files": [".aider.conf.yml", ".aiderignore"],
+        "supports_mcp": false,
+        "description": "Terminal-based pair programming tool with Git-aware editing and conventions files"
+      },
+      {
+        "id": "continue",
+        "name": "Continue",
+        "vendor": "Continue.dev",
+        "plugin_format": ".continue/config.json",
+        "config_files": [".continue/config.json", ".continue/rules/*.md", ".continuerc.json"],
+        "supports_mcp": true,
+        "description": "Open-source AI coding assistant with extensible configuration and context providers"
+      }
+    ],
+    "portability_levels": [
+      {
+        "level": "native",
+        "label": "Native",
+        "description": "Plugin was built specifically for this tool"
+      },
+      {
+        "level": "adapted",
+        "label": "Adapted",
+        "description": "Plugin has been converted/ported to work with this tool"
+      },
+      {
+        "level": "compatible",
+        "label": "Compatible",
+        "description": "Plugin's instructions are generic enough to work with minimal modification"
+      },
+      {
+        "level": "incompatible",
+        "label": "Incompatible",
+        "description": "Plugin relies on tool-specific features that cannot be ported"
+      }
+    ]
+  }
+}

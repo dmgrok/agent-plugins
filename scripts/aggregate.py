@@ -360,6 +360,20 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/sematext/sematext-otel-onboarding/main",
         "skills_path_prefix": "skills/",
     },
+    "accint": {
+        "name": "AccInt",
+        "repo": "https://github.com/maxbaluev/accreted-intelligence",
+        "api_tree_url": "https://api.github.com/repos/maxbaluev/accreted-intelligence/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/maxbaluev/accreted-intelligence/main",
+        "skills_path_prefix": "plugins/claude/skills/",
+    },
+    "bilig": {
+        "name": "Bilig WorkPaper",
+        "repo": "https://github.com/proompteng/bilig",
+        "api_tree_url": "https://api.github.com/repos/proompteng/bilig/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/proompteng/bilig/main",
+        "skills_path_prefix": "packages/headless/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
@@ -692,7 +706,7 @@ def fetch_url(url: str, retries: int = 3) -> Optional[str]:
         try:
             req = urllib.request.Request(url, headers=DEFAULT_HEADERS)
             with urllib.request.urlopen(req, timeout=30) as response:
-                return response.read().decode("utf-8")
+                return response.read().decode("utf-8", errors="replace")
         except urllib.error.HTTPError as e:
             # Handle GitHub API rate limiting specifically
             if e.code == 403 and 'rate limit' in str(e.reason).lower():

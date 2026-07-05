@@ -681,9 +681,12 @@
 
         const modal = document.getElementById('plugin-modal');
         const title = document.getElementById('modal-title');
+        const subtitle = document.getElementById('modal-subtitle');
         const body = document.getElementById('modal-body');
 
         title.textContent = plugin.name;
+        const sourceBadge = getSourceBadge(plugin);
+        subtitle.innerHTML = `<span class="source-badge ${sourceBadge.class}">${sourceBadge.label}</span>${plugin.github_stars ? `<span class="modal-stars">${formatStars(plugin.github_stars)} stars</span>` : ''}`;
         body.innerHTML = renderModalContent(plugin);
 
         modal.hidden = false;
@@ -718,23 +721,22 @@
 
     function renderModalContent(plugin) {
         const compat = plugin.compatibility || {};
-        const sourceBadge = getSourceBadge(plugin);
         const pairs = getPairsWellWith(plugin);
 
         return `
-            <div class="plugin-card-meta" style="margin-bottom: 1rem;">
-                <span class="source-badge ${sourceBadge.class}">${sourceBadge.label}</span>
-                ${plugin.github_stars ? `
-                    <span class="plugin-card-stars" style="margin-left: auto;">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        ${formatStars(plugin.github_stars)} stars
-                    </span>
-                ` : ''}
-            </div>
             <div class="modal-description">${escapeHtml(plugin.description || 'No description available.')}</div>
 
             <div class="modal-section">
-                <div class="modal-section-title">Compatibility</div>
+                <div class="modal-section-title">Install</div>
+                <div class="modal-install">
+                    <code>claude plugin add ${plugin.id}</code>
+                    <button class="btn-copy" data-copy="claude plugin add ${plugin.id}">Copy</button>
+                </div>
+                ${plugin.source && plugin.source.repo ? `<a class="modal-source-link" href="${escapeHtml(plugin.source.repo)}" target="_blank" rel="noopener">View source →</a>` : ''}
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-title">Works with</div>
                 <div class="modal-compat-grid">
                     ${PLATFORMS.map(pl => `
                         <div class="modal-compat-item ${compat[pl.id] ? 'active' : 'inactive'}">
@@ -746,7 +748,6 @@
             </div>
 
             <div class="modal-section">
-                <div class="modal-section-title">Category & Tags</div>
                 <div class="modal-tags">
                     <span class="tag">${escapeHtml(plugin.category || 'uncategorized')}</span>
                     ${(plugin.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
@@ -758,7 +759,7 @@
                 if (activities.length === 0) return '';
                 return `
                     <div class="modal-section">
-                        <div class="modal-section-title">Helps With</div>
+                        <div class="modal-section-title">Helps with</div>
                         <div class="modal-activities-grid">
                             ${activities.map(a => {
                                 const persona = PERSONAS.find(p => p.id === a.persona);
@@ -774,34 +775,12 @@
 
             ${pairs.length > 0 ? `
                 <div class="modal-section">
-                    <div class="modal-section-title">Pairs Well With</div>
+                    <div class="modal-section-title">Pairs well with</div>
                     <div class="modal-pairs-grid">
                         ${pairs.map(p => `<div class="modal-pair-item" data-plugin-id="${p.id}">${escapeHtml(p.name)}</div>`).join('')}
                     </div>
                 </div>
             ` : ''}
-
-            <div class="modal-section">
-                <div class="modal-section-title">Install</div>
-                <div class="modal-install">
-                    <code>claude plugin add ${plugin.id}</code>
-                    <button class="btn-copy" data-copy="claude plugin add ${plugin.id}">Copy</button>
-                </div>
-            </div>
-
-            ${plugin.source && plugin.source.repo ? `
-                <div class="modal-section">
-                    <div class="modal-section-title">Source</div>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary);">
-                        <a href="${escapeHtml(plugin.source.repo)}" target="_blank" rel="noopener" style="color: var(--primary-light); text-decoration: none;">${escapeHtml(plugin.source.repo)}</a>
-                    </p>
-                </div>
-            ` : ''}
-
-            <div class="modal-section">
-                <div class="modal-section-title">Reviews</div>
-                ${renderReviewCards(plugin.id)}
-            </div>
         `;
     }
 

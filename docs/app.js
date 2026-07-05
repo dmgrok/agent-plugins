@@ -388,9 +388,6 @@
     function renderPersonaView() {
         const persona = state.currentPersona;
         const recommended = getPersonaPlugins(persona);
-        const allCategories = ['development', 'ml-ai', 'creative', 'integrations', 'documents', 'enterprise', 'data'];
-        const coveredCategories = [...new Set(recommended.map(p => p.category))];
-        const gaps = allCategories.filter(c => !coveredCategories.includes(c));
         const activities = (state.useCases || []).filter(u => u.persona === persona.id);
 
         return `
@@ -421,7 +418,7 @@
                     `).join('')}
                 </div>
             ` : ''}
-            ${renderCoverageSection(recommended, allCategories, coveredCategories, gaps)}
+            ${renderCoverageSection(activities)}
             ${renderStackBuilder(recommended)}
             <div class="section-header">
                 <h2 class="section-title">Recommended Plugins</h2>
@@ -434,25 +431,34 @@
         `;
     }
 
-    function renderCoverageSection(plugins, allCategories, covered, gaps) {
+    function renderCoverageSection(activities) {
+        if (activities.length === 0) return '';
+
+        const activityStatuses = activities.map(activity => {
+            const plugins = getUseCasePlugins(activity);
+            let status = 'gap';
+            if (state.selectedStack.size > 0) {
+                const selected = plugins.filter(p => state.selectedStack.has(p.id));
+                if (selected.length >= 2) status = 'covered';
+                else if (selected.length >= 1) status = 'partial';
+            } else {
+                if (plugins.length >= 2) status = 'covered';
+                else if (plugins.length >= 1) status = 'partial';
+            }
+            return { activity, status };
+        });
+
+        const coveredCount = activityStatuses.filter(a => a.status === 'covered' || a.status === 'partial').length;
+        const gaps = activityStatuses.filter(a => a.status === 'gap');
+
         return `
             <div class="coverage-section">
-                <div class="coverage-title">Taxonomy Coverage</div>
+                <div class="coverage-title">Capability Map</div>
+                <div class="coverage-summary">${coveredCount} of ${activities.length} activities have plugin support</div>
                 <div class="coverage-bar-container">
-                    ${allCategories.map(cat => {
-                        const pluginsInCat = plugins.filter(p => p.category === cat);
-                        let status = 'gap';
-                        if (pluginsInCat.length >= 2) status = 'covered';
-                        else if (pluginsInCat.length === 1) status = 'partial';
-                        // Check if selected stack changes things
-                        if (state.selectedStack.size > 0) {
-                            const selectedInCat = plugins.filter(p => state.selectedStack.has(p.id) && p.category === cat);
-                            if (selectedInCat.length >= 2) status = 'covered';
-                            else if (selectedInCat.length === 1) status = 'partial';
-                            else status = 'gap';
-                        }
-                        return `<div class="coverage-segment ${status}" title="${capitalize(cat)}: ${status}" aria-label="${capitalize(cat)}: ${status}" role="img"><span class="coverage-segment-label" aria-hidden="true">${capitalize(cat)}</span></div>`;
-                    }).join('')}
+                    ${activityStatuses.map(({ activity, status }) =>
+                        `<div class="coverage-segment ${status}" title="${escapeHtml(activity.title)}: ${status}" aria-label="${escapeHtml(activity.title)}: ${status}" role="img"><span class="coverage-segment-label" aria-hidden="true">${escapeHtml(activity.title)}</span></div>`
+                    ).join('')}
                 </div>
                 <div class="coverage-legend">
                     <span class="coverage-legend-item"><span class="coverage-legend-dot green"></span>Covered (2+ plugins)</span>
@@ -461,15 +467,12 @@
                 </div>
                 ${gaps.length > 0 ? `
                     <div class="gap-callouts">
-                        ${gaps.map(gap => {
-                            const suggestion = getSuggestionForGap(gap);
-                            return `
-                                <div class="gap-callout">
-                                    <svg class="gap-callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                                    <span>You're missing: <strong>${capitalize(gap)}</strong>. Consider: ${suggestion}</span>
-                                </div>
-                            `;
-                        }).join('')}
+                        ${gaps.map(({ activity }) => `
+                            <div class="gap-callout">
+                                <svg class="gap-callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <span>No plugins found for: <strong>${escapeHtml(activity.title)}</strong></span>
+                            </div>
+                        `).join('')}
                     </div>
                 ` : ''}
             </div>
@@ -658,6 +661,18 @@
         }).sort((a, b) => (b.github_stars || 0) - (a.github_stars || 0)).slice(0, 12);
     }
 
+    function getPluginActivities(plugin) {
+        const searchable = [plugin.name, plugin.description, plugin.category, ...(plugin.tags || [])].join(' ').toLowerCase();
+        return (state.useCases || []).filter(uc => {
+            const terms = [
+                ...(uc.taxonomy_categories || []),
+                ...(uc.search_queries || []).join(' ').split(/\s+/),
+                ...(uc.plugins_needed || [])
+            ].map(t => t.toLowerCase().replace(/-/g, ' '));
+            return terms.some(term => searchable.includes(term));
+        });
+    }
+
     // ========== MODAL ==========
     let _modalTrigger = null;
 
@@ -731,12 +746,31 @@
             </div>
 
             <div class="modal-section">
-                <div class="modal-section-title">Category Coverage</div>
+                <div class="modal-section-title">Category & Tags</div>
                 <div class="modal-tags">
                     <span class="tag">${escapeHtml(plugin.category || 'uncategorized')}</span>
                     ${(plugin.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
                 </div>
             </div>
+
+            ${(() => {
+                const activities = getPluginActivities(plugin);
+                if (activities.length === 0) return '';
+                return `
+                    <div class="modal-section">
+                        <div class="modal-section-title">Helps With</div>
+                        <div class="modal-activities-grid">
+                            ${activities.map(a => {
+                                const persona = PERSONAS.find(p => p.id === a.persona);
+                                return `<div class="modal-activity-item" data-usecase="${a.id}">
+                                    <span class="modal-activity-title">${escapeHtml(a.title)}</span>
+                                    <span class="modal-activity-persona">${persona ? escapeHtml(persona.name) : a.persona.replace(/-/g, ' ')}</span>
+                                </div>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            })()}
 
             ${pairs.length > 0 ? `
                 <div class="modal-section">
@@ -1155,6 +1189,15 @@
                     closeModal();
                     setTimeout(() => openModal(plugin), 250);
                 }
+                return;
+            }
+
+            // Activity item (Helps With)
+            const activityItem = e.target.closest('.modal-activity-item');
+            if (activityItem) {
+                const ucId = activityItem.dataset.usecase;
+                closeModal();
+                setTimeout(() => { window.location.hash = 'usecase/' + ucId; }, 250);
             }
         });
     }
@@ -1284,19 +1327,6 @@
             }
         }
         return unique.slice(0, 4);
-    }
-
-    function getSuggestionForGap(category) {
-        const suggestions = {
-            'ml-ai': 'huggingface/hf-cli or skillcreatorai/llm-application-dev',
-            'creative': 'anthropics/canvas-design or anthropics/algorithmic-art',
-            'integrations': 'anthropics/mcp-builder or github/gh-cli',
-            'documents': 'anthropics/pdf or anthropics/docx',
-            'enterprise': 'openai/notion-knowledge-capture',
-            'development': 'skillcreatorai/backend-development',
-            'data': 'huggingface/hugging-face-datasets'
-        };
-        return suggestions[category] || 'browse the directory for options';
     }
 
     function formatStars(stars) {

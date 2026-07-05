@@ -853,6 +853,12 @@ body {
 .coverage-legend-dot.yellow { background: var(--warning); }
 .coverage-legend-dot.red { background: var(--danger); opacity: 0.5; }
 
+.coverage-summary {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
 /* Gap callouts */
 .gap-callouts {
     margin-top: 1.25rem;
@@ -1093,6 +1099,41 @@ body {
 
 .modal-pair-item:hover {
     background: var(--bg-card-hover);
+}
+
+.modal-activities-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.modal-activity-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 0.75rem;
+    background: var(--bg-subtle);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.modal-activity-item:hover {
+    background: var(--bg-card-hover);
+}
+
+.modal-activity-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.modal-activity-persona {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: capitalize;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
 }
 
 .modal-install {

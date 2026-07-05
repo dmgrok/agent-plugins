@@ -719,19 +719,28 @@
         }
     }
 
+    function getInstallCommand(plugin) {
+        const name = plugin.id.split('/').pop();
+        const url = plugin.source && plugin.source.skill_md_url ? plugin.source.skill_md_url : null;
+        if (!url) return null;
+        return `mkdir -p ~/.claude/skills/${name} && curl -fsSL "${url}" -o ~/.claude/skills/${name}/SKILL.md`;
+    }
+
     function renderModalContent(plugin) {
         const compat = plugin.compatibility || {};
         const pairs = getPairsWellWith(plugin);
+        const installCmd = getInstallCommand(plugin);
 
         return `
             <div class="modal-description">${escapeHtml(plugin.description || 'No description available.')}</div>
 
             <div class="modal-section">
-                <div class="modal-section-title">Install</div>
+                <div class="modal-section-title">Install for Claude Code</div>
+                ${installCmd ? `
                 <div class="modal-install">
-                    <code>claude plugin add ${plugin.id}</code>
-                    <button class="btn-copy" data-copy="claude plugin add ${plugin.id}">Copy</button>
-                </div>
+                    <code class="modal-install-code">${escapeHtml(installCmd)}</code>
+                    <button class="btn-copy" data-copy="${escapeHtml(installCmd)}">Copy</button>
+                </div>` : `<p class="modal-install-unavailable">No install URL available for this plugin.</p>`}
                 ${plugin.source && plugin.source.repo ? `<a class="modal-source-link" href="${escapeHtml(plugin.source.repo)}" target="_blank" rel="noopener">View source →</a>` : ''}
             </div>
 
@@ -930,6 +939,7 @@
             updateStackDrawer();
             updateAddButtons();
         }
+        updateStackScript();
     }
 
     function persistStack() {
@@ -960,6 +970,7 @@
         const drawer = document.getElementById('stack-drawer');
         if (!drawer) return;
         updateStackDrawer();
+        updateStackScript();
         drawer.hidden = false;
         requestAnimationFrame(() => drawer.classList.add('open'));
     }
@@ -992,16 +1003,39 @@
         `).join('');
     }
 
+    function buildStackScript(plugins) {
+        const cmds = plugins.map(p => getInstallCommand(p)).filter(Boolean);
+        return cmds.join(' && \\\n');
+    }
+
     function exportStack() {
         const plugins = state.plugins.filter(p => state.selectedStack.has(p.id));
         if (plugins.length === 0) return;
-        const script = plugins.map(p => `claude plugin add ${p.id}`).join(' && \\\n');
+        const script = buildStackScript(plugins);
+        if (!script) return;
         navigator.clipboard.writeText(script).then(() => {
             const btn = document.getElementById('btn-export-stack');
             if (!btn) return;
             btn.textContent = 'Copied!';
             setTimeout(() => { btn.textContent = 'Copy Install Script'; }, 2000);
         });
+    }
+
+    function updateStackScript() {
+        const footer = document.getElementById('stack-drawer-footer');
+        if (!footer) return;
+        const plugins = state.plugins.filter(p => state.selectedStack.has(p.id));
+        if (plugins.length === 0) {
+            footer.innerHTML = '';
+            return;
+        }
+        const script = buildStackScript(plugins);
+        footer.innerHTML = `
+            <div class="stack-script-box">
+                <div class="stack-script-label">Install script</div>
+                <pre class="stack-script-code">${escapeHtml(script)}</pre>
+            </div>
+        `;
     }
 
     // ========== SEARCH ==========

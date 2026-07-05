@@ -1145,12 +1145,25 @@ body {
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 0.625rem 0.875rem;
-    font-family: 'SFMono-Regular', Consolas, monospace;
-    font-size: 0.82rem;
-    color: var(--text);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 0.625rem;
     justify-content: space-between;
+}
+
+.modal-install-code {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--text);
+    line-height: 1.5;
+    word-break: break-all;
+    flex: 1;
+}
+
+.modal-install-unavailable {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
 }
 
 .modal-source-link {
@@ -1165,9 +1178,36 @@ body {
     color: var(--primary-light);
 }
 
-.modal-install code {
-    font-family: inherit;
+.stack-script-box {
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.25rem;
 }
+
+.stack-script-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.stack-script-code {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.625rem 0.75rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.6;
+    margin: 0;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
 
 .btn-copy {
     background: var(--primary);

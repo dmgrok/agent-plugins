@@ -719,11 +719,11 @@
         }
     }
 
+    const MARKETPLACE_URL = 'https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json';
+    const MARKETPLACE_ADD_CMD = `claude plugin marketplace add ${MARKETPLACE_URL}`;
+
     function getInstallCommand(plugin) {
-        const name = plugin.id.split('/').pop();
-        const url = plugin.source && plugin.source.skill_md_url ? plugin.source.skill_md_url : null;
-        if (!url) return null;
-        return `mkdir -p ~/.claude/skills/${name} && curl -fsSL "${url}" -o ~/.claude/skills/${name}/SKILL.md`;
+        return `claude plugin install ${plugin.id.split('/').pop()}`;
     }
 
     function renderModalContent(plugin) {
@@ -735,12 +735,12 @@
             <div class="modal-description">${escapeHtml(plugin.description || 'No description available.')}</div>
 
             <div class="modal-section">
-                <div class="modal-section-title">Install for Claude Code</div>
-                ${installCmd ? `
+                <div class="modal-section-title">Install</div>
                 <div class="modal-install">
                     <code class="modal-install-code">${escapeHtml(installCmd)}</code>
                     <button class="btn-copy" data-copy="${escapeHtml(installCmd)}">Copy</button>
-                </div>` : `<p class="modal-install-unavailable">No install URL available for this plugin.</p>`}
+                </div>
+                <div class="modal-marketplace-hint">Requires marketplace: <code>${escapeHtml(MARKETPLACE_ADD_CMD)}</code></div>
                 ${plugin.source && plugin.source.repo ? `<a class="modal-source-link" href="${escapeHtml(plugin.source.repo)}" target="_blank" rel="noopener">View source →</a>` : ''}
             </div>
 
@@ -1004,15 +1004,14 @@
     }
 
     function buildStackScript(plugins) {
-        const cmds = plugins.map(p => getInstallCommand(p)).filter(Boolean);
-        return cmds.join(' && \\\n');
+        const lines = [MARKETPLACE_ADD_CMD, ...plugins.map(p => getInstallCommand(p))];
+        return lines.join('\n');
     }
 
     function exportStack() {
         const plugins = state.plugins.filter(p => state.selectedStack.has(p.id));
         if (plugins.length === 0) return;
         const script = buildStackScript(plugins);
-        if (!script) return;
         navigator.clipboard.writeText(script).then(() => {
             const btn = document.getElementById('btn-export-stack');
             if (!btn) return;

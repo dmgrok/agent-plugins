@@ -664,9 +664,9 @@ body {
 
 /* ========== ACTIVITIES LIST ========== */
 .activities-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
     margin-bottom: 2rem;
 }
 
@@ -674,16 +674,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 0.875rem 1rem;
+    gap: 0.75rem;
+    padding: 0.75rem 0.875rem;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     cursor: pointer;
     text-align: left;
-    width: 100%;
     font-family: var(--font);
     transition: border-color var(--transition), background var(--transition);
+    min-width: 0;
 }
 
 .activity-row:hover {
@@ -1857,6 +1857,10 @@ body {
 }
 
 @media (max-width: 480px) {
+    .activities-list {
+        grid-template-columns: 1fr;
+    }
+
     .app-container {
         padding: 0 1rem;
     }

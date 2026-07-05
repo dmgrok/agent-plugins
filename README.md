@@ -1,11 +1,11 @@
-# Agent Skills Directory
+# Agent Plugins
 
-**Intelligent skill discovery for AI agents.** Find, install, and manage quality-validated skills from 40+ official providers — all from one place.
+**Discover the best AI agent plugins.** Find, compare, and build your plugin stack — 1,100+ curated plugins from 46 official providers, organized around real workflows.
 
 ```bash
-skillsdir suggest           # Smart recommendations for your project
-skillsdir search "testing"  # Search 130+ curated skills
-skillsdir install anthropic/pdf  # Install with one command
+skills suggest           # Smart recommendations for your project
+skills search "testing"  # Search 1100+ curated plugins
+skills install anthropic/pdf  # Install with one command
 ```
 
 [![Skills](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json)](https://dmgrok.github.io/agent-plugins/)
@@ -16,20 +16,20 @@ skillsdir install anthropic/pdf  # Install with one command
 
 ## Why This Exists
 
-There are thousands of AI agent skills scattered across GitHub. Which ones work? Which are maintained? Which fit your project?
+The AI plugin ecosystem is exploding — MCP servers, Claude Code skills, Cursor extensions, Copilot plugins — but discovery is broken. You're left scrolling GitHub awesome-lists hoping something fits.
 
-We aggregate, validate, and score skills from **40+ official providers** so you can make informed decisions — no guesswork.
+We aggregate, validate, and score plugins from **46 official providers** so you can find what actually works for your workflow — no guesswork.
 
 | Feature | Description |
 |---------|-------------|
-| 🎯 **Smart Recommendations** | Analyzes your project and suggests relevant skills |
-| 📊 **Quality Scoring** | 0–100 points based on docs, maintenance, and trust |
+| 🎯 **Persona-Based Discovery** | Browse by role — Web Dev, DevOps, Data Scientist, and more |
+| 🗺️ **Capability Map** | See which of your real activities have plugin coverage |
+| 📦 **Stack Builder** | Assemble and export a plugin stack, watch coverage fill in live |
+| 📊 **Quality Scoring** | 0–100 points based on docs, maintenance, and provider trust |
 | 🟢 **Maintenance Tracking** | Active · Maintained · Stale · Abandoned |
-| 🛡️ **Security Validated** | Scanned for secrets and prompt injection |
 | 🏢 **Official Sources** | Anthropic, OpenAI, GitHub, Vercel, Stripe, Cloudflare + more |
-| 💯 **100% Local** | No LLM or external API required |
 
-**[Browse all skills →](https://dmgrok.github.io/agent-plugins/)**
+**[Browse all plugins →](https://dmgrok.github.io/agent-plugins/)**
 
 ---
 
@@ -37,13 +37,13 @@ We aggregate, validate, and score skills from **40+ official providers** so you 
 
 ```bash
 # macOS
-brew install dmgrok/tap/skillsdir
+brew install dmgrok/tap/agent-plugins
 
 # Linux / macOS
 curl -fsSL https://raw.githubusercontent.com/dmgrok/agent-plugins/main/install.sh | bash
 
 # Python
-pip install skillsdir
+pip install agent-skills
 ```
 
 ---
@@ -53,9 +53,9 @@ pip install skillsdir
 ### Get recommendations for your project
 
 ```bash
-skillsdir suggest                      # Analyze current directory
-skillsdir suggest /path/to/project     # Analyze specific project
-skillsdir suggest --verbose            # Show scoring details
+skills suggest                      # Analyze current directory
+skills suggest /path/to/project     # Analyze specific project
+skills suggest --verbose            # Show scoring details
 ```
 
 The `suggest` command reads your README, detects languages and frameworks, and ranks skills using a multi-factor scoring algorithm — entirely offline, no LLM needed.
@@ -63,33 +63,33 @@ The `suggest` command reads your README, detects languages and frameworks, and r
 ### Search and explore
 
 ```bash
-skillsdir search "pdf extraction"      # Keyword search
-skillsdir info anthropic/pdf           # Detailed skill info
+skills search "pdf extraction"      # Keyword search
+skills info anthropic/pdf           # Detailed skill info
 ```
 
 ### Install and manage
 
 ```bash
-skillsdir install anthropic/pdf                     # Install globally
-skillsdir install anthropic/pdf --project            # Install to project (auto-detects agent)
-skillsdir install anthropic/pdf -p --agent claude    # → .claude/skills/
-skillsdir install anthropic/pdf -p --agent copilot   # → .github/skills/
-skillsdir install anthropic/pdf -p --agent codex     # → .codex/skills/
-skillsdir install anthropic/pdf -p --agent cursor    # → .cursor/skills/
+skills install anthropic/pdf                     # Install globally
+skills install anthropic/pdf --project            # Install to project (auto-detects agent)
+skills install anthropic/pdf -p --agent claude    # → .claude/skills/
+skills install anthropic/pdf -p --agent copilot   # → .github/skills/
+skills install anthropic/pdf -p --agent codex     # → .codex/skills/
+skills install anthropic/pdf -p --agent cursor    # → .cursor/skills/
 
-skillsdir list                         # List installed skills
-skillsdir update                       # Update all skills
-skillsdir uninstall anthropic/pdf      # Remove a skill
+skills list                         # List installed skills
+skills update                       # Update all skills
+skills uninstall anthropic/pdf      # Remove a skill
 ```
 
 ### Create and publish
 
 ```bash
-skillsdir init               # Create a new skill.json
-skillsdir validate           # Validate your skill
-skillsdir login              # Authenticate with GitHub
-skillsdir publish            # Push to GitHub
-skillsdir publish --submit   # Request inclusion in directory
+skills init               # Create a new skill.json
+skills validate           # Validate your skill
+skills login              # Authenticate with GitHub
+skills publish            # Push to GitHub
+skills publish --submit   # Request inclusion in directory
 ```
 
 ---
@@ -177,10 +177,10 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 
 ---
 
-## Skills Listing
+## Plugins Listing
 
 <!-- AUTO-GENERATED SKILLS TABLE START -->
-## 📋 All Skills — 687 skills across 43 providers · v2026.03.06
+## 📋 All Plugins — 1,126 plugins across 46 providers · v2026.07.05
 
 > Auto-generated daily · [Browse interactively →](https://dmgrok.github.io/agent-plugins/)  
 > Legend: 🔒 Secrets scan · 🛡️ Injection check · 📝 Content · 🔄 No duplicate · ✅ Full skill · S=Scripts · R=References · A=Assets
@@ -959,7 +959,7 @@ Instructions for the AI agent on how to use this skill...
 For teams needing governance and control, point the CLI at your own catalog:
 
 ```bash
-skillsdir config set registry https://your-cdn/catalog.json
+skills config set registry https://your-cdn/catalog.json
 ```
 
 Fork this repo, update `PROVIDERS` in `scripts/aggregate.py`, and run `python scripts/aggregate.py` to generate your own `catalog.json`.
@@ -984,7 +984,7 @@ jobs:
 ## Badges
 
 ```markdown
-[![Listed on Agent Skills Directory](https://img.shields.io/badge/Listed_on-Agent_Skills_Directory-6366f1?style=flat)](https://dmgrok.github.io/agent-plugins/)
+[![Listed on Agent Plugins](https://img.shields.io/badge/Listed_on-Agent_Plugins-6366f1?style=flat)](https://dmgrok.github.io/agent-plugins/)
 ```
 
 Dynamic (auto-updated):
@@ -997,7 +997,7 @@ Dynamic (auto-updated):
 
 ## Related Projects
 
-- 🌐 [Browse Skills](https://dmgrok.github.io/agent-plugins/) — Interactive web catalog
+- 🌐 [Browse Plugins](https://dmgrok.github.io/agent-plugins/) — Interactive web catalog
 - 🔌 [MCP Mother Skills](https://github.com/dmgrok/mcp_mother_skills) — MCP server integration
 - 🛡️ [LGTM Agent Skills](https://github.com/dmgrok/LGTM_agent_skills) — Quality validation tool
 - 📖 [Agent Skills Spec](https://agentskills.io/specification) — Standard specification

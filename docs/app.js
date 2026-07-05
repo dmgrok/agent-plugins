@@ -299,7 +299,7 @@
             <section class="hero" aria-label="Welcome">
                 <div class="hero-content">
                     <h1>What are you trying to build?</h1>
-                    <p>Don't browse categories — describe your goal. We'll recommend the plugin stack that gets you there, show what's covered, and flag what's missing.</p>
+                    <p>The TripAdvisor for AI agent plugins. Describe your goal — we'll find the stack that gets you there, show what's covered, and flag what's missing.</p>
                     <div class="hero-search">
                         <div class="search-container">
                             <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>

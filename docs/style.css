@@ -2069,3 +2069,265 @@ body {
     font-weight: 600;
     color: var(--text-muted);
 }
+
+/* ========== VISUAL REDESIGN: PREMIUM LIFT ========== */
+
+/* Better CSS variables */
+:root {
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+    --shadow-card-hover: 0 8px 24px rgba(107,33,168,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #6B21A8 100%);
+}
+
+/* ── Hero: taller, more breathing room ── */
+.hero {
+    padding: 5rem 2.5rem 4rem;
+    margin: 1.5rem 0 0;
+    border-radius: var(--radius-xl);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+}
+
+.hero-stats {
+    gap: 3rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero-stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* ── Section headers: stronger hierarchy ── */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+/* ── Use-case pills: horizontal scroll strip, card-style ── */
+.use-case-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 0 2rem;
+    margin: 0;
+}
+
+.use-case-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 14px 18px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 200ms ease;
+    text-align: left;
+    flex: 1 1 calc(25% - 10px);
+    min-width: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.use-case-pill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+
+.use-case-pill:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-3px);
+}
+
+.use-case-pill:hover::before {
+    opacity: 1;
+}
+
+.use-case-pill-title {
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.use-case-pill-persona {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+[data-theme="dark"] .use-case-pill {
+    background: var(--bg-card);
+    border-color: var(--border);
+}
+[data-theme="dark"] .use-case-pill:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 8px 24px rgba(139,92,246,0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .use-case-pill {
+        background: var(--bg-card);
+        border-color: var(--border);
+    }
+    :root:not([data-theme="light"]) .use-case-pill:hover {
+        border-color: var(--primary-light);
+    }
+}
+
+/* ── Plugin cards: elevated, personality ── */
+.plugin-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.375rem;
+    box-shadow: var(--shadow-card);
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.plugin-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(107, 33, 168, 0.3);
+}
+
+.plugin-card-name {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.plugin-card-description {
+    font-size: 0.825rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    -webkit-line-clamp: 3;
+    margin-bottom: 0.875rem;
+}
+
+.plugin-card-footer {
+    margin-top: auto;
+    padding-top: 0.875rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-view-details {
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    letter-spacing: 0.01em;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    background: rgba(107, 33, 168, 0.07);
+    transition: background 200ms ease, color 200ms ease;
+}
+
+.btn-view-details:hover {
+    background: rgba(107, 33, 168, 0.14);
+    color: var(--primary);
+}
+
+/* Tags with more visual weight */
+.tag {
+    padding: 3px 9px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+}
+
+/* Compat icons: slightly larger, cleaner */
+.compat-icon {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* ── Persona cards: richer ── */
+.persona-card {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.persona-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(107,33,168,0.25);
+}
+
+.persona-icon {
+    background: linear-gradient(135deg, rgba(107,33,168,0.08) 0%, rgba(249,115,22,0.06) 100%);
+    border: 1px solid rgba(107,33,168,0.1);
+}
+
+/* ── Trending cards ── */
+.trending-card {
+    box-shadow: var(--shadow-card);
+}
+
+.trending-card:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Navbar branding: wider name ── */
+.nav-title {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* ── Plugins grid: wider minimum ── */
+.plugins-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1.5rem 2.5rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .use-case-pill {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    .use-case-pill {
+        flex: 1 1 100%;
+    }
+}

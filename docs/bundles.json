@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/schema/bundles-schema.json",
+  "$schema": "https://raw.githubusercontent.com/dmgrok/agent-plugins/main/schema/bundles-schema.json",
   "version": "1.0.0",
   "generated_at": "2026-01-23T00:00:00Z",
   "total_bundles": 18,

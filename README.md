@@ -8,9 +8,9 @@ skillsdir search "testing"  # Search 130+ curated skills
 skillsdir install anthropic/pdf  # Install with one command
 ```
 
-[![Skills](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-skills.json)](https://dmgrok.github.io/agent_skills_directory/)
-[![Providers](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-providers.json)](https://dmgrok.github.io/agent_skills_directory/)
-[![Quality Tracked](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-quality.json)](https://dmgrok.github.io/agent_skills_directory/)
+[![Skills](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json)](https://dmgrok.github.io/agent-plugins/)
+[![Providers](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-providers.json)](https://dmgrok.github.io/agent-plugins/)
+[![Quality Tracked](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-quality.json)](https://dmgrok.github.io/agent-plugins/)
 
 ---
 
@@ -29,7 +29,7 @@ We aggregate, validate, and score skills from **40+ official providers** so you 
 | 🏢 **Official Sources** | Anthropic, OpenAI, GitHub, Vercel, Stripe, Cloudflare + more |
 | 💯 **100% Local** | No LLM or external API required |
 
-**[Browse all skills →](https://dmgrok.github.io/agent_skills_directory/)**
+**[Browse all skills →](https://dmgrok.github.io/agent-plugins/)**
 
 ---
 
@@ -40,7 +40,7 @@ We aggregate, validate, and score skills from **40+ official providers** so you 
 brew install dmgrok/tap/skillsdir
 
 # Linux / macOS
-curl -fsSL https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dmgrok/agent-plugins/main/install.sh | bash
 
 # Python
 pip install skillsdir
@@ -98,7 +98,7 @@ skillsdir publish --submit   # Request inclusion in directory
 
 Skills are aggregated from 40+ repositories across the AI agent ecosystem.
 
-**[View all providers →](https://dmgrok.github.io/agent_skills_directory/)**
+**[View all providers →](https://dmgrok.github.io/agent-plugins/)**
 
 ### Featured
 
@@ -153,23 +153,23 @@ Every skill gets a quality score (0–100) based on three factors:
 The catalog is updated daily at 06:00 UTC and available via CDN:
 
 ```
-https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json
+https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json
 ```
 
 Pre-filtered exports for specific ecosystems:
 
 | Export | Filter | URL |
 |--------|--------|-----|
-| Claude Skills | Quality ≥ 50 | [`exports/claude-skills.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/claude-skills.json) |
-| Copilot Skills | Quality ≥ 50 | [`exports/copilot-skills.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/copilot-skills.json) |
-| Premium Skills | Quality ≥ 70 | [`exports/premium-skills.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/premium-skills.json) |
-| Active Skills | Updated &lt; 6mo | [`exports/active-skills.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/active-skills.json) |
-| MCP-Compatible | Tagged `mcp` | [`exports/mcp-compatible.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/mcp-compatible.json) |
+| Claude Skills | Quality ≥ 50 | [`exports/claude-skills.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/claude-skills.json) |
+| Copilot Skills | Quality ≥ 50 | [`exports/copilot-skills.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/copilot-skills.json) |
+| Premium Skills | Quality ≥ 70 | [`exports/premium-skills.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/premium-skills.json) |
+| Active Skills | Updated &lt; 6mo | [`exports/active-skills.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/active-skills.json) |
+| MCP-Compatible | Tagged `mcp` | [`exports/mcp-compatible.json`](https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/mcp-compatible.json) |
 
 ```python
 import requests
 catalog = requests.get(
-    "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json"
+    "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json"
 ).json()
 
 quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
@@ -182,7 +182,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 <!-- AUTO-GENERATED SKILLS TABLE START -->
 ## 📋 All Skills — 687 skills across 43 providers · v2026.03.06
 
-> Auto-generated daily · [Browse interactively →](https://dmgrok.github.io/agent_skills_directory/)  
+> Auto-generated daily · [Browse interactively →](https://dmgrok.github.io/agent-plugins/)  
 > Legend: 🔒 Secrets scan · 🛡️ Injection check · 📝 Content · 🔄 No duplicate · ✅ Full skill · S=Scripts · R=References · A=Assets
 
 | Skill | Provider | Compat | 🔒 | 🛡️ | 📝 | 🔄 | ✅ | S | R | A | Quality | Status | Dup |
@@ -883,7 +883,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 
 ### Add your skills to the directory
 
-1. **[Create a New Provider Issue](https://github.com/dmgrok/agent_skills_directory/issues/new?template=new-provider.yml)** with your repo details
+1. **[Create a New Provider Issue](https://github.com/dmgrok/agent-plugins/issues/new?template=new-provider.yml)** with your repo details
 2. Automated validation runs:
    - ✅ SKILL.md format with YAML frontmatter
    - 🔒 Secrets scan (gitleaks)
@@ -891,7 +891,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
    - 📊 Quality score ≥ 70 ([LGTM validation](https://github.com/dmgrok/LGTM_agent_skills))
 3. Auto-PR created on pass → skills appear in the next daily aggregation
 
-**See [issue #11](https://github.com/dmgrok/agent_skills_directory/issues/11) for an example submission.**
+**See [issue #11](https://github.com/dmgrok/agent-plugins/issues/11) for an example submission.**
 
 ### Contribute to an existing provider
 
@@ -901,8 +901,8 @@ Add skills to repositories accepting contributions:
 ### Local development
 
 ```bash
-git clone https://github.com/dmgrok/agent_skills_directory.git
-cd agent_skills_directory
+git clone https://github.com/dmgrok/agent-plugins.git
+cd agent-plugins
 pip install -e ".[validation]"
 python scripts/aggregate.py   # Test aggregation
 pytest                        # Run tests
@@ -974,7 +974,7 @@ name: Validate Skill
 on: [push, pull_request]
 jobs:
   validate:
-    uses: dmgrok/agent_skills_directory/.github/workflows/validate-skill.yml@main
+    uses: dmgrok/agent-plugins/.github/workflows/validate-skill.yml@main
     with:
       skill-path: '.'
 ```
@@ -984,20 +984,20 @@ jobs:
 ## Badges
 
 ```markdown
-[![Listed on Agent Skills Directory](https://img.shields.io/badge/Listed_on-Agent_Skills_Directory-6366f1?style=flat)](https://dmgrok.github.io/agent_skills_directory/)
+[![Listed on Agent Skills Directory](https://img.shields.io/badge/Listed_on-Agent_Skills_Directory-6366f1?style=flat)](https://dmgrok.github.io/agent-plugins/)
 ```
 
 Dynamic (auto-updated):
 ```markdown
-![Skills](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-skills.json)
-![Providers](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-providers.json)
+![Skills](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json)
+![Providers](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-providers.json)
 ```
 
 ---
 
 ## Related Projects
 
-- 🌐 [Browse Skills](https://dmgrok.github.io/agent_skills_directory/) — Interactive web catalog
+- 🌐 [Browse Skills](https://dmgrok.github.io/agent-plugins/) — Interactive web catalog
 - 🔌 [MCP Mother Skills](https://github.com/dmgrok/mcp_mother_skills) — MCP server integration
 - 🛡️ [LGTM Agent Skills](https://github.com/dmgrok/LGTM_agent_skills) — Quality validation tool
 - 📖 [Agent Skills Spec](https://agentskills.io/specification) — Standard specification
@@ -1007,4 +1007,4 @@ Dynamic (auto-updated):
 
 MIT License — Individual skills retain their original licenses.
 
-**[🐛 Issues](https://github.com/dmgrok/agent_skills_directory/issues) · [💬 Discussions](https://github.com/dmgrok/agent_skills_directory/discussions) · [📊 Changelog](CHANGELOG.md)**
+**[🐛 Issues](https://github.com/dmgrok/agent-plugins/issues) · [💬 Discussions](https://github.com/dmgrok/agent-plugins/discussions) · [📊 Changelog](CHANGELOG.md)**

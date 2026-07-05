@@ -1146,7 +1146,7 @@ def build_catalog() -> dict:
     # Build catalog
     now = datetime.now(timezone.utc)
     catalog = {
-        "$schema": "https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/schema/catalog-schema.json",
+        "$schema": "https://raw.githubusercontent.com/dmgrok/agent-plugins/main/schema/catalog-schema.json",
         "version": now.strftime("%Y.%m.%d"),
         "generated_at": now.isoformat(),
         "total_skills": len(all_skills),
@@ -1254,9 +1254,9 @@ def generate_ecosystem_exports(catalog: dict, output_dir: Path) -> None:
             "description": description,
             "version": version,
             "generated_at": now,
-            "source": "https://github.com/dmgrok/agent_skills_directory",
-            "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json",
-            "website": "https://dmgrok.github.io/agent_skills_directory/",
+            "source": "https://github.com/dmgrok/agent-plugins",
+            "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
+            "website": "https://dmgrok.github.io/agent-plugins/",
             "total_skills": len(filtered),
             "skills": filtered
         }
@@ -1369,33 +1369,33 @@ def generate_ecosystem_exports(catalog: dict, output_dir: Path) -> None:
             "claude-skills.json": {
                 "description": "Skills for Claude Code",
                 "total": claude_export["total_skills"],
-                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/claude-skills.json"
+                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/claude-skills.json"
             },
             "copilot-skills.json": {
                 "description": "Skills for GitHub Copilot",
                 "total": copilot_export["total_skills"],
-                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/copilot-skills.json"
+                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/copilot-skills.json"
             },
             "mcp-compatible.json": {
                 "description": "MCP-compatible skills",
                 "total": mcp_export["total_skills"],
-                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/mcp-compatible.json"
+                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/mcp-compatible.json"
             },
             "premium-skills.json": {
                 "description": "High-quality skills (score >= 70)",
                 "total": premium_export["total_skills"],
-                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/premium-skills.json"
+                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/premium-skills.json"
             },
             "active-skills.json": {
                 "description": "Recently maintained skills",
                 "total": active_export["total_skills"],
-                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/active-skills.json"
+                "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/active-skills.json"
             }
         },
         "badges": {
-            "skills-count": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-skills.json",
-            "providers-count": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-providers.json",
-            "quality": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-quality.json",
+            "skills-count": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json",
+            "providers-count": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-providers.json",
+            "quality": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-quality.json",
             "listed-badge": "https://img.shields.io/badge/Listed_on-Agent_Skills_Directory-6366f1?style=flat&logo=data:image/svg+xml;base64,8J+ngQ==",
             "quality-score": "https://img.shields.io/badge/quality_score-{score}%2F100-{color}?style=flat"
         }
@@ -1525,7 +1525,7 @@ def update_readme(catalog: dict, output_dir: Path) -> None:
         f"<!-- AUTO-GENERATED SKILLS TABLE START -->",
         f"## 📋 All Skills — {total} skills across {len(providers)} providers · v{version}",
         f"",
-        f"> Auto-generated daily · [Browse interactively →](https://dmgrok.github.io/agent_skills_directory/)  ",
+        f"> Auto-generated daily · [Browse interactively →](https://dmgrok.github.io/agent-plugins/)  ",
         f"> Legend: 🔒 Secrets scan · 🛡️ Injection check · 📝 Content · 🔄 No duplicate · ✅ Full skill · S=Scripts · R=References · A=Assets",
         f"",
         f"| Skill | Provider | Compat | 🔒 | 🛡️ | 📝 | 🔄 | ✅ | S | R | A | Quality | Status | Dup |",

@@ -72,11 +72,11 @@ all = [
 skillsdir = "cli.skills:main"
 
 [project.urls]
-Homepage = "https://github.com/dmgrok/agent_skills_directory"
-Documentation = "https://dmgrok.github.io/agent_skills_directory"
-Repository = "https://github.com/dmgrok/agent_skills_directory"
-Changelog = "https://github.com/dmgrok/agent_skills_directory/blob/main/CHANGELOG.md"
-Issues = "https://github.com/dmgrok/agent_skills_directory/issues"
+Homepage = "https://github.com/dmgrok/agent-plugins"
+Documentation = "https://dmgrok.github.io/agent-plugins"
+Repository = "https://github.com/dmgrok/agent-plugins"
+Changelog = "https://github.com/dmgrok/agent-plugins/blob/main/CHANGELOG.md"
+Issues = "https://github.com/dmgrok/agent-plugins/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["cli"]

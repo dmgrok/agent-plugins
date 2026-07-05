@@ -471,7 +471,7 @@ jobs:
             **Low Quality Score**: Your skills need improvement in these areas:
             - Add clear examples and usage instructions
             - Include test cases
-            - Follow the [SKILL.md format](https://github.com/dmgrok/agent_skills_directory/blob/main/schema/catalog-schema.json)
+            - Follow the [SKILL.md format](https://github.com/dmgrok/agent-plugins/blob/main/schema/catalog-schema.json)
             - Ensure no security vulnerabilities
             ` : ''}
             

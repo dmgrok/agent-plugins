@@ -113,7 +113,7 @@ SKILLS_INSTALLED = SKILLS_HOME / "installed"
 SKILLS_CACHE = SKILLS_HOME / "cache"
 SKILLS_LOCK = SKILLS_HOME / "skills-lock.json"
 
-CATALOG_URL = "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json"
+CATALOG_URL = "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json"
 CATALOG_CACHE_TTL = 3600  # 1 hour
 
 # ANSI colors
@@ -1434,7 +1434,7 @@ def cmd_publish(args):
         print(f"  2. Push skill.json, SKILL.md")
         print(f"  3. Create release: v{skill_version}")
         if args.submit:
-            print(f"  4. Submit PR/issue to dmgrok/agent_skills_directory")
+            print(f"  4. Submit PR/issue to dmgrok/agent-plugins")
         return 0
     
     # Step 3: Ensure repository exists
@@ -1463,7 +1463,7 @@ def cmd_publish(args):
             repo_data = github_api_request("/user/repos", method="POST", data={
                 "name": repo_name,
                 "description": manifest.get("description", f"Agent skill: {skill_name}")[:100],
-                "homepage": "https://dmgrok.github.io/agent_skills_directory/",
+                "homepage": "https://dmgrok.github.io/agent-plugins/",
                 "has_issues": True,
                 "has_wiki": False,
                 "auto_init": False,
@@ -1496,7 +1496,7 @@ def cmd_submit_to_directory(token: str, username: str, skill_name: str, repo_nam
     print(f"{Colors.BOLD}Submitting to Official Directory{Colors.RESET}")
     print(f"{Colors.DIM}{'─' * 40}{Colors.RESET}")
     
-    DIRECTORY_REPO = "dmgrok/agent_skills_directory"
+    DIRECTORY_REPO = "dmgrok/agent-plugins"
     skill_id = f"{username}/{skill_name}"
     
     # Generate provider entry for aggregate.py
@@ -1544,7 +1544,7 @@ To add this skill, merge this entry into `PROVIDERS` in `scripts/aggregate.py`:
 `{', '.join(manifest.get('capabilities', [])) or 'None specified'}`
 
 ---
-*Submitted via `skills publish --submit` • [View CLI docs](https://dmgrok.github.io/agent_skills_directory/)*
+*Submitted via `skills publish --submit` • [View CLI docs](https://dmgrok.github.io/agent-plugins/)*
 """
     
     print_info("Creating submission issue...")
@@ -1695,7 +1695,7 @@ def cmd_publish_auto(skill_dir: Path, manifest: dict, token: str, username: str,
     print(f"  Skill ID:   {Colors.BOLD}{username}/{manifest['name']}{Colors.RESET}")
     print()
     print(f"  To add to the official directory, open a PR:")
-    print(f"  {Colors.BLUE}https://github.com/dmgrok/agent_skills_directory{Colors.RESET}")
+    print(f"  {Colors.BLUE}https://github.com/dmgrok/agent-plugins{Colors.RESET}")
     
     return 0
 
@@ -2841,7 +2841,7 @@ This command will:
 2. Create a GitHub repository (skill-{name}) if needed
 3. Push your skill files
 4. Create a release with the version from skill.json
-5. Optionally submit to dmgrok/agent_skills_directory (--submit)
+5. Optionally submit to dmgrok/agent-plugins (--submit)
 
 Your skill ID will be: {github-username}/{skill-name}
 

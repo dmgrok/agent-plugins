@@ -90,7 +90,7 @@ This repository aggregates agent skills from **41 provider repositories** (Anthr
    - Reusable workflow that skill authors reference in their repos
    - Validates: YAML frontmatter, required fields, naming conventions, content length, secrets scan
    - Generates badge suggestion on success
-   - Usage: `uses: dmgrok/agent_skills_directory/.github/workflows/validate-skill.yml@main`
+   - Usage: `uses: dmgrok/agent-plugins/.github/workflows/validate-skill.yml@main`
 
 ## Critical Workflows
 
@@ -171,8 +171,8 @@ pytest  # Runs tests/test_aggregate.py
 
 ### CDN Delivery
 Primary distribution via jsdelivr CDN with two patterns:
-- Latest: `https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/catalog.json`
-- Pinned: `https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@v2026.01.26/catalog.json`
+- Latest: `https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json`
+- Pinned: `https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@v2026.01.26/catalog.json`
 
 ## Common Development Tasks
 

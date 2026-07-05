@@ -87,7 +87,7 @@ def github_headers() -> dict[str, str]:
     """Return headers for GitHub API requests."""
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "agent-skills-directory/ingest-plugins",
+        "User-Agent": "agent-plugins/ingest-plugins",
         "X-GitHub-Api-Version": "2022-11-28",
     }
     if GITHUB_TOKEN:
@@ -115,7 +115,7 @@ def github_raw(owner: str, repo: str, path: str, branch: str = "main") -> Option
     """Fetch raw file content from GitHub."""
     url = f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path}"
     req = urllib.request.Request(url, headers={
-        "User-Agent": "agent-skills-directory/ingest-plugins",
+        "User-Agent": "agent-plugins/ingest-plugins",
     })
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:

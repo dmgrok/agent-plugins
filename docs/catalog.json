@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/schema/catalog-schema.json",
+  "$schema": "https://raw.githubusercontent.com/dmgrok/agent-plugins/main/schema/catalog-schema.json",
   "version": "2026.07.05",
   "generated_at": "2026-07-05T09:13:44.516676+00:00",
   "total_skills": 1126,

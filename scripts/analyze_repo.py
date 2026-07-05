@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Analyze a potential new skills repository for compatibility with agent_skills_directory.
+Analyze a potential new skills repository for compatibility with agent-plugins.
 Usage: python scripts/analyze_repo.py <github_repo_url>
 Example: python scripts/analyze_repo.py https://github.com/Prat011/awesome-llm-skills
 """

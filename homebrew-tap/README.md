@@ -1,6 +1,6 @@
 # Homebrew Tap for Agent Skills
 
-This is the official Homebrew tap for [Agent Skills CLI](https://github.com/dmgrok/agent_skills_directory).
+This is the official Homebrew tap for [Agent Skills CLI](https://github.com/dmgrok/agent-plugins).
 
 ## Installation
 
@@ -42,6 +42,6 @@ brew untap dmgrok/tap  # optional: remove the tap
 
 ## Links
 
-- [Main Repository](https://github.com/dmgrok/agent_skills_directory)
-- [Documentation](https://dmgrok.github.io/agent_skills_directory/)
-- [Report Issues](https://github.com/dmgrok/agent_skills_directory/issues)
+- [Main Repository](https://github.com/dmgrok/agent-plugins)
+- [Documentation](https://dmgrok.github.io/agent-plugins/)
+- [Report Issues](https://github.com/dmgrok/agent-plugins/issues)

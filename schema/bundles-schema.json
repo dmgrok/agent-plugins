@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/schema/bundles-schema.json",
+  "$id": "https://raw.githubusercontent.com/dmgrok/agent-plugins/main/schema/bundles-schema.json",
   "title": "Agent Skills Bundles",
   "description": "Schema for curated skill bundles - collections of skills grouped by use case",
   "type": "object",

@@ -33,7 +33,7 @@ Please confirm that the skill repository meets our quality standards:
 - [ ] Repository has a valid license file (MIT, Apache 2.0, etc.)
 
 ### Skill Quality Standards
-- [ ] Skills follow the [SKILL.md format](https://github.com/dmgrok/agent_skills_directory/blob/main/schema/catalog-schema.json)
+- [ ] Skills follow the [SKILL.md format](https://github.com/dmgrok/agent-plugins/blob/main/schema/catalog-schema.json)
 - [ ] Each skill has a clear name and description
 - [ ] Skills have appropriate category tags
 - [ ] Instructions are well-written and actionable
@@ -79,4 +79,4 @@ After submission, our team will:
 
 ---
 
-*By submitting this request, you confirm that you have the right to share this repository and that it complies with our [contribution guidelines](https://github.com/dmgrok/agent_skills_directory/blob/main/README.md).*
+*By submitting this request, you confirm that you have the right to share this repository and that it complies with our [contribution guidelines](https://github.com/dmgrok/agent-plugins/blob/main/README.md).*

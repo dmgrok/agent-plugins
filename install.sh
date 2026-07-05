@@ -1,12 +1,12 @@
 #!/bin/sh
 # Agent Skills CLI Installer
-# Usage: curl -fsSL https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/install.sh | sh
+# Usage: curl -fsSL https://raw.githubusercontent.com/dmgrok/agent-plugins/main/install.sh | sh
 #
 # This script detects your OS/architecture and installs the appropriate binary.
 
 set -e
 
-REPO="dmgrok/agent_skills_directory"
+REPO="dmgrok/agent-plugins"
 INSTALL_DIR="${SKILLS_INSTALL_DIR:-$HOME/.local/bin}"
 BINARY_NAME="skills"
 

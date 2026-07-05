@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/dmgrok/agent_skills_directory/main/schema/skill-manifest-schema.json",
+  "$id": "https://raw.githubusercontent.com/dmgrok/agent-plugins/main/schema/skill-manifest-schema.json",
   "title": "Skill Manifest",
   "description": "Schema for skill.json manifest files - the package.json of AI agent skills",
   "type": "object",

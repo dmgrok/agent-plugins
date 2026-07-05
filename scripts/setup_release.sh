@@ -5,7 +5,7 @@
 set -e
 
 GITHUB_USER="dmgrok"
-MAIN_REPO="agent_skills_directory"
+MAIN_REPO="agent-plugins"
 TAP_REPO="homebrew-tap"
 VERSION="${1:-0.1.0}"
 

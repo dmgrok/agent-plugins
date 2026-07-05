@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: "📖 Documentation"
-    url: https://github.com/dmgrok/agent_skills_directory#readme
+    url: https://github.com/dmgrok/agent-plugins#readme
     about: "Learn more about the Agent Skills Directory"
   - name: "💬 Discussions"
-    url: https://github.com/dmgrok/agent_skills_directory/discussions
+    url: https://github.com/dmgrok/agent-plugins/discussions
     about: "Ask questions and share ideas with the community"

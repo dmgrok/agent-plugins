@@ -5,7 +5,7 @@
     'use strict';
 
     // ========== CONFIG ==========
-    const CDN_BASE = 'https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/';
+    const CDN_BASE = 'https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/';
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const BASE = isLocal ? './' : CDN_BASE;
 
@@ -994,7 +994,7 @@
     function exportStack() {
         const plugins = state.plugins.filter(p => state.selectedStack.has(p.id));
         if (plugins.length === 0) return;
-        const md = `# My PlugStack\n\n${plugins.map(p => `- **${p.name}** (${p.provider}) — ${p.category}`).join('\n')}\n\nBuilt with [PlugStack](https://dmgrok.github.io/agent_skills_directory/)`;
+        const md = `# My PlugStack\n\n${plugins.map(p => `- **${p.name}** (${p.provider}) — ${p.category}`).join('\n')}\n\nBuilt with [PlugStack](https://dmgrok.github.io/agent-plugins/)`;
         navigator.clipboard.writeText(md).then(() => {
             const btn = document.getElementById('btn-export-stack');
             if (!btn) return;

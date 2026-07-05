@@ -7,33 +7,33 @@
     "claude-skills.json": {
       "description": "Skills for Claude Code",
       "total": 1118,
-      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/claude-skills.json"
+      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/claude-skills.json"
     },
     "copilot-skills.json": {
       "description": "Skills for GitHub Copilot",
       "total": 1118,
-      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/copilot-skills.json"
+      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/copilot-skills.json"
     },
     "mcp-compatible.json": {
       "description": "MCP-compatible skills",
       "total": 70,
-      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/mcp-compatible.json"
+      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/mcp-compatible.json"
     },
     "premium-skills.json": {
       "description": "High-quality skills (score >= 70)",
       "total": 576,
-      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/premium-skills.json"
+      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/premium-skills.json"
     },
     "active-skills.json": {
       "description": "Recently maintained skills",
       "total": 1108,
-      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/active-skills.json"
+      "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/active-skills.json"
     }
   },
   "badges": {
-    "skills-count": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-skills.json",
-    "providers-count": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-providers.json",
-    "quality": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent_skills_directory@main/exports/badge-quality.json",
+    "skills-count": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json",
+    "providers-count": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-providers.json",
+    "quality": "https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-quality.json",
     "listed-badge": "https://img.shields.io/badge/Listed_on-Agent_Skills_Directory-6366f1?style=flat&logo=data:image/svg+xml;base64,8J+ngQ==",
     "quality-score": "https://img.shields.io/badge/quality_score-{score}%2F100-{color}?style=flat"
   }

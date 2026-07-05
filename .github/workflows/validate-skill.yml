@@ -7,13 +7,13 @@ name: Validate Skill
 #   on: [push, pull_request]
 #   jobs:
 #     validate:
-#       uses: dmgrok/agent_skills_directory/.github/workflows/validate-skill.yml@main
+#       uses: dmgrok/agent-plugins/.github/workflows/validate-skill.yml@main
 #       with:
 #         skill-path: '.'
 #
 # Or use it as a standalone action in your workflow:
 #
-#   - uses: dmgrok/agent_skills_directory/.github/actions/validate-skill@main
+#   - uses: dmgrok/agent-plugins/.github/actions/validate-skill@main
 #     with:
 #       skill-path: '.'
 
@@ -173,11 +173,11 @@ jobs:
         run: |
           echo "## ✅ Skill Validation Passed" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Your skill meets the [Agent Skills Directory](https://github.com/dmgrok/agent_skills_directory) standards." >> $GITHUB_STEP_SUMMARY
+          echo "Your skill meets the [Agent Skills Directory](https://github.com/dmgrok/agent-plugins) standards." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Add a badge to your README:" >> $GITHUB_STEP_SUMMARY
           echo '```markdown' >> $GITHUB_STEP_SUMMARY
-          echo '[![Listed on Agent Skills Directory](https://img.shields.io/badge/Listed_on-Agent_Skills_Directory-6366f1?style=flat)](https://dmgrok.github.io/agent_skills_directory/)' >> $GITHUB_STEP_SUMMARY
+          echo '[![Listed on Agent Skills Directory](https://img.shields.io/badge/Listed_on-Agent_Skills_Directory-6366f1?style=flat)](https://dmgrok.github.io/agent-plugins/)' >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Submit to the directory:" >> $GITHUB_STEP_SUMMARY

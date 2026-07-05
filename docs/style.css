@@ -1400,3 +1400,67 @@ body {
     white-space: nowrap;
     border: 0;
 }
+
+/* Use Case Pills */
+.use-case-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 24px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.use-case-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 20px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    min-width: 200px;
+    flex: 1 1 calc(25% - 12px);
+}
+
+.use-case-pill:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 16px rgba(107, 33, 168, 0.12);
+    transform: translateY(-2px);
+}
+
+.use-case-pill-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.use-case-pill-persona {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+[data-theme="dark"] .use-case-pill {
+    background: var(--bg-card);
+    border-color: var(--border);
+}
+
+[data-theme="dark"] .use-case-pill:hover {
+    border-color: var(--primary-light);
+}
+
+@media (max-width: 768px) {
+    .use-case-pill {
+        flex: 1 1 calc(50% - 12px);
+    }
+}
+
+@media (max-width: 480px) {
+    .use-case-pill {
+        flex: 1 1 100%;
+    }
+}

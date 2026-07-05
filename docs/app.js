@@ -14,6 +14,7 @@
     const TAXONOMY_URL = BASE + 'taxonomy.json';
     const GAP_URL = BASE + 'gap_analysis.json';
     const BUNDLES_URL = BASE + 'bundles.json';
+    const USE_CASES_URL = BASE + 'use_cases.json';
 
     const PAGE_SIZE = 24;
 
@@ -81,17 +82,18 @@
         state.loading = true;
         render();
 
-        const [pluginsData, catalogData, taxonomyData, gapData, bundlesData] = await Promise.all([
+        const [pluginsData, catalogData, taxonomyData, gapData, bundlesData, useCasesData] = await Promise.all([
             loadJSON(PLUGINS_URL),
             loadJSON(CATALOG_URL),
             loadJSON(TAXONOMY_URL),
             loadJSON(GAP_URL),
-            loadJSON(BUNDLES_URL)
+            loadJSON(BUNDLES_URL),
+            loadJSON(USE_CASES_URL)
         ]);
 
         // Use plugins.json if available, otherwise fall back to catalog.json
-        if (pluginsData && pluginsData.skills) {
-            state.plugins = pluginsData.skills;
+        if (pluginsData && (pluginsData.plugins || pluginsData.skills)) {
+            state.plugins = pluginsData.plugins || pluginsData.skills;
         } else if (catalogData && catalogData.skills) {
             state.plugins = catalogData.skills;
         } else {
@@ -101,6 +103,7 @@
         state.taxonomy = taxonomyData;
         state.gapData = gapData;
         state.bundles = bundlesData ? bundlesData.bundles || [] : [];
+        state.useCases = useCasesData ? useCasesData.use_cases || [] : [];
 
         // Derive compatibility for plugins based on provider and skill type
         state.plugins = state.plugins.map(p => {
@@ -232,9 +235,10 @@
         const trending = getTrendingPlugins();
         return `
             ${renderHero()}
+            ${renderUseCaseSection()}
             <div class="section-header">
-                <h2 class="section-title">Choose Your Role</h2>
-                <span class="section-subtitle">Get a curated plugin stack</span>
+                <h2 class="section-title">Or browse by role</h2>
+                <span class="section-subtitle">Get a curated plugin stack for your persona</span>
             </div>
             ${renderPersonaGrid()}
             <div class="section-header">
@@ -252,6 +256,25 @@
         `;
     }
 
+    function renderUseCaseSection() {
+        if (!state.useCases || state.useCases.length === 0) return '';
+        const featured = state.useCases.slice(0, 8);
+        return `
+            <div class="section-header">
+                <h2 class="section-title">What are you building?</h2>
+                <span class="section-subtitle">Start with an outcome, get a complete plugin stack</span>
+            </div>
+            <div class="use-case-pills">
+                ${featured.map(uc => `
+                    <button class="use-case-pill" data-usecase="${uc.id}">
+                        <span class="use-case-pill-title">${uc.title}</span>
+                        <span class="use-case-pill-persona">${PERSONAS.find(p => p.id === uc.persona)?.icon || ''} ${uc.persona.replace('-', ' ')}</span>
+                    </button>
+                `).join('')}
+            </div>
+        `;
+    }
+
     function renderHero() {
         const totalPlugins = state.plugins.length;
         const categories = [...new Set(state.plugins.map(p => p.category))].length;
@@ -259,8 +282,8 @@
         return `
             <section class="hero" aria-label="Welcome">
                 <div class="hero-content">
-                    <h1>Find the perfect AI plugins for your workflow</h1>
-                    <p>Discover, compare, and stack plugins from ${providers} providers across ${categories} categories. Build your ideal AI agent toolkit.</p>
+                    <h1>What are you trying to build?</h1>
+                    <p>Don't browse categories — describe your goal. We'll recommend the plugin stack that gets you there, show what's covered, and flag what's missing.</p>
                     <div class="hero-stats">
                         <div class="hero-stat">
                             <span class="hero-stat-value">${totalPlugins.toLocaleString()}</span>
@@ -719,6 +742,7 @@
     function initSearch() {
         const input = document.getElementById('search-input');
         const autocomplete = document.getElementById('search-autocomplete');
+        if (!input || !autocomplete) return;
         let focusedIndex = -1;
 
         input.addEventListener('input', () => {

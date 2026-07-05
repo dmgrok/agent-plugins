@@ -1016,12 +1016,12 @@
     function exportStack() {
         const plugins = state.plugins.filter(p => state.selectedStack.has(p.id));
         if (plugins.length === 0) return;
-        const md = `# My PlugStack\n\n${plugins.map(p => `- **${p.name}** (${p.provider}) — ${p.category}`).join('\n')}\n\nBuilt with [PlugStack](https://dmgrok.github.io/agent-plugins/)`;
-        navigator.clipboard.writeText(md).then(() => {
+        const script = plugins.map(p => `claude plugin add ${p.id}`).join(' && \\\n');
+        navigator.clipboard.writeText(script).then(() => {
             const btn = document.getElementById('btn-export-stack');
             if (!btn) return;
             btn.textContent = 'Copied!';
-            setTimeout(() => { btn.textContent = 'Export'; }, 2000);
+            setTimeout(() => { btn.textContent = 'Copy Install Script'; }, 2000);
         });
     }
 

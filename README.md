@@ -1,102 +1,48 @@
 # Agent Plugins
 
-**Discover the best AI agent plugins.** Find, compare, and build your plugin stack — 1,100+ curated plugins from 46 official providers, organized around real workflows.
+**Web-based discovery for AI agent plugins.** Browse 1,100+ curated plugins from 46 official providers, build your stack, and install in one command.
 
-```bash
-skills suggest           # Smart recommendations for your project
-skills search "testing"  # Search 1100+ curated plugins
-skills install anthropic/pdf  # Install with one command
-```
-
-[![Skills](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json)](https://dmgrok.github.io/agent-plugins/)
+[![Plugins](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json)](https://dmgrok.github.io/agent-plugins/)
 [![Providers](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-providers.json)](https://dmgrok.github.io/agent-plugins/)
 [![Quality Tracked](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-quality.json)](https://dmgrok.github.io/agent-plugins/)
-
----
-
-## Why This Exists
-
-The AI plugin ecosystem is exploding — MCP servers, Claude Code skills, Cursor extensions, Copilot plugins — but discovery is broken. You're left scrolling GitHub awesome-lists hoping something fits.
-
-We aggregate, validate, and score plugins from **46 official providers** so you can find what actually works for your workflow — no guesswork.
-
-| Feature | Description |
-|---------|-------------|
-| 🎯 **Persona-Based Discovery** | Browse by role — Web Dev, DevOps, Data Scientist, and more |
-| 🗺️ **Capability Map** | See which of your real activities have plugin coverage |
-| 📦 **Stack Builder** | Assemble and export a plugin stack, watch coverage fill in live |
-| 📊 **Quality Scoring** | 0–100 points based on docs, maintenance, and provider trust |
-| 🟢 **Maintenance Tracking** | Active · Maintained · Stale · Abandoned |
-| 🏢 **Official Sources** | Anthropic, OpenAI, GitHub, Vercel, Stripe, Cloudflare + more |
 
 **[Browse all plugins →](https://dmgrok.github.io/agent-plugins/)**
 
 ---
 
-## Install
+## How It Works
+
+Plugins already live on marketplaces — you just need to find the right ones. This site organizes them around your role and real activities so you can see exactly what coverage you'd get.
+
+1. **Pick your persona** — Web Dev, DevOps, Data Scientist, Security Engineer, and more
+2. **Build a stack** — see which of your activities have plugin coverage (Capability Map), add plugins to your stack
+3. **Install** — copy the install script and paste it into your terminal
+
+### Install a single plugin
+
+Every plugin has a copy button. The command is:
 
 ```bash
-# macOS
-brew install dmgrok/tap/agent-plugins
-
-# Linux / macOS
-curl -fsSL https://raw.githubusercontent.com/dmgrok/agent-plugins/main/install.sh | bash
-
-# Python
-pip install agent-skills
+claude plugin add <plugin-id>
 ```
 
----
+### Install your whole stack
 
-## Usage
-
-### Get recommendations for your project
+Click **Copy Install Script** in the Stack Builder. It produces:
 
 ```bash
-skills suggest                      # Analyze current directory
-skills suggest /path/to/project     # Analyze specific project
-skills suggest --verbose            # Show scoring details
+claude plugin add github-copilot && \
+claude plugin add anthropic-pdf && \
+claude plugin add vercel-deploy
 ```
 
-The `suggest` command reads your README, detects languages and frameworks, and ranks skills using a multi-factor scoring algorithm — entirely offline, no LLM needed.
-
-### Search and explore
-
-```bash
-skills search "pdf extraction"      # Keyword search
-skills info anthropic/pdf           # Detailed skill info
-```
-
-### Install and manage
-
-```bash
-skills install anthropic/pdf                     # Install globally
-skills install anthropic/pdf --project            # Install to project (auto-detects agent)
-skills install anthropic/pdf -p --agent claude    # → .claude/skills/
-skills install anthropic/pdf -p --agent copilot   # → .github/skills/
-skills install anthropic/pdf -p --agent codex     # → .codex/skills/
-skills install anthropic/pdf -p --agent cursor    # → .cursor/skills/
-
-skills list                         # List installed skills
-skills update                       # Update all skills
-skills uninstall anthropic/pdf      # Remove a skill
-```
-
-### Create and publish
-
-```bash
-skills init               # Create a new skill.json
-skills validate           # Validate your skill
-skills login              # Authenticate with GitHub
-skills publish            # Push to GitHub
-skills publish --submit   # Request inclusion in directory
-```
+Paste and run. Done.
 
 ---
 
 ## Providers
 
-Skills are aggregated from 40+ repositories across the AI agent ecosystem.
+Plugins are aggregated from **46 providers** across the AI agent ecosystem.
 
 **[View all providers →](https://dmgrok.github.io/agent-plugins/)**
 
@@ -134,17 +80,6 @@ Every skill gets a quality score (0–100) based on three factors:
 | **Maintenance** | 50 | 🟢 Active (&lt;30d) = 50 · 🟡 Maintained (&lt;6mo) = 40 · 🟠 Stale (&lt;1yr) = 20 · 🔴 Abandoned = 5 |
 | **Documentation** | 30 | Scripts (+10) · References (+10) · Assets (+10) |
 | **Provider Trust** | 20 | Official = 20 · Community = 10 |
-
----
-
-## Supported Agents
-
-| Agent | Project Path | Auto-Detection |
-|-------|-------------|----------------|
-| **Claude** | `.claude/skills/` | `CLAUDE.md`, `.claude/` |
-| **Copilot** | `.github/skills/` | `.github/copilot-instructions.md` |
-| **Codex** | `.codex/skills/` | `AGENTS.md` |
-| **Cursor** | `.cursor/skills/` | `.cursorrules` |
 
 ---
 
@@ -906,91 +841,6 @@ cd agent-plugins
 pip install -e ".[validation]"
 python scripts/aggregate.py   # Test aggregation
 pytest                        # Run tests
-```
-
----
-
-## Creating Skills
-
-A skill is a directory with two files:
-
-```
-my-skill/
-├── skill.json    # Metadata (like package.json)
-└── SKILL.md      # Instructions for the agent
-```
-
-<details>
-<summary><b>skill.json example</b></summary>
-
-```json
-{
-  "name": "my-skill",
-  "version": "1.0.0",
-  "description": "What this skill does",
-  "author": "your-username",
-  "license": "MIT",
-  "keywords": ["keyword1", "keyword2"],
-  "runtime": "universal"
-}
-```
-</details>
-
-<details>
-<summary><b>SKILL.md example</b></summary>
-
-```markdown
----
-name: My Skill
-version: 1.0.0
-description: What this skill does
----
-
-# My Skill
-
-Instructions for the AI agent on how to use this skill...
-```
-</details>
-
----
-
-## Private Registries
-
-For teams needing governance and control, point the CLI at your own catalog:
-
-```bash
-skills config set registry https://your-cdn/catalog.json
-```
-
-Fork this repo, update `PROVIDERS` in `scripts/aggregate.py`, and run `python scripts/aggregate.py` to generate your own `catalog.json`.
-
----
-
-## CI/CD Validation
-
-```yaml
-# .github/workflows/validate.yml
-name: Validate Skill
-on: [push, pull_request]
-jobs:
-  validate:
-    uses: dmgrok/agent-plugins/.github/workflows/validate-skill.yml@main
-    with:
-      skill-path: '.'
-```
-
----
-
-## Badges
-
-```markdown
-[![Listed on Agent Plugins](https://img.shields.io/badge/Listed_on-Agent_Plugins-6366f1?style=flat)](https://dmgrok.github.io/agent-plugins/)
-```
-
-Dynamic (auto-updated):
-```markdown
-![Skills](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json)
-![Providers](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-providers.json)
 ```
 
 ---

@@ -1401,6 +1401,140 @@ body {
     border: 0;
 }
 
+/* Hero Search */
+.hero-search {
+    margin: 1.5rem auto 0;
+    max-width: 600px;
+    width: 100%;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    font-size: 1rem;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.95);
+    color: #1f2937;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 4px 20px rgba(107, 33, 168, 0.2);
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+.search-autocomplete {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: none;
+    z-index: 100;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.search-autocomplete.active {
+    display: block;
+}
+
+.autocomplete-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.focused {
+    background: #f3f4f6;
+}
+
+.autocomplete-item-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #1f2937;
+}
+
+.autocomplete-item-meta {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+[data-theme="dark"] .search-input {
+    background: rgba(30,30,30,0.95);
+    color: #f9fafb;
+    border-color: rgba(255,255,255,0.2);
+}
+
+[data-theme="dark"] .search-autocomplete {
+    background: #1f2937;
+}
+
+[data-theme="dark"] .autocomplete-item:hover {
+    background: #374151;
+}
+
+[data-theme="dark"] .autocomplete-item-name {
+    color: #f9fafb;
+}
+
+/* Autocomplete section labels */
+.autocomplete-section-label {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    background: var(--bg-secondary, #f3f4f6);
+    border-top: 1px solid var(--border);
+}
+
+.autocomplete-section-label:first-child {
+    border-top: none;
+}
+
+.autocomplete-item--usecase {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.autocomplete-item-icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+    margin-top: 0.15rem;
+}
+
+[data-theme="dark"] .autocomplete-section-label {
+    background: var(--bg-card, #1f2937);
+}
+
 /* Use Case Pills */
 .use-case-pills {
     display: flex;

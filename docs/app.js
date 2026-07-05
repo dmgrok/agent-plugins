@@ -48,8 +48,9 @@
         bundles: [],
         taxonomy: null,
         gapData: null,
-        currentView: 'home', // home | persona | search
+        currentView: 'home', // home | persona | search | usecase
         currentPersona: null,
+        currentUseCase: null,
         searchQuery: '',
         filterCategory: 'all',
         filterSort: 'stars',
@@ -167,6 +168,12 @@
             const input = document.getElementById('search-input');
             if (input) input.value = state.searchQuery;
             return;
+        } else if (hash.startsWith('usecase/')) {
+            state.currentUseCase = hash.replace('usecase/', '');
+            state.currentView = 'usecase';
+            state.visibleCount = PAGE_SIZE;
+            render();
+            return;
         }
 
         state.currentView = 'home';
@@ -216,9 +223,13 @@
             case 'search':
                 app.innerHTML = renderSearchView();
                 break;
+            case 'usecase':
+                app.innerHTML = renderUseCaseView();
+                break;
         }
 
         attachEventListeners();
+        initSearch();
     }
 
     function renderLoading() {
@@ -284,6 +295,13 @@
                 <div class="hero-content">
                     <h1>What are you trying to build?</h1>
                     <p>Don't browse categories — describe your goal. We'll recommend the plugin stack that gets you there, show what's covered, and flag what's missing.</p>
+                    <div class="hero-search">
+                        <div class="search-container">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                            <input type="text" id="search-input" class="search-input" placeholder="Ship an MVP, automate code reviews, build a RAG system..." autocomplete="off" aria-label="Search plugins and use cases">
+                            <div id="search-autocomplete" class="search-autocomplete" role="listbox"></div>
+                        </div>
+                    </div>
                     <div class="hero-stats">
                         <div class="hero-stat">
                             <span class="hero-stat-value">${totalPlugins.toLocaleString()}</span>
@@ -528,6 +546,100 @@
         `;
     }
 
+    // ========== USE CASE VIEW ==========
+    function renderUseCaseView() {
+        const uc = (state.useCases || []).find(u => u.id === state.currentUseCase);
+        if (!uc) {
+            return `
+                <button class="back-button" id="btn-back">← Back to Directory</button>
+                <div class="empty-state"><p>Use case not found.</p></div>
+            `;
+        }
+        const persona = PERSONAS.find(p => p.id === uc.persona);
+        const recommended = getUseCasePlugins(uc);
+        const related = (state.useCases || []).filter(u => u.persona === uc.persona && u.id !== uc.id).slice(0, 4);
+
+        return `
+            <button class="back-button" id="btn-back">← Back to Directory</button>
+            <div class="persona-view-header">
+                <div class="persona-view-icon">${persona ? persona.icon : '🎯'}</div>
+                <div class="persona-view-info">
+                    <h2>${escapeHtml(uc.title)}</h2>
+                    <p>${escapeHtml(uc.description)}</p>
+                    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;align-items:center;">
+                        ${persona ? `<span class="tag">${persona.icon} ${escapeHtml(persona.name)}</span>` : ''}
+                        <span class="source-badge" style="text-transform:capitalize;">${escapeHtml(uc.complexity || 'intermediate')}</span>
+                    </div>
+                </div>
+            </div>
+
+            ${uc.pain_today ? `
+                <div class="gap-callout" style="margin:1.5rem 0;">
+                    <strong>Pain today:</strong> ${escapeHtml(uc.pain_today)}
+                </div>
+            ` : ''}
+
+            ${uc.plugins_needed && uc.plugins_needed.length > 0 ? `
+                <div class="coverage-section">
+                    <div class="coverage-title">What you'll need</div>
+                    <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.75rem;">
+                        ${uc.plugins_needed.map((plugin, i) => `
+                            <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:var(--bg-card,#f9fafb);border-radius:8px;border:1px solid var(--border,#e5e7eb);">
+                                <span style="width:1.5rem;height:1.5rem;border-radius:50%;background:var(--primary,#6B21A8);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">${i + 1}</span>
+                                <span style="font-weight:500;text-transform:capitalize;">${escapeHtml(plugin.replace(/-/g, ' '))}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : ''}
+
+            ${uc.success_criteria ? `
+                <div class="coverage-section" style="margin-top:1rem;">
+                    <div class="coverage-title">✓ Success looks like</div>
+                    <p style="margin-top:0.5rem;color:var(--text-muted,#6b7280);line-height:1.6;">${escapeHtml(uc.success_criteria)}</p>
+                </div>
+            ` : ''}
+
+            ${recommended.length > 0 ? `
+                <div class="section-header" style="margin-top:2rem;">
+                    <h2 class="section-title">Recommended Plugins</h2>
+                    <span class="section-subtitle">${recommended.length} plugins for this use case</span>
+                </div>
+                <div class="plugins-grid">
+                    ${recommended.map(p => renderPluginCard(p)).join('')}
+                </div>
+            ` : ''}
+
+            ${related.length > 0 ? `
+                <div class="section-header" style="margin-top:2rem;">
+                    <h2 class="section-title">Related Use Cases</h2>
+                    <span class="section-subtitle">More for ${persona ? persona.name : uc.persona}</span>
+                </div>
+                <div class="use-case-pills">
+                    ${related.map(r => `
+                        <button class="use-case-pill" data-usecase="${r.id}">
+                            <span class="use-case-pill-title">${escapeHtml(r.title)}</span>
+                            <span class="use-case-pill-persona">${PERSONAS.find(p => p.id === r.persona)?.icon || ''} ${r.persona.replace(/-/g, ' ')}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            ` : ''}
+        `;
+    }
+
+    function getUseCasePlugins(uc) {
+        const terms = [
+            ...(uc.taxonomy_categories || []),
+            ...(uc.search_queries || []).join(' ').split(/\s+/),
+            ...(uc.plugins_needed || [])
+        ].map(t => t.toLowerCase().replace(/-/g, ' '));
+
+        return state.plugins.filter(p => {
+            const searchable = [p.name, p.description, p.category, ...(p.tags || [])].join(' ').toLowerCase();
+            return terms.some(term => searchable.includes(term));
+        }).sort((a, b) => (b.github_stars || 0) - (a.github_stars || 0)).slice(0, 12);
+    }
+
     // ========== MODAL ==========
     function openModal(plugin) {
         const modal = document.getElementById('plugin-modal');
@@ -638,6 +750,13 @@
 
     // ========== EVENT LISTENERS ==========
     function attachEventListeners() {
+        // Use case pills
+        document.querySelectorAll('.use-case-pill').forEach(pill => {
+            pill.addEventListener('click', () => {
+                window.location.hash = 'usecase/' + pill.dataset.usecase;
+            });
+        });
+
         // Persona cards
         document.querySelectorAll('.persona-card').forEach(card => {
             card.addEventListener('click', () => {
@@ -752,30 +871,56 @@
                 autocomplete.innerHTML = '';
                 return;
             }
-            const results = getSearchResults(query).slice(0, 8);
-            if (results.length === 0) {
+            const useCaseResults = getUseCaseSearchResults(query).slice(0, 3);
+            const pluginResults = getSearchResults(query).slice(0, 5);
+            if (useCaseResults.length === 0 && pluginResults.length === 0) {
                 autocomplete.classList.remove('active');
                 return;
             }
             focusedIndex = -1;
-            autocomplete.innerHTML = results.map((p, i) => `
-                <div class="autocomplete-item" data-index="${i}" data-plugin-id="${p.id}" role="option">
-                    <div>
-                        <div class="autocomplete-item-name">${escapeHtml(p.name)}</div>
-                        <div class="autocomplete-item-meta">${escapeHtml(p.provider)} &middot; ${escapeHtml(p.category || '')}</div>
-                    </div>
-                </div>
-            `).join('');
+            const parts = [];
+            let idx = 0;
+            if (useCaseResults.length > 0) {
+                parts.push(`<div class="autocomplete-section-label">Use Cases</div>`);
+                useCaseResults.forEach(uc => {
+                    parts.push(`
+                        <div class="autocomplete-item autocomplete-item--usecase" data-index="${idx++}" data-usecase-id="${uc.id}" role="option">
+                            <span class="autocomplete-item-icon">🎯</span>
+                            <div>
+                                <div class="autocomplete-item-name">${escapeHtml(uc.title)}</div>
+                                <div class="autocomplete-item-meta">Use case · ${escapeHtml(uc.persona.replace(/-/g, ' '))}</div>
+                            </div>
+                        </div>
+                    `);
+                });
+            }
+            if (pluginResults.length > 0) {
+                if (useCaseResults.length > 0) parts.push(`<div class="autocomplete-section-label">Plugins</div>`);
+                pluginResults.forEach(p => {
+                    parts.push(`
+                        <div class="autocomplete-item" data-index="${idx++}" data-plugin-id="${p.id}" role="option">
+                            <div>
+                                <div class="autocomplete-item-name">${escapeHtml(p.name)}</div>
+                                <div class="autocomplete-item-meta">${escapeHtml(p.provider)} · ${escapeHtml(p.category || '')}</div>
+                            </div>
+                        </div>
+                    `);
+                });
+            }
+            autocomplete.innerHTML = parts.join('');
             autocomplete.classList.add('active');
 
             autocomplete.querySelectorAll('.autocomplete-item').forEach(item => {
                 item.addEventListener('click', () => {
-                    const id = item.dataset.pluginId;
-                    const plugin = state.plugins.find(p => p.id === id);
-                    if (plugin) {
-                        autocomplete.classList.remove('active');
-                        input.value = '';
-                        openModal(plugin);
+                    const usecaseId = item.dataset.usecaseId;
+                    const pluginId = item.dataset.pluginId;
+                    autocomplete.classList.remove('active');
+                    input.value = '';
+                    if (usecaseId) {
+                        window.location.hash = 'usecase/' + usecaseId;
+                    } else if (pluginId) {
+                        const plugin = state.plugins.find(p => p.id === pluginId);
+                        if (plugin) openModal(plugin);
                     }
                 });
             });
@@ -943,6 +1088,16 @@
             const bName = b.name.toLowerCase().includes(q) ? 1 : 0;
             if (aName !== bName) return bName - aName;
             return (b.github_stars || 0) - (a.github_stars || 0);
+        });
+    }
+
+    function getUseCaseSearchResults(query) {
+        if (!state.useCases || state.useCases.length === 0) return [];
+        const q = query.toLowerCase();
+        const terms = q.split(/\s+/);
+        return state.useCases.filter(uc => {
+            const searchable = [uc.title, uc.description, ...(uc.search_queries || [])].join(' ').toLowerCase();
+            return terms.every(term => searchable.includes(term));
         });
     }
 

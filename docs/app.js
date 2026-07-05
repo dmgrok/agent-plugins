@@ -1,4 +1,4 @@
-// AI Plugin Directory - TripAdvisor for AI Agent Plugins
+// Agent Plugins Directory
 // Pure vanilla JS, no build tools, hash-based routing
 
 (function () {
@@ -21,14 +21,14 @@
 
     // ========== PERSONAS ==========
     const PERSONAS = [
-        { id: 'knowledge-worker', name: 'Knowledge Worker', icon: '📚', tagline: 'Documents, research, and productivity', categories: ['documents', 'enterprise'], tags: ['docs', 'productivity', 'writing', 'notion'] },
-        { id: 'web-developer', name: 'Web Developer', icon: '🌐', tagline: 'Frontend, React, and modern web apps', categories: ['development'], tags: ['frontend', 'web', 'react', 'nextjs', 'design', 'ui'] },
-        { id: 'backend-engineer', name: 'Backend Engineer', icon: '⚙️', tagline: 'APIs, databases, and microservices', categories: ['development'], tags: ['backend', 'api', 'python', 'database'] },
-        { id: 'mobile-developer', name: 'Mobile Developer', icon: '📱', tagline: 'iOS, Android, and cross-platform', categories: ['development'], tags: ['mobile', 'expo', 'react-native', 'ios', 'android'] },
-        { id: 'devops-engineer', name: 'DevOps Engineer', icon: '🚀', tagline: 'CI/CD, cloud, and infrastructure', categories: ['development'], tags: ['devops', 'ci-cd', 'github', 'azure', 'cloud', 'docker'] },
-        { id: 'data-scientist', name: 'Data Scientist', icon: '🧬', tagline: 'ML, data pipelines, and experiments', categories: ['ml-ai', 'data'], tags: ['ml', 'data', 'huggingface', 'python', 'ai'] },
-        { id: 'security-engineer', name: 'Security Engineer', icon: '🔒', tagline: 'Security audits, compliance, and hardening', categories: ['development'], tags: ['security', 'audit', 'compliance'] },
-        { id: 'startup-founder', name: 'Startup Founder', icon: '💡', tagline: 'Ship fast with full-stack bundles', categories: ['development', 'creative'], tags: ['fullstack', 'deployment', 'design', 'ai'] }
+        { id: 'knowledge-worker', name: 'Knowledge Worker', tagline: 'Documents, research, and productivity', categories: ['documents', 'enterprise'], tags: ['docs', 'productivity', 'writing', 'notion'] },
+        { id: 'web-developer', name: 'Web Developer', tagline: 'Frontend, React, and modern web apps', categories: ['development'], tags: ['frontend', 'web', 'react', 'nextjs', 'design', 'ui'] },
+        { id: 'backend-engineer', name: 'Backend Engineer', tagline: 'APIs, databases, and microservices', categories: ['development'], tags: ['backend', 'api', 'python', 'database'] },
+        { id: 'mobile-developer', name: 'Mobile Developer', tagline: 'iOS, Android, and cross-platform', categories: ['development'], tags: ['mobile', 'expo', 'react-native', 'ios', 'android'] },
+        { id: 'devops-engineer', name: 'DevOps Engineer', tagline: 'CI/CD, cloud, and infrastructure', categories: ['development'], tags: ['devops', 'ci-cd', 'github', 'azure', 'cloud', 'docker'] },
+        { id: 'data-scientist', name: 'Data Scientist', tagline: 'ML, data pipelines, and experiments', categories: ['ml-ai', 'data'], tags: ['ml', 'data', 'huggingface', 'python', 'ai'] },
+        { id: 'security-engineer', name: 'Security Engineer', tagline: 'Security audits, compliance, and hardening', categories: ['development'], tags: ['security', 'audit', 'compliance'] },
+        { id: 'startup-founder', name: 'Startup Founder', tagline: 'Ship fast with full-stack bundles', categories: ['development', 'creative'], tags: ['fullstack', 'deployment', 'design', 'ai'] }
     ];
 
     // ========== COMPATIBILITY PLATFORMS ==========
@@ -211,6 +211,13 @@
     }
 
     // ========== RENDERING ==========
+    function announce(message) {
+        const el = document.getElementById('aria-announcer');
+        if (!el) return;
+        el.textContent = '';
+        requestAnimationFrame(() => { el.textContent = message; });
+    }
+
     function render() {
         const app = document.getElementById('app');
         if (state.loading) {
@@ -219,15 +226,23 @@
         }
 
         switch (state.currentView) {
-            case 'home':
+            case 'home': {
                 app.innerHTML = renderHome();
+                const count = getFilteredPlugins().length;
+                if (state.filterCategory !== 'all' || state.filterSort !== 'stars') {
+                    announce(`Showing ${count} plugin${count !== 1 ? 's' : ''}`);
+                }
                 break;
+            }
             case 'persona':
                 app.innerHTML = renderPersonaView();
                 break;
-            case 'search':
+            case 'search': {
                 app.innerHTML = renderSearchView();
+                const results = getSearchResults(state.searchQuery);
+                announce(`${results.length} plugin${results.length !== 1 ? 's' : ''} found for "${state.searchQuery}"`);
                 break;
+            }
             case 'usecase':
                 app.innerHTML = renderUseCaseView();
                 break;
@@ -248,77 +263,34 @@
 
     // ========== HOME VIEW ==========
     function renderHome() {
-        const trending = getTrendingPlugins();
+        const filtered = getFilteredPlugins();
         return `
             ${renderHero()}
-            ${renderUseCaseSection()}
             <div class="section-header">
-                <h2 class="section-title">Or browse by role</h2>
-                <span class="section-subtitle">Get a curated plugin stack for your persona</span>
+                <h2 class="section-title">Browse by role</h2>
             </div>
             ${renderPersonaGrid()}
             <div class="section-header">
-                <h2 class="section-title">Trending Plugins</h2>
-                <span class="section-subtitle">Most popular by stars</span>
-            </div>
-            ${renderTrendingRow(trending)}
-            <div class="section-header">
                 <h2 class="section-title">All Plugins</h2>
-                <span class="section-subtitle">${state.plugins.length} plugins available</span>
+                <span class="section-subtitle">${state.plugins.length.toLocaleString()} plugins</span>
             </div>
             ${renderFilterBar()}
-            ${renderPluginsGrid(getFilteredPlugins())}
-            ${renderLoadMore(getFilteredPlugins().length)}
-        `;
-    }
-
-    function renderUseCaseSection() {
-        if (!state.useCases || state.useCases.length === 0) return '';
-        const featured = state.useCases.slice(0, 8);
-        return `
-            <div class="section-header">
-                <h2 class="section-title">What are you building?</h2>
-                <span class="section-subtitle">Start with an outcome, get a complete plugin stack</span>
-            </div>
-            <div class="use-case-pills">
-                ${featured.map(uc => `
-                    <button class="use-case-pill" data-usecase="${uc.id}">
-                        <span class="use-case-pill-title">${uc.title}</span>
-                        <span class="use-case-pill-persona">${PERSONAS.find(p => p.id === uc.persona)?.icon || ''} ${uc.persona.replace('-', ' ')}</span>
-                    </button>
-                `).join('')}
-            </div>
+            ${renderPluginsGrid(filtered)}
+            ${renderLoadMore(filtered.length)}
         `;
     }
 
     function renderHero() {
-        const totalPlugins = state.plugins.length;
-        const categories = [...new Set(state.plugins.map(p => p.category))].length;
-        const providers = [...new Set(state.plugins.map(p => p.provider))].length;
         return `
-            <section class="hero" aria-label="Welcome">
+            <section class="hero" aria-label="Search plugins">
                 <div class="hero-content">
-                    <h1>What are you trying to build?</h1>
-                    <p>The TripAdvisor for AI agent plugins. Describe your goal — we'll find the stack that gets you there, show what's covered, and flag what's missing.</p>
+                    <h1>Find the right plugin</h1>
+                    <p>Search ${state.plugins.length.toLocaleString()}+ plugins or browse by role below.</p>
                     <div class="hero-search">
                         <div class="search-container">
                             <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                            <input type="text" id="search-input" class="search-input" placeholder="Ship an MVP, automate code reviews, build a RAG system..." autocomplete="off" aria-label="Search plugins and use cases">
-                            <div id="search-autocomplete" class="search-autocomplete" role="listbox"></div>
-                        </div>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <span class="hero-stat-value">${totalPlugins.toLocaleString()}</span>
-                            <span class="hero-stat-label">Plugins</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="hero-stat-value">${providers}</span>
-                            <span class="hero-stat-label">Providers</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="hero-stat-value">${categories}</span>
-                            <span class="hero-stat-label">Categories</span>
+                            <input type="text" id="search-input" class="search-input" placeholder="docker, code review, RAG, GitHub Actions..." autocomplete="off" aria-label="Search plugins" aria-controls="search-autocomplete" aria-autocomplete="list">
+                            <div id="search-autocomplete" class="search-autocomplete" role="listbox" aria-label="Search suggestions"></div>
                         </div>
                     </div>
                 </div>
@@ -331,27 +303,8 @@
             <div class="persona-grid">
                 ${PERSONAS.map((p, i) => `
                     <div class="persona-card fade-in stagger-${i + 1}" tabindex="0" role="button" aria-label="View ${p.name} plugins" data-persona="${p.id}">
-                        <div class="persona-icon">${p.icon}</div>
                         <div class="persona-card-title">${p.name}</div>
                         <div class="persona-card-tagline">${p.tagline}</div>
-                    </div>
-                `).join('')}
-            </div>
-        `;
-    }
-
-    function renderTrendingRow(plugins) {
-        return `
-            <div class="trending-row">
-                ${plugins.map((p, i) => `
-                    <div class="trending-card fade-in stagger-${i + 1}" data-plugin-id="${p.id}">
-                        <span class="trending-rank">#${i + 1}</span>
-                        <div class="trending-card-name">${escapeHtml(p.name)}</div>
-                        <div class="trending-card-provider">${escapeHtml(p.provider)}</div>
-                        <div class="trending-card-stars">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            ${formatStars(p.github_stars)}
-                        </div>
                     </div>
                 `).join('')}
             </div>
@@ -382,7 +335,6 @@
         if (visible.length === 0) {
             return `
                 <div class="empty-state">
-                    <div class="empty-state-icon">&#x1F50D;</div>
                     <div class="empty-state-title">No plugins found</div>
                     <p>Try adjusting your filters or search query.</p>
                 </div>
@@ -397,38 +349,26 @@
 
     function renderPluginCard(plugin) {
         const sourceBadge = getSourceBadge(plugin);
-        const rating = getPluginRating(plugin.id);
-        const compat = plugin.compatibility || {};
+        const inStack = state.selectedStack.has(plugin.id);
         return `
             <article class="plugin-card" data-plugin-id="${plugin.id}" tabindex="0" role="button" aria-label="View details for ${escapeHtml(plugin.name)}">
                 <div class="plugin-card-header">
                     <div class="plugin-card-name">${escapeHtml(plugin.name)}</div>
-                    <div style="display:flex;align-items:center;gap:6px;">
+                    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
                         ${plugin.github_stars ? `
                             <div class="plugin-card-stars">
                                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                                 ${formatStars(plugin.github_stars)}
                             </div>
                         ` : ''}
-                        <button class="btn-add-stack ${state.selectedStack.has(plugin.id) ? 'in-stack' : ''}" data-stack-add="${plugin.id}" aria-label="Add to stack" title="${state.selectedStack.has(plugin.id) ? 'Remove from stack' : 'Add to stack'}">${state.selectedStack.has(plugin.id) ? '✓' : '+'}</button>
+                        <button class="btn-add-stack ${inStack ? 'in-stack' : ''}" data-stack-add="${plugin.id}" aria-label="${inStack ? 'Remove from stack' : 'Add to stack'}" title="${inStack ? 'Remove from stack' : 'Add to stack'}">${inStack ? '✓' : '+'}</button>
                     </div>
                 </div>
-                <div class="plugin-card-description">${escapeHtml(truncateDescription(plugin.description))}</div>
+                <div class="plugin-card-description">${escapeHtml(plugin.description || 'No description available.')}</div>
                 <div class="plugin-card-meta">
                     <span class="source-badge ${sourceBadge.class}">${sourceBadge.label}</span>
-                </div>
-                <div class="plugin-card-compatibility">
-                    ${PLATFORMS.map(pl => `
-                        <span class="compat-icon ${compat[pl.id] ? 'active' : ''}" title="${pl.label}${compat[pl.id] ? ' (compatible)' : ''}">${pl.abbr}</span>
-                    `).join('')}
-                </div>
-                <div class="plugin-card-tags">
-                    ${(plugin.tags || []).slice(0, 3).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
-                </div>
-                <div class="plugin-card-footer">
                     <span class="plugin-card-category">${escapeHtml(plugin.category || 'uncategorized')}</span>
-                    ${rating ? `<span class="plugin-card-rating">${renderStars(rating.rating, 'sm')}<span class="rating-count">${rating.rating.toFixed(1)}</span></span>` : ''}
-                    <button class="btn-view-details">View Details</button>
+                    ${(plugin.tags || []).slice(0, 2).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
                 </div>
             </article>
         `;
@@ -451,6 +391,7 @@
         const allCategories = ['development', 'ml-ai', 'creative', 'integrations', 'documents', 'enterprise', 'data'];
         const coveredCategories = [...new Set(recommended.map(p => p.category))];
         const gaps = allCategories.filter(c => !coveredCategories.includes(c));
+        const activities = (state.useCases || []).filter(u => u.persona === persona.id);
 
         return `
             <button class="back-button" id="btn-back" aria-label="Back to home">
@@ -458,12 +399,28 @@
                 Back to Directory
             </button>
             <div class="persona-view-header">
-                <div class="persona-view-icon">${persona.icon}</div>
                 <div class="persona-view-info">
                     <h2>${persona.name}</h2>
                     <p>${persona.tagline}</p>
                 </div>
             </div>
+            ${activities.length > 0 ? `
+                <div class="section-header">
+                    <h2 class="section-title">Activities</h2>
+                    <span class="section-subtitle">Common tasks for this role</span>
+                </div>
+                <div class="activities-list">
+                    ${activities.map(a => `
+                        <button class="activity-row" data-usecase="${a.id}" aria-label="${escapeHtml(a.title)}">
+                            <div class="activity-row-main">
+                                <span class="activity-row-title">${escapeHtml(a.title)}</span>
+                                <span class="activity-row-desc">${escapeHtml(a.description)}</span>
+                            </div>
+                            <span class="activity-row-complexity">${escapeHtml(a.complexity || 'intermediate')}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            ` : ''}
             ${renderCoverageSection(recommended, allCategories, coveredCategories, gaps)}
             ${renderStackBuilder(recommended)}
             <div class="section-header">
@@ -494,7 +451,7 @@
                             else if (selectedInCat.length === 1) status = 'partial';
                             else status = 'gap';
                         }
-                        return `<div class="coverage-segment ${status}" title="${capitalize(cat)}: ${status}"><span class="coverage-segment-label">${capitalize(cat)}</span></div>`;
+                        return `<div class="coverage-segment ${status}" title="${capitalize(cat)}: ${status}" aria-label="${capitalize(cat)}: ${status}" role="img"><span class="coverage-segment-label" aria-hidden="true">${capitalize(cat)}</span></div>`;
                     }).join('')}
                 </div>
                 <div class="coverage-legend">
@@ -552,16 +509,16 @@
             </button>
             <div class="search-results-header">
                 <h2 class="search-results-title">Results for "${escapeHtml(state.searchQuery)}"</h2>
-                <p class="search-results-count">${pluginResults.length} plugin${pluginResults.length !== 1 ? 's' : ''}${useCaseResults.length > 0 ? ` &middot; ${useCaseResults.length} use case${useCaseResults.length !== 1 ? 's' : ''}` : ''} found</p>
+                <p class="search-results-count">${pluginResults.length} plugin${pluginResults.length !== 1 ? 's' : ''}${useCaseResults.length > 0 ? ` &middot; ${useCaseResults.length} activit${useCaseResults.length !== 1 ? 'ies' : 'y'}` : ''} found</p>
             </div>
             ${useCaseResults.length > 0 ? `
                 <div class="search-section">
-                    <h3 class="search-section-title">Matching Use Cases</h3>
+                    <h3 class="search-section-title">Matching Activities</h3>
                     <div class="use-case-pills" style="padding:0 0 1rem;">
                         ${useCaseResults.slice(0, 6).map(uc => `
                             <button class="use-case-pill" data-usecase="${uc.id}">
                                 <span class="use-case-pill-title">${escapeHtml(uc.title)}</span>
-                                <span class="use-case-pill-persona">${PERSONAS.find(p => p.id === uc.persona)?.icon || ''} ${uc.persona.replace(/-/g, ' ')}</span>
+                                <span class="use-case-pill-persona">${uc.persona.replace(/-/g, ' ')}</span>
                             </button>
                         `).join('')}
                     </div>
@@ -604,8 +561,11 @@
         const uc = (state.useCases || []).find(u => u.id === state.currentUseCase);
         if (!uc) {
             return `
-                <button class="back-button" id="btn-back">← Back to Directory</button>
-                <div class="empty-state"><p>Use case not found.</p></div>
+                <button class="back-button" id="btn-back">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back to Directory
+                </button>
+                <div class="empty-state"><p>Activity not found.</p></div>
             `;
         }
         const persona = PERSONAS.find(p => p.id === uc.persona);
@@ -613,14 +573,16 @@
         const related = (state.useCases || []).filter(u => u.persona === uc.persona && u.id !== uc.id).slice(0, 4);
 
         return `
-            <button class="back-button" id="btn-back">← Back to Directory</button>
+            <button class="back-button" id="btn-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                ${persona ? persona.name : 'Back to Directory'}
+            </button>
             <div class="persona-view-header">
-                <div class="persona-view-icon">${persona ? persona.icon : '🎯'}</div>
                 <div class="persona-view-info">
                     <h2>${escapeHtml(uc.title)}</h2>
                     <p>${escapeHtml(uc.description)}</p>
                     <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;align-items:center;">
-                        ${persona ? `<span class="tag">${persona.icon} ${escapeHtml(persona.name)}</span>` : ''}
+                        ${persona ? `<span class="tag">${escapeHtml(persona.name)}</span>` : ''}
                         <span class="source-badge" style="text-transform:capitalize;">${escapeHtml(uc.complexity || 'intermediate')}</span>
                     </div>
                 </div>
@@ -637,8 +599,8 @@
                     <div class="coverage-title">What you'll need</div>
                     <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.75rem;">
                         ${uc.plugins_needed.map((plugin, i) => `
-                            <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:var(--bg-card,#f9fafb);border-radius:8px;border:1px solid var(--border,#e5e7eb);">
-                                <span style="width:1.5rem;height:1.5rem;border-radius:50%;background:var(--primary,#6B21A8);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">${i + 1}</span>
+                            <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:var(--bg-card);border-radius:8px;border:1px solid var(--border);">
+                                <span style="width:1.5rem;height:1.5rem;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">${i + 1}</span>
                                 <span style="font-weight:500;text-transform:capitalize;">${escapeHtml(plugin.replace(/-/g, ' '))}</span>
                             </div>
                         `).join('')}
@@ -648,15 +610,15 @@
 
             ${uc.success_criteria ? `
                 <div class="coverage-section" style="margin-top:1rem;">
-                    <div class="coverage-title">✓ Success looks like</div>
-                    <p style="margin-top:0.5rem;color:var(--text-muted,#6b7280);line-height:1.6;">${escapeHtml(uc.success_criteria)}</p>
+                    <div class="coverage-title">Success looks like</div>
+                    <p style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.6;">${escapeHtml(uc.success_criteria)}</p>
                 </div>
             ` : ''}
 
             ${recommended.length > 0 ? `
                 <div class="section-header" style="margin-top:2rem;">
                     <h2 class="section-title">Recommended Plugins</h2>
-                    <span class="section-subtitle">${recommended.length} plugins for this use case</span>
+                    <span class="section-subtitle">${recommended.length} plugins for this activity</span>
                 </div>
                 <div class="plugins-grid">
                     ${recommended.map(p => renderPluginCard(p)).join('')}
@@ -665,14 +627,17 @@
 
             ${related.length > 0 ? `
                 <div class="section-header" style="margin-top:2rem;">
-                    <h2 class="section-title">Related Use Cases</h2>
-                    <span class="section-subtitle">More for ${persona ? persona.name : uc.persona}</span>
+                    <h2 class="section-title">Related Activities</h2>
+                    <span class="section-subtitle">More for ${persona ? persona.name : uc.persona.replace(/-/g, ' ')}</span>
                 </div>
-                <div class="use-case-pills">
+                <div class="activities-list">
                     ${related.map(r => `
-                        <button class="use-case-pill" data-usecase="${r.id}">
-                            <span class="use-case-pill-title">${escapeHtml(r.title)}</span>
-                            <span class="use-case-pill-persona">${PERSONAS.find(p => p.id === r.persona)?.icon || ''} ${r.persona.replace(/-/g, ' ')}</span>
+                        <button class="activity-row" data-usecase="${r.id}" aria-label="${escapeHtml(r.title)}">
+                            <div class="activity-row-main">
+                                <span class="activity-row-title">${escapeHtml(r.title)}</span>
+                                <span class="activity-row-desc">${escapeHtml(r.description)}</span>
+                            </div>
+                            <span class="activity-row-complexity">${escapeHtml(r.complexity || 'intermediate')}</span>
                         </button>
                     `).join('')}
                 </div>
@@ -694,7 +659,11 @@
     }
 
     // ========== MODAL ==========
+    let _modalTrigger = null;
+
     function openModal(plugin) {
+        _modalTrigger = document.activeElement;
+
         const modal = document.getElementById('plugin-modal');
         const title = document.getElementById('modal-title');
         const body = document.getElementById('modal-body');
@@ -705,11 +674,9 @@
         modal.hidden = false;
         requestAnimationFrame(() => modal.classList.add('active'));
 
-        // Update hash without triggering re-render
         const pluginHash = 'plugin/' + plugin.id.replace(/\//g, '-');
         history.replaceState(null, '', '#' + pluginHash);
 
-        // Focus trap
         const closeBtn = modal.querySelector('.modal-close');
         closeBtn.focus();
     }
@@ -717,9 +684,14 @@
     function closeModal() {
         const modal = document.getElementById('plugin-modal');
         modal.classList.remove('active');
-        setTimeout(() => { modal.hidden = true; }, 200);
+        setTimeout(() => {
+            modal.hidden = true;
+            if (_modalTrigger && typeof _modalTrigger.focus === 'function') {
+                _modalTrigger.focus();
+            }
+            _modalTrigger = null;
+        }, 200);
 
-        // Restore hash
         if (state.currentView === 'persona' && state.currentPersona) {
             history.replaceState(null, '', '#persona/' + state.currentPersona.id);
         } else if (state.currentView === 'search') {
@@ -801,10 +773,23 @@
 
     // ========== EVENT LISTENERS ==========
     function attachEventListeners() {
-        // Use case pills
+        // Use case pills (search results)
         document.querySelectorAll('.use-case-pill').forEach(pill => {
             pill.addEventListener('click', () => {
                 window.location.hash = 'usecase/' + pill.dataset.usecase;
+            });
+        });
+
+        // Activity rows (persona view + activity view related)
+        document.querySelectorAll('.activity-row').forEach(row => {
+            row.addEventListener('click', () => {
+                window.location.hash = 'usecase/' + row.dataset.usecase;
+            });
+            row.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    row.click();
+                }
             });
         });
 
@@ -837,19 +822,17 @@
             });
         });
 
-        // Trending cards
-        document.querySelectorAll('.trending-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const id = card.dataset.pluginId;
-                const plugin = state.plugins.find(p => p.id === id);
-                if (plugin) openModal(plugin);
-            });
-        });
-
         // Back button
         const backBtn = document.getElementById('btn-back');
         if (backBtn) {
             backBtn.addEventListener('click', () => {
+                if (state.currentView === 'usecase') {
+                    const uc = (state.useCases || []).find(u => u.id === state.currentUseCase);
+                    if (uc) {
+                        window.location.hash = 'persona/' + uc.persona;
+                        return;
+                    }
+                }
                 window.location.hash = '';
             });
         }
@@ -860,6 +843,11 @@
             loadMoreBtn.addEventListener('click', () => {
                 state.visibleCount += PAGE_SIZE;
                 render();
+                const total = state.currentView === 'search'
+                    ? getSearchResults(state.searchQuery).length
+                    : getFilteredPlugins().length;
+                const showing = Math.min(state.visibleCount, total);
+                announce(`Now showing ${showing} of ${total} plugins`);
             });
         }
 
@@ -1027,14 +1015,13 @@
             const parts = [];
             let idx = 0;
             if (useCaseResults.length > 0) {
-                parts.push(`<div class="autocomplete-section-label">Use Cases</div>`);
+                parts.push(`<div class="autocomplete-section-label">Activities</div>`);
                 useCaseResults.forEach(uc => {
                     parts.push(`
                         <div class="autocomplete-item autocomplete-item--usecase" data-index="${idx++}" data-usecase-id="${uc.id}" role="option">
-                            <span class="autocomplete-item-icon">🎯</span>
                             <div>
                                 <div class="autocomplete-item-name">${escapeHtml(uc.title)}</div>
-                                <div class="autocomplete-item-meta">Use case · ${escapeHtml(uc.persona.replace(/-/g, ' '))}</div>
+                                <div class="autocomplete-item-meta">Activity · ${escapeHtml(uc.persona.replace(/-/g, ' '))}</div>
                             </div>
                         </div>
                     `);
@@ -1126,8 +1113,23 @@
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') {
                 closeModal();
+                return;
+            }
+            // Focus trap
+            if (e.key === 'Tab') {
+                const focusable = modal.querySelectorAll(
+                    'a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])'
+                );
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey) {
+                    if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+                } else {
+                    if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+                }
             }
         });
 
@@ -1158,13 +1160,6 @@
     }
 
     // ========== HELPERS ==========
-    function getTrendingPlugins() {
-        return [...state.plugins]
-            .filter(p => p.github_stars)
-            .sort((a, b) => (b.github_stars || 0) - (a.github_stars || 0))
-            .slice(0, 5);
-    }
-
     function getFilteredPlugins() {
         let filtered = [...state.plugins];
 
@@ -1372,6 +1367,15 @@
 
     // ========== INIT ==========
     function init() {
+        // Inject aria-live region for screen reader announcements
+        const announcer = document.createElement('div');
+        announcer.id = 'aria-announcer';
+        announcer.setAttribute('role', 'status');
+        announcer.setAttribute('aria-live', 'polite');
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.className = 'sr-only';
+        document.body.appendChild(announcer);
+
         initTheme();
         initSearch();
         initModal();

@@ -91,25 +91,27 @@ Per-plugin, per-tool verification record. Fields: id, plugin_id, tool (claude_co
 - **12-category taxonomy** with 60 subcategories and 8 persona mappings defined in `taxonomy.json`
 - **Gap analysis engine** — `scripts/gap_analysis.py` maps plugins against use-case capabilities using keyword matching, outputs coverage scores and explicit gap lists
 - **Frontend** — persona cards for filtered browsing, searchable plugin grid, detail modals with metadata, coverage bars showing category fill rates
-- **Static export** — `docs/exports/` contains deployable frontend assets
+- **Static export** — `docs/` contains the deployable SPA hosted on GitHub Pages
 
-### Next (v0.2)
+### Built (v0.2) — Live
 
-- **Use-case-driven navigation** — `use_cases.json` powering the landing page with "What are you building?" entry point
-- **Premium UI overhaul** — narrative flow replacing grid-first layout, progressive disclosure, visual hierarchy that guides rather than dumps
-- **Natural language search** — query parsing that maps intent to use cases and plugin recommendations
-- **Stack builder MVP** — interactive assembly with real-time coverage bar updates and gap highlighting
-- **Compatibility tracking** — initial data collection for multi-tool support signals
+- **Use-case-driven navigation** — 41 use cases in `use_cases.json` powering "What are you building?" hero entry point with click-through recipe views (pain, steps, success criteria, recommended plugins)
+- **Premium UI overhaul** — TripAdvisor-style hero, use-case pills, persona grid, trending row, progressive disclosure; purple/orange design system with Inter typeface
+- **Natural language search** — autocomplete matches use cases (🎯 shown first) and plugins; Enter navigates to full results page with use-case matches at top, plugin count, sort controls (relevance/stars/name/quality)
+- **Global stack builder** — "+" button on every plugin card adds to a persistent stack; nav badge shows count; slide-in drawer lists items with remove buttons; Export copies markdown to clipboard; stack persists in `localStorage`
+- **Review system** — seeded ratings for 20 popular plugins (`reviews.json`); aggregate star rating on card footers; full review cards in modal with author, date, verified badge, and rating
+- **Multi-tool compatibility** — 5-platform compat matrix (Claude, Cursor, Copilot, Gemini, Codex) on every card and modal
+- **Dark mode** — CSS variable system with both explicit toggle and system-preference auto-detection; all components including stack drawer, reviews, and search results are dark-mode aware
 
 ### Future (v0.3+)
 
-- **Review system** — submit, moderate, publish pipeline with use-case tagging and verified-install badges
+- **Live review submission** — user-submitted reviews with use-case tagging, moderation pipeline, and verified-install badge earned through install confirmation
 - **Multi-tool portability verification** — automated testing of plugins across Claude Code, Cursor, Copilot, Gemini CLI, and Codex
-- **Community contribution flow** — plugin authors submit listings, community votes surface quality
+- **Community contribution flow** — plugin authors submit listings, community votes surface quality; claimed listings get analytics dashboard
 - **API for programmatic access** — enables integrations, custom dashboards, and third-party tooling
-- **Plugin author dashboard** — analytics on installs, reviews, compatibility reports, and gap-fill opportunities
 - **"Compare stacks" feature** — side-by-side stack comparison showing coverage differences, cost, and complexity trade-offs
 - **Persona evolution** — user behavior refines persona models over time, enabling personalized recommendations
+- **Shareable stack URLs** — export stacks as a deep link so teams can align on tooling without sharing config files
 
 ## 7. Design Principles
 

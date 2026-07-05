@@ -15,6 +15,7 @@
     const GAP_URL = BASE + 'gap_analysis.json';
     const BUNDLES_URL = BASE + 'bundles.json';
     const USE_CASES_URL = BASE + 'use_cases.json';
+    const REVIEWS_URL = BASE + 'reviews.json';
 
     const PAGE_SIZE = 24;
 
@@ -48,14 +49,16 @@
         bundles: [],
         taxonomy: null,
         gapData: null,
+        reviews: {},
         currentView: 'home', // home | persona | search | usecase
         currentPersona: null,
         currentUseCase: null,
         searchQuery: '',
         filterCategory: 'all',
         filterSort: 'stars',
+        searchSort: 'relevance',
         visibleCount: PAGE_SIZE,
-        selectedStack: new Set(),
+        selectedStack: new Set(JSON.parse(localStorage.getItem('plugstack_stack') || '[]')),
         loading: true
     };
 
@@ -83,13 +86,14 @@
         state.loading = true;
         render();
 
-        const [pluginsData, catalogData, taxonomyData, gapData, bundlesData, useCasesData] = await Promise.all([
+        const [pluginsData, catalogData, taxonomyData, gapData, bundlesData, useCasesData, reviewsData] = await Promise.all([
             loadJSON(PLUGINS_URL),
             loadJSON(CATALOG_URL),
             loadJSON(TAXONOMY_URL),
             loadJSON(GAP_URL),
             loadJSON(BUNDLES_URL),
-            loadJSON(USE_CASES_URL)
+            loadJSON(USE_CASES_URL),
+            loadJSON(REVIEWS_URL)
         ]);
 
         // Use plugins.json if available, otherwise fall back to catalog.json
@@ -105,6 +109,7 @@
         state.gapData = gapData;
         state.bundles = bundlesData ? bundlesData.bundles || [] : [];
         state.useCases = useCasesData ? useCasesData.use_cases || [] : [];
+        state.reviews = reviewsData ? reviewsData.reviews || {} : {};
 
         // Derive compatibility for plugins based on provider and skill type
         state.plugins = state.plugins.map(p => {
@@ -115,6 +120,7 @@
         });
 
         state.loading = false;
+        updateStackBadge();
         handleRoute();
     }
 
@@ -147,7 +153,6 @@
                 state.currentView = 'persona';
                 state.currentPersona = persona;
                 state.visibleCount = PAGE_SIZE;
-                state.selectedStack = new Set();
                 render();
                 return;
             }
@@ -392,17 +397,21 @@
 
     function renderPluginCard(plugin) {
         const sourceBadge = getSourceBadge(plugin);
+        const rating = getPluginRating(plugin.id);
         const compat = plugin.compatibility || {};
         return `
             <article class="plugin-card" data-plugin-id="${plugin.id}" tabindex="0" role="button" aria-label="View details for ${escapeHtml(plugin.name)}">
                 <div class="plugin-card-header">
                     <div class="plugin-card-name">${escapeHtml(plugin.name)}</div>
-                    ${plugin.github_stars ? `
-                        <div class="plugin-card-stars">
-                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            ${formatStars(plugin.github_stars)}
-                        </div>
-                    ` : ''}
+                    <div style="display:flex;align-items:center;gap:6px;">
+                        ${plugin.github_stars ? `
+                            <div class="plugin-card-stars">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                ${formatStars(plugin.github_stars)}
+                            </div>
+                        ` : ''}
+                        <button class="btn-add-stack ${state.selectedStack.has(plugin.id) ? 'in-stack' : ''}" data-stack-add="${plugin.id}" aria-label="Add to stack" title="${state.selectedStack.has(plugin.id) ? 'Remove from stack' : 'Add to stack'}">${state.selectedStack.has(plugin.id) ? '✓' : '+'}</button>
+                    </div>
                 </div>
                 <div class="plugin-card-description">${escapeHtml(truncateDescription(plugin.description))}</div>
                 <div class="plugin-card-meta">
@@ -418,6 +427,7 @@
                 </div>
                 <div class="plugin-card-footer">
                     <span class="plugin-card-category">${escapeHtml(plugin.category || 'uncategorized')}</span>
+                    ${rating ? `<span class="plugin-card-rating">${renderStars(rating.rating, 'sm')}<span class="rating-count">${rating.rating.toFixed(1)}</span></span>` : ''}
                     <button class="btn-view-details">View Details</button>
                 </div>
             </article>
@@ -531,19 +541,62 @@
 
     // ========== SEARCH VIEW ==========
     function renderSearchView() {
-        const results = getSearchResults(state.searchQuery);
+        const useCaseResults = getUseCaseSearchResults(state.searchQuery);
+        const pluginResults = getSearchResults(state.searchQuery);
+        const sortedPlugins = applySortToResults(pluginResults);
+
         return `
             <button class="back-button" id="btn-back" aria-label="Back to home">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 Back to Directory
             </button>
-            <div class="section-header">
-                <h2 class="section-title">Search Results for "${escapeHtml(state.searchQuery)}"</h2>
-                <span class="section-subtitle">${results.length} results</span>
+            <div class="search-results-header">
+                <h2 class="search-results-title">Results for "${escapeHtml(state.searchQuery)}"</h2>
+                <p class="search-results-count">${pluginResults.length} plugin${pluginResults.length !== 1 ? 's' : ''}${useCaseResults.length > 0 ? ` &middot; ${useCaseResults.length} use case${useCaseResults.length !== 1 ? 's' : ''}` : ''} found</p>
             </div>
-            ${renderPluginsGrid(results)}
-            ${renderLoadMore(results.length)}
+            ${useCaseResults.length > 0 ? `
+                <div class="search-section">
+                    <h3 class="search-section-title">Matching Use Cases</h3>
+                    <div class="use-case-pills" style="padding:0 0 1rem;">
+                        ${useCaseResults.slice(0, 6).map(uc => `
+                            <button class="use-case-pill" data-usecase="${uc.id}">
+                                <span class="use-case-pill-title">${escapeHtml(uc.title)}</span>
+                                <span class="use-case-pill-persona">${PERSONAS.find(p => p.id === uc.persona)?.icon || ''} ${uc.persona.replace(/-/g, ' ')}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : ''}
+            <div class="search-section">
+                <div class="search-section-toolbar">
+                    <h3 class="search-section-title">Plugins</h3>
+                    <div class="search-sort">
+                        <label for="search-sort-select">Sort:</label>
+                        <select id="search-sort-select" class="filter-select">
+                            <option value="relevance" ${state.searchSort === 'relevance' ? 'selected' : ''}>Relevance</option>
+                            <option value="stars" ${state.searchSort === 'stars' ? 'selected' : ''}>Most Stars</option>
+                            <option value="name" ${state.searchSort === 'name' ? 'selected' : ''}>Name A-Z</option>
+                            <option value="quality" ${state.searchSort === 'quality' ? 'selected' : ''}>Quality Score</option>
+                        </select>
+                    </div>
+                </div>
+                ${renderPluginsGrid(sortedPlugins)}
+                ${renderLoadMore(sortedPlugins.length)}
+            </div>
         `;
+    }
+
+    function applySortToResults(results) {
+        switch (state.searchSort) {
+            case 'stars':
+                return [...results].sort((a, b) => (b.github_stars || 0) - (a.github_stars || 0));
+            case 'name':
+                return [...results].sort((a, b) => a.name.localeCompare(b.name));
+            case 'quality':
+                return [...results].sort((a, b) => (b.quality_score || 0) - (a.quality_score || 0));
+            default:
+                return results; // relevance = original order from getSearchResults
+        }
     }
 
     // ========== USE CASE VIEW ==========
@@ -741,9 +794,7 @@
 
             <div class="modal-section">
                 <div class="modal-section-title">Reviews</div>
-                <div class="modal-review-placeholder">
-                    Be the first to review this plugin.
-                </div>
+                ${renderReviewCards(plugin.id)}
             </div>
         `;
     }
@@ -831,6 +882,15 @@
             });
         }
 
+        const searchSortEl = document.getElementById('search-sort-select');
+        if (searchSortEl) {
+            searchSortEl.addEventListener('change', (e) => {
+                state.searchSort = e.target.value;
+                state.visibleCount = PAGE_SIZE;
+                render();
+            });
+        }
+
         // Stack checkboxes
         document.querySelectorAll('.stack-plugin-item').forEach(item => {
             item.addEventListener('click', (e) => {
@@ -846,6 +906,14 @@
                 });
             }
         });
+
+        // Add-to-stack buttons (delegated)
+        document.querySelectorAll('.btn-add-stack').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleStack(btn.dataset.stackAdd);
+            });
+        });
     }
 
     function toggleStack(id) {
@@ -854,7 +922,85 @@
         } else {
             state.selectedStack.add(id);
         }
-        render();
+        persistStack();
+        if (state.currentView === 'persona') {
+            render();
+        } else {
+            updateStackDrawer();
+            updateAddButtons();
+        }
+    }
+
+    function persistStack() {
+        localStorage.setItem('plugstack_stack', JSON.stringify([...state.selectedStack]));
+        updateStackBadge();
+    }
+
+    function updateStackBadge() {
+        const btn = document.getElementById('nav-stack-btn');
+        const badge = document.getElementById('stack-badge-count');
+        if (!btn || !badge) return;
+        const count = state.selectedStack.size;
+        badge.textContent = count;
+        btn.hidden = count === 0;
+    }
+
+    function updateAddButtons() {
+        document.querySelectorAll('.btn-add-stack').forEach(btn => {
+            const id = btn.dataset.stackAdd;
+            const inStack = state.selectedStack.has(id);
+            btn.classList.toggle('in-stack', inStack);
+            btn.textContent = inStack ? '✓' : '+';
+            btn.title = inStack ? 'In your stack' : 'Add to stack';
+        });
+    }
+
+    function openStackDrawer() {
+        const drawer = document.getElementById('stack-drawer');
+        if (!drawer) return;
+        updateStackDrawer();
+        drawer.hidden = false;
+        requestAnimationFrame(() => drawer.classList.add('open'));
+    }
+
+    function closeStackDrawer() {
+        const drawer = document.getElementById('stack-drawer');
+        if (!drawer) return;
+        drawer.classList.remove('open');
+        setTimeout(() => { drawer.hidden = true; }, 300);
+    }
+
+    function updateStackDrawer() {
+        const body = document.getElementById('stack-drawer-body');
+        if (!body) return;
+        const plugins = state.plugins.filter(p => state.selectedStack.has(p.id));
+        if (plugins.length === 0) {
+            body.innerHTML = '<div class="stack-drawer-empty">Add plugins with the + button on any card.</div>';
+            return;
+        }
+        body.innerHTML = plugins.map(p => `
+            <div class="stack-drawer-item">
+                <div class="stack-drawer-item-info">
+                    <span class="stack-drawer-item-name">${escapeHtml(p.name)}</span>
+                    <span class="stack-drawer-item-provider">${escapeHtml(p.provider)}</span>
+                </div>
+                <button class="stack-drawer-remove" data-remove-id="${p.id}" aria-label="Remove ${escapeHtml(p.name)}">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+        `).join('');
+    }
+
+    function exportStack() {
+        const plugins = state.plugins.filter(p => state.selectedStack.has(p.id));
+        if (plugins.length === 0) return;
+        const md = `# My PlugStack\n\n${plugins.map(p => `- **${p.name}** (${p.provider}) — ${p.category}`).join('\n')}\n\nBuilt with [PlugStack](https://dmgrok.github.io/agent_skills_directory/)`;
+        navigator.clipboard.writeText(md).then(() => {
+            const btn = document.getElementById('btn-export-stack');
+            if (!btn) return;
+            btn.textContent = 'Copied!';
+            setTimeout(() => { btn.textContent = 'Export'; }, 2000);
+        });
     }
 
     // ========== SEARCH ==========
@@ -1182,11 +1328,64 @@
         return div.innerHTML;
     }
 
+    function getPluginRating(pluginId) {
+        const r = state.reviews[pluginId];
+        return r && r.aggregate ? r.aggregate : null;
+    }
+
+    function renderStars(rating, size) {
+        const full = Math.floor(rating);
+        const half = (rating - full) >= 0.5 ? 1 : 0;
+        const empty = 5 - full - half;
+        const s = size === 'lg' ? 16 : 12;
+        const starFull = `<svg class="star-icon${size === 'lg' ? ' lg' : ''}" width="${s}" height="${s}" viewBox="0 0 24 24"><path class="star-filled" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+        const starHalf = `<svg class="star-icon${size === 'lg' ? ' lg' : ''}" width="${s}" height="${s}" viewBox="0 0 24 24"><defs><linearGradient id="half-g"><stop offset="50%" stop-color="var(--warning)"/><stop offset="50%" stop-color="transparent"/></linearGradient></defs><path fill="url(#half-g)" stroke="var(--warning)" stroke-width="1" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+        const starEmpty = `<svg class="star-icon${size === 'lg' ? ' lg' : ''}" width="${s}" height="${s}" viewBox="0 0 24 24"><path class="star-empty" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+        return `<span class="stars-row">${starFull.repeat(full)}${half ? starHalf : ''}${starEmpty.repeat(empty)}</span>`;
+    }
+
+    function renderReviewCards(pluginId) {
+        const data = state.reviews[pluginId];
+        if (!data || !data.items || data.items.length === 0) {
+            return '<div class="modal-review-placeholder">Be the first to review this plugin.</div>';
+        }
+        return `
+            <div class="review-aggregate">
+                ${renderStars(data.aggregate.rating, 'lg')}
+                <span class="review-aggregate-text">${data.aggregate.rating.toFixed(1)} out of 5 &middot; ${data.aggregate.count} reviews</span>
+            </div>
+            <div class="review-list">
+                ${data.items.map(r => `
+                    <div class="review-card">
+                        <div class="review-card-header">
+                            <span class="review-author">${escapeHtml(r.author)}</span>
+                            ${r.verified ? '<span class="review-verified">Verified</span>' : ''}
+                            <span class="review-date">${r.date}</span>
+                        </div>
+                        <div class="review-rating">${renderStars(r.rating, 'sm')}</div>
+                        <p class="review-text">${escapeHtml(r.text)}</p>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
     // ========== INIT ==========
     function init() {
         initTheme();
         initSearch();
         initModal();
+
+        // Stack drawer
+        document.getElementById('nav-stack-btn').addEventListener('click', openStackDrawer);
+        document.getElementById('stack-drawer-close').addEventListener('click', closeStackDrawer);
+        document.getElementById('btn-export-stack').addEventListener('click', exportStack);
+        document.getElementById('stack-drawer-body').addEventListener('click', (e) => {
+            const removeBtn = e.target.closest('.stack-drawer-remove');
+            if (removeBtn) toggleStack(removeBtn.dataset.removeId);
+        });
+        updateStackBadge();
+
         loadData();
     }
 

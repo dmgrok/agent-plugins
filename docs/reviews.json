@@ -1,0 +1,610 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-07-05",
+  "reviews": {
+    "anthropics/brainstorming": {
+      "aggregate": { "rating": 4.6, "count": 31 },
+      "items": [
+        {
+          "id": "r-ab-1",
+          "author": "ProductMindset",
+          "date": "2026-06-28",
+          "rating": 5,
+          "text": "Transformed how our team runs ideation sessions. The structured prompting chains surface angles we'd never think of on our own.",
+          "verified": true
+        },
+        {
+          "id": "r-ab-2",
+          "author": "startup_cto_diary",
+          "date": "2026-06-15",
+          "rating": 4,
+          "text": "Solid for early-stage feature scoping. Sometimes the suggestions are a bit generic but prompting it with constraints sharpens the output.",
+          "verified": false
+        },
+        {
+          "id": "r-ab-3",
+          "author": "UXResearcher_Kai",
+          "date": "2026-05-30",
+          "rating": 5,
+          "text": "Used this to prepare stakeholder workshops — the divergent-thinking mode is genuinely impressive and saves hours of prep.",
+          "verified": true
+        }
+      ]
+    },
+    "anthropics/coding": {
+      "aggregate": { "rating": 4.8, "count": 87 },
+      "items": [
+        {
+          "id": "r-ac-1",
+          "author": "fullstack_felix",
+          "date": "2026-07-01",
+          "rating": 5,
+          "text": "Probably the best coding assistant I've used. It catches subtle bugs in TypeScript generics that other tools miss entirely.",
+          "verified": true
+        },
+        {
+          "id": "r-ac-2",
+          "author": "backend_beatriz",
+          "date": "2026-06-22",
+          "rating": 5,
+          "text": "The refactoring suggestions respect the existing architecture rather than rewriting everything from scratch — huge win on legacy codebases.",
+          "verified": true
+        },
+        {
+          "id": "r-ac-3",
+          "author": "weekend_hacker_99",
+          "date": "2026-06-10",
+          "rating": 4,
+          "text": "Does exactly what it says. Occasionally verbose in explanations when you just want the code, but overall excellent quality.",
+          "verified": false
+        },
+        {
+          "id": "r-ac-4",
+          "author": "SeniorDevSam",
+          "date": "2026-05-18",
+          "rating": 5,
+          "text": "Pair programming at 3am when my team is asleep. Understands context across files better than anything else I've tested.",
+          "verified": false
+        }
+      ]
+    },
+    "anthropics/pdf": {
+      "aggregate": { "rating": 4.4, "count": 19 },
+      "items": [
+        {
+          "id": "r-apdf-1",
+          "author": "LegalEagle_Marco",
+          "date": "2026-06-25",
+          "rating": 5,
+          "text": "Extracts clause-level detail from contracts that would take a paralegal hours to manually review. Game-changer for due diligence work.",
+          "verified": true
+        },
+        {
+          "id": "r-apdf-2",
+          "author": "research_librarian",
+          "date": "2026-06-08",
+          "rating": 4,
+          "text": "Good at summarizing dense academic papers. Struggles with multi-column layouts and footnotes in older scanned PDFs.",
+          "verified": false
+        },
+        {
+          "id": "r-apdf-3",
+          "author": "FinanceAnalystPro",
+          "date": "2026-05-22",
+          "rating": 4,
+          "text": "Works well for financial reports. I'd love better table extraction, but the narrative summarization is excellent.",
+          "verified": true
+        }
+      ]
+    },
+    "anthropics/sequentialthinking": {
+      "aggregate": { "rating": 4.5, "count": 28 },
+      "items": [
+        {
+          "id": "r-ast-1",
+          "author": "SREoncall",
+          "date": "2026-07-02",
+          "rating": 5,
+          "text": "This is the plugin that makes complex incident postmortems tractable. It forces a step-by-step causal chain that I now include in every RCA.",
+          "verified": true
+        },
+        {
+          "id": "r-ast-2",
+          "author": "architekt_anna",
+          "date": "2026-06-17",
+          "rating": 5,
+          "text": "Invaluable for system design sessions. Forces you to think through dependencies before committing to an approach.",
+          "verified": true
+        },
+        {
+          "id": "r-ast-3",
+          "author": "pmthoughts",
+          "date": "2026-05-29",
+          "rating": 3.5,
+          "text": "It's useful but can feel slow for simpler problems. Best reserved for genuinely complex multi-step reasoning tasks.",
+          "verified": false
+        }
+      ]
+    },
+    "anthropics/search": {
+      "aggregate": { "rating": 4.3, "count": 42 },
+      "items": [
+        {
+          "id": "r-as-1",
+          "author": "researchbot_ryan",
+          "date": "2026-06-29",
+          "rating": 4,
+          "text": "Solid web search integration. The source attribution makes it usable for anything where you need to cite your findings.",
+          "verified": true
+        },
+        {
+          "id": "r-as-2",
+          "author": "competitive_intel_ops",
+          "date": "2026-06-14",
+          "rating": 5,
+          "text": "Combined with brainstorming plugin it gives you a research-to-ideation pipeline that's hard to beat for market analysis.",
+          "verified": false
+        },
+        {
+          "id": "r-as-3",
+          "author": "techwriter_tomas",
+          "date": "2026-06-02",
+          "rating": 4,
+          "text": "Results are relevant and the summaries are concise. Occasionally surfaces outdated pages but generally reliable for current topics.",
+          "verified": false
+        }
+      ]
+    },
+    "openai/codex": {
+      "aggregate": { "rating": 4.2, "count": 56 },
+      "items": [
+        {
+          "id": "r-oc-1",
+          "author": "PythonEngineer_Dev",
+          "date": "2026-06-30",
+          "rating": 4,
+          "text": "Strong for Python and JavaScript. Autocomplete accuracy in complex async patterns is noticeably better than older models.",
+          "verified": true
+        },
+        {
+          "id": "r-oc-2",
+          "author": "GoDevGunnar",
+          "date": "2026-06-18",
+          "rating": 4,
+          "text": "Works well for most languages. Go support has improved considerably — it now produces idiomatic error handling most of the time.",
+          "verified": false
+        },
+        {
+          "id": "r-oc-3",
+          "author": "mobiledev_mia",
+          "date": "2026-05-25",
+          "rating": 4.5,
+          "text": "Very capable. Pair it with GitHub plugin for review automation and the value compound quickly.",
+          "verified": true
+        }
+      ]
+    },
+    "github/github": {
+      "aggregate": { "rating": 4.7, "count": 104 },
+      "items": [
+        {
+          "id": "r-gh-1",
+          "author": "DevOpsDaily",
+          "date": "2026-07-03",
+          "rating": 5,
+          "text": "PR review workflow is seamlessly integrated. The AI diff summaries alone save 30 minutes per day across our team.",
+          "verified": true
+        },
+        {
+          "id": "r-gh-2",
+          "author": "open_source_otto",
+          "date": "2026-06-21",
+          "rating": 5,
+          "text": "Issue triage and labeling automation is excellent. Finally cleared a 6-month-old backlog of unlabeled issues in one afternoon.",
+          "verified": true
+        },
+        {
+          "id": "r-gh-3",
+          "author": "release_engineer_ren",
+          "date": "2026-06-05",
+          "rating": 4,
+          "text": "Changelog generation from commit history is very good. Occasionally over-includes minor dependency bumps but easily filtered.",
+          "verified": false
+        },
+        {
+          "id": "r-gh-4",
+          "author": "CodingCatalina",
+          "date": "2026-05-15",
+          "rating": 5,
+          "text": "The code review suggestions are context-aware and catch things static analysis misses. Worth it for larger teams alone.",
+          "verified": true
+        }
+      ]
+    },
+    "huggingface/hf-cli": {
+      "aggregate": { "rating": 4.5, "count": 33 },
+      "items": [
+        {
+          "id": "r-hf-1",
+          "author": "MLEngineer_Priya",
+          "date": "2026-06-27",
+          "rating": 5,
+          "text": "Model search and download right from the CLI without leaving my dev environment. The dataset preview feature is underrated.",
+          "verified": true
+        },
+        {
+          "id": "r-hf-2",
+          "author": "data_scientist_dom",
+          "date": "2026-06-13",
+          "rating": 4,
+          "text": "Excellent for rapid model prototyping. Inference API integration is smooth though rate limits bite on heavy experimentation days.",
+          "verified": false
+        },
+        {
+          "id": "r-hf-3",
+          "author": "ResearchEngineer_Rin",
+          "date": "2026-05-28",
+          "rating": 4.5,
+          "text": "Combined with the Anthropic coding plugin for eval scripting this becomes a genuinely powerful ML research assistant.",
+          "verified": false
+        }
+      ]
+    },
+    "skillcreatorai/backend-development": {
+      "aggregate": { "rating": 4.3, "count": 22 },
+      "items": [
+        {
+          "id": "r-sc-be-1",
+          "author": "backend_beatriz",
+          "date": "2026-06-26",
+          "rating": 4,
+          "text": "Solid boilerplate generation for REST APIs. The OpenAPI spec output saves hours of documentation work on each new service.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-be-2",
+          "author": "microservices_mike",
+          "date": "2026-06-09",
+          "rating": 4.5,
+          "text": "Good understanding of service-to-service auth patterns. Correctly suggested JWT rotation strategy for our inter-service calls.",
+          "verified": false
+        },
+        {
+          "id": "r-sc-be-3",
+          "author": "api_architect_al",
+          "date": "2026-05-20",
+          "rating": 4,
+          "text": "Useful, though database schema design suggestions could be more opinionated about normalization trade-offs.",
+          "verified": false
+        }
+      ]
+    },
+    "skillcreatorai/frontend-development": {
+      "aggregate": { "rating": 4.4, "count": 27 },
+      "items": [
+        {
+          "id": "r-sc-fe-1",
+          "author": "ReactDevRuby",
+          "date": "2026-07-01",
+          "rating": 5,
+          "text": "Component generation is fast and the output follows modern React patterns. Custom hook suggestions in particular are excellent.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-fe-2",
+          "author": "css_wizard_wei",
+          "date": "2026-06-16",
+          "rating": 4,
+          "text": "Good at Tailwind and CSS Modules. Sometimes suggests deprecated patterns for older frameworks but current tooling support is great.",
+          "verified": false
+        },
+        {
+          "id": "r-sc-fe-3",
+          "author": "a11y_advocate_ama",
+          "date": "2026-06-01",
+          "rating": 4,
+          "text": "Accessibility considerations are better than most tools — it proactively adds ARIA attributes and keyboard navigation in generated components.",
+          "verified": true
+        }
+      ]
+    },
+    "skillcreatorai/fullstack-development": {
+      "aggregate": { "rating": 4.5, "count": 18 },
+      "items": [
+        {
+          "id": "r-sc-fs-1",
+          "author": "indie_hacker_ingrid",
+          "date": "2026-06-24",
+          "rating": 5,
+          "text": "This cuts MVP time in half. The full-stack scaffolding with auth, database, and API wired together out of the box is incredibly practical.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-fs-2",
+          "author": "solofounder_sol",
+          "date": "2026-06-11",
+          "rating": 4,
+          "text": "Next.js + Prisma stack setup is really clean. Deployment config for Vercel works first-try which is more than I can say for most tools.",
+          "verified": false
+        },
+        {
+          "id": "r-sc-fs-3",
+          "author": "startup_cto_diary",
+          "date": "2026-05-27",
+          "rating": 4.5,
+          "text": "Saved us from setting up boilerplate for the third time. Opinionated in a good way.",
+          "verified": false
+        }
+      ]
+    },
+    "skillcreatorai/devops-deployment": {
+      "aggregate": { "rating": 4.6, "count": 35 },
+      "items": [
+        {
+          "id": "r-sc-do-1",
+          "author": "DevOpsDaily",
+          "date": "2026-07-02",
+          "rating": 5,
+          "text": "Terraform and Helm generation are both solid. The multi-environment promotion workflow it scaffolded matches our internal best practices almost exactly.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-do-2",
+          "author": "k8s_whisperer_ko",
+          "date": "2026-06-19",
+          "rating": 5,
+          "text": "Kubernetes manifest generation with proper resource limits and health checks — no more copy-pasting from previous projects.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-do-3",
+          "author": "sre_siddarth",
+          "date": "2026-06-03",
+          "rating": 4,
+          "text": "Good for CI/CD pipeline generation. GitHub Actions support is excellent; Bitbucket support feels like an afterthought.",
+          "verified": false
+        }
+      ]
+    },
+    "skillcreatorai/llm-application-dev": {
+      "aggregate": { "rating": 4.7, "count": 41 },
+      "items": [
+        {
+          "id": "r-sc-llm-1",
+          "author": "aiProductBuilder_ab",
+          "date": "2026-06-28",
+          "rating": 5,
+          "text": "The RAG pipeline scaffolding is excellent — chunking strategies, embedding model selection, retrieval scoring all covered with sensible defaults.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-llm-2",
+          "author": "MLEngineer_Priya",
+          "date": "2026-06-14",
+          "rating": 5,
+          "text": "Best plugin I've found for building LLM-powered tools. Evaluation harness generation alone is worth the install.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-llm-3",
+          "author": "promptEngineer_pete",
+          "date": "2026-06-01",
+          "rating": 4,
+          "text": "Prompt engineering patterns are well-chosen. Would love native LangGraph support but the general agent loop scaffolding works.",
+          "verified": false
+        },
+        {
+          "id": "r-sc-llm-4",
+          "author": "ResearchEngineer_Rin",
+          "date": "2026-05-19",
+          "rating": 4.5,
+          "text": "Saved our team from reinventing the observability wheel for LLM apps. Tracing integration suggestions were spot-on.",
+          "verified": false
+        }
+      ]
+    },
+    "skillcreatorai/mobile-development": {
+      "aggregate": { "rating": 4.1, "count": 16 },
+      "items": [
+        {
+          "id": "r-sc-mob-1",
+          "author": "mobiledev_mia",
+          "date": "2026-06-23",
+          "rating": 4,
+          "text": "React Native generation is good. Expo workflow is well-understood and the navigation scaffold follows Expo Router conventions correctly.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-mob-2",
+          "author": "ios_eng_ivan",
+          "date": "2026-06-08",
+          "rating": 4,
+          "text": "Reasonable for cross-platform work. Native Swift/Kotlin support is thin — stick to it for React Native projects.",
+          "verified": false
+        },
+        {
+          "id": "r-sc-mob-3",
+          "author": "android_dev_ariel",
+          "date": "2026-05-24",
+          "rating": 4,
+          "text": "Handles push notification setup better than any tool I've used before. Saves the painful back-and-forth with docs.",
+          "verified": false
+        }
+      ]
+    },
+    "skillcreatorai/data-engineering": {
+      "aggregate": { "rating": 4.4, "count": 24 },
+      "items": [
+        {
+          "id": "r-sc-de-1",
+          "author": "data_engineer_dani",
+          "date": "2026-06-27",
+          "rating": 5,
+          "text": "dbt model generation is exceptional. The lineage-aware refactoring suggestions alone justify the install for any warehouse project.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-de-2",
+          "author": "data_scientist_dom",
+          "date": "2026-06-12",
+          "rating": 4,
+          "text": "Good Spark job scaffolding. I especially like that it reasons about partition strategies and not just syntax.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-de-3",
+          "author": "analytics_eng_alex",
+          "date": "2026-05-30",
+          "rating": 4,
+          "text": "Solid overall. Airflow DAG generation could handle more complex dependency graphs but simpler pipelines come out clean.",
+          "verified": false
+        }
+      ]
+    },
+    "skillcreatorai/security-audit": {
+      "aggregate": { "rating": 4.6, "count": 29 },
+      "items": [
+        {
+          "id": "r-sc-sec-1",
+          "author": "appsec_engineer_ash",
+          "date": "2026-07-01",
+          "rating": 5,
+          "text": "The OWASP Top 10 scan integration is thorough and the remediation suggestions include code examples — not just descriptions of the problem.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-sec-2",
+          "author": "pentest_practitioner",
+          "date": "2026-06-17",
+          "rating": 5,
+          "text": "Found two SQL injection vectors in a codebase that had passed our standard linting rules. Very impressed with the depth of analysis.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-sec-3",
+          "author": "cloud_sec_cora",
+          "date": "2026-06-02",
+          "rating": 4,
+          "text": "Good for IaC security review. Catches overly permissive IAM policies reliably. False positive rate is low enough for daily use.",
+          "verified": false
+        }
+      ]
+    },
+    "skillcreatorai/product-management": {
+      "aggregate": { "rating": 4.2, "count": 20 },
+      "items": [
+        {
+          "id": "r-sc-pm-1",
+          "author": "pmthoughts",
+          "date": "2026-06-25",
+          "rating": 4,
+          "text": "PRD drafting support is genuinely useful. It asks the right clarifying questions before writing rather than hallucinating requirements.",
+          "verified": false
+        },
+        {
+          "id": "r-sc-pm-2",
+          "author": "ProductMindset",
+          "date": "2026-06-10",
+          "rating": 4.5,
+          "text": "User story generation with acceptance criteria saves at least two hours of sprint planning prep per week for our team.",
+          "verified": true
+        },
+        {
+          "id": "r-sc-pm-3",
+          "author": "growth_pm_grace",
+          "date": "2026-05-26",
+          "rating": 4,
+          "text": "Competitive analysis framework support is solid. Could use deeper integration with metrics and OKR tooling.",
+          "verified": false
+        }
+      ]
+    },
+    "obra-superpowers/brainstorming": {
+      "aggregate": { "rating": 4.3, "count": 14 },
+      "items": [
+        {
+          "id": "r-ob-br-1",
+          "author": "creative_director_cleo",
+          "date": "2026-06-22",
+          "rating": 4,
+          "text": "Different flavor than the Anthropic brainstorming plugin — leans more creative and lateral. Good for concept exploration in design sprints.",
+          "verified": false
+        },
+        {
+          "id": "r-ob-br-2",
+          "author": "UXResearcher_Kai",
+          "date": "2026-06-07",
+          "rating": 4.5,
+          "text": "The \"superpowers\" framing encourages more ambitious thinking. I use it alongside the Anthropic version for a wider range of ideas.",
+          "verified": true
+        },
+        {
+          "id": "r-ob-br-3",
+          "author": "indie_hacker_ingrid",
+          "date": "2026-05-23",
+          "rating": 4,
+          "text": "Fun and surprising output. Best for early exploration when you want to break out of obvious solutions.",
+          "verified": false
+        }
+      ]
+    },
+    "obra-superpowers/coding": {
+      "aggregate": { "rating": 4.4, "count": 21 },
+      "items": [
+        {
+          "id": "r-ob-co-1",
+          "author": "fullstack_felix",
+          "date": "2026-06-26",
+          "rating": 4,
+          "text": "Interesting alternative perspective on code problems. Sometimes suggests unconventional approaches that turn out to be elegant solutions.",
+          "verified": false
+        },
+        {
+          "id": "r-ob-co-2",
+          "author": "SeniorDevSam",
+          "date": "2026-06-11",
+          "rating": 5,
+          "text": "When I'm stuck on an algorithmic problem this is my second opinion. Found a O(n log n) solution where I was stuck at O(n²).",
+          "verified": true
+        },
+        {
+          "id": "r-ob-co-3",
+          "author": "weekend_hacker_99",
+          "date": "2026-05-28",
+          "rating": 4,
+          "text": "Good complementary tool to the standard coding plugins. Doesn't replace them but adds a useful creative lens.",
+          "verified": false
+        }
+      ]
+    },
+    "obra-superpowers/research": {
+      "aggregate": { "rating": 4.5, "count": 17 },
+      "items": [
+        {
+          "id": "r-ob-re-1",
+          "author": "researchbot_ryan",
+          "date": "2026-06-29",
+          "rating": 5,
+          "text": "The synthesis quality is noticeably higher than a plain search plugin. It connects disparate sources into a coherent narrative.",
+          "verified": true
+        },
+        {
+          "id": "r-ob-re-2",
+          "author": "competitive_intel_ops",
+          "date": "2026-06-13",
+          "rating": 4,
+          "text": "Great for literature review and technical benchmarking. Source diversity is good though paywalled papers are a limitation.",
+          "verified": false
+        },
+        {
+          "id": "r-ob-re-3",
+          "author": "techwriter_tomas",
+          "date": "2026-05-31",
+          "rating": 4.5,
+          "text": "My go-to for deep dives before writing a technical article. Saves days of manual research and the citations are reliable.",
+          "verified": true
+        }
+      ]
+    }
+  }
+}

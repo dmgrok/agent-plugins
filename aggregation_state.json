@@ -1,15 +1,15 @@
 {
-  "last_run": "2026-07-09T09:53:37.081633+00:00",
+  "last_run": "2026-07-10T09:48:24.676972+00:00",
   "provider_commits": {
     "anthropics": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "44ffa65c503feee850fad4186b21ab5c913777a9",
+    "github": "30472ecf0fe34cc561df958c08501ecc5ca80ea4",
     "vercel": "f8a72b9603728bb92a217a879b7e62e43ad76c81",
-    "huggingface": "89d91fd4d0e6d4330471ba35f1c388489e94b496",
+    "huggingface": "7039bdcf4510c30ec932637e8b2c1646aee7f185",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
     "obra-superpowers": "d884ae04edebef577e82ff7c4e143debd0bbec99",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
-    "sanjay-ai-skills": "9731c774240126a924be44058148bd7a353e20d7",
+    "sanjay-ai-skills": "361969210b1002034be70de60a041a25732b098a",
     "aws-skills": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
     "claude-marketplace-engineering": "3fa16a94e0aba3509e4d4b318ca175d3191b5b7d",
     "claude-marketplace-visual": "3fa16a94e0aba3509e4d4b318ca175d3191b5b7d",
@@ -48,6 +48,6 @@
     "accint": "03ed61f278b37f9a9e4c5b23932626989da4fd67",
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
-  "skills_count": 1140,
-  "version": "2026.07.09"
+  "skills_count": 1143,
+  "version": "2026.07.10"
 }

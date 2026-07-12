@@ -1,8 +1,8 @@
 {
   "name": "MCP-Compatible Skills",
   "description": "Skills with MCP integration support, filtered from Agent Skills Directory",
-  "version": "2026.07.11",
-  "generated_at": "2026-07-11T08:03:58.962628+00:00",
+  "version": "2026.07.12",
+  "generated_at": "2026-07-12T08:25:27.966005+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
@@ -22,7 +22,7 @@
         "repo": "https://github.com/neondatabase/agent-skills",
         "path": "skills/neon-postgres",
         "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
-        "commit_sha": "f2b4b8b38183c33bbfe359de6453f843ffc1d30a"
+        "commit_sha": "53566ea4057c7381749c745544819403ff692862"
       },
       "has_scripts": false,
       "has_references": false,
@@ -39,7 +39,7 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 8,
+      "days_since_update": 9,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
@@ -60,7 +60,7 @@
         "repo": "https://github.com/neondatabase/agent-skills",
         "path": "skills/neon-postgres-branches",
         "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
-        "commit_sha": "f2b4b8b38183c33bbfe359de6453f843ffc1d30a"
+        "commit_sha": "53566ea4057c7381749c745544819403ff692862"
       },
       "has_scripts": false,
       "has_references": false,
@@ -78,7 +78,7 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 10,
+      "days_since_update": 11,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",

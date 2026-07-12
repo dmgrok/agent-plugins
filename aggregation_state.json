@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-07-11T08:03:59.149993+00:00",
+  "last_run": "2026-07-12T08:25:28.157799+00:00",
   "provider_commits": {
     "anthropics": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -35,9 +35,9 @@
     "google-labs-stitch": "3f64079d75d025bc5890c73669f27c26a2d80b31",
     "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
     "tinybird": "960fb7516723d7ac4dac00522a36825de9e906cd",
-    "neondatabase": "f2b4b8b38183c33bbfe359de6453f843ffc1d30a",
+    "neondatabase": "53566ea4057c7381749c745544819403ff692862",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
-    "remotion": "6726bf2d4bcce0359806749b3656b0c886d74aaa",
+    "remotion": "8b1d51ade295b2d9bd22a8f07047d13c0740f275",
     "nginity": "0241f43765572f15146fcef692defbf96d473f37",
     "obsidian-plugin": "9b016a2c0914ba44eba683da5b65cf08b0a4a4aa",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
@@ -48,6 +48,6 @@
     "accint": "03ed61f278b37f9a9e4c5b23932626989da4fd67",
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
-  "skills_count": 1143,
-  "version": "2026.07.11"
+  "skills_count": 1157,
+  "version": "2026.07.12"
 }

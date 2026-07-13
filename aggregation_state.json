@@ -1,11 +1,11 @@
 {
-  "last_run": "2026-07-12T08:25:28.157799+00:00",
+  "last_run": "2026-07-13T09:42:45.568164+00:00",
   "provider_commits": {
     "anthropics": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "30472ecf0fe34cc561df958c08501ecc5ca80ea4",
+    "github": "0aaced533251f5b86c69dfbc5e55db74c4b4d1af",
     "vercel": "f8a72b9603728bb92a217a879b7e62e43ad76c81",
-    "huggingface": "7039bdcf4510c30ec932637e8b2c1646aee7f185",
+    "huggingface": "4af99a60b31de8077abaeb954380f525305548d7",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
     "obra-superpowers": "d884ae04edebef577e82ff7c4e143debd0bbec99",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
@@ -49,5 +49,5 @@
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
   "skills_count": 1157,
-  "version": "2026.07.12"
+  "version": "2026.07.13"
 }

@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-07-14T08:30:52.724382+00:00",
+  "last_run": "2026-07-15T08:27:15.562301+00:00",
   "provider_commits": {
     "anthropics": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "e353a8cfb8124d44905fc73214d873cea4a0ba3b",
+    "github": "2c2461a7fa383f664bb75546f03a2c6087f3819d",
     "vercel": "f8a72b9603728bb92a217a879b7e62e43ad76c81",
     "huggingface": "52d324945107f68d06d561743cf26194bdbf9cf8",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
@@ -26,16 +26,16 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "eea5cb28ba79ab8b078a1eaa44ce9ec44f75dbf8",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "f915ccf3cc13faae9b18ce2e734156e181db20da",
+    "stripe": "b377be4730ff675c145d52e90695191316013c0d",
     "cloudflare": "70215303d44a81a0db3219428f4825b604fc6061",
     "trailofbits": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af",
-    "expo": "ca4f034c39f3540559c3c10f69e160ad8020b991",
+    "expo": "9eb5ab06b7315a1a517b61fa730f60d9a3b48d69",
     "getsentry": "5a64b36c62d042d3981b7937d9d6ca7bd1753b9a",
     "supabase": "1ad9aaeb49caafd9e95c0a91116f71890eebbc53",
     "google-labs-stitch": "ad4b8bc8c51991f53214b573c98eb4f46807e178",
     "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
     "tinybird": "960fb7516723d7ac4dac00522a36825de9e906cd",
-    "neondatabase": "0dd3586fb31af7bd8fe9bff5e1ca7d65cc6e7fc4",
+    "neondatabase": "585efd786714a3eee95ec003c9de5658f0e06d1b",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
     "remotion": "8b1d51ade295b2d9bd22a8f07047d13c0740f275",
     "nginity": "84dc5a4f6ab93df5195805010572d7d0f874dadb",
@@ -48,6 +48,6 @@
     "accint": "03ed61f278b37f9a9e4c5b23932626989da4fd67",
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
-  "skills_count": 1159,
-  "version": "2026.07.14"
+  "skills_count": 1161,
+  "version": "2026.07.15"
 }

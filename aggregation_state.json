@@ -1,11 +1,11 @@
 {
-  "last_run": "2026-07-15T08:27:15.562301+00:00",
+  "last_run": "2026-07-16T08:27:04.025304+00:00",
   "provider_commits": {
     "anthropics": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "2c2461a7fa383f664bb75546f03a2c6087f3819d",
+    "github": "fb80ec4f215e8a96dfdc80f674cabcda36ccd01a",
     "vercel": "f8a72b9603728bb92a217a879b7e62e43ad76c81",
-    "huggingface": "52d324945107f68d06d561743cf26194bdbf9cf8",
+    "huggingface": "86cdeee824b73e504198b6005bb113552cdfa7ba",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
     "obra-superpowers": "d884ae04edebef577e82ff7c4e143debd0bbec99",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
@@ -26,16 +26,16 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "eea5cb28ba79ab8b078a1eaa44ce9ec44f75dbf8",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "b377be4730ff675c145d52e90695191316013c0d",
+    "stripe": "e238b951665cba5260d70aa80e5021def27a61d3",
     "cloudflare": "70215303d44a81a0db3219428f4825b604fc6061",
     "trailofbits": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af",
-    "expo": "9eb5ab06b7315a1a517b61fa730f60d9a3b48d69",
-    "getsentry": "5a64b36c62d042d3981b7937d9d6ca7bd1753b9a",
+    "expo": "dba2a34f0db6aeba1af440da0f93aff916c765bb",
+    "getsentry": "412f2368ee3ec90ce042826b57533f080d531aaf",
     "supabase": "1ad9aaeb49caafd9e95c0a91116f71890eebbc53",
     "google-labs-stitch": "ad4b8bc8c51991f53214b573c98eb4f46807e178",
     "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
     "tinybird": "960fb7516723d7ac4dac00522a36825de9e906cd",
-    "neondatabase": "585efd786714a3eee95ec003c9de5658f0e06d1b",
+    "neondatabase": "61c6218eddf689fff39c4eb4abd7b1038ce15398",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
     "remotion": "8b1d51ade295b2d9bd22a8f07047d13c0740f275",
     "nginity": "84dc5a4f6ab93df5195805010572d7d0f874dadb",
@@ -48,6 +48,6 @@
     "accint": "03ed61f278b37f9a9e4c5b23932626989da4fd67",
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
-  "skills_count": 1161,
-  "version": "2026.07.15"
+  "skills_count": 1164,
+  "version": "2026.07.16"
 }

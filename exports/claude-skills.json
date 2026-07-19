@@ -1,13 +1,343 @@
 {
   "name": "Claude Skills Export",
   "description": "High-quality skills compatible with Claude Code, filtered from Agent Skills Directory. Install with: skillsdir install <skill-id> --project --agent claude",
-  "version": "2026.07.18",
-  "generated_at": "2026-07-18T08:11:08.714566+00:00",
+  "version": "2026.07.19",
+  "generated_at": "2026-07-19T08:26:27.326879+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
-  "total_skills": 1156,
+  "total_skills": 1148,
   "skills": [
+    {
+      "id": "remotion/mediabunny",
+      "name": "mediabunny",
+      "description": "Multimedia handling with the Mediabunny library",
+      "provider": "remotion",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-18T14:06:47Z",
+      "metadata": {
+        "tags": "remotion, mediabunny, multimedia, video, audio"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/mediabunny",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/mediabunny/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "mediabunny"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
+    {
+      "id": "remotion/remotion-best-practices",
+      "name": "remotion-best-practices",
+      "description": "Best practices for Remotion",
+      "provider": "remotion",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-19T08:14:07Z",
+      "metadata": {
+        "tags": "remotion, video, react, animation, composition"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-best-practices",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "remotion",
+        "best",
+        "practices"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
+    {
+      "id": "remotion/remotion-captions",
+      "name": "remotion-captions",
+      "description": "Dealing with captions in Remotion",
+      "provider": "remotion",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-11T12:51:32Z",
+      "metadata": {
+        "tags": "subtitles, captions, remotion, json"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-captions",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-captions/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "remotion",
+        "captions"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 7,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
+    {
+      "id": "remotion/remotion-create",
+      "name": "remotion-create",
+      "description": "Creating a new Remotion video",
+      "provider": "remotion",
+      "category": "creative",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-11T12:51:32Z",
+      "metadata": {
+        "tags": "remotion"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-create",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-create/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "remotion",
+        "create"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 7,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
+    {
+      "id": "remotion/remotion-docs",
+      "name": "remotion-docs",
+      "description": "Search and fetch Remotion documentation pages",
+      "provider": "remotion",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-16T13:37:38Z",
+      "metadata": {
+        "tags": "remotion, docs, documentation, search"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-docs",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-docs/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "document",
+        "remotion",
+        "docs"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
+    {
+      "id": "remotion/remotion-interactivity",
+      "name": "remotion-interactivity",
+      "description": "Best practices for writing Remotion animations that stay intuitive for agents and editable in Remotion Studio Visual Mode.",
+      "provider": "remotion",
+      "category": "creative",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-16T13:37:38Z",
+      "metadata": {
+        "tags": "remotion, interactivity, studio, visual mode"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-interactivity",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-interactivity/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "visual",
+        "remotion",
+        "interactivity"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
+    {
+      "id": "remotion/remotion-markup",
+      "name": "remotion-markup",
+      "description": "Best practices for writing Remotion React Markup",
+      "provider": "remotion",
+      "category": "web",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-16T13:37:38Z",
+      "metadata": {
+        "tags": "remotion, react, markup"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-markup",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-markup/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "remotion",
+        "markup"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
+    {
+      "id": "remotion/remotion-render",
+      "name": "remotion-render",
+      "description": "Best practices for rendering videos",
+      "provider": "remotion",
+      "category": "creative",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-11T12:51:32Z",
+      "metadata": {
+        "tags": "remotion, render"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-render",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-render/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "remotion",
+        "render"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 7,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
+    {
+      "id": "remotion/remotion-saas",
+      "name": "remotion-saas",
+      "description": "Building video apps with Remotion - framework, rendering and Player advice",
+      "provider": "remotion",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-11T12:51:32Z",
+      "metadata": {
+        "tags": "remotion, saas, player, rendering, templates, lambda"
+      },
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-saas",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-saas/SKILL.md",
+        "commit_sha": "e4012aace885fd67d95d2a1a3a965eca33298b17"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "remotion",
+        "saas"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 7,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4012
+    },
     {
       "id": "github/acquire-codebase-knowledge",
       "name": "acquire-codebase-knowledge",
@@ -30102,740 +30432,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 80
-    },
-    {
-      "id": "remotion/mediabunny",
-      "name": "mediabunny",
-      "description": "Multimedia handling with the Mediabunny library",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "remotion, mediabunny, multimedia, video, audio"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/mediabunny",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/mediabunny/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "mediabunny"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/mediabunny",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/mediabunny",
-      "name": "mediabunny",
-      "description": "Multimedia handling with the Mediabunny library",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "remotion, mediabunny, multimedia, video, audio"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices/mediabunny",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/mediabunny/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "mediabunny"
-      ],
-      "duplicate_status": "probable_duplicate",
-      "duplicate_annotation": "Probable duplicate of remotion/mediabunny (95% similar)",
-      "duplicate_of": "remotion/mediabunny",
-      "duplicate_similarity": 0.95,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/mediabunny",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-best-practices",
-      "name": "remotion-best-practices",
-      "description": "Best practices for Remotion",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-16T13:37:38Z",
-      "metadata": {
-        "tags": "remotion, video, react, animation, composition"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "remotion",
-        "best",
-        "practices"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983
-    },
-    {
-      "id": "remotion/remotion-captions",
-      "name": "remotion-captions",
-      "description": "Dealing with captions in Remotion",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "subtitles, captions, remotion, json"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices/remotion-captions",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-captions/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "remotion",
-        "captions"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-captions",
-          "provider": "remotion",
-          "similarity": 0.94
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-captions",
-      "name": "remotion-captions",
-      "description": "Dealing with captions in Remotion",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "subtitles, captions, remotion, json"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-captions",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-captions/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "remotion",
-        "captions"
-      ],
-      "duplicate_status": "probable_duplicate",
-      "duplicate_annotation": "Probable duplicate of remotion/remotion-captions (94% similar)",
-      "duplicate_of": "remotion/remotion-captions",
-      "duplicate_similarity": 0.94,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-captions",
-          "provider": "remotion",
-          "similarity": 0.94
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-create",
-      "name": "remotion-create",
-      "description": "Creating a new Remotion video",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "remotion"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices/remotion-create",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-create/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "remotion",
-        "create"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-create",
-          "provider": "remotion",
-          "similarity": 0.94
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-create",
-      "name": "remotion-create",
-      "description": "Creating a new Remotion video",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "remotion"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-create",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-create/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "remotion",
-        "create"
-      ],
-      "duplicate_status": "probable_duplicate",
-      "duplicate_annotation": "Probable duplicate of remotion/remotion-create (94% similar)",
-      "duplicate_of": "remotion/remotion-create",
-      "duplicate_similarity": 0.94,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-create",
-          "provider": "remotion",
-          "similarity": 0.94
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-docs",
-      "name": "remotion-docs",
-      "description": "Search and fetch Remotion documentation pages",
-      "provider": "remotion",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-16T13:37:38Z",
-      "metadata": {
-        "tags": "remotion, docs, documentation, search"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices/remotion-docs",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-docs/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "document",
-        "remotion",
-        "docs"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-docs",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-docs",
-      "name": "remotion-docs",
-      "description": "Search and fetch Remotion documentation pages",
-      "provider": "remotion",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-16T13:37:38Z",
-      "metadata": {
-        "tags": "remotion, docs, documentation, search"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-docs",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-docs/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "document",
-        "remotion",
-        "docs"
-      ],
-      "duplicate_status": "probable_duplicate",
-      "duplicate_annotation": "Probable duplicate of remotion/remotion-docs (95% similar)",
-      "duplicate_of": "remotion/remotion-docs",
-      "duplicate_similarity": 0.95,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-docs",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-interactivity",
-      "name": "remotion-interactivity",
-      "description": "Best practices for writing Remotion animations that stay intuitive for agents and editable in Remotion Studio Visual Mode.",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-16T13:37:38Z",
-      "metadata": {
-        "tags": "remotion, interactivity, studio, visual mode"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices/remotion-interactivity",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-interactivity/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "visual",
-        "remotion",
-        "interactivity"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-interactivity",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-interactivity",
-      "name": "remotion-interactivity",
-      "description": "Best practices for writing Remotion animations that stay intuitive for agents and editable in Remotion Studio Visual Mode.",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-16T13:37:38Z",
-      "metadata": {
-        "tags": "remotion, interactivity, studio, visual mode"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-interactivity",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-interactivity/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "visual",
-        "remotion",
-        "interactivity"
-      ],
-      "duplicate_status": "mirror",
-      "duplicate_annotation": "Complete mirror of remotion/remotion-interactivity",
-      "duplicate_of": "remotion/remotion-interactivity",
-      "duplicate_similarity": 0.95,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-interactivity",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-markup",
-      "name": "remotion-markup",
-      "description": "Best practices for writing Remotion React Markup",
-      "provider": "remotion",
-      "category": "web",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-16T13:37:38Z",
-      "metadata": {
-        "tags": "remotion, react, markup"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices/remotion-markup",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-markup/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "remotion",
-        "markup"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-markup",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-markup",
-      "name": "remotion-markup",
-      "description": "Best practices for writing Remotion React Markup",
-      "provider": "remotion",
-      "category": "web",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-16T13:37:38Z",
-      "metadata": {
-        "tags": "remotion, react, markup"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-markup",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-markup/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "remotion",
-        "markup"
-      ],
-      "duplicate_status": "mirror",
-      "duplicate_annotation": "Complete mirror of remotion/remotion-markup",
-      "duplicate_of": "remotion/remotion-markup",
-      "duplicate_similarity": 0.95,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-markup",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-render",
-      "name": "remotion-render",
-      "description": "Best practices for rendering videos",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "remotion, render"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices/remotion-render",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-render/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "remotion",
-        "render"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-render",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-render",
-      "name": "remotion-render",
-      "description": "Best practices for rendering videos",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "remotion, render"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-render",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-render/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "remotion",
-        "render"
-      ],
-      "duplicate_status": "probable_duplicate",
-      "duplicate_annotation": "Probable duplicate of remotion/remotion-render (95% similar)",
-      "duplicate_of": "remotion/remotion-render",
-      "duplicate_similarity": 0.95,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-render",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-saas",
-      "name": "remotion-saas",
-      "description": "Building video apps with Remotion - framework, rendering and Player advice",
-      "provider": "remotion",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "remotion, saas, player, rendering, templates, lambda"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices/remotion-saas",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-saas/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "remotion",
-        "saas"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-saas",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
-    },
-    {
-      "id": "remotion/remotion-saas",
-      "name": "remotion-saas",
-      "description": "Building video apps with Remotion - framework, rendering and Player advice",
-      "provider": "remotion",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-11T12:51:32Z",
-      "metadata": {
-        "tags": "remotion, saas, player, rendering, templates, lambda"
-      },
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-saas",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-saas/SKILL.md",
-        "commit_sha": "ab22f5fa89962ec943eaa18797cbf38c9d727743"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "remotion",
-        "saas"
-      ],
-      "duplicate_status": "mirror",
-      "duplicate_annotation": "Complete mirror of remotion/remotion-saas",
-      "duplicate_of": "remotion/remotion-saas",
-      "duplicate_similarity": 0.95,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3983,
-      "similar_skills": [
-        {
-          "id": "remotion/remotion-saas",
-          "provider": "remotion",
-          "similarity": 0.95
-        }
-      ]
     },
     {
       "id": "getsentry/agents-md",

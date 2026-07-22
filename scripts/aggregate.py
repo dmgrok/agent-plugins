@@ -374,6 +374,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/proompteng/bilig/main",
         "skills_path_prefix": "packages/headless/",
     },
+    "bountyverdict": {
+        "name": "BountyVerdict",
+        "repo": "https://github.com/cristianmoroaica/bountyverdict",
+        "api_tree_url": "https://api.github.com/repos/cristianmoroaica/bountyverdict/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/cristianmoroaica/bountyverdict/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

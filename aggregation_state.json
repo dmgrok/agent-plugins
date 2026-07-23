@@ -1,7 +1,7 @@
 {
-  "last_run": "2026-07-22T08:41:30.639165+00:00",
+  "last_run": "2026-07-23T08:38:56.545903+00:00",
   "provider_commits": {
-    "anthropics": "fa0fa64bdc967915dc8399e803be67759e1e62b8",
+    "anthropics": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
     "github": "786bdcfc65b669faee10803db460a7218858ad21",
     "vercel": "4559f18a20c1691c744b4395194290db6a0df5e9",
@@ -26,10 +26,10 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "eea5cb28ba79ab8b078a1eaa44ce9ec44f75dbf8",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "cc67124fa6ed230cda567e598dc9b06e17e23f40",
+    "stripe": "1b71f4bcc916dcabda8816964091ab23664c84df",
     "cloudflare": "70215303d44a81a0db3219428f4825b604fc6061",
     "trailofbits": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af",
-    "expo": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3",
+    "expo": "cb916609b51a71f73c8230571530ea0e673d1d7a",
     "getsentry": "9a85b59acc928789b49907109483f46aee1050cd",
     "supabase": "1ad9aaeb49caafd9e95c0a91116f71890eebbc53",
     "google-labs-stitch": "7b53207b94e62911777d53d4238b5f8c88c2b519",
@@ -48,6 +48,6 @@
     "accint": "03ed61f278b37f9a9e4c5b23932626989da4fd67",
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
-  "skills_count": 1176,
-  "version": "2026.07.22"
+  "skills_count": 1177,
+  "version": "2026.07.23"
 }

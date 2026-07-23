@@ -1,13 +1,417 @@
 {
   "name": "Copilot Skills Export",
   "description": "High-quality skills compatible with GitHub Copilot, filtered from Agent Skills Directory. Install with: skillsdir install <skill-id> --project --agent copilot",
-  "version": "2026.07.22",
-  "generated_at": "2026-07-22T08:41:30.434542+00:00",
+  "version": "2026.07.23",
+  "generated_at": "2026-07-23T08:38:56.387836+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
-  "total_skills": 1154,
+  "total_skills": 1155,
   "skills": [
+    {
+      "id": "anthropics/algorithmic-art",
+      "name": "algorithmic-art",
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "provider": "anthropics",
+      "category": "development",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2025-12-01T18:05:36Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/algorithmic-art",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/algorithmic-art/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "art",
+        "algorithmic"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 233,
+      "maintenance_status": "stale",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/claude-api",
+      "name": "claude-api",
+      "description": "Reference for the Claude API / Anthropic SDK \u2014 model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER \u2014 read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" \u2014 whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) \u2014 never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named \u2014 don't Read the file).",
+      "provider": "anthropics",
+      "category": "ml-ai",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2026-07-22T18:20:09Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/claude-api",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/claude-api/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "mcp",
+        "extract",
+        "claude"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/docx",
+      "name": "docx",
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+      "provider": "anthropics",
+      "category": "documents",
+      "license": "Proprietary. LICENSE.txt has complete terms",
+      "compatibility": null,
+      "last_updated_at": "2026-07-17T02:47:37Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/docx",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/docx/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pdf",
+        "docx",
+        "pr",
+        "ci",
+        "document",
+        "extract",
+        "convert"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/frontend-design",
+      "name": "frontend-design",
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "provider": "anthropics",
+      "category": "creative",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2026-06-09T19:33:41Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/frontend-design",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "design",
+        "visual",
+        "frontend"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 43,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/mcp-builder",
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "provider": "anthropics",
+      "category": "development",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2025-12-01T18:05:36Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/mcp-builder",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/mcp-builder/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "mcp",
+        "design",
+        "builder"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 233,
+      "maintenance_status": "stale",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/pdf",
+      "name": "pdf",
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "provider": "anthropics",
+      "category": "creative",
+      "license": "Proprietary. LICENSE.txt has complete terms",
+      "compatibility": null,
+      "last_updated_at": "2026-02-04T02:09:36Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/pdf",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/pdf/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pdf",
+        "pr",
+        "art",
+        "extract"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 169,
+      "maintenance_status": "maintained",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/pptx",
+      "name": "pptx",
+      "description": "Use this skill any time a .pptx or .potx file is involved in any way \u2014 as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.",
+      "provider": "anthropics",
+      "category": "documents",
+      "license": "Proprietary. LICENSE.txt has complete terms",
+      "compatibility": null,
+      "last_updated_at": "2026-07-17T02:47:37Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/pptx",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pptx",
+        "pr",
+        "extract",
+        "email"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/skill-creator",
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "provider": "anthropics",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-03-06T20:06:23Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/skill-creator",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/skill-creator/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": true,
+      "tags": [
+        "pr",
+        "test",
+        "analysis",
+        "skill",
+        "creator"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 138,
+      "maintenance_status": "maintained",
+      "quality_score": 90,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/web-artifacts-builder",
+      "name": "web-artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "provider": "anthropics",
+      "category": "web",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2025-12-01T18:05:36Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/web-artifacts-builder",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/web-artifacts-builder/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "art",
+        "web",
+        "artifacts",
+        "builder"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 233,
+      "maintenance_status": "stale",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/webapp-testing",
+      "name": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "provider": "anthropics",
+      "category": "web",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2025-12-01T18:05:36Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/webapp-testing",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "test",
+        "webapp",
+        "testing"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 233,
+      "maintenance_status": "stale",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
+    {
+      "id": "anthropics/xlsx",
+      "name": "xlsx",
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path \u2014 even casually (like \"the xlsx in my downloads\") \u2014 and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+      "provider": "anthropics",
+      "category": "data",
+      "license": "Proprietary. LICENSE.txt has complete terms",
+      "compatibility": null,
+      "last_updated_at": "2026-07-17T02:47:37Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/xlsx",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/xlsx/SKILL.md",
+        "commit_sha": "1f630fdf9259cec4a14913127dfd7c3b69ef72eb"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "xlsx",
+        "csv",
+        "pr",
+        "ci",
+        "api",
+        "art",
+        "document",
+        "convert"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 163560
+    },
     {
       "id": "expo/eas-app-stores",
       "name": "eas-app-stores",
@@ -16,13 +420,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/eas-app-stores",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-app-stores/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -40,12 +444,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/eas-hosting",
@@ -55,13 +459,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/eas-hosting",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-hosting/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": false,
@@ -76,12 +480,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/eas-observe",
@@ -91,13 +495,13 @@
       "category": "creative",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/eas-observe",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-observe/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -113,12 +517,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/eas-simulator",
@@ -128,13 +532,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-16T15:32:06Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/eas-simulator",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-simulator/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -152,12 +556,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 5,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/eas-update-insights",
@@ -167,13 +571,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/eas-update-insights",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-update-insights/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -188,12 +592,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/eas-workflows",
@@ -203,13 +607,13 @@
       "category": "development",
       "license": "MIT License",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/eas-workflows",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-workflows/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": true,
       "has_references": false,
@@ -226,12 +630,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-app-clip",
@@ -241,13 +645,13 @@
       "category": "mobile",
       "license": null,
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-app-clip",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-app-clip/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -264,12 +668,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-brownfield",
@@ -279,13 +683,13 @@
       "category": "mobile",
       "license": null,
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-brownfield",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-brownfield/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -299,12 +703,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-data-fetching",
@@ -314,13 +718,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-data-fetching",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-data-fetching/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -335,12 +739,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-dev-client",
@@ -350,13 +754,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-dev-client",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-dev-client/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": false,
@@ -373,12 +777,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-dom",
@@ -388,13 +792,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-dom",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-dom/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": false,
@@ -407,12 +811,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-examples",
@@ -422,13 +826,13 @@
       "category": "ml-ai",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-examples",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-examples/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -444,12 +848,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-migrate-module",
@@ -459,13 +863,13 @@
       "category": "mobile",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-20T05:29:36Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo-experiments/skills/expo-migrate-module",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo-experiments/skills/expo-migrate-module/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -482,12 +886,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 2,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-module",
@@ -497,13 +901,13 @@
       "category": "mobile",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-20T05:29:36Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-module",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-module/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -517,12 +921,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 2,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-native-ui",
@@ -532,13 +936,13 @@
       "category": "creative",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-native-ui",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-native-ui/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -552,12 +956,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-project-structure",
@@ -567,13 +971,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-14T14:58:19Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-project-structure",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-project-structure/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": false,
@@ -589,12 +993,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 7,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-router",
@@ -604,13 +1008,13 @@
       "category": "development",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-router",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-router/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -624,34 +1028,38 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-skill-feedback",
       "name": "expo-skill-feedback",
-      "description": "Framework (OSS). Submit feedback on an Expo skill \u2014 or on Expo itself \u2014 or turn the bundled anonymous usage telemetry on or off (off by default / opt-in; the user saying \"enable Expo skills telemetry\" in conversation is the switch). Use when an Expo skill was useful, confusing, broken, missing context, or worth improving; when something fell short because of Expo (an SDK bug or confusing framework behavior) rather than the skill; or when the user wants to enable, turn on, opt in to, disable, turn off, opt out of, check the status of, or understand the anonymous usage tracking these skills can send.",
+      "description": "Submit feedback on an Expo skill\u2014or Expo itself\u2014and control bundled anonymous usage telemetry (off by default / opt-in). Submit feedback with: npx --yes submit-expo-feedback@latest \"ACTIONABLE_FEEDBACK\". Optionally add either or both: --category \"CATEGORY\" and --subject \"SUBJECT\". Replace the uppercase placeholders before running. Use when a skill was useful, confusing, broken, missing context, or worth improving; when Expo, Expo CLI, EAS CLI, docs, or MCP worked well or fell short; or when the user explicitly asks to enable or disable telemetry, check its status, or understand what it collects.",
       "provider": "expo",
-      "category": "mobile",
+      "category": "development",
       "license": null,
       "compatibility": null,
-      "last_updated_at": "2026-07-13T15:46:18Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-skill-feedback",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-skill-feedback/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": true,
       "has_references": false,
       "has_assets": false,
       "tags": [
         "pr",
+        "ci",
+        "test",
+        "mcp",
+        "cli",
         "expo",
         "skill",
         "feedback"
@@ -660,12 +1068,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 8,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 2300
+      "requires_mcp": true,
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-tailwind-setup",
@@ -675,13 +1083,13 @@
       "category": "mobile",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-tailwind-setup",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-tailwind-setup/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": false,
@@ -695,12 +1103,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-ui",
@@ -710,13 +1118,13 @@
       "category": "mobile",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-ui",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-ui/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": true,
       "has_references": true,
@@ -729,12 +1137,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-upgrade",
@@ -744,13 +1152,13 @@
       "category": "mobile",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-16T07:38:14Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-upgrade",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-upgrade/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -763,12 +1171,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 6,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
     },
     {
       "id": "expo/expo-web-to-native",
@@ -778,13 +1186,13 @@
       "category": "mobile",
       "license": "MIT",
       "compatibility": null,
-      "last_updated_at": "2026-07-07T16:18:52Z",
+      "last_updated_at": "2026-07-22T22:32:17Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/expo/skills",
         "path": "plugins/expo/skills/expo-web-to-native",
         "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-web-to-native/SKILL.md",
-        "commit_sha": "25e2b5dc24a621ad520596a94c0660d7d4f8bac3"
+        "commit_sha": "cb916609b51a71f73c8230571530ea0e673d1d7a"
       },
       "has_scripts": false,
       "has_references": true,
@@ -798,12 +1206,238 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 14,
+      "days_since_update": 0,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 2300
+      "github_stars": 2306
+    },
+    {
+      "id": "stripe/connect-recommend",
+      "name": "connect-recommend",
+      "description": "Use this skill when the user asks about Stripe Connect configuration, charge patterns, Dashboard access, or how to get started with Connect, is building a marketplace, platform, multi-vendor store, gig platform, or subscription platform, needs to pay out sellers, vendors, or providers, mentions split payments, revenue sharing, multi-party payments, or similar payment distribution concepts, provides a company URL or business description for a recommendation, builds SaaS that routes money between parties (for example, POS, booking, invoicing \u2014 not operational SaaS without payment routing), asks about onboarding or KYC for merchants, sellers, and vendors, mentions connected account Dashboard or responsibility configurations, or asks about payment flows, white-label payments, or embedded payments.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-23T00:49:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/connect-recommend",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-recommend/SKILL.md",
+        "commit_sha": "1b71f4bcc916dcabda8816964091ab23664c84df"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "art",
+        "connect",
+        "recommend"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1701
+    },
+    {
+      "id": "stripe/stripe-best-practices",
+      "name": "stripe-best-practices",
+      "description": "Guides Stripe integration decisions across API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, tax and registrations (Stripe Tax, automatic_tax, product tax codes), Treasury financial accounts, integration options (Checkout, Payment Element), migrating from deprecated Stripe APIs, and security best practices (API key management, restricted keys, webhooks, OAuth). Use when building, modifying, or reviewing any Stripe integration, including accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, collecting sales tax, VAT, or GST, creating connected accounts, or implementing secure key handling.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-16T00:45:27Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-best-practices",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
+        "commit_sha": "1b71f4bcc916dcabda8816964091ab23664c84df"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "stripe",
+        "best",
+        "practices"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 7,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1701
+    },
+    {
+      "id": "stripe/stripe-directory",
+      "name": "stripe-directory",
+      "description": "Use when the user wants to find businesses, software, service providers, or partners for a specific industry, workflow, pain point, capability, or job to be done. Also use when the agent needs to programmatically purchase or consume a service. Use Stripe Directory to build a short relevant shortlist, even if the user does not mention Stripe Directory explicitly.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-14T01:19:13Z",
+      "metadata": {
+        "short-description": "Find (and optionally purchase from) vendors or partners"
+      },
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-directory",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-directory/SKILL.md",
+        "commit_sha": "1b71f4bcc916dcabda8816964091ab23664c84df"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "art",
+        "stripe",
+        "directory"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 39,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1701
+    },
+    {
+      "id": "stripe/stripe-docs",
+      "name": "stripe-docs",
+      "description": "Use when the user or agent needs to read, search, or look up Stripe documentation or API reference. Prefer this over curl or WebFetch for any docs.stripe.com content.",
+      "provider": "stripe",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-21T00:47:45Z",
+      "metadata": {
+        "short-description": "Read and search Stripe documentation from the terminal"
+      },
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-docs",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-docs/SKILL.md",
+        "commit_sha": "1b71f4bcc916dcabda8816964091ab23664c84df"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "document",
+        "stripe",
+        "docs"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1701
+    },
+    {
+      "id": "stripe/stripe-projects",
+      "name": "stripe-projects",
+      "description": "Use when the user wants to provision infrastructure or third-party services using Stripe Projects. Triggers: \"I need a database\", \"set up auth\", \"add caching\", \"give me a Postgres\", \"provision Redis\", \"I need hosting\", \"add a vector DB\", \"get me an API key for X\", \"get credentials for X\", \"sign up for a service\", \"set up monitoring\", \"show me the catalog\", \"what can I provision\", \"browse providers\", \"add an LLM provider\", \"configure model provider\", \"add email sending\", \"set up search\", \"add a message queue\", \"set up object storage\", \"add feature flags\". Also trigger when the user asks how to get an API key or credentials for any third-party service \u2014 don't tell them to sign up manually; check the Projects catalog first. Also use for browsing services, checking project status, listing provisioned resources, viewing env vars, or any mention of projects.dev or adding/provisioning/connecting a cloud service.\n",
+      "provider": "stripe",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-17T00:48:13Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-projects",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
+        "commit_sha": "1b71f4bcc916dcabda8816964091ab23664c84df"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "art",
+        "email",
+        "stripe",
+        "projects"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1701
+    },
+    {
+      "id": "stripe/upgrade-stripe",
+      "name": "upgrade-stripe",
+      "description": "Guide for upgrading Stripe API versions and SDKs",
+      "provider": "stripe",
+      "category": "integrations",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-26T01:12:31Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/upgrade-stripe",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
+        "commit_sha": "1b71f4bcc916dcabda8816964091ab23664c84df"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "upgrade",
+        "stripe"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 27,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1701
     },
     {
       "id": "getsentry/agents-md",
@@ -16695,195 +17329,6 @@
       "github_stars": 4044
     },
     {
-      "id": "stripe/stripe-best-practices",
-      "name": "stripe-best-practices",
-      "description": "Guides Stripe integration decisions across API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, tax and registrations (Stripe Tax, automatic_tax, product tax codes), Treasury financial accounts, integration options (Checkout, Payment Element), migrating from deprecated Stripe APIs, and security best practices (API key management, restricted keys, webhooks, OAuth). Use when building, modifying, or reviewing any Stripe integration, including accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, collecting sales tax, VAT, or GST, creating connected accounts, or implementing secure key handling.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-16T00:45:27Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-best-practices",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
-        "commit_sha": "cc67124fa6ed230cda567e598dc9b06e17e23f40"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "stripe",
-        "best",
-        "practices"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 6,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1699
-    },
-    {
-      "id": "stripe/stripe-directory",
-      "name": "stripe-directory",
-      "description": "Use when the user wants to find businesses, software, service providers, or partners for a specific industry, workflow, pain point, capability, or job to be done. Also use when the agent needs to programmatically purchase or consume a service. Use Stripe Directory to build a short relevant shortlist, even if the user does not mention Stripe Directory explicitly.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-14T01:19:13Z",
-      "metadata": {
-        "short-description": "Find (and optionally purchase from) vendors or partners"
-      },
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-directory",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-directory/SKILL.md",
-        "commit_sha": "cc67124fa6ed230cda567e598dc9b06e17e23f40"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "art",
-        "stripe",
-        "directory"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 38,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1699
-    },
-    {
-      "id": "stripe/stripe-docs",
-      "name": "stripe-docs",
-      "description": "Use when the user or agent needs to read, search, or look up Stripe documentation or API reference. Prefer this over curl or WebFetch for any docs.stripe.com content.",
-      "provider": "stripe",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-21T00:47:45Z",
-      "metadata": {
-        "short-description": "Read and search Stripe documentation from the terminal"
-      },
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-docs",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-docs/SKILL.md",
-        "commit_sha": "cc67124fa6ed230cda567e598dc9b06e17e23f40"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "document",
-        "stripe",
-        "docs"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1699
-    },
-    {
-      "id": "stripe/stripe-projects",
-      "name": "stripe-projects",
-      "description": "Use when the user wants to provision infrastructure or third-party services using Stripe Projects. Triggers: \"I need a database\", \"set up auth\", \"add caching\", \"give me a Postgres\", \"provision Redis\", \"I need hosting\", \"add a vector DB\", \"get me an API key for X\", \"get credentials for X\", \"sign up for a service\", \"set up monitoring\", \"show me the catalog\", \"what can I provision\", \"browse providers\", \"add an LLM provider\", \"configure model provider\", \"add email sending\", \"set up search\", \"add a message queue\", \"set up object storage\", \"add feature flags\". Also trigger when the user asks how to get an API key or credentials for any third-party service \u2014 don't tell them to sign up manually; check the Projects catalog first. Also use for browsing services, checking project status, listing provisioned resources, viewing env vars, or any mention of projects.dev or adding/provisioning/connecting a cloud service.\n",
-      "provider": "stripe",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-17T00:48:13Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-projects",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
-        "commit_sha": "cc67124fa6ed230cda567e598dc9b06e17e23f40"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "art",
-        "email",
-        "stripe",
-        "projects"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1699
-    },
-    {
-      "id": "stripe/upgrade-stripe",
-      "name": "upgrade-stripe",
-      "description": "Guide for upgrading Stripe API versions and SDKs",
-      "provider": "stripe",
-      "category": "integrations",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-26T01:12:31Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/upgrade-stripe",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
-        "commit_sha": "cc67124fa6ed230cda567e598dc9b06e17e23f40"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "upgrade",
-        "stripe"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 26,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1699
-    },
-    {
       "id": "vercel/deploy-to-vercel",
       "name": "deploy-to-vercel",
       "description": "Deploy applications and websites to Vercel. Use when the user requests deployment actions like \"deploy my app\", \"deploy and give me the link\", \"push this live\", or \"create a preview deployment\".",
@@ -31331,417 +31776,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 22711
-    },
-    {
-      "id": "anthropics/algorithmic-art",
-      "name": "algorithmic-art",
-      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
-      "provider": "anthropics",
-      "category": "development",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2025-12-01T18:05:36Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/algorithmic-art",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/algorithmic-art/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "art",
-        "algorithmic"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 227,
-      "maintenance_status": "stale",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/claude-api",
-      "name": "claude-api",
-      "description": "Reference for the Claude API / Anthropic SDK \u2014 model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER \u2014 read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" \u2014 whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) \u2014 never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named \u2014 don't Read the file).",
-      "provider": "anthropics",
-      "category": "ml-ai",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2026-07-01T18:11:23Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/claude-api",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/claude-api/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "mcp",
-        "extract",
-        "claude"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 15,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/docx",
-      "name": "docx",
-      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
-      "provider": "anthropics",
-      "category": "documents",
-      "license": "Proprietary. LICENSE.txt has complete terms",
-      "compatibility": null,
-      "last_updated_at": "2026-07-17T02:47:37Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/docx",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/docx/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pdf",
-        "docx",
-        "pr",
-        "ci",
-        "document",
-        "extract",
-        "convert"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/frontend-design",
-      "name": "frontend-design",
-      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
-      "provider": "anthropics",
-      "category": "creative",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2026-06-09T19:33:41Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/frontend-design",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "design",
-        "visual",
-        "frontend"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 37,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/mcp-builder",
-      "name": "mcp-builder",
-      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
-      "provider": "anthropics",
-      "category": "development",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2025-12-01T18:05:36Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/mcp-builder",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/mcp-builder/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "mcp",
-        "design",
-        "builder"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 227,
-      "maintenance_status": "stale",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/pdf",
-      "name": "pdf",
-      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
-      "provider": "anthropics",
-      "category": "creative",
-      "license": "Proprietary. LICENSE.txt has complete terms",
-      "compatibility": null,
-      "last_updated_at": "2026-02-04T02:09:36Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/pdf",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/pdf/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pdf",
-        "pr",
-        "art",
-        "extract"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 163,
-      "maintenance_status": "maintained",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/pptx",
-      "name": "pptx",
-      "description": "Use this skill any time a .pptx or .potx file is involved in any way \u2014 as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.",
-      "provider": "anthropics",
-      "category": "documents",
-      "license": "Proprietary. LICENSE.txt has complete terms",
-      "compatibility": null,
-      "last_updated_at": "2026-07-17T02:47:37Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/pptx",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pptx",
-        "pr",
-        "extract",
-        "email"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/skill-creator",
-      "name": "skill-creator",
-      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
-      "provider": "anthropics",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-03-06T20:06:23Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/skill-creator",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/skill-creator/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": true,
-      "tags": [
-        "pr",
-        "test",
-        "analysis",
-        "skill",
-        "creator"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 132,
-      "maintenance_status": "maintained",
-      "quality_score": 90,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/web-artifacts-builder",
-      "name": "web-artifacts-builder",
-      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
-      "provider": "anthropics",
-      "category": "web",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2025-12-01T18:05:36Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/web-artifacts-builder",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/web-artifacts-builder/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "art",
-        "web",
-        "artifacts",
-        "builder"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 227,
-      "maintenance_status": "stale",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893
-    },
-    {
-      "id": "anthropics/webapp-testing",
-      "name": "webapp-testing",
-      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
-      "provider": "anthropics",
-      "category": "web",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2025-12-01T18:05:36Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/webapp-testing",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "test",
-        "webapp",
-        "testing"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 227,
-      "maintenance_status": "stale",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893,
-      "similar_skills": [
-        {
-          "id": "github/webapp-testing",
-          "provider": "github",
-          "similarity": 1.0
-        }
-      ]
-    },
-    {
-      "id": "anthropics/xlsx",
-      "name": "xlsx",
-      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path \u2014 even casually (like \"the xlsx in my downloads\") \u2014 and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
-      "provider": "anthropics",
-      "category": "data",
-      "license": "Proprietary. LICENSE.txt has complete terms",
-      "compatibility": null,
-      "last_updated_at": "2026-07-17T02:47:37Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/xlsx",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/xlsx/SKILL.md",
-        "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "xlsx",
-        "csv",
-        "pr",
-        "ci",
-        "api",
-        "art",
-        "document",
-        "convert"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 161893
     },
     {
       "id": "neondatabase/claimable-postgres",

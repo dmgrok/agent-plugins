@@ -374,6 +374,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/proompteng/bilig/main",
         "skills_path_prefix": "packages/headless/",
     },
+    "findmate": {
+        "name": "FindMate",
+        "repo": "https://github.com/merc1305/findMate",
+        "api_tree_url": "https://api.github.com/repos/merc1305/findMate/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/merc1305/findMate/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

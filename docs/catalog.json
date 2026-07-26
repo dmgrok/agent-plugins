@@ -1,169 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/dmgrok/agent-plugins/main/schema/catalog-schema.json",
-  "version": "2026.07.25",
-  "generated_at": "2026-07-25T08:20:36.971259+00:00",
+  "version": "2026.07.26",
+  "generated_at": "2026-07-26T08:33:48.730093+00:00",
   "total_skills": 1183,
   "providers": {
-    "anthropics": {
-      "name": "Anthropic",
-      "repo": "https://github.com/anthropics/skills",
-      "skills_count": 17,
-      "stars": 164028,
-      "description": "Public repository for Agent Skills"
-    },
-    "github": {
-      "name": "GitHub",
-      "repo": "https://github.com/github/awesome-copilot",
-      "skills_count": 406,
-      "stars": 37017,
-      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot."
-    },
-    "vercel": {
-      "name": "Vercel",
-      "repo": "https://github.com/vercel-labs/agent-skills",
-      "skills_count": 9,
-      "stars": 29454,
-      "description": "Vercel's official collection of agent skills"
-    },
-    "huggingface": {
-      "name": "HuggingFace",
-      "repo": "https://github.com/huggingface/skills",
-      "skills_count": 25,
-      "stars": 10867,
-      "description": "Give your agents the power of the Hugging Face ecosystem"
-    },
-    "claude-marketplace-engineering": {
-      "name": "Claude Marketplace (Engineering)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "claude-marketplace-visual": {
-      "name": "Claude Marketplace (Visual)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "claude-marketplace-code": {
-      "name": "Claude Marketplace (Code Ops)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 4,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "claude-marketplace-productivity": {
-      "name": "Claude Marketplace (Productivity)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 4,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "cloudflare": {
-      "name": "Cloudflare",
-      "repo": "https://github.com/cloudflare/skills",
-      "skills_count": 11,
-      "stars": 2468,
-      "description": "Skills for teaching agents how to build on Cloudflare."
-    },
-    "neondatabase": {
-      "name": "Neon Database",
-      "repo": "https://github.com/neondatabase/agent-skills",
-      "skills_count": 8,
-      "stars": 81,
-      "description": "Agent Skills for Neon Severless Postgres"
-    },
-    "remotion": {
-      "name": "Remotion",
-      "repo": "https://github.com/remotion-dev/skills",
-      "skills_count": 11,
-      "stars": 4073,
-      "description": "Agent Skills"
-    },
-    "obsidian-plugin": {
-      "name": "Obsidian Plugin Development",
-      "repo": "https://github.com/gapmiss/obsidian-plugin-skill",
-      "skills_count": 0,
-      "stars": 174,
-      "description": "Agent SKILL for Obsidian.md plugin development"
-    },
-    "fal-ai": {
-      "name": "fal.ai",
-      "repo": "https://github.com/fal-ai-community/skills",
-      "skills_count": 16,
-      "stars": 186,
-      "description": null
-    },
-    "tinybird": {
-      "name": "Tinybird",
-      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
-      "skills_count": 4,
-      "stars": 20,
-      "description": null
-    },
     "getsentry": {
       "name": "Sentry",
       "repo": "https://github.com/getsentry/skills",
       "skills_count": 28,
-      "stars": 878,
+      "stars": 885,
       "description": "Agent Skills used by the Sentry team for development."
-    },
-    "trailofbits": {
-      "name": "Trail of Bits Security",
-      "repo": "https://github.com/trailofbits/skills",
-      "skills_count": 75,
-      "stars": 5948,
-      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
-    },
-    "better-auth": {
-      "name": "Better Auth",
-      "repo": "https://github.com/better-auth/skills",
-      "skills_count": 5,
-      "stars": 201,
-      "description": null
-    },
-    "aws-skills": {
-      "name": "AWS Skills",
-      "repo": "https://github.com/zxkane/aws-skills",
-      "skills_count": 6,
-      "stars": 309,
-      "description": "Claude Code plugins and agent skills for AWS development \u2014 IaC(CDK/SST), serverless, cost ops, and Bedrock AgentCore"
-    },
-    "playwright-skill": {
-      "name": "Playwright Automation",
-      "repo": "https://github.com/lackeyjb/playwright-skill",
-      "skills_count": 1,
-      "stars": 1889,
-      "description": "Claude Code Skill for browser automation with Playwright. Model-invoked - Claude autonomously writes and executes custom automation for testing and validation."
-    },
-    "nginity": {
-      "name": "nginity Enterprise",
-      "repo": "https://github.com/alirezarezvani/claude-skills",
-      "skills_count": 359,
-      "stars": 22711,
-      "description": "345 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
-    },
-    "sanjay-ai-skills": {
-      "name": "Sanjay AI Skills",
-      "repo": "https://github.com/sanjay3290/ai-skills",
-      "skills_count": 24,
-      "stars": 335,
-      "description": "24 cross-platform agent skills for Claude Code, Cursor, Codex & Gemini CLI \u2014 databases, messaging, research, TTS, DevOps, and Google Workspace"
-    },
-    "bilig": {
-      "name": "Bilig WorkPaper",
-      "repo": "https://github.com/proompteng/bilig",
-      "skills_count": 1,
-      "stars": 34,
-      "description": "Formula workbooks for Node services: edit inputs, recalculate formulas, read outputs, persist WorkPaper JSON, and expose MCP tools."
-    },
-    "aiqualitylab": {
-      "name": "AI Quality Lab",
-      "repo": "https://github.com/aiqualitylab/agent-skills",
-      "skills_count": 2,
-      "stars": 1,
-      "description": "AI-powered testing skills for automation frameworks"
     },
     "openai": {
       "name": "OpenAI",
@@ -172,89 +18,12 @@
       "stars": 22795,
       "description": "Skills Catalog for Codex"
     },
-    "expo": {
-      "name": "Expo",
-      "repo": "https://github.com/expo/skills",
-      "skills_count": 22,
-      "stars": 2307,
-      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
-    },
-    "epub-skill": {
-      "name": "EPUB Converter",
-      "repo": "https://github.com/smerchek/claude-epub-skill",
-      "skills_count": 1,
-      "stars": 83,
-      "description": "A Claude Skill for converting markdown documents, chat summaries, or research reports into a downloadable epub file that can be sent to kindle"
-    },
-    "ios-simulator-skill": {
-      "name": "iOS Simulator",
-      "repo": "https://github.com/conorluddy/ios-simulator-skill",
-      "skills_count": 1,
-      "stars": 1090,
-      "description": "An IOS Simulator Skill for ClaudeCode. Use it to optimise Claude's ability to build, run and interact with your apps. I mainly use it as an xcodebuild wrapper to save context."
-    },
-    "accint": {
-      "name": "AccInt",
-      "repo": "https://github.com/maxbaluev/accreted-intelligence",
-      "skills_count": 3,
-      "stars": 4,
-      "description": "AccInt - local-first MCP Work Model for coding agents that learns from real outcomes."
-    },
-    "stream-coding": {
-      "name": "Stream Coding Methodology",
-      "repo": "https://github.com/frmoretto/stream-coding",
-      "skills_count": 1,
-      "stars": 60,
-      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
-    },
-    "ipsw-skill": {
-      "name": "IPSW iOS Firmware",
-      "repo": "https://github.com/blacktop/ipsw-skill",
-      "skills_count": 0,
-      "stars": 55,
-      "description": "A SKILL.md for ipsw"
-    },
-    "obra-superpowers": {
-      "name": "Obra Superpowers",
-      "repo": "https://github.com/obra/superpowers",
-      "skills_count": 14,
-      "stars": 260281,
-      "description": "An agentic skills framework & software development methodology that works."
-    },
-    "family-history-skill": {
-      "name": "Family History Research",
-      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
-      "skills_count": 1,
-      "stars": 44,
-      "description": "A Claude Skill to assist with family history and genealogy research planning."
-    },
-    "visionos-agents": {
-      "name": "visionOS Development",
-      "repo": "https://github.com/tomkrikorian/visionOSAgents",
-      "skills_count": 22,
-      "stars": 56,
-      "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
-    },
-    "pypict-skill": {
-      "name": "PICT Test Cases",
-      "repo": "https://github.com/omkamal/pypict-claude-skill",
-      "skills_count": 1,
-      "stars": 57,
-      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
-    },
-    "stripe": {
-      "name": "Stripe",
-      "repo": "https://github.com/stripe/ai",
+    "aws-skills": {
+      "name": "AWS Skills",
+      "repo": "https://github.com/zxkane/aws-skills",
       "skills_count": 6,
-      "stars": 1702,
-      "description": "One-stop shop for building AI-powered products and businesses with Stripe."
-    },
-    "skillcreatorai": {
-      "name": "SkillCreator.ai",
-      "repo": "https://github.com/skillcreatorai/Ai-Agent-Skills",
-      "skills_count": 17,
-      "stars": 1059,
-      "description": "my curated agent skills library "
+      "stars": 309,
+      "description": "Claude Code plugins and agent skills for AWS development \u2014 IaC(CDK/SST), serverless, cost ops, and Bedrock AgentCore"
     },
     "sematext": {
       "name": "Sematext",
@@ -263,26 +32,40 @@
       "stars": 0,
       "description": "OpenTelemetry onboarding for Sematext Cloud \u2014 reference examples shipping traces, metrics, and logs across multiple languages, an end-to-end multi-service tracing demo, and an open-source AI skill that walks engineers through the setup."
     },
-    "tapestry": {
-      "name": "Tapestry Skills",
-      "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
-      "skills_count": 7,
-      "stars": 276,
-      "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
+    "huggingface": {
+      "name": "HuggingFace",
+      "repo": "https://github.com/huggingface/skills",
+      "skills_count": 25,
+      "stars": 10867,
+      "description": "Give your agents the power of the Hugging Face ecosystem"
     },
-    "ffuf-skill": {
-      "name": "FFUF Web Fuzzing",
-      "repo": "https://github.com/jthack/ffuf_claude_skill",
-      "skills_count": 1,
-      "stars": 121,
-      "description": "This is a \"skill\" for claude to use FFUF."
+    "obra-superpowers": {
+      "name": "Obra Superpowers",
+      "repo": "https://github.com/obra/superpowers",
+      "skills_count": 14,
+      "stars": 260281,
+      "description": "An agentic skills framework & software development methodology that works."
     },
-    "notebooklm-skill": {
-      "name": "NotebookLM Integration",
-      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
-      "skills_count": 1,
-      "stars": 4163,
-      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
+    "vercel": {
+      "name": "Vercel",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "skills_count": 9,
+      "stars": 29454,
+      "description": "Vercel's official collection of agent skills"
+    },
+    "obsidian-plugin": {
+      "name": "Obsidian Plugin Development",
+      "repo": "https://github.com/gapmiss/obsidian-plugin-skill",
+      "skills_count": 0,
+      "stars": 174,
+      "description": "Agent SKILL for Obsidian.md plugin development"
+    },
+    "claude-marketplace-code": {
+      "name": "Claude Marketplace (Code Ops)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 4,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
     },
     "move-quality-skill": {
       "name": "Move Code Quality",
@@ -291,6 +74,34 @@
       "stars": 16,
       "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
     },
+    "playwright-skill": {
+      "name": "Playwright Automation",
+      "repo": "https://github.com/lackeyjb/playwright-skill",
+      "skills_count": 1,
+      "stars": 1889,
+      "description": "Claude Code Skill for browser automation with Playwright. Model-invoked - Claude autonomously writes and executes custom automation for testing and validation."
+    },
+    "pypict-skill": {
+      "name": "PICT Test Cases",
+      "repo": "https://github.com/omkamal/pypict-claude-skill",
+      "skills_count": 1,
+      "stars": 57,
+      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
+    },
+    "trailofbits": {
+      "name": "Trail of Bits Security",
+      "repo": "https://github.com/trailofbits/skills",
+      "skills_count": 75,
+      "stars": 5948,
+      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
+    },
+    "anthropics": {
+      "name": "Anthropic",
+      "repo": "https://github.com/anthropics/skills",
+      "skills_count": 17,
+      "stars": 164028,
+      "description": "Public repository for Agent Skills"
+    },
     "emblemcompany": {
       "name": "EmblemAI",
       "repo": "https://github.com/EmblemCompany/Agent-skills",
@@ -298,19 +109,54 @@
       "stars": 10,
       "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
     },
-    "d3js-skill": {
-      "name": "D3.js Visualization",
-      "repo": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
-      "skills_count": 1,
-      "stars": 125,
-      "description": "A Claude skill for d3.js."
+    "neondatabase": {
+      "name": "Neon Database",
+      "repo": "https://github.com/neondatabase/agent-skills",
+      "skills_count": 8,
+      "stars": 81,
+      "description": "Agent Skills for Neon Severless Postgres"
     },
-    "google-labs-stitch": {
-      "name": "Google Labs Stitch",
-      "repo": "https://github.com/google-labs-code/stitch-skills",
-      "skills_count": 0,
-      "stars": 7755,
-      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
+    "visionos-agents": {
+      "name": "visionOS Development",
+      "repo": "https://github.com/tomkrikorian/visionOSAgents",
+      "skills_count": 22,
+      "stars": 56,
+      "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
+    },
+    "ios-simulator-skill": {
+      "name": "iOS Simulator",
+      "repo": "https://github.com/conorluddy/ios-simulator-skill",
+      "skills_count": 1,
+      "stars": 1090,
+      "description": "An IOS Simulator Skill for ClaudeCode. Use it to optimise Claude's ability to build, run and interact with your apps. I mainly use it as an xcodebuild wrapper to save context."
+    },
+    "better-auth": {
+      "name": "Better Auth",
+      "repo": "https://github.com/better-auth/skills",
+      "skills_count": 5,
+      "stars": 201,
+      "description": null
+    },
+    "csv-summarizer-skill": {
+      "name": "CSV Data Summarizer",
+      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+      "skills_count": 1,
+      "stars": 276,
+      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
+    },
+    "claude-marketplace-productivity": {
+      "name": "Claude Marketplace (Productivity)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 4,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "tinybird": {
+      "name": "Tinybird",
+      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
+      "skills_count": 4,
+      "stars": 20,
+      "description": null
     },
     "supabase": {
       "name": "Supabase",
@@ -319,31 +165,1192 @@
       "stars": 2327,
       "description": "Agent Skills to help developers using AI agents with Supabase"
     },
-    "csv-summarizer-skill": {
-      "name": "CSV Data Summarizer",
-      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+    "aiqualitylab": {
+      "name": "AI Quality Lab",
+      "repo": "https://github.com/aiqualitylab/agent-skills",
+      "skills_count": 2,
+      "stars": 1,
+      "description": "AI-powered testing skills for automation frameworks"
+    },
+    "epub-skill": {
+      "name": "EPUB Converter",
+      "repo": "https://github.com/smerchek/claude-epub-skill",
       "skills_count": 1,
+      "stars": 83,
+      "description": "A Claude Skill for converting markdown documents, chat summaries, or research reports into a downloadable epub file that can be sent to kindle"
+    },
+    "stripe": {
+      "name": "Stripe",
+      "repo": "https://github.com/stripe/ai",
+      "skills_count": 6,
+      "stars": 1702,
+      "description": "One-stop shop for building AI-powered products and businesses with Stripe."
+    },
+    "accint": {
+      "name": "AccInt",
+      "repo": "https://github.com/maxbaluev/accreted-intelligence",
+      "skills_count": 3,
+      "stars": 4,
+      "description": "AccInt - local-first MCP Work Model for coding agents that learns from real outcomes."
+    },
+    "remotion": {
+      "name": "Remotion",
+      "repo": "https://github.com/remotion-dev/skills",
+      "skills_count": 11,
+      "stars": 4073,
+      "description": "Agent Skills"
+    },
+    "expo": {
+      "name": "Expo",
+      "repo": "https://github.com/expo/skills",
+      "skills_count": 22,
+      "stars": 2307,
+      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
+    },
+    "claude-marketplace-visual": {
+      "name": "Claude Marketplace (Visual)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "google-labs-stitch": {
+      "name": "Google Labs Stitch",
+      "repo": "https://github.com/google-labs-code/stitch-skills",
+      "skills_count": 0,
+      "stars": 7755,
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
+    },
+    "sanjay-ai-skills": {
+      "name": "Sanjay AI Skills",
+      "repo": "https://github.com/sanjay3290/ai-skills",
+      "skills_count": 24,
+      "stars": 335,
+      "description": "24 cross-platform agent skills for Claude Code, Cursor, Codex & Gemini CLI \u2014 databases, messaging, research, TTS, DevOps, and Google Workspace"
+    },
+    "skillcreatorai": {
+      "name": "SkillCreator.ai",
+      "repo": "https://github.com/skillcreatorai/Ai-Agent-Skills",
+      "skills_count": 17,
+      "stars": 1059,
+      "description": "my curated agent skills library "
+    },
+    "stream-coding": {
+      "name": "Stream Coding Methodology",
+      "repo": "https://github.com/frmoretto/stream-coding",
+      "skills_count": 1,
+      "stars": 60,
+      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
+    },
+    "d3js-skill": {
+      "name": "D3.js Visualization",
+      "repo": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
+      "skills_count": 1,
+      "stars": 125,
+      "description": "A Claude skill for d3.js."
+    },
+    "tapestry": {
+      "name": "Tapestry Skills",
+      "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
+      "skills_count": 7,
       "stars": 276,
-      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
+      "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
+    },
+    "claude-marketplace-engineering": {
+      "name": "Claude Marketplace (Engineering)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "fal-ai": {
+      "name": "fal.ai",
+      "repo": "https://github.com/fal-ai-community/skills",
+      "skills_count": 16,
+      "stars": 186,
+      "description": null
+    },
+    "family-history-skill": {
+      "name": "Family History Research",
+      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
+      "skills_count": 1,
+      "stars": 44,
+      "description": "A Claude Skill to assist with family history and genealogy research planning."
+    },
+    "cloudflare": {
+      "name": "Cloudflare",
+      "repo": "https://github.com/cloudflare/skills",
+      "skills_count": 11,
+      "stars": 2468,
+      "description": "Skills for teaching agents how to build on Cloudflare."
+    },
+    "ffuf-skill": {
+      "name": "FFUF Web Fuzzing",
+      "repo": "https://github.com/jthack/ffuf_claude_skill",
+      "skills_count": 1,
+      "stars": 121,
+      "description": "This is a \"skill\" for claude to use FFUF."
+    },
+    "ipsw-skill": {
+      "name": "IPSW iOS Firmware",
+      "repo": "https://github.com/blacktop/ipsw-skill",
+      "skills_count": 0,
+      "stars": 55,
+      "description": "A SKILL.md for ipsw"
+    },
+    "github": {
+      "name": "GitHub",
+      "repo": "https://github.com/github/awesome-copilot",
+      "skills_count": 406,
+      "stars": 37017,
+      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot."
+    },
+    "bilig": {
+      "name": "Bilig WorkPaper",
+      "repo": "https://github.com/proompteng/bilig",
+      "skills_count": 1,
+      "stars": 34,
+      "description": "Formula workbooks for Node services: edit inputs, recalculate formulas, read outputs, persist WorkPaper JSON, and expose MCP tools."
+    },
+    "notebooklm-skill": {
+      "name": "NotebookLM Integration",
+      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
+      "skills_count": 1,
+      "stars": 4163,
+      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
+    },
+    "nginity": {
+      "name": "nginity Enterprise",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "skills_count": 359,
+      "stars": 22711,
+      "description": "345 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
     }
   },
   "categories": [
-    "cloud",
     "creative",
-    "data",
     "development",
-    "devops",
     "documents",
-    "enterprise",
-    "integrations",
     "ml-ai",
-    "mobile",
     "other",
     "security",
-    "testing",
     "web"
   ],
   "skills": [
+    {
+      "id": "getsentry/agents-md",
+      "name": "agents-md",
+      "description": "Creates and maintains concise AGENTS.md and CLAUDE.md project instruction files. Use when asked to create AGENTS.md, update AGENTS.md, maintain agent docs, set up CLAUDE.md, document repository agent conventions, or keep coding-agent instructions minimal and reference-backed.",
+      "provider": "getsentry",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-04T17:40:37Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/agents-md",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/agents-md/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "document",
+        "agents"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 82,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/blog-writing-guide",
+      "name": "blog-writing-guide",
+      "description": "Write, review, and improve blog posts for the Sentry engineering blog following Sentry's specific writing standards, voice, and quality bar. Use this skill whenever someone asks to write a blog post, draft a technical article, review blog content, improve a draft, write a product announcement, create an engineering deep-dive, or produce any written content destined for the Sentry blog or developer audience. Also trigger when the user mentions \"blog post,\" \"blog draft,\" \"write-up,\" \"announcement post,\" \"engineering post,\" \"deep dive,\" \"postmortem,\" or asks for help with technical writing for Sentry. Even if the user just says \"help me write about [feature/topic]\" \u2014 if it sounds like it could become a Sentry blog post, use this skill.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/blog-writing-guide",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/blog-writing-guide/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "art",
+        "blog",
+        "writing",
+        "guide"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/brand-guidelines",
+      "name": "brand-guidelines",
+      "description": "Write copy following Sentry brand guidelines. Use when writing UI text, error messages, empty states, onboarding flows, 404 pages, documentation, marketing copy, or any user-facing content. Covers both Plain Speech (default) and Sentry Voice tones.",
+      "provider": "getsentry",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/brand-guidelines",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/brand-guidelines/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "ci",
+        "brand",
+        "document",
+        "guidelines"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/claude-settings-audit",
+      "name": "claude-settings-audit",
+      "description": "Analyze a repository to generate recommended Claude Code settings.json permissions. Use when setting up a new project, auditing existing settings, or determining which read-only bash commands to allow. Detects tech stack, build tools, and monorepo structure.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-04T17:30:29Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/claude-settings-audit",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/claude-settings-audit/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "json",
+        "pr",
+        "claude",
+        "settings",
+        "audit"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 51,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/code-review",
+      "name": "code-review",
+      "description": "Perform code reviews following Sentry engineering practices. Use when reviewing pull requests, examining code changes, or providing feedback on code quality. Covers security, performance, testing, and design review.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/code-review",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/code-review/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "test",
+        "design",
+        "code",
+        "review"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/code-simplifier",
+      "name": "code-simplifier",
+      "description": "Simplifies and refines code for clarity, consistency, and maintainability while preserving all functionality. Use when asked to \"simplify code\", \"clean up code\", \"refactor for clarity\", \"improve readability\", or review recently modified code for elegance. Focuses on project-specific best practices.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/code-simplifier",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/code-simplifier/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "code",
+        "simplifier"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/commit",
+      "name": "commit",
+      "description": "Use for every request to commit changes or draft a commit message. Creates Sentry-style conventional commits with issue references.",
+      "provider": "getsentry",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-15T21:24:30Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/commit",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/commit/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "commit"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 10,
+      "maintenance_status": "active",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/create-branch",
+      "name": "create-branch",
+      "description": "Create a git branch following Sentry naming conventions. Use when asked to \"create a branch\", \"new branch\", \"start a branch\", \"make a branch\", \"switch to a new branch\", or when starting new work on the default branch.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-07T13:31:39Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/create-branch",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/create-branch/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "git",
+        "art",
+        "create",
+        "branch"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 79,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/django-access-review",
+      "name": "django-access-review",
+      "description": "Django access control and IDOR security review. Use when reviewing Django views, DRF viewsets, ORM queries, or any Python/Django code handling user authorization. Trigger keywords: \"IDOR\", \"access control\", \"authorization\", \"Django permissions\", \"object permissions\", \"tenant isolation\", \"broken access\".",
+      "provider": "getsentry",
+      "category": "development",
+      "license": "LICENSE",
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/django-access-review",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/django-access-review/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "django",
+        "access",
+        "review"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/django-perf-review",
+      "name": "django-perf-review",
+      "description": "Django performance code review. Use when asked to \"review Django performance\", \"find N+1 queries\", \"optimize Django\", \"check queryset performance\", \"database performance\", \"Django ORM issues\", or audit Django code for performance problems.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": "LICENSE",
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/django-perf-review",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/django-perf-review/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "django",
+        "perf",
+        "review"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/doc-coauthoring",
+      "name": "doc-coauthoring",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "provider": "getsentry",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/doc-coauthoring",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/doc-coauthoring/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "document",
+        "doc",
+        "coauthoring"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/document-api-endpoint",
+      "name": "document-api-endpoint",
+      "description": "Document and type a Sentry API endpoint. Write or fix @extend_schema decorators, specify response TypedDicts, type request parameters, correct type drift between the declared schema and the runtime response, and validate the generated spec. Use when asked to \"document an endpoint\", \"add OpenAPI docs\", \"add/fix @extend_schema\", \"type an endpoint response\", \"fix the response type\", \"fix type drift\", \"reuse a response type\", \"split an overloaded endpoint\", \"specify the response schema\", \"add a TypedDict response\", \"migrate a legacy api-docs path\", \"fix a parameter type\", or \"make an endpoint public\" / \"promote an endpoint\" (promotion is one section here).",
+      "provider": "getsentry",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-04T17:30:29Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/document-api-endpoint",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/document-api-endpoint/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "document",
+        "endpoint"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 51,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/find-bugs",
+      "name": "find-bugs",
+      "description": "Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or audit code on the current branch.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/find-bugs",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/find-bugs/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "find",
+        "bugs"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/gh-review-requests",
+      "name": "gh-review-requests",
+      "description": "Fetch unread GitHub notifications for open PRs where review is requested from a specified team or opened by a team member. Use when asked to \"find PRs I need to review\", \"show my review requests\", \"what needs my review\", \"fetch GitHub review requests\", or \"check team review queue\".",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-09T17:46:26Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/gh-review-requests",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/gh-review-requests/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "github",
+        "git",
+        "pr",
+        "ci",
+        "review",
+        "requests"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 77,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/gha-security-review",
+      "name": "gha-security-review",
+      "description": "GitHub Actions security review for workflow exploitation vulnerabilities. Use when asked to \"review GitHub Actions\", \"audit workflows\", \"check CI security\", \"GHA security\", \"workflow security review\", or review .github/workflows/ for pwn requests, expression injection, credential theft, and supply chain attacks. Exploitation-focused with concrete PoC scenarios.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/gha-security-review",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/gha-security-review/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "github",
+        "git",
+        "pr",
+        "ci",
+        "gha",
+        "security",
+        "review"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/iterate-pr",
+      "name": "iterate-pr",
+      "description": "Iterate on a PR until actionable CI passes and high/medium review feedback is addressed. Use for PR CI failures, review feedback, or green-check loops; do not wait for human approval, draft status, or merge gates.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-25T15:44:40Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/iterate-pr",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/iterate-pr/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "merge",
+        "iterate"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/pr-link-issue",
+      "name": "pr-link-issue",
+      "description": "Append a GitHub issue link and its Linear ticket to the current PR's description. Use when asked to \"link issue to pr\", \"fill in issue and linear in pr\", \"add issue refs to pr\", or when given a GitHub issue URL and asked to attach it to the current PR. Resolves the Linear ticket automatically from the issue's linear-linkback comment.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-21T13:54:53Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/pr-link-issue",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/pr-link-issue/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "github",
+        "git",
+        "pr",
+        "link",
+        "issue"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 65,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/pr-writer",
+      "name": "pr-writer",
+      "description": "Create or refresh reviewer-facing PR titles and descriptions. Use when opening a PR, updating its title or body, or preparing branch changes for review.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-15T21:24:30Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/pr-writer",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/pr-writer/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "writer"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 10,
+      "maintenance_status": "active",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/presentation-creator",
+      "name": "presentation-creator",
+      "description": "Create data-driven presentation slides using React, Vite, and Recharts with Sentry branding. Use when asked to \"create a presentation\", \"build slides\", \"make a deck\", \"create a data presentation\", \"build a Sentry presentation\". Scaffolds a complete slide-based app with charts, animations, and single-file HTML output.",
+      "provider": "getsentry",
+      "category": "creative",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-09T17:46:26Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/presentation-creator",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/presentation-creator/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "art",
+        "brand",
+        "presentation",
+        "creator"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 77,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/prompt-optimizer",
+      "name": "prompt-optimizer",
+      "description": "Creates, optimizes, and iteratively refines agent prompts, system prompts, developer prompts, and reusable prompt templates. Use when asked to improve a prompt, optimize a system prompt, rewrite an agent prompt, tune prompt wording, make a prompt more reliable, port prompts between OpenAI, Claude, or Gemini, or build prompt evals.",
+      "provider": "getsentry",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-04T17:40:37Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/prompt-optimizer",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/prompt-optimizer/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "prompt",
+        "optimizer"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 82,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/replay-ux-research",
+      "name": "replay-ux-research",
+      "description": "Analyze Sentry session replays to surface UX patterns, pain points, and user journeys for a given product area. Use when asked to \"show me how users use\", \"day in the life\", \"UX research\", \"replay research\", \"how do customers use\", \"what's the user experience like for\", \"watch replays of\", \"analyze replays for\", \"user behavior on\", or \"replay UX audit\" for any Sentry product surface.",
+      "provider": "getsentry",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-24T18:55:16Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/replay-ux-research",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/replay-ux-research/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "replay",
+        "research"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 92,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/security-review",
+      "name": "security-review",
+      "description": "Security code review for vulnerabilities. Use when asked to \"security review\", \"find vulnerabilities\", \"check for security issues\", \"audit security\", \"OWASP review\", or review code for injection, XSS, authentication, authorization, cryptography issues. Provides systematic review with confidence-based reporting.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": "LICENSE",
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/security-review",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/security-review/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "security",
+        "review"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/skill-scanner",
+      "name": "skill-scanner",
+      "description": "Scan agent skills for security issues. Use when asked to \"scan a skill\", \"audit a skill\", \"review skill security\", \"check skill for injection\", \"validate SKILL.md\", or assess whether an agent skill is safe to install. Checks for prompt injection, malicious scripts, excessive permissions, secret exposure, and supply chain risks.",
+      "provider": "getsentry",
+      "category": "security",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-09T17:46:26Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/skill-scanner",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/skill-scanner/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "skill",
+        "scanner"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 77,
+      "maintenance_status": "maintained",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/skill-writer",
+      "name": "skill-writer",
+      "description": "Create, synthesize, and iteratively improve agent skills following the Agent Skills specification. Use when asked to \"create a skill\", \"write a skill\", \"synthesize sources into a skill\", \"improve a skill from positive/negative examples\", \"update a skill\", or \"maintain skill docs and registration\". Handles source capture, precision passes, authoring, registration, and validation.",
+      "provider": "getsentry",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-06-30T20:52:17Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/skill-writer",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/skill-writer/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "skill",
+        "writer"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 25,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/sred-project-organizer",
+      "name": "sred-project-organizer",
+      "description": "Take a list of projects and their related documentation, and organize them into the SRED format for submission.",
+      "provider": "getsentry",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-09T17:46:26Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/sred-project-organizer",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/sred-project-organizer/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "document",
+        "sred",
+        "project",
+        "organizer"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 77,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/sred-work-summary",
+      "name": "sred-work-summary",
+      "description": "Go back through the previous year of work and create a Notion doc that groups relevant links into projects that can then be documented as SRED projects.",
+      "provider": "getsentry",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/sred-work-summary",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/sred-work-summary/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "notion",
+        "document",
+        "sred",
+        "work",
+        "summary"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/triage-frontend-issues",
+      "name": "triage-frontend-issues",
+      "description": "Triage new issues in the Sentry `javascript` project by archiving non-actionable noise. Use when asked to \"triage issues\", \"triage the javascript project\", \"archive non-actionable issues\", \"triage new frontend issues\", or \"clean up the sentry/javascript queue\". Operates only on the sentry/javascript project, only archives (never resolves), and always archives with `untilEscalating`.",
+      "provider": "getsentry",
+      "category": "web",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-05-21T16:41:59Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/triage-frontend-issues",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/triage-frontend-issues/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "triage",
+        "frontend",
+        "issues"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 65,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 885
+    },
+    {
+      "id": "getsentry/typing-exclusion-worker",
+      "name": "typing-exclusion-worker",
+      "description": "Python typing exclusion worker: remove assigned mypy exclusion modules in small scoped batches, fix typing issues, run validation, and produce a structured completion summary. Use when running parallel typing-debt workers or when asked to remove modules from pyproject mypy exclusion overrides.",
+      "provider": "getsentry",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-04-19T23:10:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/getsentry/skills",
+        "path": "skills/typing-exclusion-worker",
+        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/typing-exclusion-worker/SKILL.md",
+        "commit_sha": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "typing",
+        "exclusion",
+        "worker"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 97,
+      "maintenance_status": "maintained",
+      "quality_score": 50,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 885
+    },
     {
       "id": "anthropics/algorithmic-art",
       "name": "algorithmic-art",
@@ -20733,1034 +21740,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 1702
-    },
-    {
-      "id": "getsentry/agents-md",
-      "name": "agents-md",
-      "description": "Creates and maintains concise AGENTS.md and CLAUDE.md project instruction files. Use when asked to create AGENTS.md, update AGENTS.md, maintain agent docs, set up CLAUDE.md, document repository agent conventions, or keep coding-agent instructions minimal and reference-backed.",
-      "provider": "getsentry",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-04T17:40:37Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/agents-md",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/agents-md/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "document",
-        "agents"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 78,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/blog-writing-guide",
-      "name": "blog-writing-guide",
-      "description": "Write, review, and improve blog posts for the Sentry engineering blog following Sentry's specific writing standards, voice, and quality bar. Use this skill whenever someone asks to write a blog post, draft a technical article, review blog content, improve a draft, write a product announcement, create an engineering deep-dive, or produce any written content destined for the Sentry blog or developer audience. Also trigger when the user mentions \"blog post,\" \"blog draft,\" \"write-up,\" \"announcement post,\" \"engineering post,\" \"deep dive,\" \"postmortem,\" or asks for help with technical writing for Sentry. Even if the user just says \"help me write about [feature/topic]\" \u2014 if it sounds like it could become a Sentry blog post, use this skill.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/blog-writing-guide",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/blog-writing-guide/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "art",
-        "blog",
-        "writing",
-        "guide"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/brand-guidelines",
-      "name": "brand-guidelines",
-      "description": "Write copy following Sentry brand guidelines. Use when writing UI text, error messages, empty states, onboarding flows, 404 pages, documentation, marketing copy, or any user-facing content. Covers both Plain Speech (default) and Sentry Voice tones.",
-      "provider": "getsentry",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/brand-guidelines",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/brand-guidelines/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "ci",
-        "brand",
-        "document",
-        "guidelines"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/claude-settings-audit",
-      "name": "claude-settings-audit",
-      "description": "Analyze a repository to generate recommended Claude Code settings.json permissions. Use when setting up a new project, auditing existing settings, or determining which read-only bash commands to allow. Detects tech stack, build tools, and monorepo structure.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-04T17:30:29Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/claude-settings-audit",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/claude-settings-audit/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "json",
-        "pr",
-        "claude",
-        "settings",
-        "audit"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 47,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/code-review",
-      "name": "code-review",
-      "description": "Perform code reviews following Sentry engineering practices. Use when reviewing pull requests, examining code changes, or providing feedback on code quality. Covers security, performance, testing, and design review.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/code-review",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/code-review/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "test",
-        "design",
-        "code",
-        "review"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/code-simplifier",
-      "name": "code-simplifier",
-      "description": "Simplifies and refines code for clarity, consistency, and maintainability while preserving all functionality. Use when asked to \"simplify code\", \"clean up code\", \"refactor for clarity\", \"improve readability\", or review recently modified code for elegance. Focuses on project-specific best practices.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/code-simplifier",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/code-simplifier/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "code",
-        "simplifier"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/commit",
-      "name": "commit",
-      "description": "Use for every request to commit changes or draft a commit message. Creates Sentry-style conventional commits with issue references.",
-      "provider": "getsentry",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-15T21:24:30Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/commit",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/commit/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "commit"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 6,
-      "maintenance_status": "active",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/create-branch",
-      "name": "create-branch",
-      "description": "Create a git branch following Sentry naming conventions. Use when asked to \"create a branch\", \"new branch\", \"start a branch\", \"make a branch\", \"switch to a new branch\", or when starting new work on the default branch.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-07T13:31:39Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/create-branch",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/create-branch/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "git",
-        "art",
-        "create",
-        "branch"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 75,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/django-access-review",
-      "name": "django-access-review",
-      "description": "Django access control and IDOR security review. Use when reviewing Django views, DRF viewsets, ORM queries, or any Python/Django code handling user authorization. Trigger keywords: \"IDOR\", \"access control\", \"authorization\", \"Django permissions\", \"object permissions\", \"tenant isolation\", \"broken access\".",
-      "provider": "getsentry",
-      "category": "development",
-      "license": "LICENSE",
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/django-access-review",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/django-access-review/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "django",
-        "access",
-        "review"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/django-perf-review",
-      "name": "django-perf-review",
-      "description": "Django performance code review. Use when asked to \"review Django performance\", \"find N+1 queries\", \"optimize Django\", \"check queryset performance\", \"database performance\", \"Django ORM issues\", or audit Django code for performance problems.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": "LICENSE",
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/django-perf-review",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/django-perf-review/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "django",
-        "perf",
-        "review"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/doc-coauthoring",
-      "name": "doc-coauthoring",
-      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
-      "provider": "getsentry",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/doc-coauthoring",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/doc-coauthoring/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "document",
-        "doc",
-        "coauthoring"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/document-api-endpoint",
-      "name": "document-api-endpoint",
-      "description": "Document and type a Sentry API endpoint. Write or fix @extend_schema decorators, specify response TypedDicts, type request parameters, correct type drift between the declared schema and the runtime response, and validate the generated spec. Use when asked to \"document an endpoint\", \"add OpenAPI docs\", \"add/fix @extend_schema\", \"type an endpoint response\", \"fix the response type\", \"fix type drift\", \"reuse a response type\", \"split an overloaded endpoint\", \"specify the response schema\", \"add a TypedDict response\", \"migrate a legacy api-docs path\", \"fix a parameter type\", or \"make an endpoint public\" / \"promote an endpoint\" (promotion is one section here).",
-      "provider": "getsentry",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-04T17:30:29Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/document-api-endpoint",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/document-api-endpoint/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "document",
-        "endpoint"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 47,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/find-bugs",
-      "name": "find-bugs",
-      "description": "Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or audit code on the current branch.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/find-bugs",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/find-bugs/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "find",
-        "bugs"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/gh-review-requests",
-      "name": "gh-review-requests",
-      "description": "Fetch unread GitHub notifications for open PRs where review is requested from a specified team or opened by a team member. Use when asked to \"find PRs I need to review\", \"show my review requests\", \"what needs my review\", \"fetch GitHub review requests\", or \"check team review queue\".",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-09T17:46:26Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/gh-review-requests",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/gh-review-requests/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "github",
-        "git",
-        "pr",
-        "ci",
-        "review",
-        "requests"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 73,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/gha-security-review",
-      "name": "gha-security-review",
-      "description": "GitHub Actions security review for workflow exploitation vulnerabilities. Use when asked to \"review GitHub Actions\", \"audit workflows\", \"check CI security\", \"GHA security\", \"workflow security review\", or review .github/workflows/ for pwn requests, expression injection, credential theft, and supply chain attacks. Exploitation-focused with concrete PoC scenarios.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/gha-security-review",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/gha-security-review/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "github",
-        "git",
-        "pr",
-        "ci",
-        "gha",
-        "security",
-        "review"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/iterate-pr",
-      "name": "iterate-pr",
-      "description": "Iterate on a PR until actionable CI passes and high/medium review feedback is addressed. Use for PR CI failures, review feedback, or green-check loops; do not wait for human approval, draft status, or merge gates.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-19T21:35:02Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/iterate-pr",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/iterate-pr/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "merge",
-        "iterate"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 63,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/pr-link-issue",
-      "name": "pr-link-issue",
-      "description": "Append a GitHub issue link and its Linear ticket to the current PR's description. Use when asked to \"link issue to pr\", \"fill in issue and linear in pr\", \"add issue refs to pr\", or when given a GitHub issue URL and asked to attach it to the current PR. Resolves the Linear ticket automatically from the issue's linear-linkback comment.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-21T13:54:53Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/pr-link-issue",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/pr-link-issue/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "github",
-        "git",
-        "pr",
-        "link",
-        "issue"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 61,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/pr-writer",
-      "name": "pr-writer",
-      "description": "Create or refresh reviewer-facing PR titles and descriptions. Use when opening a PR, updating its title or body, or preparing branch changes for review.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-15T21:24:30Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/pr-writer",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/pr-writer/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "writer"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 6,
-      "maintenance_status": "active",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/presentation-creator",
-      "name": "presentation-creator",
-      "description": "Create data-driven presentation slides using React, Vite, and Recharts with Sentry branding. Use when asked to \"create a presentation\", \"build slides\", \"make a deck\", \"create a data presentation\", \"build a Sentry presentation\". Scaffolds a complete slide-based app with charts, animations, and single-file HTML output.",
-      "provider": "getsentry",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-09T17:46:26Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/presentation-creator",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/presentation-creator/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "art",
-        "brand",
-        "presentation",
-        "creator"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 73,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/prompt-optimizer",
-      "name": "prompt-optimizer",
-      "description": "Creates, optimizes, and iteratively refines agent prompts, system prompts, developer prompts, and reusable prompt templates. Use when asked to improve a prompt, optimize a system prompt, rewrite an agent prompt, tune prompt wording, make a prompt more reliable, port prompts between OpenAI, Claude, or Gemini, or build prompt evals.",
-      "provider": "getsentry",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-04T17:40:37Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/prompt-optimizer",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/prompt-optimizer/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "prompt",
-        "optimizer"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 78,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878,
-      "similar_skills": [
-        {
-          "id": "github/prompt-optimizer",
-          "provider": "github",
-          "similarity": 0.4
-        }
-      ]
-    },
-    {
-      "id": "getsentry/replay-ux-research",
-      "name": "replay-ux-research",
-      "description": "Analyze Sentry session replays to surface UX patterns, pain points, and user journeys for a given product area. Use when asked to \"show me how users use\", \"day in the life\", \"UX research\", \"replay research\", \"how do customers use\", \"what's the user experience like for\", \"watch replays of\", \"analyze replays for\", \"user behavior on\", or \"replay UX audit\" for any Sentry product surface.",
-      "provider": "getsentry",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-24T18:55:16Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/replay-ux-research",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/replay-ux-research/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "replay",
-        "research"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 88,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/security-review",
-      "name": "security-review",
-      "description": "Security code review for vulnerabilities. Use when asked to \"security review\", \"find vulnerabilities\", \"check for security issues\", \"audit security\", \"OWASP review\", or review code for injection, XSS, authentication, authorization, cryptography issues. Provides systematic review with confidence-based reporting.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": "LICENSE",
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/security-review",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/security-review/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "security",
-        "review"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878,
-      "similar_skills": [
-        {
-          "id": "github/security-review",
-          "provider": "github",
-          "similarity": 0.49
-        }
-      ]
-    },
-    {
-      "id": "getsentry/skill-scanner",
-      "name": "skill-scanner",
-      "description": "Scan agent skills for security issues. Use when asked to \"scan a skill\", \"audit a skill\", \"review skill security\", \"check skill for injection\", \"validate SKILL.md\", or assess whether an agent skill is safe to install. Checks for prompt injection, malicious scripts, excessive permissions, secret exposure, and supply chain risks.",
-      "provider": "getsentry",
-      "category": "security",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-09T17:46:26Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/skill-scanner",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/skill-scanner/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "skill",
-        "scanner"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 73,
-      "maintenance_status": "maintained",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/skill-writer",
-      "name": "skill-writer",
-      "description": "Create, synthesize, and iteratively improve agent skills following the Agent Skills specification. Use when asked to \"create a skill\", \"write a skill\", \"synthesize sources into a skill\", \"improve a skill from positive/negative examples\", \"update a skill\", or \"maintain skill docs and registration\". Handles source capture, precision passes, authoring, registration, and validation.",
-      "provider": "getsentry",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-30T20:52:17Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/skill-writer",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/skill-writer/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "skill",
-        "writer"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 21,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/sred-project-organizer",
-      "name": "sred-project-organizer",
-      "description": "Take a list of projects and their related documentation, and organize them into the SRED format for submission.",
-      "provider": "getsentry",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-09T17:46:26Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/sred-project-organizer",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/sred-project-organizer/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "document",
-        "sred",
-        "project",
-        "organizer"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 73,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/sred-work-summary",
-      "name": "sred-work-summary",
-      "description": "Go back through the previous year of work and create a Notion doc that groups relevant links into projects that can then be documented as SRED projects.",
-      "provider": "getsentry",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/sred-work-summary",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/sred-work-summary/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "notion",
-        "document",
-        "sred",
-        "work",
-        "summary"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/triage-frontend-issues",
-      "name": "triage-frontend-issues",
-      "description": "Triage new issues in the Sentry `javascript` project by archiving non-actionable noise. Use when asked to \"triage issues\", \"triage the javascript project\", \"archive non-actionable issues\", \"triage new frontend issues\", or \"clean up the sentry/javascript queue\". Operates only on the sentry/javascript project, only archives (never resolves), and always archives with `untilEscalating`.",
-      "provider": "getsentry",
-      "category": "web",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-05-21T16:41:59Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/triage-frontend-issues",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/triage-frontend-issues/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "triage",
-        "frontend",
-        "issues"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 61,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 878
-    },
-    {
-      "id": "getsentry/typing-exclusion-worker",
-      "name": "typing-exclusion-worker",
-      "description": "Python typing exclusion worker: remove assigned mypy exclusion modules in small scoped batches, fix typing issues, run validation, and produce a structured completion summary. Use when running parallel typing-debt workers or when asked to remove modules from pyproject mypy exclusion overrides.",
-      "provider": "getsentry",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-04-19T23:10:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/getsentry/skills",
-        "path": "skills/typing-exclusion-worker",
-        "skill_md_url": "https://raw.githubusercontent.com/getsentry/skills/main/skills/typing-exclusion-worker/SKILL.md",
-        "commit_sha": "9a85b59acc928789b49907109483f46aee1050cd"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "typing",
-        "exclusion",
-        "worker"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 93,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 878
     },
     {
       "id": "nginity/a11y-audit",
@@ -45142,21 +45121,21 @@
     }
   ],
   "duplicate_summary": {
-    "total_annotated": 1,
-    "mirrors": 1,
+    "total_annotated": 0,
+    "mirrors": 0,
     "probable_duplicates": 0
   },
   "maintenance_summary": {
-    "active": 69,
-    "maintained": 388,
-    "stale": 48,
+    "active": 4,
+    "maintained": 24,
+    "stale": 0,
     "abandoned": 0,
     "unknown": 0,
-    "active_percentage": 13.7,
-    "maintained_percentage": 90.5
+    "active_percentage": 14.3,
+    "maintained_percentage": 100.0
   },
   "skill_type_summary": {
-    "full": 505,
+    "full": 28,
     "integration": 0
   }
 }

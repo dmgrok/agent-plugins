@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-07-25T08:20:37.126150+00:00",
+  "last_run": "2026-07-26T08:33:48.919365+00:00",
   "provider_commits": {
     "anthropics": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -30,7 +30,7 @@
     "cloudflare": "30553f89ae1ef1e3c2917cd09d72dac992bb4e9a",
     "trailofbits": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af",
     "expo": "09eb052410e7f609624cb161ea4cd9576c69cd5d",
-    "getsentry": "9a85b59acc928789b49907109483f46aee1050cd",
+    "getsentry": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1",
     "supabase": "1ad9aaeb49caafd9e95c0a91116f71890eebbc53",
     "google-labs-stitch": "7b53207b94e62911777d53d4238b5f8c88c2b519",
     "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
@@ -49,5 +49,5 @@
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
   "skills_count": 1183,
-  "version": "2026.07.25"
+  "version": "2026.07.26"
 }

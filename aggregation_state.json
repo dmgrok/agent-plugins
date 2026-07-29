@@ -1,13 +1,13 @@
 {
-  "last_run": "2026-07-28T08:46:06.786875+00:00",
+  "last_run": "2026-07-29T08:52:49.734090+00:00",
   "provider_commits": {
     "anthropics": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "9933dcad5be5caeb288cebcd370eeeb2fc2f1685",
+    "github": "8ae5a99109124c22288eee0254da61741e44d12a",
     "vercel": "7c180d9044c9ae2b442b567aad4e42a28dd5ed62",
     "huggingface": "87f9ee5b670a630b022809a8742606c6da21812c",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
-    "obra-superpowers": "3dcbd5c4b48e02263fbf4a3c01e3fe4f81d584d9",
+    "obra-superpowers": "44c9b2d6e889982ac18c27d05a19fefe335194e1",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
     "sanjay-ai-skills": "361969210b1002034be70de60a041a25732b098a",
     "aws-skills": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
@@ -26,10 +26,10 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "eea5cb28ba79ab8b078a1eaa44ce9ec44f75dbf8",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "84c364c683c58ba8dfbc003d812e6a35f4c97b47",
+    "stripe": "150d4d4ac00b28220b1a31044d21e5970d701dee",
     "cloudflare": "30553f89ae1ef1e3c2917cd09d72dac992bb4e9a",
     "trailofbits": "cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af",
-    "expo": "09eb052410e7f609624cb161ea4cd9576c69cd5d",
+    "expo": "b1ec56fc67ab61528f80652ae7cd5b8c94f88e2c",
     "getsentry": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1",
     "supabase": "1ad9aaeb49caafd9e95c0a91116f71890eebbc53",
     "google-labs-stitch": "7b53207b94e62911777d53d4238b5f8c88c2b519",
@@ -44,10 +44,10 @@
     "ipsw-skill": "30f98b82fdfd9d1ccbee47c2c2d494b42f56ed8c",
     "visionos-agents": "c359c3a99ffe9ad9a46f1de2d4fbb7f16d4db2dc",
     "emblemcompany": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
-    "sematext": "29fd3fd08e938fcbfc52d6c9c5a1033699d5d5ee",
+    "sematext": "30445903e746ee45de06d06a52a04a6fa35702cf",
     "accint": "03ed61f278b37f9a9e4c5b23932626989da4fd67",
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
   "skills_count": 1185,
-  "version": "2026.07.28"
+  "version": "2026.07.29"
 }

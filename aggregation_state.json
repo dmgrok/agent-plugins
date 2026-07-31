@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-07-30T08:39:28.533318+00:00",
+  "last_run": "2026-07-31T09:01:20.570448+00:00",
   "provider_commits": {
     "anthropics": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "be7a1cf734f427d50266335b461b86977299d953",
+    "github": "336af71f1b7d2e6e15a8a986ba79ca031a40549b",
     "vercel": "7c180d9044c9ae2b442b567aad4e42a28dd5ed62",
     "huggingface": "87f9ee5b670a630b022809a8742606c6da21812c",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
@@ -26,20 +26,20 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "eea5cb28ba79ab8b078a1eaa44ce9ec44f75dbf8",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "3adce6293895305828948781d91cb86a9b324e50",
+    "stripe": "2ecd560bd426075690686536200174785c94f2b5",
     "cloudflare": "30553f89ae1ef1e3c2917cd09d72dac992bb4e9a",
-    "trailofbits": "ca08fc8a91f64d80b00d48597907c579d0a85c6f",
+    "trailofbits": "09dfbd91537b888136c9203dca4ffdee5a595c69",
     "expo": "b1ec56fc67ab61528f80652ae7cd5b8c94f88e2c",
     "getsentry": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1",
-    "supabase": "1ad9aaeb49caafd9e95c0a91116f71890eebbc53",
-    "google-labs-stitch": "894d79ce4ae4fbe89778526a6ef5783277b741cc",
+    "supabase": "1207767388a0ffb55f21fb4e6988fee96942431d",
+    "google-labs-stitch": "535b0889a46868c9b08f8a7f7084db3c1958a2b6",
     "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
     "neondatabase": "d0189b0b1d83dd150ba6d5c884b3ab061367b380",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
     "remotion": "b3e242a87fe94b902e3a9da343ae89b7ac5279b3",
     "nginity": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
-    "obsidian-plugin": "088a0afda82e361e7dfee841b5b352af8ede258a",
+    "obsidian-plugin": "4eb98b0c76c6dda373ce7f4e65495d38d207311b",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
     "ipsw-skill": "30f98b82fdfd9d1ccbee47c2c2d494b42f56ed8c",
     "visionos-agents": "c359c3a99ffe9ad9a46f1de2d4fbb7f16d4db2dc",
@@ -49,5 +49,5 @@
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
   "skills_count": 1194,
-  "version": "2026.07.30"
+  "version": "2026.07.31"
 }

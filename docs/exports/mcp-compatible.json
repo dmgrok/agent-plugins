@@ -1,13 +1,53 @@
 {
   "name": "MCP-Compatible Skills",
   "description": "Skills with MCP integration support, filtered from Agent Skills Directory",
-  "version": "2026.08.01",
-  "generated_at": "2026-08-01T08:28:37.030515+00:00",
+  "version": "2026.08.02",
+  "generated_at": "2026-08-02T08:31:08.876082+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
   "total_skills": 76,
   "skills": [
+    {
+      "id": "expo/expo-skill-feedback",
+      "name": "expo-skill-feedback",
+      "description": "Submit feedback on an Expo skill\u2014or Expo itself\u2014and control bundled anonymous usage telemetry (off by default / opt-in). Submit feedback with: npx --yes submit-expo-feedback@latest \"ACTIONABLE_FEEDBACK\". Optionally add either or both: --category \"CATEGORY\" and --subject \"SUBJECT\". Replace the uppercase placeholders before running. Use when a skill was useful, confusing, broken, missing context, or worth improving; when Expo, Expo CLI, EAS CLI, docs, or MCP worked well or fell short; or when the user explicitly asks to enable or disable telemetry, check its status, or understand what it collects.",
+      "provider": "expo",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-07-22T22:32:17Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/expo/skills",
+        "path": "plugins/expo/skills/expo-skill-feedback",
+        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-skill-feedback/SKILL.md",
+        "commit_sha": "db6dcfa12a77ff7561455d8e1c690978f2a9e9cd"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "test",
+        "mcp",
+        "cli",
+        "expo",
+        "skill",
+        "feedback"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 10,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 2348
+    },
     {
       "id": "neondatabase/neon",
       "name": "neon",
@@ -16,13 +56,13 @@
       "category": "data",
       "license": null,
       "compatibility": null,
-      "last_updated_at": "2026-07-31T13:38:58Z",
+      "last_updated_at": "2026-08-01T13:02:54Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/neondatabase/agent-skills",
         "path": "skills/neon",
         "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon/SKILL.md",
-        "commit_sha": "d5f8a5bb438a0a700c6fc83b9b037e712ae7be25"
+        "commit_sha": "173654ff6b7de7686cb56e80524ba41f4b003d23"
       },
       "has_scripts": false,
       "has_references": false,
@@ -44,7 +84,7 @@
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 81
+      "github_stars": 82
     },
     {
       "id": "neondatabase/neon-functions",
@@ -62,7 +102,7 @@
         "repo": "https://github.com/neondatabase/agent-skills",
         "path": "skills/neon-functions",
         "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-functions/SKILL.md",
-        "commit_sha": "d5f8a5bb438a0a700c6fc83b9b037e712ae7be25"
+        "commit_sha": "173654ff6b7de7686cb56e80524ba41f4b003d23"
       },
       "has_scripts": false,
       "has_references": true,
@@ -77,12 +117,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 0,
+      "days_since_update": 1,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 81
+      "github_stars": 82
     },
     {
       "id": "neondatabase/neon-postgres",
@@ -100,7 +140,7 @@
         "repo": "https://github.com/neondatabase/agent-skills",
         "path": "skills/neon-postgres",
         "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
-        "commit_sha": "d5f8a5bb438a0a700c6fc83b9b037e712ae7be25"
+        "commit_sha": "173654ff6b7de7686cb56e80524ba41f4b003d23"
       },
       "has_scripts": false,
       "has_references": false,
@@ -116,12 +156,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 0,
+      "days_since_update": 1,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 81
+      "github_stars": 82
     },
     {
       "id": "neondatabase/neon-postgres-branches",
@@ -139,7 +179,7 @@
         "repo": "https://github.com/neondatabase/agent-skills",
         "path": "skills/neon-postgres-branches",
         "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
-        "commit_sha": "d5f8a5bb438a0a700c6fc83b9b037e712ae7be25"
+        "commit_sha": "173654ff6b7de7686cb56e80524ba41f4b003d23"
       },
       "has_scripts": false,
       "has_references": false,
@@ -159,12 +199,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 0,
+      "days_since_update": 1,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 81
+      "github_stars": 82
     },
     {
       "id": "trailofbits/chrome-mcp-troubleshooting",
@@ -1910,46 +1950,6 @@
       "skill_type": "full",
       "requires_mcp": true,
       "github_stars": 2456
-    },
-    {
-      "id": "expo/expo-skill-feedback",
-      "name": "expo-skill-feedback",
-      "description": "Submit feedback on an Expo skill\u2014or Expo itself\u2014and control bundled anonymous usage telemetry (off by default / opt-in). Submit feedback with: npx --yes submit-expo-feedback@latest \"ACTIONABLE_FEEDBACK\". Optionally add either or both: --category \"CATEGORY\" and --subject \"SUBJECT\". Replace the uppercase placeholders before running. Use when a skill was useful, confusing, broken, missing context, or worth improving; when Expo, Expo CLI, EAS CLI, docs, or MCP worked well or fell short; or when the user explicitly asks to enable or disable telemetry, check its status, or understand what it collects.",
-      "provider": "expo",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-22T22:32:17Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/expo/skills",
-        "path": "plugins/expo/skills/expo-skill-feedback",
-        "skill_md_url": "https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-skill-feedback/SKILL.md",
-        "commit_sha": "b1ec56fc67ab61528f80652ae7cd5b8c94f88e2c"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "test",
-        "mcp",
-        "cli",
-        "expo",
-        "skill",
-        "feedback"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 6,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 2339
     },
     {
       "id": "anthropics/claude-api",

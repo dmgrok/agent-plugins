@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-08-01T08:28:37.223426+00:00",
+  "last_run": "2026-08-02T08:31:09.068510+00:00",
   "provider_commits": {
     "anthropics": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -29,13 +29,13 @@
     "stripe": "2ecd560bd426075690686536200174785c94f2b5",
     "cloudflare": "30553f89ae1ef1e3c2917cd09d72dac992bb4e9a",
     "trailofbits": "1256982d4d925a0acfe11e26c2253c32052c6247",
-    "expo": "b1ec56fc67ab61528f80652ae7cd5b8c94f88e2c",
+    "expo": "db6dcfa12a77ff7561455d8e1c690978f2a9e9cd",
     "getsentry": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1",
     "supabase": "1207767388a0ffb55f21fb4e6988fee96942431d",
     "google-labs-stitch": "535b0889a46868c9b08f8a7f7084db3c1958a2b6",
     "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
-    "neondatabase": "d5f8a5bb438a0a700c6fc83b9b037e712ae7be25",
+    "neondatabase": "173654ff6b7de7686cb56e80524ba41f4b003d23",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
     "remotion": "4951f6aca2a236f2f2a2bff4734566963fe12707",
     "nginity": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
@@ -49,5 +49,5 @@
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
   "skills_count": 1193,
-  "version": "2026.08.01"
+  "version": "2026.08.02"
 }

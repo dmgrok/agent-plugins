@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-08-02T08:31:09.068510+00:00",
+  "last_run": "2026-08-03T09:56:04.064954+00:00",
   "provider_commits": {
     "anthropics": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -37,7 +37,7 @@
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
     "neondatabase": "173654ff6b7de7686cb56e80524ba41f4b003d23",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
-    "remotion": "4951f6aca2a236f2f2a2bff4734566963fe12707",
+    "remotion": "954abf64096dc18d1599cde9c8026c9ab71579a4",
     "nginity": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
     "obsidian-plugin": "4eb98b0c76c6dda373ce7f4e65495d38d207311b",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
@@ -49,5 +49,5 @@
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
   "skills_count": 1193,
-  "version": "2026.08.02"
+  "version": "2026.08.03"
 }

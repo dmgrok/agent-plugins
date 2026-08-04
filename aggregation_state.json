@@ -1,11 +1,11 @@
 {
-  "last_run": "2026-08-03T09:56:04.064954+00:00",
+  "last_run": "2026-08-04T08:50:41.874658+00:00",
   "provider_commits": {
     "anthropics": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "336af71f1b7d2e6e15a8a986ba79ca031a40549b",
+    "github": "dab758a392cd6b06e806c1aa0444e2bc463b32f9",
     "vercel": "7c180d9044c9ae2b442b567aad4e42a28dd5ed62",
-    "huggingface": "87f9ee5b670a630b022809a8742606c6da21812c",
+    "huggingface": "32f8bb0928e95fc9d47ca9fbf69cbfbaf2bc2bda",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
     "obra-superpowers": "44c9b2d6e889982ac18c27d05a19fefe335194e1",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
@@ -26,18 +26,18 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "eea5cb28ba79ab8b078a1eaa44ce9ec44f75dbf8",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "2ecd560bd426075690686536200174785c94f2b5",
+    "stripe": "70de14e5d211c85a7c557f543554fbfe05109b4e",
     "cloudflare": "30553f89ae1ef1e3c2917cd09d72dac992bb4e9a",
-    "trailofbits": "1256982d4d925a0acfe11e26c2253c32052c6247",
+    "trailofbits": "9ea55c598763f7cb87ab56933d773d7dc34344a0",
     "expo": "db6dcfa12a77ff7561455d8e1c690978f2a9e9cd",
     "getsentry": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1",
     "supabase": "1207767388a0ffb55f21fb4e6988fee96942431d",
     "google-labs-stitch": "535b0889a46868c9b08f8a7f7084db3c1958a2b6",
     "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
-    "neondatabase": "173654ff6b7de7686cb56e80524ba41f4b003d23",
+    "neondatabase": "69f205aa75e9b2cbaf8074d1ab881b744797f36d",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
-    "remotion": "954abf64096dc18d1599cde9c8026c9ab71579a4",
+    "remotion": "f94c1e18db2bb30b904784b986f6897822b8f152",
     "nginity": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
     "obsidian-plugin": "4eb98b0c76c6dda373ce7f4e65495d38d207311b",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
@@ -48,6 +48,6 @@
     "accint": "03ed61f278b37f9a9e4c5b23932626989da4fd67",
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
-  "skills_count": 1193,
-  "version": "2026.08.03"
+  "skills_count": 1190,
+  "version": "2026.08.04"
 }

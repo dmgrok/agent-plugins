@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-08-05T08:47:38.031154+00:00",
+  "last_run": "2026-08-06T08:48:58.588919+00:00",
   "provider_commits": {
     "anthropics": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "9db369d00f121542e1c99fd9b6cd6f707bade765",
+    "github": "6c7fe1b15f1be7e29d3aaf04fb3423ee5a226353",
     "vercel": "7c180d9044c9ae2b442b567aad4e42a28dd5ed62",
     "huggingface": "32f8bb0928e95fc9d47ca9fbf69cbfbaf2bc2bda",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
@@ -28,8 +28,8 @@
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
     "stripe": "a929698fa483f392a21d46e7385ff3f6025407e6",
     "cloudflare": "30553f89ae1ef1e3c2917cd09d72dac992bb4e9a",
-    "trailofbits": "9ea55c598763f7cb87ab56933d773d7dc34344a0",
-    "expo": "114ee4ddc1371efed4209f8ea1cce5f93354613a",
+    "trailofbits": "ea7c60e6283d97f4cae485b1671b3936dc604fcb",
+    "expo": "69ea062f5c412a045e2e21bcd2cd7676926234cc",
     "getsentry": "e7a87fa72645158f9b5e722cbb1c7e09266f48f1",
     "supabase": "1207767388a0ffb55f21fb4e6988fee96942431d",
     "google-labs-stitch": "535b0889a46868c9b08f8a7f7084db3c1958a2b6",
@@ -49,5 +49,5 @@
     "bilig": "f9ce204933b9d75981d20c0edc7297218b0236d3"
   },
   "skills_count": 1195,
-  "version": "2026.08.05"
+  "version": "2026.08.06"
 }

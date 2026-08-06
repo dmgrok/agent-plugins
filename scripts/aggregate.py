@@ -374,6 +374,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/proompteng/bilig/main",
         "skills_path_prefix": "packages/headless/",
     },
+    "markstream": {
+        "name": "Markstream",
+        "repo": "https://github.com/Simon-He95/markstream-vue",
+        "api_tree_url": "https://api.github.com/repos/Simon-He95/markstream-vue/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/Simon-He95/markstream-vue/main",
+        "skills_path_prefix": ".agents/skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

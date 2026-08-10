@@ -374,6 +374,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/proompteng/bilig/main",
         "skills_path_prefix": "packages/headless/",
     },
+    "brainiall": {
+        "name": "BRAINIALL",
+        "repo": "https://github.com/fasuizu-br/brainiall-transcription-skill",
+        "api_tree_url": "https://api.github.com/repos/fasuizu-br/brainiall-transcription-skill/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

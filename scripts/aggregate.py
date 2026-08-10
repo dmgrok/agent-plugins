@@ -374,6 +374,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/proompteng/bilig/main",
         "skills_path_prefix": "packages/headless/",
     },
+    "tree-ring-memory": {
+        "name": "Tree Ring Memory",
+        "repo": "https://github.com/TerminallyLazy/tree-ring-memory-skill",
+        "api_tree_url": "https://api.github.com/repos/TerminallyLazy/tree-ring-memory-skill/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/TerminallyLazy/tree-ring-memory-skill/main",
+        "skills_path_prefix": "",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

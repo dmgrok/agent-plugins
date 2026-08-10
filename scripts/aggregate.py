@@ -374,6 +374,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/proompteng/bilig/main",
         "skills_path_prefix": "packages/headless/",
     },
+    "videosays": {
+        "name": "Videosays",
+        "repo": "https://github.com/xwchris/videosays-agent-tools",
+        "api_tree_url": "https://api.github.com/repos/xwchris/videosays-agent-tools/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/xwchris/videosays-agent-tools/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

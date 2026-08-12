@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-08-11T07:19:00.207264+00:00",
+  "last_run": "2026-08-12T07:45:22.253851+00:00",
   "provider_commits": {
     "anthropics": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "35b7b9b0ece5ef92fd0f4c91944f56be9ab8b675",
+    "github": "0a6e37e4e242c944380228fa29dbd14e64ac1b63",
     "vercel": "7c180d9044c9ae2b442b567aad4e42a28dd5ed62",
     "huggingface": "ec0108293521ef698e451ec044e8b4feba6b732b",
     "skillcreatorai": "039ad59e2a1256a47c08abc7d2c194446e9a2c02",
@@ -20,7 +20,7 @@
     "ffuf-skill": "50fd4af4d8bd60cfc48fd84eda1720fbd718857d",
     "ios-simulator-skill": "e0ee87a884b438632238ef8ab42139797f8638a8",
     "move-quality-skill": "6813ac55cb3bfcaa35c349da7dd5f9eae745009d",
-    "playwright-skill": "bb7e920d376022958214e349ef25498a2644e189",
+    "playwright-skill": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
     "pypict-skill": "fbda212bca79dfa7611be12527b102c89cc8faeb",
     "csv-summarizer-skill": "9b3affd270f85aaf1c8a7a457f510034d5736cde",
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
@@ -28,16 +28,16 @@
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
     "stripe": "1953b6cce7344d880a054c42b8dd21ca3e50ebd5",
     "cloudflare": "f96bff754e428838818017f75817f0f9428acd48",
-    "trailofbits": "e6066e7db1fd57cb35f9a534781ceec595327feb",
-    "expo": "ea6f1492f4e69e5b530c3fb8162728a1b0d982eb",
+    "trailofbits": "304c81a8cefb6e3c029ebd0d12940ccf0713eccb",
+    "expo": "dcff9e7cd61f79ee821e18b5b215d5585eaac441",
     "getsentry": "24fdb833b9e67670a027e3b482189100a69ff7f9",
-    "supabase": "1207767388a0ffb55f21fb4e6988fee96942431d",
+    "supabase": "8331f910845103c08d51f6ca1d86ebb7d1f745e3",
     "google-labs-stitch": "535b0889a46868c9b08f8a7f7084db3c1958a2b6",
     "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
     "neondatabase": "af27b52659c3c5bbf05d6c626b166163eb351e19",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
-    "remotion": "eed702478ce34eff4eb77230b748375332c536ae",
+    "remotion": "b12104ef5f1b1ca2ca5590fcc7c1804fbc85556f",
     "nginity": "aa8d778811a557a2c28ccadda4cf3d0bd028a4cc",
     "obsidian-plugin": "aebdf69f769ca95a62ce6b87822261bc05c74924",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
@@ -49,6 +49,6 @@
     "bilig": "11ae6004f59ce4d969b102b13a55db7b3deb6cba",
     "brainiall": "366ca7ec1c08662c45efb9d2cfde81835058083e"
   },
-  "skills_count": 1206,
-  "version": "2026.08.11"
+  "skills_count": 1207,
+  "version": "2026.08.12"
 }

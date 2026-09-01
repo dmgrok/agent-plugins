@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-08-31T13:18:55.456691+00:00",
+  "last_run": "2026-09-01T11:30:42.426142+00:00",
   "provider_commits": {
     "anthropics": "3b3fad96af16a10759d930941b4520ba0c40edae",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "c956566a35c3c2e635f019e7a1bfa59d9497e8b1",
+    "github": "5eaae7e2cde26b5cf86682fb31e758da0288aef7",
     "vercel": "063bee94c3f4df8453406c830b0a7df0f2860278",
     "huggingface": "cead19e10754e773bad24fecef83cb64be24094e",
     "skillcreatorai": "1159592a122885ddd8d767243a7cf16aab065919",
@@ -28,16 +28,16 @@
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
     "stripe": "9f39fa607a63582d8c5b62aaf6fa4898b9c7caac",
     "cloudflare": "f96bff754e428838818017f75817f0f9428acd48",
-    "trailofbits": "7e7a9b2a5d50e952ec38c0fbcf60c63c62f44cf9",
-    "expo": "50f59f837ddb7595d8c6683c693207e265d58c43",
+    "trailofbits": "6feac677af72e52ef4d279412276b5a6f21366f0",
+    "expo": "a8f0b6c737fa915e4697f76ea6d9e427df9b19db",
     "getsentry": "c2f99a5b04b4cd992ec3022d7c2c3e23e938d241",
     "supabase": "8331f910845103c08d51f6ca1d86ebb7d1f745e3",
     "google-labs-stitch": "0337446dadde6f8c94210444e2aa9d546126480f",
-    "better-auth": "17dfe3a1da1c3982de723098ba1015d67f35694c",
+    "better-auth": "20c9e88a5c007461a703f1c213572b073196113e",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
     "neondatabase": "8370e740b4705a79d104b24dd29b3e33c8688378",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
-    "remotion": "357a270803b23e16b32bec65df07c41a62e94bd9",
+    "remotion": "54e9b19a612897171e0b3b242e01c2badba4a272",
     "nginity": "19392f7a08264ed00486a251f5b2098321771f94",
     "obsidian-plugin": "aebdf69f769ca95a62ce6b87822261bc05c74924",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
@@ -49,6 +49,6 @@
     "bilig": "3f740671e8464de63d08042fea4db8441163c720",
     "brainiall": "366ca7ec1c08662c45efb9d2cfde81835058083e"
   },
-  "skills_count": 1253,
-  "version": "2026.08.31"
+  "skills_count": 1252,
+  "version": "2026.09.01"
 }

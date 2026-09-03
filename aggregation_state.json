@@ -1,11 +1,11 @@
 {
-  "last_run": "2026-09-02T11:04:30.687929+00:00",
+  "last_run": "2026-09-03T11:04:02.455671+00:00",
   "provider_commits": {
     "anthropics": "53048666b05b4799081517d00e09e0a2dd688678",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "6a8fa297b0fe652bd3d7c8946554dc146846b20e",
+    "github": "2ba72cd14253500bbb747b5f01e72dd03fbafcb0",
     "vercel": "063bee94c3f4df8453406c830b0a7df0f2860278",
-    "huggingface": "cead19e10754e773bad24fecef83cb64be24094e",
+    "huggingface": "97862b0fcc89c850fdd00c82ede1e62d3c930a6d",
     "skillcreatorai": "1159592a122885ddd8d767243a7cf16aab065919",
     "obra-superpowers": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
@@ -26,16 +26,16 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "eea5cb28ba79ab8b078a1eaa44ce9ec44f75dbf8",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "cf681787184a493e7106b0ae1ee88a1fede65017",
-    "cloudflare": "f96bff754e428838818017f75817f0f9428acd48",
-    "trailofbits": "14e5a1070020c5d101e8362756f3201fb677b467",
+    "stripe": "68382523846ea5bfad75ba1ef58dc5db031d0a5a",
+    "cloudflare": "9177f9a0bafc1ab61a0dae8dca57a8eb4d9f636d",
+    "trailofbits": "d3323cefbcf645678b8dc481de204b02ad3d02dc",
     "expo": "80090ccda0ce5973c1354743d1d02602664b15be",
     "getsentry": "c2f99a5b04b4cd992ec3022d7c2c3e23e938d241",
     "supabase": "8331f910845103c08d51f6ca1d86ebb7d1f745e3",
     "google-labs-stitch": "0337446dadde6f8c94210444e2aa9d546126480f",
     "better-auth": "20c9e88a5c007461a703f1c213572b073196113e",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
-    "neondatabase": "4534b581657c7beaff0149a15c8290d5275f640b",
+    "neondatabase": "4d02514f89ec203ec0f603882f90d468ff8c44f8",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
     "remotion": "54e9b19a612897171e0b3b242e01c2badba4a272",
     "nginity": "19392f7a08264ed00486a251f5b2098321771f94",
@@ -50,5 +50,5 @@
     "brainiall": "366ca7ec1c08662c45efb9d2cfde81835058083e"
   },
   "skills_count": 1253,
-  "version": "2026.09.02"
+  "version": "2026.09.03"
 }

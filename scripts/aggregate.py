@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "szarkans-multi": {
+        "name": "multi",
+        "repo": "https://github.com/szarkans/multi",
+        "api_tree_url": "https://api.github.com/repos/szarkans/multi/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/szarkans/multi/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

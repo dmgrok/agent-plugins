@@ -1,7 +1,7 @@
 {
   "name": "Agent Skills Directory - Ecosystem Exports",
-  "version": "2026.09.09",
-  "generated_at": "2026-09-09T11:06:06.831945+00:00",
+  "version": "2026.09.10",
+  "generated_at": "2026-09-10T11:01:24.441092+00:00",
   "description": "Pre-filtered skill catalogs for different ecosystems and use cases",
   "exports": {
     "claude-skills.json": {
@@ -21,7 +21,7 @@
     },
     "premium-skills.json": {
       "description": "High-quality skills (score >= 70)",
-      "total": 661,
+      "total": 659,
       "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/premium-skills.json"
     },
     "active-skills.json": {

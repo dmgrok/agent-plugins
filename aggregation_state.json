@@ -1,11 +1,11 @@
 {
-  "last_run": "2026-09-09T11:06:07.048326+00:00",
+  "last_run": "2026-09-10T11:01:24.640377+00:00",
   "provider_commits": {
     "anthropics": "41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
     "github": "7568a482ce2df38f8965ab5336a3220db796a4ba",
     "vercel": "063bee94c3f4df8453406c830b0a7df0f2860278",
-    "huggingface": "97862b0fcc89c850fdd00c82ede1e62d3c930a6d",
+    "huggingface": "f3186efbbc322121eb5d0f31e8a1d669ee961159",
     "skillcreatorai": "1159592a122885ddd8d767243a7cf16aab065919",
     "obra-superpowers": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
@@ -24,12 +24,12 @@
     "pypict-skill": "fbda212bca79dfa7611be12527b102c89cc8faeb",
     "csv-summarizer-skill": "9b3affd270f85aaf1c8a7a457f510034d5736cde",
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
-    "notebooklm-skill": "eea5cb28ba79ab8b078a1eaa44ce9ec44f75dbf8",
+    "notebooklm-skill": "c80722d3f27d65e06b6579add201bf69b99101d0",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "12f48810695e79d14ae1ffb251124685488e6c63",
+    "stripe": "ea3c6ffc035e12e5547dbf7e6e154564ae279664",
     "cloudflare": "b052c32bab7dd493513260228a36c88294f343f1",
-    "trailofbits": "d3323cefbcf645678b8dc481de204b02ad3d02dc",
-    "expo": "170589a7ee8963156f63de8202fa96cf08a9e610",
+    "trailofbits": "321ccfe628eca0d314b0ee4eaffcdd8a05639aaf",
+    "expo": "85c7236254db761c3905f9078ce17393f3544ff8",
     "getsentry": "c2f99a5b04b4cd992ec3022d7c2c3e23e938d241",
     "supabase": "8331f910845103c08d51f6ca1d86ebb7d1f745e3",
     "google-labs-stitch": "0337446dadde6f8c94210444e2aa9d546126480f",
@@ -37,7 +37,7 @@
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
     "neondatabase": "2e0da3a1653bcdd227565ac14bb3e9e453a8b854",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
-    "remotion": "11986e44eeb672b083354e68967f2b194df73b7c",
+    "remotion": "9ae8048a84690098b1059f7f5d30e6d05833b824",
     "nginity": "19392f7a08264ed00486a251f5b2098321771f94",
     "obsidian-plugin": "aebdf69f769ca95a62ce6b87822261bc05c74924",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
@@ -50,5 +50,5 @@
     "brainiall": "366ca7ec1c08662c45efb9d2cfde81835058083e"
   },
   "skills_count": 1257,
-  "version": "2026.09.09"
+  "version": "2026.09.10"
 }

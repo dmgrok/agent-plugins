@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "deepread": {
+        "name": "DeepRead",
+        "repo": "https://github.com/xiehuan123/dsh-deepread",
+        "api_tree_url": "https://api.github.com/repos/xiehuan123/dsh-deepread/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/xiehuan123/dsh-deepread/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

@@ -1,57 +1,29 @@
 {
   "$schema": "https://raw.githubusercontent.com/dmgrok/agent-plugins/main/schema/catalog-schema.json",
-  "version": "2026.09.12",
-  "generated_at": "2026-09-12T10:26:00.463035+00:00",
+  "version": "2026.09.13",
+  "generated_at": "2026-09-13T11:29:00.095824+00:00",
   "total_skills": 1257,
   "providers": {
     "ios-simulator-skill": {
       "name": "iOS Simulator",
       "repo": "https://github.com/conorluddy/ios-simulator-skill",
       "skills_count": 1,
-      "stars": 1246,
+      "stars": 1249,
       "description": "An IOS Simulator Skill for ClaudeCode. Use it to optimise Claude's ability to build, run and interact with your apps, and to proxy xcodebuild to save token and context wastage."
     },
-    "expo": {
-      "name": "Expo",
-      "repo": "https://github.com/expo/skills",
-      "skills_count": 25,
-      "stars": 2520,
-      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
+    "remotion": {
+      "name": "Remotion",
+      "repo": "https://github.com/remotion-dev/skills",
+      "skills_count": 12,
+      "stars": 4565,
+      "description": "Agent Skills"
     },
-    "sematext": {
-      "name": "Sematext",
-      "repo": "https://github.com/sematext/sematext-otel-onboarding",
-      "skills_count": 1,
-      "stars": 0,
-      "description": "OpenTelemetry onboarding for Sematext Cloud \u2014 reference examples shipping traces, metrics, and logs across multiple languages, an end-to-end multi-service tracing demo, and an open-source AI skill that walks engineers through the setup."
-    },
-    "github": {
-      "name": "GitHub",
-      "repo": "https://github.com/github/awesome-copilot",
-      "skills_count": 433,
-      "stars": 38796,
-      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot."
-    },
-    "nginity": {
-      "name": "nginity Enterprise",
-      "repo": "https://github.com/alirezarezvani/claude-skills",
-      "skills_count": 388,
-      "stars": 25079,
-      "description": "380 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
-    },
-    "huggingface": {
-      "name": "HuggingFace",
-      "repo": "https://github.com/huggingface/skills",
-      "skills_count": 25,
-      "stars": 11033,
-      "description": "Give your agents the power of the Hugging Face ecosystem"
-    },
-    "brainiall": {
-      "name": "BRAINIALL",
-      "repo": "https://github.com/fasuizu-br/brainiall-transcription-skill",
-      "skills_count": 1,
-      "stars": 0,
-      "description": "Agent Skill for PT-BR and Spanish diarized transcription to JSON, SRT, and WebVTT"
+    "accint": {
+      "name": "AccInt",
+      "repo": "https://github.com/maxbaluev/accreted-intelligence",
+      "skills_count": 3,
+      "stars": 4,
+      "description": "AccInt - local-first MCP Work Model for coding agents that learns from real outcomes."
     },
     "cloudflare": {
       "name": "Cloudflare",
@@ -60,54 +32,26 @@
       "stars": 2800,
       "description": "Skills for teaching agents how to build on Cloudflare."
     },
-    "openai": {
-      "name": "OpenAI",
-      "repo": "https://github.com/openai/skills",
-      "skills_count": 44,
-      "stars": 22795,
-      "description": "Skills Catalog for Codex"
+    "nginity": {
+      "name": "nginity Enterprise",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "skills_count": 388,
+      "stars": 25079,
+      "description": "380 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
     },
-    "ffuf-skill": {
-      "name": "FFUF Web Fuzzing",
-      "repo": "https://github.com/jthack/ffuf_claude_skill",
+    "github": {
+      "name": "GitHub",
+      "repo": "https://github.com/github/awesome-copilot",
+      "skills_count": 433,
+      "stars": 38796,
+      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot."
+    },
+    "sematext": {
+      "name": "Sematext",
+      "repo": "https://github.com/sematext/sematext-otel-onboarding",
       "skills_count": 1,
-      "stars": 121,
-      "description": "This is a \"skill\" for claude to use FFUF."
-    },
-    "visionos-agents": {
-      "name": "visionOS Development",
-      "repo": "https://github.com/tomkrikorian/visionOSAgents",
-      "skills_count": 22,
-      "stars": 56,
-      "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
-    },
-    "move-quality-skill": {
-      "name": "Move Code Quality",
-      "repo": "https://github.com/1NickPappas/move-code-quality-skill",
-      "skills_count": 1,
-      "stars": 16,
-      "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
-    },
-    "obra-superpowers": {
-      "name": "Obra Superpowers",
-      "repo": "https://github.com/obra/superpowers",
-      "skills_count": 14,
-      "stars": 271414,
-      "description": "An agentic skills framework & software development methodology that works."
-    },
-    "epub-skill": {
-      "name": "EPUB Converter",
-      "repo": "https://github.com/smerchek/claude-epub-skill",
-      "skills_count": 1,
-      "stars": 83,
-      "description": "A Claude Skill for converting markdown documents, chat summaries, or research reports into a downloadable epub file that can be sent to kindle"
-    },
-    "claude-marketplace-productivity": {
-      "name": "Claude Marketplace (Productivity)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 4,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+      "stars": 0,
+      "description": "OpenTelemetry onboarding for Sematext Cloud \u2014 reference examples shipping traces, metrics, and logs across multiple languages, an end-to-end multi-service tracing demo, and an open-source AI skill that walks engineers through the setup."
     },
     "d3js-skill": {
       "name": "D3.js Visualization",
@@ -116,34 +60,6 @@
       "stars": 125,
       "description": "A Claude skill for d3.js."
     },
-    "bilig": {
-      "name": "Bilig WorkPaper",
-      "repo": "https://github.com/proompteng/bilig",
-      "skills_count": 1,
-      "stars": 35,
-      "description": "Formula workbooks for Node services: edit inputs, recalculate formulas, read outputs, persist WorkPaper JSON, and expose MCP tools."
-    },
-    "google-labs-stitch": {
-      "name": "Google Labs Stitch",
-      "repo": "https://github.com/google-labs-code/stitch-skills",
-      "skills_count": 0,
-      "stars": 8090,
-      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
-    },
-    "anthropics": {
-      "name": "Anthropic",
-      "repo": "https://github.com/anthropics/skills",
-      "skills_count": 19,
-      "stars": 175765,
-      "description": "Public repository for Agent Skills"
-    },
-    "stream-coding": {
-      "name": "Stream Coding Methodology",
-      "repo": "https://github.com/frmoretto/stream-coding",
-      "skills_count": 1,
-      "stars": 60,
-      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
-    },
     "claude-marketplace-code": {
       "name": "Claude Marketplace (Code Ops)",
       "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
@@ -151,12 +67,33 @@
       "stars": 656,
       "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
     },
-    "supabase": {
-      "name": "Supabase",
-      "repo": "https://github.com/supabase/agent-skills",
-      "skills_count": 2,
-      "stars": 2499,
-      "description": "Agent Skills to help developers using AI agents with Supabase"
+    "neondatabase": {
+      "name": "Neon Database",
+      "repo": "https://github.com/neondatabase/agent-skills",
+      "skills_count": 7,
+      "stars": 85,
+      "description": "Agent Skills for Neon Severless Postgres"
+    },
+    "sanjay-ai-skills": {
+      "name": "Sanjay AI Skills",
+      "repo": "https://github.com/sanjay3290/ai-skills",
+      "skills_count": 24,
+      "stars": 422,
+      "description": "24 cross-platform agent skills for Claude Code, Cursor, Codex & Gemini CLI \u2014 databases, messaging, research, TTS, DevOps, and Google Workspace"
+    },
+    "playwright-skill": {
+      "name": "Playwright Automation",
+      "repo": "https://github.com/lackeyjb/playwright-skill",
+      "skills_count": 1,
+      "stars": 3030,
+      "description": "General-purpose Playwright automation for coding agents"
+    },
+    "claude-marketplace-visual": {
+      "name": "Claude Marketplace (Visual)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
     },
     "skillcreatorai": {
       "name": "SkillCreator.ai",
@@ -165,12 +102,61 @@
       "stars": 1124,
       "description": "Universal skill installer and package manager for AI coding agents. One command, 12+ runtimes. npx ai-agent-skills"
     },
-    "family-history-skill": {
-      "name": "Family History Research",
-      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
+    "move-quality-skill": {
+      "name": "Move Code Quality",
+      "repo": "https://github.com/1NickPappas/move-code-quality-skill",
       "skills_count": 1,
-      "stars": 44,
-      "description": "A Claude Skill to assist with family history and genealogy research planning."
+      "stars": 16,
+      "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
+    },
+    "bilig": {
+      "name": "Bilig WorkPaper",
+      "repo": "https://github.com/proompteng/bilig",
+      "skills_count": 1,
+      "stars": 35,
+      "description": "Formula workbooks for Node services: edit inputs, recalculate formulas, read outputs, persist WorkPaper JSON, and expose MCP tools."
+    },
+    "openai": {
+      "name": "OpenAI",
+      "repo": "https://github.com/openai/skills",
+      "skills_count": 44,
+      "stars": 22795,
+      "description": "Skills Catalog for Codex"
+    },
+    "pypict-skill": {
+      "name": "PICT Test Cases",
+      "repo": "https://github.com/omkamal/pypict-claude-skill",
+      "skills_count": 1,
+      "stars": 57,
+      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
+    },
+    "fal-ai": {
+      "name": "fal.ai",
+      "repo": "https://github.com/fal-ai-community/skills",
+      "skills_count": 16,
+      "stars": 186,
+      "description": null
+    },
+    "stream-coding": {
+      "name": "Stream Coding Methodology",
+      "repo": "https://github.com/frmoretto/stream-coding",
+      "skills_count": 1,
+      "stars": 60,
+      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
+    },
+    "visionos-agents": {
+      "name": "visionOS Development",
+      "repo": "https://github.com/tomkrikorian/visionOSAgents",
+      "skills_count": 22,
+      "stars": 56,
+      "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
+    },
+    "getsentry": {
+      "name": "Sentry",
+      "repo": "https://github.com/getsentry/skills",
+      "skills_count": 27,
+      "stars": 951,
+      "description": "Agent Skills used by the Sentry team for development."
     },
     "aws-skills": {
       "name": "AWS Skills",
@@ -186,61 +172,26 @@
       "stars": 7029,
       "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
     },
+    "obra-superpowers": {
+      "name": "Obra Superpowers",
+      "repo": "https://github.com/obra/superpowers",
+      "skills_count": 14,
+      "stars": 271414,
+      "description": "An agentic skills framework & software development methodology that works."
+    },
+    "ffuf-skill": {
+      "name": "FFUF Web Fuzzing",
+      "repo": "https://github.com/jthack/ffuf_claude_skill",
+      "skills_count": 1,
+      "stars": 121,
+      "description": "This is a \"skill\" for claude to use FFUF."
+    },
     "stripe": {
       "name": "Stripe",
       "repo": "https://github.com/stripe/ai",
       "skills_count": 8,
       "stars": 1798,
       "description": "One-stop shop for building AI-powered products and businesses with Stripe."
-    },
-    "better-auth": {
-      "name": "Better Auth",
-      "repo": "https://github.com/better-auth/skills",
-      "skills_count": 5,
-      "stars": 210,
-      "description": null
-    },
-    "remotion": {
-      "name": "Remotion",
-      "repo": "https://github.com/remotion-dev/skills",
-      "skills_count": 12,
-      "stars": 4532,
-      "description": "Agent Skills"
-    },
-    "playwright-skill": {
-      "name": "Playwright Automation",
-      "repo": "https://github.com/lackeyjb/playwright-skill",
-      "skills_count": 1,
-      "stars": 3030,
-      "description": "General-purpose Playwright automation for coding agents"
-    },
-    "claude-marketplace-engineering": {
-      "name": "Claude Marketplace (Engineering)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "pypict-skill": {
-      "name": "PICT Test Cases",
-      "repo": "https://github.com/omkamal/pypict-claude-skill",
-      "skills_count": 1,
-      "stars": 57,
-      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
-    },
-    "sanjay-ai-skills": {
-      "name": "Sanjay AI Skills",
-      "repo": "https://github.com/sanjay3290/ai-skills",
-      "skills_count": 24,
-      "stars": 422,
-      "description": "24 cross-platform agent skills for Claude Code, Cursor, Codex & Gemini CLI \u2014 databases, messaging, research, TTS, DevOps, and Google Workspace"
-    },
-    "vercel": {
-      "name": "Vercel",
-      "repo": "https://github.com/vercel-labs/agent-skills",
-      "skills_count": 9,
-      "stars": 30586,
-      "description": "Vercel's official collection of agent skills"
     },
     "aiqualitylab": {
       "name": "AI Quality Lab",
@@ -249,75 +200,12 @@
       "stars": 1,
       "description": "AI-powered testing skills for automation frameworks"
     },
-    "ipsw-skill": {
-      "name": "IPSW iOS Firmware",
-      "repo": "https://github.com/blacktop/ipsw-skill",
-      "skills_count": 0,
-      "stars": 55,
-      "description": "A SKILL.md for ipsw"
-    },
-    "tinybird": {
-      "name": "Tinybird",
-      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
-      "skills_count": 4,
-      "stars": 20,
-      "description": null
-    },
-    "neondatabase": {
-      "name": "Neon Database",
-      "repo": "https://github.com/neondatabase/agent-skills",
-      "skills_count": 7,
-      "stars": 85,
-      "description": "Agent Skills for Neon Severless Postgres"
-    },
-    "csv-summarizer-skill": {
-      "name": "CSV Data Summarizer",
-      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
-      "skills_count": 1,
-      "stars": 276,
-      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
-    },
-    "fal-ai": {
-      "name": "fal.ai",
-      "repo": "https://github.com/fal-ai-community/skills",
-      "skills_count": 16,
-      "stars": 186,
-      "description": null
-    },
-    "accint": {
-      "name": "AccInt",
-      "repo": "https://github.com/maxbaluev/accreted-intelligence",
-      "skills_count": 3,
-      "stars": 4,
-      "description": "AccInt - local-first MCP Work Model for coding agents that learns from real outcomes."
-    },
-    "emblemcompany": {
-      "name": "EmblemAI",
-      "repo": "https://github.com/EmblemCompany/Agent-skills",
-      "skills_count": 9,
-      "stars": 10,
-      "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
-    },
-    "notebooklm-skill": {
-      "name": "NotebookLM Integration",
-      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
-      "skills_count": 1,
-      "stars": 7771,
-      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
-    },
-    "claude-marketplace-visual": {
-      "name": "Claude Marketplace (Visual)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "getsentry": {
-      "name": "Sentry",
-      "repo": "https://github.com/getsentry/skills",
-      "skills_count": 27,
-      "stars": 951,
-      "description": "Agent Skills used by the Sentry team for development."
+    "supabase": {
+      "name": "Supabase",
+      "repo": "https://github.com/supabase/agent-skills",
+      "skills_count": 2,
+      "stars": 2499,
+      "description": "Agent Skills to help developers using AI agents with Supabase"
     },
     "obsidian-plugin": {
       "name": "Obsidian Plugin Development",
@@ -326,22 +214,584 @@
       "stars": 182,
       "description": "Agent SKILL for Obsidian.md plugin development"
     },
+    "expo": {
+      "name": "Expo",
+      "repo": "https://github.com/expo/skills",
+      "skills_count": 25,
+      "stars": 2520,
+      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
+    },
+    "tinybird": {
+      "name": "Tinybird",
+      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
+      "skills_count": 4,
+      "stars": 20,
+      "description": null
+    },
+    "huggingface": {
+      "name": "HuggingFace",
+      "repo": "https://github.com/huggingface/skills",
+      "skills_count": 25,
+      "stars": 11033,
+      "description": "Give your agents the power of the Hugging Face ecosystem"
+    },
+    "ipsw-skill": {
+      "name": "IPSW iOS Firmware",
+      "repo": "https://github.com/blacktop/ipsw-skill",
+      "skills_count": 0,
+      "stars": 55,
+      "description": "A SKILL.md for ipsw"
+    },
+    "brainiall": {
+      "name": "BRAINIALL",
+      "repo": "https://github.com/fasuizu-br/brainiall-transcription-skill",
+      "skills_count": 1,
+      "stars": 0,
+      "description": "Agent Skill for PT-BR and Spanish diarized transcription to JSON, SRT, and WebVTT"
+    },
+    "emblemcompany": {
+      "name": "EmblemAI",
+      "repo": "https://github.com/EmblemCompany/Agent-skills",
+      "skills_count": 9,
+      "stars": 10,
+      "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
+    },
+    "vercel": {
+      "name": "Vercel",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "skills_count": 9,
+      "stars": 30586,
+      "description": "Vercel's official collection of agent skills"
+    },
+    "better-auth": {
+      "name": "Better Auth",
+      "repo": "https://github.com/better-auth/skills",
+      "skills_count": 5,
+      "stars": 210,
+      "description": null
+    },
+    "family-history-skill": {
+      "name": "Family History Research",
+      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
+      "skills_count": 1,
+      "stars": 44,
+      "description": "A Claude Skill to assist with family history and genealogy research planning."
+    },
+    "claude-marketplace-engineering": {
+      "name": "Claude Marketplace (Engineering)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "csv-summarizer-skill": {
+      "name": "CSV Data Summarizer",
+      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+      "skills_count": 1,
+      "stars": 276,
+      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
+    },
+    "epub-skill": {
+      "name": "EPUB Converter",
+      "repo": "https://github.com/smerchek/claude-epub-skill",
+      "skills_count": 1,
+      "stars": 83,
+      "description": "A Claude Skill for converting markdown documents, chat summaries, or research reports into a downloadable epub file that can be sent to kindle"
+    },
+    "claude-marketplace-productivity": {
+      "name": "Claude Marketplace (Productivity)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 4,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "notebooklm-skill": {
+      "name": "NotebookLM Integration",
+      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
+      "skills_count": 1,
+      "stars": 7771,
+      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
+    },
+    "anthropics": {
+      "name": "Anthropic",
+      "repo": "https://github.com/anthropics/skills",
+      "skills_count": 19,
+      "stars": 175765,
+      "description": "Public repository for Agent Skills"
+    },
     "tapestry": {
       "name": "Tapestry Skills",
       "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
       "skills_count": 7,
       "stars": 276,
       "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
+    },
+    "google-labs-stitch": {
+      "name": "Google Labs Stitch",
+      "repo": "https://github.com/google-labs-code/stitch-skills",
+      "skills_count": 0,
+      "stars": 8090,
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
     }
   },
   "categories": [
     "creative",
-    "data",
     "development",
-    "ml-ai",
-    "mobile"
+    "documents",
+    "other"
   ],
   "skills": [
+    {
+      "id": "ios-simulator-skill/ios-simulator-skill",
+      "name": "ios-simulator-skill",
+      "description": "29 production-ready scripts for iOS app testing, building, and automation. Provides semantic UI navigation, build automation, accessibility testing, and simulator lifecycle management. Optimized for AI agents with minimal token output.",
+      "provider": "ios-simulator-skill",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T07:29:47Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/conorluddy/ios-simulator-skill",
+        "path": "ios-simulator-skill/skills/ios-simulator-skill",
+        "skill_md_url": "https://raw.githubusercontent.com/conorluddy/ios-simulator-skill/main/ios-simulator-skill/skills/ios-simulator-skill/SKILL.md",
+        "commit_sha": "037a37f135100c76157b4c915a5b55bd272b5e32"
+      },
+      "has_scripts": true,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "test",
+        "ios",
+        "simulator",
+        "skill"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 1,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1249
+    },
+    {
+      "id": "remotion/remotion-best-practices",
+      "name": "remotion-best-practices",
+      "description": "Router for all Remotion skills",
+      "provider": "remotion",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-best-practices",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "pr",
+        "remotion",
+        "best",
+        "practices"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-captions",
+      "name": "remotion-captions",
+      "description": "Transcribing, displaying and animating captions",
+      "provider": "remotion",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-captions",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-captions/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "remotion",
+        "captions"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-create",
+      "name": "remotion-create",
+      "description": "Create a new Remotion video",
+      "provider": "remotion",
+      "category": "creative",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-create",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-create/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "remotion",
+        "create"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-docs",
+      "name": "remotion-docs",
+      "description": "Search Remotion documentation",
+      "provider": "remotion",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-docs",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-docs/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "document",
+        "remotion",
+        "docs"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-interactivity",
+      "name": "remotion-interactivity",
+      "description": "Structure Remotion markup for interactivity",
+      "provider": "remotion",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-interactivity",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-interactivity/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "remotion",
+        "interactivity"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-maps",
+      "name": "remotion-maps",
+      "description": "Remotion Map animation knowledge",
+      "provider": "remotion",
+      "category": "creative",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-maps",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-maps/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "knowledge",
+        "remotion",
+        "maps"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-markup",
+      "name": "remotion-markup",
+      "description": "Content, animation and effects best practices",
+      "provider": "remotion",
+      "category": "creative",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-markup",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-markup/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "pr",
+        "remotion",
+        "markup"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-multimedia",
+      "name": "remotion-multimedia",
+      "description": "Interacting with Mediabunny",
+      "provider": "remotion",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-multimedia",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-multimedia/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "remotion",
+        "multimedia"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-render",
+      "name": "remotion-render",
+      "description": "Export a Remotion video",
+      "provider": "remotion",
+      "category": "creative",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-render",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-render/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "remotion",
+        "render"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-saas",
+      "name": "remotion-saas",
+      "description": "Build an app with Remotion",
+      "provider": "remotion",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-saas",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-saas/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "remotion",
+        "saas"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-studio",
+      "name": "remotion-studio",
+      "description": "Preview a Remotion video",
+      "provider": "remotion",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-studio",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-studio/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "pr",
+        "remotion",
+        "studio"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
+    {
+      "id": "remotion/remotion-upgrade",
+      "name": "remotion-upgrade",
+      "description": "Upgrade Remotion, and related packages",
+      "provider": "remotion",
+      "category": "other",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-12T13:29:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-upgrade",
+        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-upgrade/SKILL.md",
+        "commit_sha": "bd566b65d521b40fe92e1f26766e82de9e291693"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "remotion",
+        "upgrade"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 4565
+    },
     {
       "id": "expo/eas-app-stores",
       "name": "eas-app-stores",
@@ -1257,43 +1707,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 2520
-    },
-    {
-      "id": "ios-simulator-skill/ios-simulator-skill",
-      "name": "ios-simulator-skill",
-      "description": "29 production-ready scripts for iOS app testing, building, and automation. Provides semantic UI navigation, build automation, accessibility testing, and simulator lifecycle management. Optimized for AI agents with minimal token output.",
-      "provider": "ios-simulator-skill",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-12T07:29:47Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/conorluddy/ios-simulator-skill",
-        "path": "ios-simulator-skill/skills/ios-simulator-skill",
-        "skill_md_url": "https://raw.githubusercontent.com/conorluddy/ios-simulator-skill/main/ios-simulator-skill/skills/ios-simulator-skill/SKILL.md",
-        "commit_sha": "9210ee3ff0b4acb03e7c27e5c41e626713506533"
-      },
-      "has_scripts": true,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "test",
-        "ios",
-        "simulator",
-        "skill"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1246
     },
     {
       "id": "anthropics/academy-guide",
@@ -4180,420 +4593,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 7771
-    },
-    {
-      "id": "remotion/remotion-best-practices",
-      "name": "remotion-best-practices",
-      "description": "Router for all Remotion skills",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "pr",
-        "remotion",
-        "best",
-        "practices"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-captions",
-      "name": "remotion-captions",
-      "description": "Transcribing, displaying and animating captions",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-captions",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-captions/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "remotion",
-        "captions"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-create",
-      "name": "remotion-create",
-      "description": "Create a new Remotion video",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-create",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-create/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "remotion",
-        "create"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-docs",
-      "name": "remotion-docs",
-      "description": "Search Remotion documentation",
-      "provider": "remotion",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-docs",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-docs/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "document",
-        "remotion",
-        "docs"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-interactivity",
-      "name": "remotion-interactivity",
-      "description": "Structure Remotion markup for interactivity",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-interactivity",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-interactivity/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "remotion",
-        "interactivity"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-maps",
-      "name": "remotion-maps",
-      "description": "Remotion Map animation knowledge",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-maps",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-maps/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "knowledge",
-        "remotion",
-        "maps"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-markup",
-      "name": "remotion-markup",
-      "description": "Content, animation and effects best practices",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-markup",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-markup/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "pr",
-        "remotion",
-        "markup"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-multimedia",
-      "name": "remotion-multimedia",
-      "description": "Interacting with Mediabunny",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-multimedia",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-multimedia/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "remotion",
-        "multimedia"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-render",
-      "name": "remotion-render",
-      "description": "Export a Remotion video",
-      "provider": "remotion",
-      "category": "creative",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-render",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-render/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "remotion",
-        "render"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-saas",
-      "name": "remotion-saas",
-      "description": "Build an app with Remotion",
-      "provider": "remotion",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-saas",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-saas/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "remotion",
-        "saas"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-studio",
-      "name": "remotion-studio",
-      "description": "Preview a Remotion video",
-      "provider": "remotion",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-studio",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-studio/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "pr",
-        "remotion",
-        "studio"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
-    },
-    {
-      "id": "remotion/remotion-upgrade",
-      "name": "remotion-upgrade",
-      "description": "Upgrade Remotion, and related packages",
-      "provider": "remotion",
-      "category": "other",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T12:07:55Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-upgrade",
-        "skill_md_url": "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-upgrade/SKILL.md",
-        "commit_sha": "9ae8048a84690098b1059f7f5d30e6d05833b824"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "remotion",
-        "upgrade"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 4532
     },
     {
       "id": "trailofbits/address-sanitizer",
@@ -47888,16 +47887,16 @@
     "probable_duplicates": 0
   },
   "maintenance_summary": {
-    "active": 16,
-    "maintained": 10,
+    "active": 13,
+    "maintained": 0,
     "stale": 0,
     "abandoned": 0,
     "unknown": 0,
-    "active_percentage": 61.5,
+    "active_percentage": 100.0,
     "maintained_percentage": 100.0
   },
   "skill_type_summary": {
-    "full": 26,
+    "full": 13,
     "integration": 0
   }
 }

@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "magichour": {
+        "name": "Magic Hour",
+        "repo": "https://github.com/magichourhq/skills",
+        "api_tree_url": "https://api.github.com/repos/magichourhq/skills/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/magichourhq/skills/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

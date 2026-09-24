@@ -1,11 +1,11 @@
 {
-  "last_run": "2026-09-23T11:15:32.076571+00:00",
+  "last_run": "2026-09-24T11:31:10.885200+00:00",
   "provider_commits": {
     "anthropics": "34040c9c568585f6929bedeaad110ad08f079624",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "d7e4ad98ed8fd72e4744ee604e6277eb36748fe2",
+    "github": "1f5644080a525d26a2e24f61a7609fb9b261c21a",
     "vercel": "063bee94c3f4df8453406c830b0a7df0f2860278",
-    "huggingface": "abc20ae526d8b4c0e4dff89f904adce28a4a0eb6",
+    "huggingface": "0e9e9eb7c0799928673f0a80e6318372b1284f8e",
     "skillcreatorai": "6d95c788aa22ce39a4807b9a4c31c758a2036dc6",
     "obra-superpowers": "5bf4e78011075bcfc0dc295f0724994cd123ee71",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
@@ -26,18 +26,18 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "c80722d3f27d65e06b6579add201bf69b99101d0",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "99ef7ddd24df10b78f2e0eba98c577349dd01611",
+    "stripe": "a682cd5788a6fbcc64dadf872ea91d1f0da1908c",
     "cloudflare": "6dc7604903127485e7e4cb26314651ebd4a4df19",
     "trailofbits": "32e34f8173796e3566a51aee877dc96bc5191f64",
     "expo": "cd752143d19e5a9aa71b4aaaf1cfc59226c77d6a",
     "getsentry": "c2f99a5b04b4cd992ec3022d7c2c3e23e938d241",
-    "supabase": "8331f910845103c08d51f6ca1d86ebb7d1f745e3",
+    "supabase": "551274ed2fe97c8fea1325f7ceb05803a542f8df",
     "google-labs-stitch": "0337446dadde6f8c94210444e2aa9d546126480f",
     "better-auth": "20c9e88a5c007461a703f1c213572b073196113e",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
-    "neondatabase": "827249744ed96416d799b68fb6bf033f4068b18a",
+    "neondatabase": "80164a28443aca7c82ac1a70aed836950d6c29ea",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
-    "remotion": "9682e994989f951c75912fbc49aa10332a512685",
+    "remotion": "41b22eec767aa77eb31df62ccb3bacf52ed771fb",
     "nginity": "19392f7a08264ed00486a251f5b2098321771f94",
     "obsidian-plugin": "9afc9a49dd5301794dad5e85637604068ab139b3",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
@@ -50,5 +50,5 @@
     "brainiall": "366ca7ec1c08662c45efb9d2cfde81835058083e"
   },
   "skills_count": 1269,
-  "version": "2026.09.23"
+  "version": "2026.09.24"
 }

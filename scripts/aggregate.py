@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "famulor": {
+        "name": "Famulor",
+        "repo": "https://github.com/bekservice/Famulor-Skill",
+        "api_tree_url": "https://api.github.com/repos/bekservice/Famulor-Skill/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/bekservice/Famulor-Skill/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

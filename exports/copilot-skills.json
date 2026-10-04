@@ -1,13 +1,337 @@
 {
   "name": "Copilot Skills Export",
   "description": "High-quality skills compatible with GitHub Copilot, filtered from Agent Skills Directory. Install with: skillsdir install <skill-id> --project --agent copilot",
-  "version": "2026.10.03",
-  "generated_at": "2026-10-03T11:24:58.886767+00:00",
+  "version": "2026.10.04",
+  "generated_at": "2026-10-04T12:06:25.189904+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
-  "total_skills": 1063,
+  "total_skills": 1062,
   "skills": [
+    {
+      "id": "neondatabase/neon",
+      "name": "neon",
+      "description": "Overview of Neon, a complete set of cloud backend primitives around Lakebase Postgres: Auth, Object Storage, Functions, and the AI Gateway. Start here to choose Neon for undecided login, files, APIs, and LLM calls, set up the CLI or MCP server, and follow the branch-first workflow. Use when building an app or backend on Neon, or when \"Neon\" or \"Lakebase Postgres\" is mentioned. Child skill neon-postgres wins for an existing DATABASE_URL, SQL, schema, inspect, or search. Child skill neon-auth wins for login, users, sessions, identity routing, and Managed Better Auth setup. Also use for object storage, S3, buckets, serverless functions, function triggers, cron, AI gateway, LLM calls, logs, Loki, Grafana, observability, postgres, database, backend, Claimable Neon, neon.new, or a no-signup database.",
+      "provider": "neondatabase",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-03T21:17:27Z",
+      "metadata": {
+        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon"
+      },
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon/SKILL.md",
+        "commit_sha": "9e4a5705922fddb540c396111a7979e0dca79cc2"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "mcp",
+        "cli",
+        "art",
+        "neon"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 98
+    },
+    {
+      "id": "neondatabase/neon-ai-gateway",
+      "name": "neon-ai-gateway",
+      "description": "One API and one credential for frontier and open-source LLMs, built into your Neon branch and powered by Databricks. Use when a user wants to call an LLM, add AI/chat/an agent to their app, route between model providers (OpenAI, Anthropic, Google/Gemini, Meta, Alibaba, and more), or avoid juggling separate provider API keys and accounts \u2014 especially when they already use Neon and want AI requests to branch with their project. Works with the OpenAI SDK, Anthropic SDK, google-genai, the Vercel AI SDK, and Mastra by changing only the base URL. Triggers include \"call an LLM\", \"add AI to my app\", \"chat completion\", \"model routing\", \"LLM proxy/gateway\", \"one API for all models\", \"use Claude/GPT/Gemini\", \"AI SDK\", \"Mastra agent\", \"Neon AI Gateway\", and \"log/rate-limit AI calls\".",
+      "provider": "neondatabase",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-22T13:32:49Z",
+      "metadata": {
+        "parent": "neon",
+        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-ai-gateway"
+      },
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-ai-gateway",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-ai-gateway/SKILL.md",
+        "commit_sha": "9e4a5705922fddb540c396111a7979e0dca79cc2"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "neon",
+        "gateway"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 11,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 98
+    },
+    {
+      "id": "neondatabase/neon-auth",
+      "name": "neon-auth",
+      "description": "Add authentication to a new app. Use for \"add auth\", \"add login\", Neon Auth (Managed Better Auth), identity routing, sign-up, sign-in, password reset, email OTP, magic links, organizations, phone OTP, OAuth, passkeys, MFA, trusted domains, invalid domain, and @neondatabase/auth. No existing identity: default to Managed Better Auth. Keep working Better Auth, Clerk, Supabase Auth, or another IdP. User asked to migrate from Supabase Auth: Managed Better Auth. A required plugin outside Managed support: self-managed Better Auth on a Neon Function or the existing app host. Also use for auth APIs in @neondatabase/neon-js.",
+      "provider": "neondatabase",
+      "category": "integrations",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-17T22:31:23Z",
+      "metadata": {
+        "parent": "neon",
+        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-auth"
+      },
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-auth",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-auth/SKILL.md",
+        "commit_sha": "9e4a5705922fddb540c396111a7979e0dca79cc2"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "email",
+        "neon",
+        "auth"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 16,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 98
+    },
+    {
+      "id": "neondatabase/neon-functions",
+      "name": "neon-functions",
+      "description": "Long-running, serverless Node.js HTTP functions deployed onto your Neon branch, with DATABASE_URL injected automatically and compute that runs next to your data. Use when a user wants to host an API, an AI agent with long streaming responses, a WebSocket or server-sent-events (SSE) server, a webhook handler, a Discord bot, an MCP server, or any request/response workload that risks timing out on short, lambda-style serverless functions \u2014 and wants it to branch with their database. Also use for Function Triggers: a cron or an object-storage event that POSTs to a function. Triggers include \"serverless function\", \"deploy an API\", \"long-running function\", \"streaming agent\", \"SSE server\", \"WebSocket server\", \"webhook handler\", \"MCP server\", \"cron\", \"function trigger\", \"scheduled function\", \"cron job\", \"object storage trigger\", \"on upload\", \"run code next to my database\", \"function that won't time out\", \"function logs\", \"Neon Functions\", \"Neon Compute\", \"DDoS protection\", \"rate limiting\", and \"production hardening\".",
+      "provider": "neondatabase",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-30T22:48:08Z",
+      "metadata": {
+        "parent": "neon",
+        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-functions"
+      },
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-functions",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-functions/SKILL.md",
+        "commit_sha": "9e4a5705922fddb540c396111a7979e0dca79cc2"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "mcp",
+        "neon",
+        "functions"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 3,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 98
+    },
+    {
+      "id": "neondatabase/neon-object-storage",
+      "name": "neon-object-storage",
+      "description": "S3-compatible object storage that branches with your Neon project, so files and the database stay in sync across every branch. Use when a user wants object storage, a bucket, blob/file storage, or somewhere to put uploads, images, documents, avatars, or user-generated files for their app or agent \u2014 especially when they already use (or are setting up) Lakebase Postgres and don't want to add a separate storage provider like AWS S3, Cloudflare R2, or Supabase Storage. Triggers include \"object storage\", \"bucket\", \"blob storage\", \"file storage\", \"store uploads/images/files\", \"S3-compatible storage\", \"presigned URL\", \"where do I put files\", \"storage logs\", \"bucket logs\", \"CDN in front of object storage\", \"Neon Object Storage\", \"Neon Storage\", and \"storage that branches with my database\".",
+      "provider": "neondatabase",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-17T18:53:28Z",
+      "metadata": {
+        "parent": "neon",
+        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-object-storage"
+      },
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-object-storage",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-object-storage/SKILL.md",
+        "commit_sha": "9e4a5705922fddb540c396111a7979e0dca79cc2"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "cd",
+        "document",
+        "neon",
+        "object",
+        "storage"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 16,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 98
+    },
+    {
+      "id": "neondatabase/neon-postgres",
+      "name": "neon-postgres",
+      "description": "Guides and best practices for working with Lakebase Postgres on Neon: connections, pooled vs direct, schema migrations, branching, autoscaling, scale-to-zero, instant restore, read replicas, IP allow lists, logical replication, and Lakebase Search. Use when the work is an existing DATABASE_URL, SQL, schema, inspect, or search. New backends, Auth, files, Functions, and LLM calls go to the parent `neon` skill. Also use for \"@neondatabase/serverless\", \"@neondatabase/neon-js\", \"neon inspect db\", \"semantic search\", \"vector search\", \"full-text search\", \"BM25\", or \"hybrid search\".",
+      "provider": "neondatabase",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-23T12:52:19Z",
+      "metadata": {
+        "parent": "neon",
+        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres"
+      },
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
+        "commit_sha": "9e4a5705922fddb540c396111a7979e0dca79cc2"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "neon",
+        "postgres"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 10,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 98
+    },
+    {
+      "id": "neondatabase/neon-postgres-branches",
+      "name": "neon-postgres-branches",
+      "description": "Choose and create the right Neon branch type for testing and development. Use when users ask about Neon branching, migration testing with real data, isolated test environments, schema-only branch workflows for sensitive data, resetting a branch from its parent, branch expiration and CI/CD branch lifecycles, or branch creation via Neon CLI or Neon MCP. Triggers include \"Neon branch\", \"test migrations safely\", \"branch production data\", \"schema-only branch\", \"reset branch\", \"branch per PR\" and \"sensitive data testing\".",
+      "provider": "neondatabase",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-23T12:52:34Z",
+      "metadata": {
+        "parent": "neon",
+        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres-branches"
+      },
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres-branches",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
+        "commit_sha": "9e4a5705922fddb540c396111a7979e0dca79cc2"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "cd",
+        "test",
+        "mcp",
+        "cli",
+        "neon",
+        "postgres",
+        "branches"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 10,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 98
+    },
+    {
+      "id": "neondatabase/neon-postgres-egress-optimizer",
+      "name": "neon-postgres-egress-optimizer",
+      "description": "Diagnose and fix excessive Postgres egress (network data transfer) in a codebase. Use when a user mentions high database bills, unexpected data transfer costs, network transfer charges, egress spikes, \"why is my Neon bill so high\", \"database costs jumped\", SELECT * optimization, query overfetching, reduce Neon costs, optimize database usage, or wants to reduce data sent from their database to their application. Also use when reviewing query patterns for cost efficiency, even if the user doesn't explicitly mention egress or data transfer.",
+      "provider": "neondatabase",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-16T16:00:34Z",
+      "metadata": {
+        "parent": "neon",
+        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres-egress-optimizer"
+      },
+      "source": {
+        "repo": "https://github.com/neondatabase/agent-skills",
+        "path": "skills/neon-postgres-egress-optimizer",
+        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-egress-optimizer/SKILL.md",
+        "commit_sha": "9e4a5705922fddb540c396111a7979e0dca79cc2"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "ci",
+        "neon",
+        "postgres",
+        "egress",
+        "optimizer"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 17,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 98
+    },
     {
       "id": "stripe/connect-recommend",
       "name": "connect-recommend",
@@ -22,7 +346,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/connect-recommend",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-recommend/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": true,
@@ -38,12 +362,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 4,
+      "days_since_update": 5,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/connect-required-verification-information",
@@ -59,7 +383,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/connect-required-verification-information",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-required-verification-information/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": false,
@@ -77,12 +401,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 17,
+      "days_since_update": 18,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/metronome",
@@ -98,7 +422,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/metronome",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/metronome/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": false,
@@ -113,12 +437,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 3,
+      "days_since_update": 4,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/stripe-apps",
@@ -134,7 +458,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/stripe-apps",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-apps/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": true,
@@ -150,12 +474,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 1,
+      "days_since_update": 2,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/stripe-best-practices",
@@ -171,7 +495,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/stripe-best-practices",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": true,
@@ -189,12 +513,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 1,
+      "days_since_update": 2,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/stripe-directory",
@@ -210,7 +534,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/stripe-directory",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-directory/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": false,
@@ -228,12 +552,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 35,
+      "days_since_update": 36,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/stripe-docs",
@@ -251,7 +575,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/stripe-docs",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-docs/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": false,
@@ -267,12 +591,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 24,
+      "days_since_update": 25,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/stripe-pay",
@@ -290,7 +614,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/stripe-pay",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-pay/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": false,
@@ -305,12 +629,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 1,
+      "days_since_update": 2,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/stripe-projects",
@@ -326,7 +650,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/stripe-projects",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": false,
@@ -343,12 +667,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 46,
+      "days_since_update": 47,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "stripe/upgrade-stripe",
@@ -358,13 +682,13 @@
       "category": "integrations",
       "license": null,
       "compatibility": null,
-      "last_updated_at": "2026-10-03T00:49:24Z",
+      "last_updated_at": "2026-10-04T01:24:37Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/stripe/ai",
         "path": "skills/upgrade-stripe",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
-        "commit_sha": "9a33771f666e59c21cd71a3d043459464a42f9e3"
+        "commit_sha": "1b5f55651a559db8e6d818f4a7139ed216b777a6"
       },
       "has_scripts": false,
       "has_references": false,
@@ -383,7 +707,7 @@
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 1851
+      "github_stars": 1853
     },
     {
       "id": "supabase/supabase",
@@ -12107,330 +12431,6 @@
       "github_stars": 39622
     },
     {
-      "id": "neondatabase/neon",
-      "name": "neon",
-      "description": "Overview of Neon, a complete set of cloud backend primitives around Lakebase Postgres: Auth, Object Storage, Functions, and the AI Gateway. Start here to choose Neon for undecided login, files, APIs, and LLM calls, set up the CLI or MCP server, and follow the branch-first workflow. Use when building an app or backend on Neon, or when \"Neon\" or \"Lakebase Postgres\" is mentioned. Child skill neon-postgres wins for an existing DATABASE_URL, SQL, schema, inspect, or search. Child skill neon-auth wins for login, users, sessions, identity routing, and Managed Better Auth setup. Also use for object storage, S3, buckets, serverless functions, function triggers, cron, AI gateway, LLM calls, logs, Loki, Grafana, observability, postgres, database, backend, Claimable Neon, neon.new, or a no-signup database.",
-      "provider": "neondatabase",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-18T16:22:02Z",
-      "metadata": {
-        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon"
-      },
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon/SKILL.md",
-        "commit_sha": "ae082b22275461fbb5e303a1bcdc9bb00b73a946"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "mcp",
-        "cli",
-        "art",
-        "neon"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 13,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 98
-    },
-    {
-      "id": "neondatabase/neon-ai-gateway",
-      "name": "neon-ai-gateway",
-      "description": "One API and one credential for frontier and open-source LLMs, built into your Neon branch and powered by Databricks. Use when a user wants to call an LLM, add AI/chat/an agent to their app, route between model providers (OpenAI, Anthropic, Google/Gemini, Meta, Alibaba, and more), or avoid juggling separate provider API keys and accounts \u2014 especially when they already use Neon and want AI requests to branch with their project. Works with the OpenAI SDK, Anthropic SDK, google-genai, the Vercel AI SDK, and Mastra by changing only the base URL. Triggers include \"call an LLM\", \"add AI to my app\", \"chat completion\", \"model routing\", \"LLM proxy/gateway\", \"one API for all models\", \"use Claude/GPT/Gemini\", \"AI SDK\", \"Mastra agent\", \"Neon AI Gateway\", and \"log/rate-limit AI calls\".",
-      "provider": "neondatabase",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-22T13:32:49Z",
-      "metadata": {
-        "parent": "neon",
-        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-ai-gateway"
-      },
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-ai-gateway",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-ai-gateway/SKILL.md",
-        "commit_sha": "ae082b22275461fbb5e303a1bcdc9bb00b73a946"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "neon",
-        "gateway"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 9,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 98
-    },
-    {
-      "id": "neondatabase/neon-auth",
-      "name": "neon-auth",
-      "description": "Add authentication to a new app. Use for \"add auth\", \"add login\", Neon Auth (Managed Better Auth), identity routing, sign-up, sign-in, password reset, email OTP, magic links, organizations, phone OTP, OAuth, passkeys, MFA, trusted domains, invalid domain, and @neondatabase/auth. No existing identity: default to Managed Better Auth. Keep working Better Auth, Clerk, Supabase Auth, or another IdP. User asked to migrate from Supabase Auth: Managed Better Auth. A required plugin outside Managed support: self-managed Better Auth on a Neon Function or the existing app host. Also use for auth APIs in @neondatabase/neon-js.",
-      "provider": "neondatabase",
-      "category": "integrations",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-17T22:31:23Z",
-      "metadata": {
-        "parent": "neon",
-        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-auth"
-      },
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-auth",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-auth/SKILL.md",
-        "commit_sha": "ae082b22275461fbb5e303a1bcdc9bb00b73a946"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "email",
-        "neon",
-        "auth"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 14,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 98
-    },
-    {
-      "id": "neondatabase/neon-functions",
-      "name": "neon-functions",
-      "description": "Long-running, serverless Node.js HTTP functions deployed onto your Neon branch, with DATABASE_URL injected automatically and compute that runs next to your data. Use when a user wants to host an API, an AI agent with long streaming responses, a WebSocket or server-sent-events (SSE) server, a webhook handler, a Discord bot, an MCP server, or any request/response workload that risks timing out on short, lambda-style serverless functions \u2014 and wants it to branch with their database. Also use for Function Triggers: a cron or an object-storage event that POSTs to a function. Triggers include \"serverless function\", \"deploy an API\", \"long-running function\", \"streaming agent\", \"SSE server\", \"WebSocket server\", \"webhook handler\", \"MCP server\", \"cron\", \"function trigger\", \"scheduled function\", \"cron job\", \"object storage trigger\", \"on upload\", \"run code next to my database\", \"function that won't time out\", \"function logs\", \"Neon Functions\", \"Neon Compute\", \"DDoS protection\", \"rate limiting\", and \"production hardening\".",
-      "provider": "neondatabase",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-30T22:48:08Z",
-      "metadata": {
-        "parent": "neon",
-        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-functions"
-      },
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-functions",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-functions/SKILL.md",
-        "commit_sha": "ae082b22275461fbb5e303a1bcdc9bb00b73a946"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "mcp",
-        "neon",
-        "functions"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 98
-    },
-    {
-      "id": "neondatabase/neon-object-storage",
-      "name": "neon-object-storage",
-      "description": "S3-compatible object storage that branches with your Neon project, so files and the database stay in sync across every branch. Use when a user wants object storage, a bucket, blob/file storage, or somewhere to put uploads, images, documents, avatars, or user-generated files for their app or agent \u2014 especially when they already use (or are setting up) Lakebase Postgres and don't want to add a separate storage provider like AWS S3, Cloudflare R2, or Supabase Storage. Triggers include \"object storage\", \"bucket\", \"blob storage\", \"file storage\", \"store uploads/images/files\", \"S3-compatible storage\", \"presigned URL\", \"where do I put files\", \"storage logs\", \"bucket logs\", \"CDN in front of object storage\", \"Neon Object Storage\", \"Neon Storage\", and \"storage that branches with my database\".",
-      "provider": "neondatabase",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-17T18:53:28Z",
-      "metadata": {
-        "parent": "neon",
-        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-object-storage"
-      },
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-object-storage",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-object-storage/SKILL.md",
-        "commit_sha": "ae082b22275461fbb5e303a1bcdc9bb00b73a946"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "cd",
-        "document",
-        "neon",
-        "object",
-        "storage"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 14,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 98
-    },
-    {
-      "id": "neondatabase/neon-postgres",
-      "name": "neon-postgres",
-      "description": "Guides and best practices for working with Lakebase Postgres on Neon: connections, pooled vs direct, schema migrations, branching, autoscaling, scale-to-zero, instant restore, read replicas, IP allow lists, logical replication, and Lakebase Search. Use when the work is an existing DATABASE_URL, SQL, schema, inspect, or search. New backends, Auth, files, Functions, and LLM calls go to the parent `neon` skill. Also use for \"@neondatabase/serverless\", \"@neondatabase/neon-js\", \"neon inspect db\", \"semantic search\", \"vector search\", \"full-text search\", \"BM25\", or \"hybrid search\".",
-      "provider": "neondatabase",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-23T12:52:19Z",
-      "metadata": {
-        "parent": "neon",
-        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres"
-      },
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres/SKILL.md",
-        "commit_sha": "ae082b22275461fbb5e303a1bcdc9bb00b73a946"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "neon",
-        "postgres"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 98
-    },
-    {
-      "id": "neondatabase/neon-postgres-branches",
-      "name": "neon-postgres-branches",
-      "description": "Choose and create the right Neon branch type for testing and development. Use when users ask about Neon branching, migration testing with real data, isolated test environments, schema-only branch workflows for sensitive data, resetting a branch from its parent, branch expiration and CI/CD branch lifecycles, or branch creation via Neon CLI or Neon MCP. Triggers include \"Neon branch\", \"test migrations safely\", \"branch production data\", \"schema-only branch\", \"reset branch\", \"branch per PR\" and \"sensitive data testing\".",
-      "provider": "neondatabase",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-23T12:52:34Z",
-      "metadata": {
-        "parent": "neon",
-        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres-branches"
-      },
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres-branches",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-branches/SKILL.md",
-        "commit_sha": "ae082b22275461fbb5e303a1bcdc9bb00b73a946"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "cd",
-        "test",
-        "mcp",
-        "cli",
-        "neon",
-        "postgres",
-        "branches"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 98
-    },
-    {
-      "id": "neondatabase/neon-postgres-egress-optimizer",
-      "name": "neon-postgres-egress-optimizer",
-      "description": "Diagnose and fix excessive Postgres egress (network data transfer) in a codebase. Use when a user mentions high database bills, unexpected data transfer costs, network transfer charges, egress spikes, \"why is my Neon bill so high\", \"database costs jumped\", SELECT * optimization, query overfetching, reduce Neon costs, optimize database usage, or wants to reduce data sent from their database to their application. Also use when reviewing query patterns for cost efficiency, even if the user doesn't explicitly mention egress or data transfer.",
-      "provider": "neondatabase",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-16T16:00:34Z",
-      "metadata": {
-        "parent": "neon",
-        "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres-egress-optimizer"
-      },
-      "source": {
-        "repo": "https://github.com/neondatabase/agent-skills",
-        "path": "skills/neon-postgres-egress-optimizer",
-        "skill_md_url": "https://raw.githubusercontent.com/neondatabase/agent-skills/main/skills/neon-postgres-egress-optimizer/SKILL.md",
-        "commit_sha": "ae082b22275461fbb5e303a1bcdc9bb00b73a946"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "ci",
-        "neon",
-        "postgres",
-        "egress",
-        "optimizer"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 15,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 98
-    },
-    {
       "id": "huggingface/hf-cli",
       "name": "hf-cli",
       "description": "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when: handling authentication; managing local cache; managing Hugging Face Buckets; running or scheduling jobs on Hugging Face infrastructure; managing Hugging Face repos; discussions and pull requests; browsing models, datasets and spaces; reading, searching, or browsing academic papers; managing collections; querying datasets; configuring spaces; setting up webhooks; or deploying and managing HF Inference Endpoints. Make sure to use this skill whenever the user mentions 'hf', 'huggingface', 'Hugging Face', 'huggingface-cli', or 'hugging face cli', or wants to do anything related to the Hugging Face ecosystem and to AI and ML in general. Also use for cloud storage needs like training checkpoints, data pipelines, or agent traces. Use even if the user doesn't explicitly ask for a CLI command. Replaces the deprecated `huggingface-cli`.",
@@ -20021,42 +20021,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 210
-    },
-    {
-      "id": "bilig/bilig-workpaper",
-      "name": "bilig-workpaper",
-      "description": "Use @bilig/workpaper WorkPaper state for workbook formulas, MCP editing, and tool integrations without driving spreadsheet UI.",
-      "provider": "bilig",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-07-08T09:26:20Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/proompteng/bilig",
-        "path": "packages/headless",
-        "skill_md_url": "https://raw.githubusercontent.com/proompteng/bilig/main/packages/headless/SKILL.md",
-        "commit_sha": "3f740671e8464de63d08042fea4db8441163c720"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "mcp",
-        "bilig",
-        "workpaper"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 54,
-      "maintenance_status": "maintained",
-      "quality_score": 50,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 35
     },
     {
       "id": "vercel/deploy-to-vercel",

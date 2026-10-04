@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-10-03T11:24:59.077900+00:00",
+  "last_run": "2026-10-04T12:06:25.392341+00:00",
   "provider_commits": {
     "anthropics": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -26,7 +26,7 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "c80722d3f27d65e06b6579add201bf69b99101d0",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "9a33771f666e59c21cd71a3d043459464a42f9e3",
+    "stripe": "1b5f55651a559db8e6d818f4a7139ed216b777a6",
     "cloudflare": "41e0d19858946d18af9ee2c2feebbe2e11d829ff",
     "trailofbits": "82fe8226252622fa807643bdca1710901198553a",
     "expo": "13ad8e05874195633b5c185f6947bb6400e228fc",
@@ -35,7 +35,7 @@
     "google-labs-stitch": "0337446dadde6f8c94210444e2aa9d546126480f",
     "better-auth": "20c9e88a5c007461a703f1c213572b073196113e",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
-    "neondatabase": "ae082b22275461fbb5e303a1bcdc9bb00b73a946",
+    "neondatabase": "9e4a5705922fddb540c396111a7979e0dca79cc2",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
     "remotion": "0b5db9daae40f42c73544d1cc0a8c733bd530eaa",
     "nginity": "19392f7a08264ed00486a251f5b2098321771f94",
@@ -46,9 +46,9 @@
     "emblemcompany": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
     "sematext": "e26a7dc093db93516e02e987cb40c6ca790ebbc5",
     "accint": "03ed61f278b37f9a9e4c5b23932626989da4fd67",
-    "bilig": "3f740671e8464de63d08042fea4db8441163c720",
+    "bilig": "91b24bd52d96b361c0d18be8d41fff8c5491bffe",
     "brainiall": "366ca7ec1c08662c45efb9d2cfde81835058083e"
   },
-  "skills_count": 1275,
-  "version": "2026.10.03"
+  "skills_count": 1274,
+  "version": "2026.10.04"
 }

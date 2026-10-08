@@ -1,8 +1,8 @@
 {
   "name": "Premium Skills",
   "description": "Top-quality skills (score >= 70) from Agent Skills Directory",
-  "version": "2026.10.07",
-  "generated_at": "2026-10-07T13:06:27.220710+00:00",
+  "version": "2026.10.08",
+  "generated_at": "2026-10-08T13:13:15.751300+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
@@ -32,7 +32,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/acquire-codebase-knowledge",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/acquire-codebase-knowledge/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -49,12 +49,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 21,
+      "days_since_update": 22,
       "maintenance_status": "active",
       "quality_score": 100,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/adobe-illustrator-scripting",
@@ -70,7 +70,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/adobe-illustrator-scripting",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/adobe-illustrator-scripting/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -87,12 +87,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 132,
+      "days_since_update": 133,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/agent-architecture",
@@ -108,7 +108,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/agent-architecture",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/agent-architecture/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -122,12 +122,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 16,
+      "days_since_update": 17,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/agent-skill-stack",
@@ -143,7 +143,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/agent-skill-stack",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/agent-skill-stack/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -162,12 +162,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 75,
+      "days_since_update": 76,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/ai-team-orchestration",
@@ -183,7 +183,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/ai-team-orchestration",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/ai-team-orchestration/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -198,12 +198,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 69,
+      "days_since_update": 70,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/anti-ui-slop",
@@ -224,7 +224,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/anti-ui-slop",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/anti-ui-slop/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -240,12 +240,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 44,
+      "days_since_update": 45,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/api-breaking-change-detector",
@@ -261,7 +261,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/api-breaking-change-detector",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/api-breaking-change-detector/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -278,12 +278,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 15,
+      "days_since_update": 16,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arduino-azure-iot-edge-integration",
@@ -299,7 +299,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arduino-azure-iot-edge-integration",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arduino-azure-iot-edge-integration/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -317,12 +317,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-ai-provider-integration",
@@ -341,7 +341,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-ai-provider-integration",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-ai-provider-integration/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -356,12 +356,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-annotation",
@@ -380,7 +380,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-annotation",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-annotation/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -394,12 +394,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-dataset",
@@ -418,7 +418,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-dataset",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-dataset/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -433,12 +433,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-evaluator",
@@ -457,7 +457,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-evaluator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-evaluator/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -472,12 +472,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-experiment",
@@ -496,7 +496,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-experiment",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-experiment/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -511,12 +511,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-instrumentation",
@@ -535,7 +535,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-instrumentation",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-instrumentation/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -550,12 +550,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-link",
@@ -574,7 +574,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-link",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-link/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -589,12 +589,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-prompt-optimization",
@@ -613,7 +613,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-prompt-optimization",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-prompt-optimization/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -630,12 +630,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/arize-trace",
@@ -654,7 +654,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/arize-trace",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/arize-trace/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -668,12 +668,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/audit-integrity",
@@ -691,7 +691,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/audit-integrity",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/audit-integrity/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -705,12 +705,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 8,
+      "days_since_update": 9,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/azure-architecture-autopilot",
@@ -726,7 +726,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/azure-architecture-autopilot",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/azure-architecture-autopilot/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -742,12 +742,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/azure-container-registry-cli",
@@ -763,7 +763,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/azure-container-registry-cli",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/azure-container-registry-cli/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -778,12 +778,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 69,
+      "days_since_update": 70,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/azure-developer-cli",
@@ -799,7 +799,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/azure-developer-cli",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/azure-developer-cli/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -818,12 +818,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 62,
+      "days_since_update": 63,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/azure-devops-cli",
@@ -839,7 +839,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/azure-devops-cli",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/azure-devops-cli/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -857,12 +857,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 99,
+      "days_since_update": 100,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/azure-smart-city-iot-solution-builder",
@@ -878,7 +878,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/azure-smart-city-iot-solution-builder",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/azure-smart-city-iot-solution-builder/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -898,12 +898,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/batch-files",
@@ -919,7 +919,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/batch-files",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/batch-files/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -933,12 +933,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 162,
+      "days_since_update": 163,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/bug-receipt",
@@ -956,7 +956,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/bug-receipt",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/bug-receipt/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -971,12 +971,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 54,
+      "days_since_update": 55,
       "maintenance_status": "maintained",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/build-evidence-map",
@@ -992,7 +992,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/build-evidence-map",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/build-evidence-map/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1009,12 +1009,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 63,
+      "days_since_update": 64,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/code-tour",
@@ -1030,7 +1030,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/code-tour",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/code-tour/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1044,12 +1044,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 177,
+      "days_since_update": 178,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/codebase-memory-mcp",
@@ -1065,7 +1065,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/codebase-memory-mcp",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/codebase-memory-mcp/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1080,12 +1080,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 0,
+      "days_since_update": 1,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/commit-message-storyteller",
@@ -1101,7 +1101,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/commit-message-storyteller",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/commit-message-storyteller/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1116,12 +1116,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 156,
+      "days_since_update": 157,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/content-management-systems",
@@ -1137,7 +1137,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/content-management-systems",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/content-management-systems/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1152,12 +1152,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 156,
+      "days_since_update": 157,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/convert-excel-to-md",
@@ -1173,7 +1173,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/convert-excel-to-md",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/convert-excel-to-md/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1194,12 +1194,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 83,
+      "days_since_update": 84,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/convert-pdf-to-md",
@@ -1215,7 +1215,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/convert-pdf-to-md",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/convert-pdf-to-md/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1234,12 +1234,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 83,
+      "days_since_update": 84,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/convert-word-to-md",
@@ -1255,7 +1255,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/convert-word-to-md",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/convert-word-to-md/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1275,12 +1275,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 83,
+      "days_since_update": 84,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/copilot-pr-autopilot",
@@ -1296,7 +1296,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/copilot-pr-autopilot",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/copilot-pr-autopilot/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1316,12 +1316,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 98,
+      "days_since_update": 99,
       "maintenance_status": "maintained",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/creating-oracle-to-postgres-migration-bug-report",
@@ -1337,7 +1337,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/creating-oracle-to-postgres-migration-bug-report",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/creating-oracle-to-postgres-migration-bug-report/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1355,12 +1355,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 57,
+      "days_since_update": 58,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/d365-solution-blueprint",
@@ -1376,7 +1376,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/d365-solution-blueprint",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/d365-solution-blueprint/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1396,12 +1396,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 54,
+      "days_since_update": 55,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/daily-focus-board",
@@ -1417,7 +1417,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/daily-focus-board",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/daily-focus-board/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1434,12 +1434,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 71,
+      "days_since_update": 72,
       "maintenance_status": "maintained",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/data-breach-blast-radius",
@@ -1455,7 +1455,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/data-breach-blast-radius",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/data-breach-blast-radius/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1474,12 +1474,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 162,
+      "days_since_update": 163,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/dependabot",
@@ -1495,7 +1495,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/dependabot",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/dependabot/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1512,12 +1512,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 114,
+      "days_since_update": 115,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/doc-and-modernize",
@@ -1533,7 +1533,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/doc-and-modernize",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/doc-and-modernize/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1551,12 +1551,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 89,
+      "days_since_update": 90,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/docs-sync-audit",
@@ -1572,7 +1572,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/docs-sync-audit",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/docs-sync-audit/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -1591,12 +1591,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 29,
-      "maintenance_status": "active",
-      "quality_score": 80,
+      "days_since_update": 30,
+      "maintenance_status": "maintained",
+      "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/dotnet-mcp-builder",
@@ -1612,7 +1612,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/dotnet-mcp-builder",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/dotnet-mcp-builder/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1629,12 +1629,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 68,
+      "days_since_update": 69,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/draw-io-diagram-generator",
@@ -1650,7 +1650,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/draw-io-diagram-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/draw-io-diagram-generator/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1665,12 +1665,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 194,
+      "days_since_update": 195,
       "maintenance_status": "stale",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/drawio",
@@ -1686,7 +1686,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/drawio",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/drawio/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -1699,12 +1699,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 159,
+      "days_since_update": 160,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/efcore-d2-db-diagram",
@@ -1720,7 +1720,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/efcore-d2-db-diagram",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/efcore-d2-db-diagram/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1735,12 +1735,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 135,
+      "days_since_update": 136,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/eval-driven-dev",
@@ -1760,7 +1760,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/eval-driven-dev",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/eval-driven-dev/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1776,12 +1776,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 162,
+      "days_since_update": 163,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/excalidraw-diagram-generator",
@@ -1797,7 +1797,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/excalidraw-diagram-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/excalidraw-diagram-generator/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -1815,12 +1815,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 44,
+      "days_since_update": 45,
       "maintenance_status": "maintained",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/flowstudio-power-automate-build",
@@ -1836,7 +1836,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/flowstudio-power-automate-build",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/flowstudio-power-automate-build/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1854,12 +1854,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 30,
+      "days_since_update": 31,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/flowstudio-power-automate-debug",
@@ -1875,7 +1875,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/flowstudio-power-automate-debug",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/flowstudio-power-automate-debug/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1893,12 +1893,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 30,
+      "days_since_update": 31,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/flowstudio-power-automate-mcp",
@@ -1914,7 +1914,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/flowstudio-power-automate-mcp",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/flowstudio-power-automate-mcp/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1931,12 +1931,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 30,
+      "days_since_update": 31,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/foundry-hosted-agent-copilotkit",
@@ -1952,7 +1952,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/foundry-hosted-agent-copilotkit",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/foundry-hosted-agent-copilotkit/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1968,12 +1968,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 0,
+      "days_since_update": 1,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/gem-devops-guidelines",
@@ -1989,7 +1989,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/gem-devops-guidelines",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/gem-devops-guidelines/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -2007,12 +2007,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 19,
+      "days_since_update": 20,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/geofeed-tuner",
@@ -2031,7 +2031,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/geofeed-tuner",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/geofeed-tuner/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -2046,12 +2046,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/github-actions-efficiency",
@@ -2067,7 +2067,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/github-actions-efficiency",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/github-actions-efficiency/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2083,12 +2083,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 135,
+      "days_since_update": 136,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/github-actions-hardening",
@@ -2104,7 +2104,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/github-actions-hardening",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/github-actions-hardening/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2123,12 +2123,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 113,
+      "days_since_update": 114,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/github-codespaces-efficiency",
@@ -2144,7 +2144,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/github-codespaces-efficiency",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/github-codespaces-efficiency/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2162,12 +2162,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 135,
+      "days_since_update": 136,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/github-issues",
@@ -2183,7 +2183,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/github-issues",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/github-issues/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2201,12 +2201,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 37,
+      "days_since_update": 38,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/github-release",
@@ -2222,7 +2222,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/github-release",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/github-release/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2236,12 +2236,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/gitmoji",
@@ -2257,7 +2257,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/gitmoji",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/gitmoji/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2271,12 +2271,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 72,
+      "days_since_update": 73,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/gsap-framer-scroll-animation",
@@ -2295,7 +2295,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/gsap-framer-scroll-animation",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/gsap-framer-scroll-animation/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2312,12 +2312,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 175,
+      "days_since_update": 176,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/impediment-prioritization",
@@ -2340,7 +2340,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/impediment-prioritization",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/impediment-prioritization/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2354,12 +2354,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 162,
+      "days_since_update": 163,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/latchshot-page-capture",
@@ -2375,7 +2375,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/latchshot-page-capture",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/latchshot-page-capture/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -2395,12 +2395,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 78,
+      "days_since_update": 79,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/lean-comments",
@@ -2416,7 +2416,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/lean-comments",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/lean-comments/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -2433,12 +2433,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 8,
+      "days_since_update": 9,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/linkedin-post-formatter",
@@ -2454,7 +2454,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/linkedin-post-formatter",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/linkedin-post-formatter/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2471,12 +2471,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 174,
+      "days_since_update": 175,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/macos-golden-gate-design",
@@ -2492,7 +2492,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/macos-golden-gate-design",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/macos-golden-gate-design/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2507,12 +2507,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 16,
+      "days_since_update": 17,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/make-blog-post",
@@ -2528,7 +2528,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/make-blog-post",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/make-blog-post/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2544,12 +2544,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 0,
+      "days_since_update": 1,
       "maintenance_status": "active",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/markstream-install",
@@ -2568,7 +2568,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/markstream-install",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/markstream-install/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2582,12 +2582,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 80,
+      "days_since_update": 81,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/mcp-security-audit",
@@ -2603,7 +2603,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-security-audit",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-security-audit/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -2621,12 +2621,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 0,
+      "days_since_update": 1,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/md-to-docx",
@@ -2642,7 +2642,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/md-to-docx",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/md-to-docx/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -2657,12 +2657,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 159,
+      "days_since_update": 160,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/microsoft-store-publisher",
@@ -2678,7 +2678,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/microsoft-store-publisher",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/microsoft-store-publisher/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -2694,12 +2694,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 7,
+      "days_since_update": 8,
       "maintenance_status": "active",
       "quality_score": 100,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/minecraft-plugin-development",
@@ -2715,7 +2715,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/minecraft-plugin-development",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/minecraft-plugin-development/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2731,12 +2731,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 162,
+      "days_since_update": 163,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/mini-context-graph",
@@ -2752,7 +2752,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mini-context-graph",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mini-context-graph/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -2770,12 +2770,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/msgraph-sdk",
@@ -2791,7 +2791,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/msgraph-sdk",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/msgraph-sdk/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2807,12 +2807,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 146,
+      "days_since_update": 147,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/mvvm-toolkit",
@@ -2828,7 +2828,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mvvm-toolkit",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mvvm-toolkit/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2843,12 +2843,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 149,
+      "days_since_update": 150,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/mvvm-toolkit-di",
@@ -2864,7 +2864,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mvvm-toolkit-di",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mvvm-toolkit-di/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2878,12 +2878,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 149,
+      "days_since_update": 150,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/mvvm-toolkit-messenger",
@@ -2899,7 +2899,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mvvm-toolkit-messenger",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mvvm-toolkit-messenger/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2914,12 +2914,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 149,
+      "days_since_update": 150,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/namecheap",
@@ -2935,7 +2935,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/namecheap",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/namecheap/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -2948,12 +2948,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 130,
+      "days_since_update": 131,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/napkin",
@@ -2969,7 +2969,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/napkin",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/napkin/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -2984,12 +2984,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/optimize-simplicite-logs",
@@ -3005,7 +3005,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/optimize-simplicite-logs",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/optimize-simplicite-logs/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -3021,12 +3021,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 142,
+      "days_since_update": 143,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/pester-migration",
@@ -3042,7 +3042,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/pester-migration",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/pester-migration/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3057,12 +3057,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 86,
+      "days_since_update": 87,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/pester-should-migration",
@@ -3078,7 +3078,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/pester-should-migration",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/pester-should-migration/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3095,12 +3095,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 96,
+      "days_since_update": 97,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/phoenix-cli",
@@ -3119,7 +3119,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/phoenix-cli",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/phoenix-cli/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3134,12 +3134,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 147,
+      "days_since_update": 148,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/phoenix-evals",
@@ -3159,7 +3159,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/phoenix-evals",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/phoenix-evals/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3172,12 +3172,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/phoenix-tracing",
@@ -3197,7 +3197,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/phoenix-tracing",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/phoenix-tracing/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3212,12 +3212,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/poka-yoke",
@@ -3236,7 +3236,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/poka-yoke",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/poka-yoke/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": true,
@@ -3253,12 +3253,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 42,
+      "days_since_update": 43,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/pr-dashboard",
@@ -3274,7 +3274,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/pr-dashboard",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/pr-dashboard/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -3289,12 +3289,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 160,
+      "days_since_update": 161,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/protobuf-grpc-api-review",
@@ -3310,7 +3310,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/protobuf-grpc-api-review",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/protobuf-grpc-api-review/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3327,12 +3327,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 16,
+      "days_since_update": 17,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/python-azure-iot-edge-modules",
@@ -3348,7 +3348,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/python-azure-iot-edge-modules",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/python-azure-iot-edge-modules/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3365,12 +3365,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/quality-playbook",
@@ -3390,7 +3390,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/quality-playbook",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/quality-playbook/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3406,12 +3406,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 149,
+      "days_since_update": 150,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/react-container-presentation-component",
@@ -3427,7 +3427,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/react-container-presentation-component",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/react-container-presentation-component/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3444,12 +3444,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 114,
+      "days_since_update": 115,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/repo-standardizer",
@@ -3465,7 +3465,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/repo-standardizer",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/repo-standardizer/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -3482,12 +3482,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 47,
+      "days_since_update": 48,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/resemble-detect",
@@ -3503,7 +3503,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/resemble-detect",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/resemble-detect/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3516,12 +3516,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 162,
+      "days_since_update": 163,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/reviewing-oracle-to-postgres-migration",
@@ -3537,7 +3537,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/reviewing-oracle-to-postgres-migration",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/reviewing-oracle-to-postgres-migration/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3555,12 +3555,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 85,
+      "days_since_update": 86,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/rhino3d-scripts",
@@ -3576,7 +3576,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/rhino3d-scripts",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/rhino3d-scripts/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3590,12 +3590,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 131,
+      "days_since_update": 132,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/roslyn-analyzers",
@@ -3611,7 +3611,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/roslyn-analyzers",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/roslyn-analyzers/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3627,12 +3627,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 8,
+      "days_since_update": 9,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/setup-my-iq",
@@ -3648,7 +3648,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/setup-my-iq",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/setup-my-iq/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -3661,12 +3661,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 113,
+      "days_since_update": 114,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/slang-shader-engineer",
@@ -3682,7 +3682,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/slang-shader-engineer",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/slang-shader-engineer/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3697,12 +3697,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 148,
+      "days_since_update": 149,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/speak-summary",
@@ -3718,7 +3718,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/speak-summary",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/speak-summary/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -3733,12 +3733,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 41,
+      "days_since_update": 42,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/sql-object-impact-analysis",
@@ -3754,7 +3754,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/sql-object-impact-analysis",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/sql-object-impact-analysis/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -3770,12 +3770,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 19,
+      "days_since_update": 20,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/sql-server-table-reconciliation",
@@ -3791,7 +3791,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/sql-server-table-reconciliation",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/sql-server-table-reconciliation/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -3808,12 +3808,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 141,
+      "days_since_update": 142,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/test-gap-audit",
@@ -3829,7 +3829,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/test-gap-audit",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/test-gap-audit/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": true,
       "has_references": false,
@@ -3846,12 +3846,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 29,
-      "maintenance_status": "active",
-      "quality_score": 80,
+      "days_since_update": 30,
+      "maintenance_status": "maintained",
+      "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/tm7-threat-model",
@@ -3867,7 +3867,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/tm7-threat-model",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/tm7-threat-model/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -3881,12 +3881,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 84,
+      "days_since_update": 85,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/v-development",
@@ -3902,7 +3902,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/v-development",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/v-development/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": false,
@@ -3918,12 +3918,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 8,
+      "days_since_update": 9,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/vcpkg",
@@ -3939,7 +3939,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/vcpkg",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/vcpkg/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3955,12 +3955,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 81,
+      "days_since_update": 82,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/web-design-reviewer",
@@ -3976,7 +3976,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/web-design-reviewer",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/web-design-reviewer/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -3992,12 +3992,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 61,
+      "days_since_update": 62,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
     },
     {
       "id": "github/webmcpify",
@@ -4015,7 +4015,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/webmcpify",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/webmcpify/SKILL.md",
-        "commit_sha": "3a685010a7afdc0dbd4c83b7fbda6c316aa516e5"
+        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
       },
       "has_scripts": false,
       "has_references": true,
@@ -4029,12 +4029,350 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 75,
+      "days_since_update": 76,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39762
+      "github_stars": 39807
+    },
+    {
+      "id": "stripe/connect-recommend",
+      "name": "connect-recommend",
+      "description": "Use this skill when the user asks about Stripe Connect configuration, charge patterns, Dashboard access, or how to get started with Connect, is building a marketplace, platform, multi-vendor store, gig platform, or subscription platform, needs to pay out sellers, vendors, or providers, mentions split payments, revenue sharing, multi-party payments, or similar payment distribution concepts, provides a company URL or business description for a recommendation, builds SaaS that routes money between parties (for example, POS, booking, invoicing \u2014 not operational SaaS without payment routing), asks about onboarding or KYC for merchants, sellers, and vendors, mentions connected account Dashboard or responsibility configurations, or asks about payment flows, white-label payments, or embedded payments.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-29T00:53:08Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/connect-recommend",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-recommend/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "art",
+        "connect",
+        "recommend"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
+    },
+    {
+      "id": "stripe/connect-required-verification-information",
+      "name": "connect-required-verification-information",
+      "description": "Use this skill when the user asks what information a Stripe Connect connected account must provide for verification, onboarding, KYC, or account requirements; when they need to compare requirements between connected-account setups; or when they ask which verification fields, documents, or business details are required for a particular platform country, account country, business type, dashboard, service agreement, or capability.",
+      "provider": "stripe",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-16T00:48:53Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/connect-required-verification-information",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-required-verification-information/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "art",
+        "document",
+        "connect",
+        "required",
+        "verification",
+        "information"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 22,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
+    },
+    {
+      "id": "stripe/metronome",
+      "name": "metronome",
+      "description": "Guides Metronome usage-based billing integration decisions \u2014 event ingestion (single and batch, idempotency, billable metrics), contract design (rate cards, overrides, dimensional pricing, products), invoicing lifecycle (grace periods, finalization, Stripe sync), credit and commit management (prepaid, postpaid, thresholds, auto-recharge), and Stripe integration (arrears invoicing, tax providers, line item limits). Use when building, modifying, or reviewing any Metronome integration \u2014 including ingesting usage events, creating customers, contracts, or rate cards, designing billable metric group keys, managing credits and commits, configuring invoicing, syncing invoices with Stripe Billing, billing AI applications for token usage, setting up self-serve (PLG) pricing, reviewing customer health, commit burn, portfolios, or renewals, or migrating from Stripe Billing Meters to Metronome.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-30T00:54:50Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/metronome",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/metronome/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "design",
+        "metronome"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 8,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
+    },
+    {
+      "id": "stripe/stripe-apps",
+      "name": "stripe-apps",
+      "description": "Build, modify, or review Stripe Apps and extensions using the relevant documentation and reference guides. Use for custom Stripe Dashboard UI, stripe-app.yaml, @stripe/ui-extension-sdk, @stripe/extensibility-sdk, script extensions, extension interfaces, custom workflow actions, and apps that authenticate to Stripe or react to events. Also use when deciding whether a Stripe extension can support the user's billing or workflow requirements.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-02T00:51:57Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-apps",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-apps/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "yaml",
+        "ci",
+        "document",
+        "stripe",
+        "apps"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
+    },
+    {
+      "id": "stripe/stripe-best-practices",
+      "name": "stripe-best-practices",
+      "description": "Guides Stripe integration decisions across development and test environment planning (separate sandboxes vs the shared test mode sandbox), API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, tax and registrations (Stripe Tax, automatic_tax, product tax codes), Treasury financial accounts, integration options (Checkout, Payment Element), migrating from deprecated Stripe APIs, and security best practices (API key management, API key permissions, webhooks, OAuth). Use when planning, building, modifying, testing, or reviewing any Stripe integration, including choosing a development environment, accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, collecting sales tax, VAT, or GST, creating connected accounts, or implementing secure key handling.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-06T00:52:11Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-best-practices",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "test",
+        "api",
+        "stripe",
+        "best",
+        "practices"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
+    },
+    {
+      "id": "stripe/stripe-docs",
+      "name": "stripe-docs",
+      "description": "Use when the user or agent needs to read, search, or look up Stripe documentation or API reference. Prefer this over curl or WebFetch for any docs.stripe.com content. Use to fetch gated documentation.",
+      "provider": "stripe",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-09T00:49:21Z",
+      "metadata": {
+        "short-description": "Read and search Stripe documentation from the terminal"
+      },
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-docs",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-docs/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "document",
+        "stripe",
+        "docs"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 29,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
+    },
+    {
+      "id": "stripe/stripe-pay",
+      "name": "stripe-pay",
+      "description": "Helps users send funds to another Stripe business, transfer money to a Stripe Profile handle or network ID, or ask whether an agent can pay a Stripe business. Use Stripe Directory to find or verify a recipient when the user doesn't provide an exact Stripe Profile handle or network ID.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-02T00:51:57Z",
+      "metadata": {
+        "short-description": "Send funds to Stripe businesses"
+      },
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-pay",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-pay/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "stripe",
+        "pay"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 6,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
+    },
+    {
+      "id": "stripe/stripe-projects",
+      "name": "stripe-projects",
+      "description": "Use when the user wants to provision infrastructure or third-party services using Stripe Projects. Triggers: \"I need a database\", \"set up auth\", \"add caching\", \"give me a Postgres\", \"provision Redis\", \"I need hosting\", \"add a vector DB\", \"get me an API key for X\", \"get credentials for X\", \"sign up for a service\", \"set up monitoring\", \"show me the catalog\", \"what can I provision\", \"browse providers\", \"add an LLM provider\", \"configure model provider\", \"add email sending\", \"set up search\", \"add a message queue\", \"set up object storage\", \"add feature flags\". Also trigger when the user asks how to get an API key or credentials for any third-party service \u2014 don't tell them to sign up manually; check the Projects catalog first. Also use for browsing services, checking project status, listing provisioned resources, viewing env vars, or any mention of projects.dev or adding/provisioning/connecting a cloud service.\n",
+      "provider": "stripe",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-07T00:54:50Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-projects",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "art",
+        "email",
+        "stripe",
+        "projects"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 1,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
+    },
+    {
+      "id": "stripe/upgrade-stripe",
+      "name": "upgrade-stripe",
+      "description": "Guide for upgrading Stripe API versions, webhook endpoints, server-side SDKs, Stripe.js, and mobile SDKs",
+      "provider": "stripe",
+      "category": "integrations",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-08T00:53:58Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/upgrade-stripe",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
+        "commit_sha": "08d371a9fbe098ecc943713a70a669ef05cfa6d6"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "upgrade",
+        "stripe"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1864
     },
     {
       "id": "neondatabase/neon",
@@ -4773,344 +5111,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 4873
-    },
-    {
-      "id": "stripe/connect-recommend",
-      "name": "connect-recommend",
-      "description": "Use this skill when the user asks about Stripe Connect configuration, charge patterns, Dashboard access, or how to get started with Connect, is building a marketplace, platform, multi-vendor store, gig platform, or subscription platform, needs to pay out sellers, vendors, or providers, mentions split payments, revenue sharing, multi-party payments, or similar payment distribution concepts, provides a company URL or business description for a recommendation, builds SaaS that routes money between parties (for example, POS, booking, invoicing \u2014 not operational SaaS without payment routing), asks about onboarding or KYC for merchants, sellers, and vendors, mentions connected account Dashboard or responsibility configurations, or asks about payment flows, white-label payments, or embedded payments.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-29T00:53:08Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/connect-recommend",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-recommend/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "art",
-        "connect",
-        "recommend"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
-    },
-    {
-      "id": "stripe/connect-required-verification-information",
-      "name": "connect-required-verification-information",
-      "description": "Use this skill when the user asks what information a Stripe Connect connected account must provide for verification, onboarding, KYC, or account requirements; when they need to compare requirements between connected-account setups; or when they ask which verification fields, documents, or business details are required for a particular platform country, account country, business type, dashboard, service agreement, or capability.",
-      "provider": "stripe",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-16T00:48:53Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/connect-required-verification-information",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-required-verification-information/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "art",
-        "document",
-        "connect",
-        "required",
-        "verification",
-        "information"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 21,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
-    },
-    {
-      "id": "stripe/metronome",
-      "name": "metronome",
-      "description": "Guides Metronome usage-based billing integration decisions \u2014 event ingestion (single and batch, idempotency, billable metrics), contract design (rate cards, overrides, dimensional pricing, products), invoicing lifecycle (grace periods, finalization, Stripe sync), credit and commit management (prepaid, postpaid, thresholds, auto-recharge), and Stripe integration (arrears invoicing, tax providers, line item limits). Use when building, modifying, or reviewing any Metronome integration \u2014 including ingesting usage events, creating customers, contracts, or rate cards, designing billable metric group keys, managing credits and commits, configuring invoicing, syncing invoices with Stripe Billing, billing AI applications for token usage, setting up self-serve (PLG) pricing, reviewing customer health, commit burn, portfolios, or renewals, or migrating from Stripe Billing Meters to Metronome.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-30T00:54:50Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/metronome",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/metronome/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "design",
-        "metronome"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 7,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
-    },
-    {
-      "id": "stripe/stripe-apps",
-      "name": "stripe-apps",
-      "description": "Build, modify, or review Stripe Apps and extensions using the relevant documentation and reference guides. Use for custom Stripe Dashboard UI, stripe-app.yaml, @stripe/ui-extension-sdk, @stripe/extensibility-sdk, script extensions, extension interfaces, custom workflow actions, and apps that authenticate to Stripe or react to events. Also use when deciding whether a Stripe extension can support the user's billing or workflow requirements.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-02T00:51:57Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-apps",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-apps/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "yaml",
-        "ci",
-        "document",
-        "stripe",
-        "apps"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
-    },
-    {
-      "id": "stripe/stripe-best-practices",
-      "name": "stripe-best-practices",
-      "description": "Guides Stripe integration decisions across development and test environment planning (separate sandboxes vs the shared test mode sandbox), API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, tax and registrations (Stripe Tax, automatic_tax, product tax codes), Treasury financial accounts, integration options (Checkout, Payment Element), migrating from deprecated Stripe APIs, and security best practices (API key management, API key permissions, webhooks, OAuth). Use when planning, building, modifying, testing, or reviewing any Stripe integration, including choosing a development environment, accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, collecting sales tax, VAT, or GST, creating connected accounts, or implementing secure key handling.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-06T00:52:11Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-best-practices",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "test",
-        "api",
-        "stripe",
-        "best",
-        "practices"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
-    },
-    {
-      "id": "stripe/stripe-docs",
-      "name": "stripe-docs",
-      "description": "Use when the user or agent needs to read, search, or look up Stripe documentation or API reference. Prefer this over curl or WebFetch for any docs.stripe.com content. Use to fetch gated documentation.",
-      "provider": "stripe",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T00:49:21Z",
-      "metadata": {
-        "short-description": "Read and search Stripe documentation from the terminal"
-      },
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-docs",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-docs/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "document",
-        "stripe",
-        "docs"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 28,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
-    },
-    {
-      "id": "stripe/stripe-pay",
-      "name": "stripe-pay",
-      "description": "Helps users send funds to another Stripe business, transfer money to a Stripe Profile handle or network ID, or ask whether an agent can pay a Stripe business. Use Stripe Directory to find or verify a recipient when the user doesn't provide an exact Stripe Profile handle or network ID.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-02T00:51:57Z",
-      "metadata": {
-        "short-description": "Send funds to Stripe businesses"
-      },
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-pay",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-pay/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "stripe",
-        "pay"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 5,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
-    },
-    {
-      "id": "stripe/stripe-projects",
-      "name": "stripe-projects",
-      "description": "Use when the user wants to provision infrastructure or third-party services using Stripe Projects. Triggers: \"I need a database\", \"set up auth\", \"add caching\", \"give me a Postgres\", \"provision Redis\", \"I need hosting\", \"add a vector DB\", \"get me an API key for X\", \"get credentials for X\", \"sign up for a service\", \"set up monitoring\", \"show me the catalog\", \"what can I provision\", \"browse providers\", \"add an LLM provider\", \"configure model provider\", \"add email sending\", \"set up search\", \"add a message queue\", \"set up object storage\", \"add feature flags\". Also trigger when the user asks how to get an API key or credentials for any third-party service \u2014 don't tell them to sign up manually; check the Projects catalog first. Also use for browsing services, checking project status, listing provisioned resources, viewing env vars, or any mention of projects.dev or adding/provisioning/connecting a cloud service.\n",
-      "provider": "stripe",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-07T00:54:50Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-projects",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "art",
-        "email",
-        "stripe",
-        "projects"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
-    },
-    {
-      "id": "stripe/upgrade-stripe",
-      "name": "upgrade-stripe",
-      "description": "Guide for upgrading Stripe API versions, webhook endpoints, server-side SDKs, Stripe.js, and mobile SDKs",
-      "provider": "stripe",
-      "category": "integrations",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-07T00:54:50Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/upgrade-stripe",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
-        "commit_sha": "9b91884e43839591abd6ee3c70667b2e71d5e687"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "upgrade",
-        "stripe"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1860
     },
     {
       "id": "expo/eas-app-stores",

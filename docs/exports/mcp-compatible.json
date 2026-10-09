@@ -1,13 +1,126 @@
 {
   "name": "MCP-Compatible Skills",
   "description": "Skills with MCP integration support, filtered from Agent Skills Directory",
-  "version": "2026.10.08",
-  "generated_at": "2026-10-08T13:13:15.751300+00:00",
+  "version": "2026.10.09",
+  "generated_at": "2026-10-09T13:00:19.399856+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
   "total_skills": 75,
   "skills": [
+    {
+      "id": "anthropics/academy-guide",
+      "name": "academy-guide",
+      "description": "Stop and check this skill before finishing any reply to a question about how to use Claude or a Claude product \u2014 it recommends matching courses, tutorials, and use cases from Claude Academy (academy.claude.com), Anthropic's learning hub. Trigger on: \"how do I\", \"how can I\", \"getting started with\", \"what can Claude do\", \"teach me\", \"learn to use\"; questions about artifacts, projects, skills, plugins, connectors, MCP; requests about rolling Claude out to a team, class, or organization; and any ask for training materials, onboarding content, or learning resources. Use it when the user is learning how to use a feature or product \u2014 not when they are mid-task and just want the task done. This skill composes with other skills: after consulting product documentation to answer how a Claude feature works, also check here for a matching course or tutorial \u2014 a docs-grounded answer and an Academy recommendation belong together. Only recommend on a strong match; never invent Academy content.\n",
+      "provider": "anthropics",
+      "category": "ml-ai",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2026-08-18T16:02:05Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/academy-guide",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/academy-guide/SKILL.md",
+        "commit_sha": "9d630808e4add0a7146de4af9384155d5dee350a"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "mcp",
+        "art",
+        "document",
+        "academy",
+        "guide"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 51,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 180100
+    },
+    {
+      "id": "anthropics/claude-api",
+      "name": "claude-api",
+      "description": "Reference for the Claude API / Anthropic SDK \u2014 model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER \u2014 read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" \u2014 whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) \u2014 never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named \u2014 don't Read the file).",
+      "provider": "anthropics",
+      "category": "ml-ai",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2026-10-09T10:06:51Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/claude-api",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/claude-api/SKILL.md",
+        "commit_sha": "9d630808e4add0a7146de4af9384155d5dee350a"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "mcp",
+        "extract",
+        "claude"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 180100
+    },
+    {
+      "id": "anthropics/mcp-builder",
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "provider": "anthropics",
+      "category": "development",
+      "license": "Complete terms in LICENSE.txt",
+      "compatibility": null,
+      "last_updated_at": "2025-12-01T18:05:36Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "path": "skills/mcp-builder",
+        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/mcp-builder/SKILL.md",
+        "commit_sha": "9d630808e4add0a7146de4af9384155d5dee350a"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "mcp",
+        "design",
+        "builder"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 311,
+      "maintenance_status": "stale",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 180100
+    },
     {
       "id": "github/aspire",
       "name": "aspire",
@@ -22,7 +135,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/aspire",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/aspire/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -38,12 +151,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 241,
+      "days_since_update": 242,
       "maintenance_status": "stale",
       "quality_score": 50,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/chrome-devtools",
@@ -59,7 +172,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/chrome-devtools",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/chrome-devtools/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -75,12 +188,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 258,
+      "days_since_update": 259,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/cli-mastery",
@@ -98,7 +211,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/cli-mastery",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/cli-mastery/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -115,12 +228,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 213,
+      "days_since_update": 214,
       "maintenance_status": "stale",
       "quality_score": 50,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/codebase-memory-mcp",
@@ -136,7 +249,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/codebase-memory-mcp",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/codebase-memory-mcp/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -151,12 +264,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 1,
+      "days_since_update": 2,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/copilot-sdk",
@@ -172,7 +285,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/copilot-sdk",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/copilot-sdk/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -189,12 +302,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 44,
+      "days_since_update": 45,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/dependabot",
@@ -210,7 +323,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/dependabot",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/dependabot/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -227,12 +340,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 115,
+      "days_since_update": 116,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/dotnet-mcp-builder",
@@ -248,7 +361,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/dotnet-mcp-builder",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/dotnet-mcp-builder/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -265,12 +378,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 69,
+      "days_since_update": 70,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/flowstudio-power-automate-build",
@@ -286,7 +399,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/flowstudio-power-automate-build",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/flowstudio-power-automate-build/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -304,12 +417,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 31,
+      "days_since_update": 32,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/flowstudio-power-automate-debug",
@@ -325,7 +438,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/flowstudio-power-automate-debug",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/flowstudio-power-automate-debug/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -343,12 +456,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 31,
+      "days_since_update": 32,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/flowstudio-power-automate-governance",
@@ -364,7 +477,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/flowstudio-power-automate-governance",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/flowstudio-power-automate-governance/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -382,12 +495,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 31,
+      "days_since_update": 32,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/flowstudio-power-automate-mcp",
@@ -403,7 +516,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/flowstudio-power-automate-mcp",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/flowstudio-power-automate-mcp/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -420,12 +533,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 31,
+      "days_since_update": 32,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/flowstudio-power-automate-monitoring",
@@ -441,7 +554,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/flowstudio-power-automate-monitoring",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/flowstudio-power-automate-monitoring/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -458,12 +571,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 31,
+      "days_since_update": 32,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/github-issues",
@@ -479,7 +592,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/github-issues",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/github-issues/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -497,12 +610,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 38,
+      "days_since_update": 39,
       "maintenance_status": "maintained",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/go-mcp-server-generator",
@@ -518,7 +631,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/go-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/go-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -536,12 +649,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/integrate-context-matic",
@@ -557,7 +670,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/integrate-context-matic",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/integrate-context-matic/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -575,12 +688,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 174,
+      "days_since_update": 175,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/java-mcp-server-generator",
@@ -596,7 +709,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/java-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -613,12 +726,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 62,
+      "days_since_update": 63,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/kotlin-mcp-server-generator",
@@ -634,7 +747,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/kotlin-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/kotlin-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -651,12 +764,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/mcp-cli",
@@ -672,7 +785,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-cli",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-cli/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -687,12 +800,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 258,
+      "days_since_update": 259,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/mcp-copilot-studio-server-generator",
@@ -708,7 +821,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-copilot-studio-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-copilot-studio-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -725,12 +838,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/mcp-create-adaptive-cards",
@@ -746,7 +859,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-create-adaptive-cards",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-create-adaptive-cards/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -763,12 +876,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/mcp-create-declarative-agent",
@@ -784,7 +897,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-create-declarative-agent",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-create-declarative-agent/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -801,12 +914,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/mcp-deploy-manage-agents",
@@ -822,7 +935,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-deploy-manage-agents",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-deploy-manage-agents/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -839,12 +952,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/mcp-implementation-security-review",
@@ -860,7 +973,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-implementation-security-review",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-implementation-security-review/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -878,12 +991,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 90,
+      "days_since_update": 91,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/mcp-release-qa",
@@ -899,7 +1012,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-release-qa",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-release-qa/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -916,12 +1029,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 62,
+      "days_since_update": 63,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/mcp-security-audit",
@@ -937,7 +1050,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/mcp-security-audit",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/mcp-security-audit/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -955,12 +1068,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 1,
+      "days_since_update": 2,
       "maintenance_status": "active",
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/microsoft-docs",
@@ -976,7 +1089,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/microsoft-docs",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/microsoft-docs/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -994,12 +1107,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 206,
+      "days_since_update": 207,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/microsoft-skill-creator",
@@ -1015,7 +1128,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/microsoft-skill-creator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/microsoft-skill-creator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1031,12 +1144,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 206,
+      "days_since_update": 207,
       "maintenance_status": "stale",
       "quality_score": 50,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/onboard-context-matic",
@@ -1052,7 +1165,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/onboard-context-matic",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/onboard-context-matic/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1069,12 +1182,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 174,
+      "days_since_update": 175,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/penpot-uiux-design",
@@ -1090,7 +1203,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/penpot-uiux-design",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/penpot-uiux-design/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1106,12 +1219,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 247,
+      "days_since_update": 248,
       "maintenance_status": "stale",
       "quality_score": 50,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/php-mcp-server-generator",
@@ -1127,7 +1240,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/php-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/php-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1145,12 +1258,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/playwright-automation-fill-in-form",
@@ -1166,7 +1279,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/playwright-automation-fill-in-form",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/playwright-automation-fill-in-form/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1182,12 +1295,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/playwright-explore-website",
@@ -1203,7 +1316,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/playwright-explore-website",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/playwright-explore-website/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1219,12 +1332,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/playwright-generate-test",
@@ -1240,7 +1353,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/playwright-generate-test",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/playwright-generate-test/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1255,12 +1368,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/power-platform-mcp-connector-suite",
@@ -1276,7 +1389,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/power-platform-mcp-connector-suite",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/power-platform-mcp-connector-suite/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1292,12 +1405,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/powerbi-modeling",
@@ -1313,7 +1426,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/powerbi-modeling",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/powerbi-modeling/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1330,35 +1443,38 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 247,
+      "days_since_update": 248,
       "maintenance_status": "stale",
       "quality_score": 50,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/python-mcp-server-generator",
       "name": "python-mcp-server-generator",
-      "description": "Generate a complete MCP server project in Python with tools, resources, and proper configuration",
+      "description": "Use this skill when the user wants to create a new Model Context Protocol (MCP) server in Python. Also use it to expose Python functions, an API, or a database to AI clients as MCP tools. The skill makes a uv project with the MCP Python SDK v2 (MCPServer), typed tools, in-memory tests, and client configuration. Do not use it for an MCP client or for a server in another language.",
       "provider": "github",
       "category": "development",
       "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-02-19T04:34:07Z",
+      "compatibility": "Requires uv, Python 3.10 or later, and network access to install packages. The MCP Inspector also requires Node.js.",
+      "last_updated_at": "2026-10-09T01:00:23Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/python-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/python-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
-      "has_references": false,
+      "has_references": true,
       "has_assets": false,
       "tags": [
         "pr",
+        "test",
+        "api",
         "mcp",
+        "cli",
         "python",
         "server",
         "generator"
@@ -1367,12 +1483,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
-      "maintenance_status": "stale",
-      "quality_score": 40,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/ruby-mcp-server-generator",
@@ -1388,7 +1504,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/ruby-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/ruby-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1405,12 +1521,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 62,
+      "days_since_update": 63,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/rust-mcp-server-generator",
@@ -1426,7 +1542,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/rust-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/rust-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1444,12 +1560,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/secret-scanning",
@@ -1465,7 +1581,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/secret-scanning",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/secret-scanning/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1482,12 +1598,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 197,
+      "days_since_update": 198,
       "maintenance_status": "stale",
       "quality_score": 50,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/swift-mcp-server-generator",
@@ -1503,7 +1619,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/swift-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/swift-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1520,12 +1636,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/tldr-prompt",
@@ -1541,7 +1657,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/tldr-prompt",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/tldr-prompt/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1559,12 +1675,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 231,
+      "days_since_update": 232,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/typescript-mcp-server-generator",
@@ -1580,7 +1696,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/typescript-mcp-server-generator",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/typescript-mcp-server-generator/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1596,12 +1712,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 69,
+      "days_since_update": 70,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/webmcpify",
@@ -1619,7 +1735,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/webmcpify",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/webmcpify/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": true,
@@ -1633,12 +1749,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 76,
+      "days_since_update": 77,
       "maintenance_status": "maintained",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/workiq-copilot",
@@ -1654,7 +1770,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/workiq-copilot",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/workiq-copilot/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1671,12 +1787,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 255,
+      "days_since_update": 256,
       "maintenance_status": "stale",
       "quality_score": 40,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "github/x-twitter-scraper",
@@ -1692,7 +1808,7 @@
         "repo": "https://github.com/github/awesome-copilot",
         "path": "skills/x-twitter-scraper",
         "skill_md_url": "https://raw.githubusercontent.com/github/awesome-copilot/main/skills/x-twitter-scraper/SKILL.md",
-        "commit_sha": "7cce7cfb4b61196c36d7e8eb8475ae84b356b126"
+        "commit_sha": "82701c24b99488536ca399ff4789a458b7a05db7"
       },
       "has_scripts": false,
       "has_references": false,
@@ -1709,12 +1825,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 43,
+      "days_since_update": 44,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 39807
+      "github_stars": 39847
     },
     {
       "id": "neondatabase/neon",
@@ -1880,119 +1996,6 @@
       "skill_type": "full",
       "requires_mcp": true,
       "github_stars": 2659
-    },
-    {
-      "id": "anthropics/academy-guide",
-      "name": "academy-guide",
-      "description": "Stop and check this skill before finishing any reply to a question about how to use Claude or a Claude product \u2014 it recommends matching courses, tutorials, and use cases from Claude Academy (academy.claude.com), Anthropic's learning hub. Trigger on: \"how do I\", \"how can I\", \"getting started with\", \"what can Claude do\", \"teach me\", \"learn to use\"; questions about artifacts, projects, skills, plugins, connectors, MCP; requests about rolling Claude out to a team, class, or organization; and any ask for training materials, onboarding content, or learning resources. Use it when the user is learning how to use a feature or product \u2014 not when they are mid-task and just want the task done. This skill composes with other skills: after consulting product documentation to answer how a Claude feature works, also check here for a matching course or tutorial \u2014 a docs-grounded answer and an Academy recommendation belong together. Only recommend on a strong match; never invent Academy content.\n",
-      "provider": "anthropics",
-      "category": "ml-ai",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2026-08-18T16:02:05Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/academy-guide",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/academy-guide/SKILL.md",
-        "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "mcp",
-        "art",
-        "document",
-        "academy",
-        "guide"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 47,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 179729
-    },
-    {
-      "id": "anthropics/claude-api",
-      "name": "claude-api",
-      "description": "Reference for the Claude API / Anthropic SDK \u2014 model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER \u2014 read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" \u2014 whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) \u2014 never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named \u2014 don't Read the file).",
-      "provider": "anthropics",
-      "category": "ml-ai",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2026-10-05T13:46:42Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/claude-api",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/claude-api/SKILL.md",
-        "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "mcp",
-        "extract",
-        "claude"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 179729
-    },
-    {
-      "id": "anthropics/mcp-builder",
-      "name": "mcp-builder",
-      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
-      "provider": "anthropics",
-      "category": "development",
-      "license": "Complete terms in LICENSE.txt",
-      "compatibility": null,
-      "last_updated_at": "2025-12-01T18:05:36Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/anthropics/skills",
-        "path": "skills/mcp-builder",
-        "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/mcp-builder/SKILL.md",
-        "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "mcp",
-        "design",
-        "builder"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 307,
-      "maintenance_status": "stale",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 179729
     },
     {
       "id": "supabase/supabase",

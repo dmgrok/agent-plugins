@@ -1,8 +1,8 @@
 {
   "name": "MCP-Compatible Skills",
   "description": "Skills with MCP integration support, filtered from Agent Skills Directory",
-  "version": "2026.10.09",
-  "generated_at": "2026-10-09T13:00:19.399856+00:00",
+  "version": "2026.10.10",
+  "generated_at": "2026-10-10T12:14:28.394400+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
@@ -22,7 +22,7 @@
         "repo": "https://github.com/anthropics/skills",
         "path": "skills/academy-guide",
         "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/academy-guide/SKILL.md",
-        "commit_sha": "9d630808e4add0a7146de4af9384155d5dee350a"
+        "commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
       },
       "has_scripts": false,
       "has_references": false,
@@ -39,12 +39,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 51,
+      "days_since_update": 52,
       "maintenance_status": "maintained",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": false,
-      "github_stars": 180100
+      "github_stars": 180256
     },
     {
       "id": "anthropics/claude-api",
@@ -54,13 +54,13 @@
       "category": "ml-ai",
       "license": "Complete terms in LICENSE.txt",
       "compatibility": null,
-      "last_updated_at": "2026-10-09T10:06:51Z",
+      "last_updated_at": "2026-10-09T18:45:49Z",
       "metadata": {},
       "source": {
         "repo": "https://github.com/anthropics/skills",
         "path": "skills/claude-api",
         "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/claude-api/SKILL.md",
-        "commit_sha": "9d630808e4add0a7146de4af9384155d5dee350a"
+        "commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
       },
       "has_scripts": false,
       "has_references": false,
@@ -82,7 +82,7 @@
       "quality_score": 70,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 180100
+      "github_stars": 180256
     },
     {
       "id": "anthropics/mcp-builder",
@@ -98,7 +98,7 @@
         "repo": "https://github.com/anthropics/skills",
         "path": "skills/mcp-builder",
         "skill_md_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/mcp-builder/SKILL.md",
-        "commit_sha": "9d630808e4add0a7146de4af9384155d5dee350a"
+        "commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
       },
       "has_scripts": true,
       "has_references": true,
@@ -114,12 +114,84 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 311,
+      "days_since_update": 312,
       "maintenance_status": "stale",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 180100
+      "github_stars": 180256
+    },
+    {
+      "id": "trailofbits/chrome-mcp-troubleshooting",
+      "name": "chrome-mcp-troubleshooting",
+      "description": "Diagnose and fix Claude in Chrome MCP extension connectivity issues. Use when mcp__claude-in-chrome__* tools fail, return \"Browser extension is not connected\", or behave erratically.",
+      "provider": "trailofbits",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-09T18:26:06Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/trailofbits/skills",
+        "path": "plugins/chrome-mcp-troubleshooting/skills/chrome-mcp-troubleshooting",
+        "skill_md_url": "https://raw.githubusercontent.com/trailofbits/skills/main/plugins/chrome-mcp-troubleshooting/skills/chrome-mcp-troubleshooting/SKILL.md",
+        "commit_sha": "442fc9d6c89b1e937e6f7a477e7071ea75fcbea4"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "mcp",
+        "chrome",
+        "troubleshooting"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 7458
+    },
+    {
+      "id": "trailofbits/gh-cli",
+      "name": "gh-cli",
+      "description": "Enforces authenticated gh CLI workflows over unauthenticated curl, WebFetch, and MCP fetch patterns. Use when working with GitHub URLs, API access, pull requests, or issues.",
+      "provider": "trailofbits",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-08-25T14:38:13Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/trailofbits/skills",
+        "path": "plugins/gh-cli/skills/gh-cli",
+        "skill_md_url": "https://raw.githubusercontent.com/trailofbits/skills/main/plugins/gh-cli/skills/gh-cli/SKILL.md",
+        "commit_sha": "442fc9d6c89b1e937e6f7a477e7071ea75fcbea4"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": true,
+      "tags": [
+        "github",
+        "git",
+        "api",
+        "mcp",
+        "cli"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 45,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 7458
     },
     {
       "id": "github/aspire",
@@ -2035,78 +2107,6 @@
       "skill_type": "full",
       "requires_mcp": true,
       "github_stars": 2686
-    },
-    {
-      "id": "trailofbits/chrome-mcp-troubleshooting",
-      "name": "chrome-mcp-troubleshooting",
-      "description": "Diagnose and fix Claude in Chrome MCP extension connectivity issues. Use when mcp__claude-in-chrome__* tools fail, return \"Browser extension is not connected\", or behave erratically.",
-      "provider": "trailofbits",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-06-05T16:18:09Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/trailofbits/skills",
-        "path": "plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting",
-        "skill_md_url": "https://raw.githubusercontent.com/trailofbits/skills/main/plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting/SKILL.md",
-        "commit_sha": "82fe8226252622fa807643bdca1710901198553a"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "mcp",
-        "chrome",
-        "troubleshooting"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 115,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 7286
-    },
-    {
-      "id": "trailofbits/gh-cli",
-      "name": "gh-cli",
-      "description": "Enforces authenticated gh CLI workflows over unauthenticated curl, WebFetch, and MCP fetch patterns. Use when working with GitHub URLs, API access, pull requests, or issues.",
-      "provider": "trailofbits",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-08-25T14:38:13Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/trailofbits/skills",
-        "path": "plugins/gh-cli/skills/gh-cli",
-        "skill_md_url": "https://raw.githubusercontent.com/trailofbits/skills/main/plugins/gh-cli/skills/gh-cli/SKILL.md",
-        "commit_sha": "82fe8226252622fa807643bdca1710901198553a"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": true,
-      "tags": [
-        "github",
-        "git",
-        "api",
-        "mcp",
-        "cli"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 34,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 7286
     },
     {
       "id": "sanjay-ai-skills/atlassian",

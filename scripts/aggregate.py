@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "orkas-videostudio": {
+        "name": "OrkasVideoStudio",
+        "repo": "https://github.com/Orkas-AI/Orkas-VideoStudio",
+        "api_tree_url": "https://api.github.com/repos/Orkas-AI/Orkas-VideoStudio/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/Orkas-AI/Orkas-VideoStudio/main",
+        "skills_path_prefix": "packages/skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

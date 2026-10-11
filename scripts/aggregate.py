@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "browser-extension-launch": {
+        "name": "Browser Extension Launch",
+        "repo": "https://github.com/xiehuan123/browser-extension-launch",
+        "api_tree_url": "https://api.github.com/repos/xiehuan123/browser-extension-launch/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/xiehuan123/browser-extension-launch/main",
+        "skills_path_prefix": "",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "cohesivity": {
+        "name": "Cohesivity",
+        "repo": "https://github.com/cohesivity-org/cohesivity-plugin",
+        "api_tree_url": "https://api.github.com/repos/cohesivity-org/cohesivity-plugin/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/cohesivity-org/cohesivity-plugin/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

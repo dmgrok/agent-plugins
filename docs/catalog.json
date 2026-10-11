@@ -1,43 +1,50 @@
 {
   "$schema": "https://raw.githubusercontent.com/dmgrok/agent-plugins/main/schema/catalog-schema.json",
-  "version": "2026.10.10",
-  "generated_at": "2026-10-10T12:14:28.394400+00:00",
-  "total_skills": 1275,
+  "version": "2026.10.11",
+  "generated_at": "2026-10-11T12:28:10.380327+00:00",
+  "total_skills": 1276,
   "providers": {
-    "anthropics": {
-      "name": "Anthropic",
-      "repo": "https://github.com/anthropics/skills",
-      "skills_count": 19,
-      "stars": 180256,
-      "description": "Public repository for Agent Skills"
-    },
-    "obra-superpowers": {
-      "name": "Obra Superpowers",
-      "repo": "https://github.com/obra/superpowers",
-      "skills_count": 15,
-      "stars": 297069,
-      "description": "An agentic skills framework & software development methodology that works."
-    },
     "stripe": {
       "name": "Stripe",
       "repo": "https://github.com/stripe/ai",
       "skills_count": 10,
-      "stars": 1865,
+      "stars": 1867,
       "description": "One-stop shop for building AI-powered products and businesses with Stripe."
     },
     "cloudflare": {
       "name": "Cloudflare",
       "repo": "https://github.com/cloudflare/skills",
-      "skills_count": 16,
-      "stars": 3023,
+      "skills_count": 17,
+      "stars": 3034,
       "description": "Skills for teaching agents how to build on Cloudflare."
     },
-    "trailofbits": {
-      "name": "Trail of Bits Security",
-      "repo": "https://github.com/trailofbits/skills",
-      "skills_count": 85,
-      "stars": 7458,
-      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
+    "epub-skill": {
+      "name": "EPUB Converter",
+      "repo": "https://github.com/smerchek/claude-epub-skill",
+      "skills_count": 1,
+      "stars": 83,
+      "description": "A Claude Skill for converting markdown documents, chat summaries, or research reports into a downloadable epub file that can be sent to kindle"
+    },
+    "claude-marketplace-engineering": {
+      "name": "Claude Marketplace (Engineering)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "pypict-skill": {
+      "name": "PICT Test Cases",
+      "repo": "https://github.com/omkamal/pypict-claude-skill",
+      "skills_count": 1,
+      "stars": 57,
+      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
+    },
+    "better-auth": {
+      "name": "Better Auth",
+      "repo": "https://github.com/better-auth/skills",
+      "skills_count": 5,
+      "stars": 210,
+      "description": null
     },
     "sanjay-ai-skills": {
       "name": "Sanjay AI Skills",
@@ -46,12 +53,222 @@
       "stars": 422,
       "description": "24 cross-platform agent skills for Claude Code, Cursor, Codex & Gemini CLI \u2014 databases, messaging, research, TTS, DevOps, and Google Workspace"
     },
-    "ios-simulator-skill": {
-      "name": "iOS Simulator",
-      "repo": "https://github.com/conorluddy/ios-simulator-skill",
+    "d3js-skill": {
+      "name": "D3.js Visualization",
+      "repo": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
       "skills_count": 1,
-      "stars": 1266,
-      "description": "An IOS Simulator Skill for Agents. Use it to optimise their ability to build, run and interact with your apps, and to proxy xcodebuild to save token and context wastage."
+      "stars": 125,
+      "description": "A Claude skill for d3.js."
+    },
+    "family-history-skill": {
+      "name": "Family History Research",
+      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
+      "skills_count": 1,
+      "stars": 44,
+      "description": "A Claude Skill to assist with family history and genealogy research planning."
+    },
+    "accint": {
+      "name": "AccInt",
+      "repo": "https://github.com/maxbaluev/accreted-intelligence",
+      "skills_count": 3,
+      "stars": 4,
+      "description": "AccInt - local-first MCP Work Model for coding agents that learns from real outcomes."
+    },
+    "stream-coding": {
+      "name": "Stream Coding Methodology",
+      "repo": "https://github.com/frmoretto/stream-coding",
+      "skills_count": 1,
+      "stars": 60,
+      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
+    },
+    "getsentry": {
+      "name": "Sentry",
+      "repo": "https://github.com/getsentry/skills",
+      "skills_count": 28,
+      "stars": 1027,
+      "description": "Agent Skills used by the Sentry team for development."
+    },
+    "tinybird": {
+      "name": "Tinybird",
+      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
+      "skills_count": 4,
+      "stars": 20,
+      "description": null
+    },
+    "aws-skills": {
+      "name": "AWS Skills",
+      "repo": "https://github.com/zxkane/aws-skills",
+      "skills_count": 6,
+      "stars": 309,
+      "description": "Claude Code plugins and agent skills for AWS development \u2014 IaC(CDK/SST), serverless, cost ops, and Bedrock AgentCore"
+    },
+    "tapestry": {
+      "name": "Tapestry Skills",
+      "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
+      "skills_count": 7,
+      "stars": 276,
+      "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
+    },
+    "emblemcompany": {
+      "name": "EmblemAI",
+      "repo": "https://github.com/EmblemCompany/Agent-skills",
+      "skills_count": 9,
+      "stars": 10,
+      "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
+    },
+    "neondatabase": {
+      "name": "Neon Database",
+      "repo": "https://github.com/neondatabase/agent-skills",
+      "skills_count": 8,
+      "stars": 99,
+      "description": "Agent Skills for Neon Severless Postgres"
+    },
+    "sematext": {
+      "name": "Sematext",
+      "repo": "https://github.com/sematext/sematext-otel-onboarding",
+      "skills_count": 1,
+      "stars": 0,
+      "description": "OpenTelemetry onboarding for Sematext Cloud \u2014 reference examples shipping traces, metrics, and logs across multiple languages, an end-to-end multi-service tracing demo, and an open-source AI skill that walks engineers through the setup."
+    },
+    "claude-marketplace-visual": {
+      "name": "Claude Marketplace (Visual)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 5,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "obra-superpowers": {
+      "name": "Obra Superpowers",
+      "repo": "https://github.com/obra/superpowers",
+      "skills_count": 15,
+      "stars": 297069,
+      "description": "An agentic skills framework & software development methodology that works."
+    },
+    "nginity": {
+      "name": "nginity Enterprise",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "skills_count": 388,
+      "stars": 25079,
+      "description": "380 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
+    },
+    "obsidian-plugin": {
+      "name": "Obsidian Plugin Development",
+      "repo": "https://github.com/gapmiss/obsidian-plugin-skill",
+      "skills_count": 0,
+      "stars": 187,
+      "description": "Agent SKILL for Obsidian.md plugin development"
+    },
+    "playwright-skill": {
+      "name": "Playwright Automation",
+      "repo": "https://github.com/lackeyjb/playwright-skill",
+      "skills_count": 1,
+      "stars": 3030,
+      "description": "General-purpose Playwright automation for coding agents"
+    },
+    "anthropics": {
+      "name": "Anthropic",
+      "repo": "https://github.com/anthropics/skills",
+      "skills_count": 19,
+      "stars": 180256,
+      "description": "Public repository for Agent Skills"
+    },
+    "google-labs-stitch": {
+      "name": "Google Labs Stitch",
+      "repo": "https://github.com/google-labs-code/stitch-skills",
+      "skills_count": 0,
+      "stars": 8090,
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
+    },
+    "expo": {
+      "name": "Expo",
+      "repo": "https://github.com/expo/skills",
+      "skills_count": 25,
+      "stars": 2659,
+      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
+    },
+    "notebooklm-skill": {
+      "name": "NotebookLM Integration",
+      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
+      "skills_count": 1,
+      "stars": 7771,
+      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
+    },
+    "remotion": {
+      "name": "Remotion",
+      "repo": "https://github.com/remotion-dev/skills",
+      "skills_count": 12,
+      "stars": 4873,
+      "description": "Agent Skills"
+    },
+    "move-quality-skill": {
+      "name": "Move Code Quality",
+      "repo": "https://github.com/1NickPappas/move-code-quality-skill",
+      "skills_count": 1,
+      "stars": 16,
+      "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
+    },
+    "bilig": {
+      "name": "Bilig WorkPaper",
+      "repo": "https://github.com/proompteng/bilig",
+      "skills_count": 0,
+      "stars": 35,
+      "description": "Formula workbooks for Node services: edit inputs, recalculate formulas, read outputs, persist WorkPaper JSON, and expose MCP tools."
+    },
+    "huggingface": {
+      "name": "HuggingFace",
+      "repo": "https://github.com/huggingface/skills",
+      "skills_count": 25,
+      "stars": 11151,
+      "description": "Give your agents the power of the Hugging Face ecosystem"
+    },
+    "aiqualitylab": {
+      "name": "AI Quality Lab",
+      "repo": "https://github.com/aiqualitylab/agent-skills",
+      "skills_count": 2,
+      "stars": 1,
+      "description": "AI-powered testing skills for automation frameworks"
+    },
+    "openai": {
+      "name": "OpenAI",
+      "repo": "https://github.com/openai/skills",
+      "skills_count": 44,
+      "stars": 22795,
+      "description": "Skills Catalog for Codex"
+    },
+    "trailofbits": {
+      "name": "Trail of Bits Security",
+      "repo": "https://github.com/trailofbits/skills",
+      "skills_count": 85,
+      "stars": 7458,
+      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows"
+    },
+    "supabase": {
+      "name": "Supabase",
+      "repo": "https://github.com/supabase/agent-skills",
+      "skills_count": 2,
+      "stars": 2686,
+      "description": "Agent Skills to help developers using AI agents with Supabase"
+    },
+    "claude-marketplace-code": {
+      "name": "Claude Marketplace (Code Ops)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 4,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
+    },
+    "github": {
+      "name": "GitHub",
+      "repo": "https://github.com/github/awesome-copilot",
+      "skills_count": 442,
+      "stars": 39847,
+      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot."
+    },
+    "claude-marketplace-productivity": {
+      "name": "Claude Marketplace (Productivity)",
+      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
+      "skills_count": 4,
+      "stars": 656,
+      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
     },
     "brainiall": {
       "name": "BRAINIALL",
@@ -67,138 +284,12 @@
       "stars": 56,
       "description": "AGENTS.MD & SKILLS for vibe coding efficiently for the visionOS platform"
     },
-    "epub-skill": {
-      "name": "EPUB Converter",
-      "repo": "https://github.com/smerchek/claude-epub-skill",
-      "skills_count": 1,
-      "stars": 83,
-      "description": "A Claude Skill for converting markdown documents, chat summaries, or research reports into a downloadable epub file that can be sent to kindle"
-    },
-    "playwright-skill": {
-      "name": "Playwright Automation",
-      "repo": "https://github.com/lackeyjb/playwright-skill",
-      "skills_count": 1,
-      "stars": 3030,
-      "description": "General-purpose Playwright automation for coding agents"
-    },
-    "d3js-skill": {
-      "name": "D3.js Visualization",
-      "repo": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
-      "skills_count": 1,
-      "stars": 125,
-      "description": "A Claude skill for d3.js."
-    },
-    "tinybird": {
-      "name": "Tinybird",
-      "repo": "https://github.com/tinybirdco/tinybird-agent-skills",
-      "skills_count": 4,
-      "stars": 20,
-      "description": null
-    },
-    "sematext": {
-      "name": "Sematext",
-      "repo": "https://github.com/sematext/sematext-otel-onboarding",
-      "skills_count": 1,
-      "stars": 0,
-      "description": "OpenTelemetry onboarding for Sematext Cloud \u2014 reference examples shipping traces, metrics, and logs across multiple languages, an end-to-end multi-service tracing demo, and an open-source AI skill that walks engineers through the setup."
-    },
-    "emblemcompany": {
-      "name": "EmblemAI",
-      "repo": "https://github.com/EmblemCompany/Agent-skills",
-      "skills_count": 9,
-      "stars": 10,
-      "description": "Official skill collection for EmblemAI agents \u2014 200+ crypto tools across 7 blockchains"
-    },
-    "accint": {
-      "name": "AccInt",
-      "repo": "https://github.com/maxbaluev/accreted-intelligence",
-      "skills_count": 3,
-      "stars": 4,
-      "description": "AccInt - local-first MCP Work Model for coding agents that learns from real outcomes."
-    },
-    "remotion": {
-      "name": "Remotion",
-      "repo": "https://github.com/remotion-dev/skills",
-      "skills_count": 12,
-      "stars": 4873,
-      "description": "Agent Skills"
-    },
-    "csv-summarizer-skill": {
-      "name": "CSV Data Summarizer",
-      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
-      "skills_count": 1,
-      "stars": 276,
-      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
-    },
-    "github": {
-      "name": "GitHub",
-      "repo": "https://github.com/github/awesome-copilot",
-      "skills_count": 442,
-      "stars": 39847,
-      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot."
-    },
-    "pypict-skill": {
-      "name": "PICT Test Cases",
-      "repo": "https://github.com/omkamal/pypict-claude-skill",
-      "skills_count": 1,
-      "stars": 57,
-      "description": "A claude skill that generate test cases using N-wise test cases using the pypict library"
-    },
-    "supabase": {
-      "name": "Supabase",
-      "repo": "https://github.com/supabase/agent-skills",
-      "skills_count": 2,
-      "stars": 2686,
-      "description": "Agent Skills to help developers using AI agents with Supabase"
-    },
-    "obsidian-plugin": {
-      "name": "Obsidian Plugin Development",
-      "repo": "https://github.com/gapmiss/obsidian-plugin-skill",
-      "skills_count": 0,
-      "stars": 187,
-      "description": "Agent SKILL for Obsidian.md plugin development"
-    },
-    "claude-marketplace-code": {
-      "name": "Claude Marketplace (Code Ops)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 4,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "claude-marketplace-visual": {
-      "name": "Claude Marketplace (Visual)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
     "fal-ai": {
       "name": "fal.ai",
       "repo": "https://github.com/fal-ai-community/skills",
       "skills_count": 16,
       "stars": 186,
       "description": null
-    },
-    "aws-skills": {
-      "name": "AWS Skills",
-      "repo": "https://github.com/zxkane/aws-skills",
-      "skills_count": 6,
-      "stars": 309,
-      "description": "Claude Code plugins and agent skills for AWS development \u2014 IaC(CDK/SST), serverless, cost ops, and Bedrock AgentCore"
-    },
-    "notebooklm-skill": {
-      "name": "NotebookLM Integration",
-      "repo": "https://github.com/PleasePrompto/notebooklm-skill",
-      "skills_count": 1,
-      "stars": 7771,
-      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base."
-    },
-    "vercel": {
-      "name": "Vercel",
-      "repo": "https://github.com/vercel-labs/agent-skills",
-      "skills_count": 9,
-      "stars": 30586,
-      "description": "Vercel's official collection of agent skills"
     },
     "skillcreatorai": {
       "name": "SkillCreator.ai",
@@ -207,103 +298,19 @@
       "stars": 1144,
       "description": "Universal skill installer and package manager for AI coding agents. One command, 12+ runtimes. npx ai-agent-skills"
     },
-    "getsentry": {
-      "name": "Sentry",
-      "repo": "https://github.com/getsentry/skills",
-      "skills_count": 28,
-      "stars": 1027,
-      "description": "Agent Skills used by the Sentry team for development."
-    },
-    "aiqualitylab": {
-      "name": "AI Quality Lab",
-      "repo": "https://github.com/aiqualitylab/agent-skills",
-      "skills_count": 2,
-      "stars": 1,
-      "description": "AI-powered testing skills for automation frameworks"
-    },
-    "expo": {
-      "name": "Expo",
-      "repo": "https://github.com/expo/skills",
-      "skills_count": 25,
-      "stars": 2659,
-      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services"
-    },
-    "bilig": {
-      "name": "Bilig WorkPaper",
-      "repo": "https://github.com/proompteng/bilig",
-      "skills_count": 0,
-      "stars": 35,
-      "description": "Formula workbooks for Node services: edit inputs, recalculate formulas, read outputs, persist WorkPaper JSON, and expose MCP tools."
-    },
-    "ffuf-skill": {
-      "name": "FFUF Web Fuzzing",
-      "repo": "https://github.com/jthack/ffuf_claude_skill",
+    "ios-simulator-skill": {
+      "name": "iOS Simulator",
+      "repo": "https://github.com/conorluddy/ios-simulator-skill",
       "skills_count": 1,
-      "stars": 121,
-      "description": "This is a \"skill\" for claude to use FFUF."
+      "stars": 1266,
+      "description": "An IOS Simulator Skill for Agents. Use it to optimise their ability to build, run and interact with your apps, and to proxy xcodebuild to save token and context wastage."
     },
-    "claude-marketplace-engineering": {
-      "name": "Claude Marketplace (Engineering)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 5,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "claude-marketplace-productivity": {
-      "name": "Claude Marketplace (Productivity)",
-      "repo": "https://github.com/mhattingpete/claude-skills-marketplace",
-      "skills_count": 4,
-      "stars": 656,
-      "description": "Claude Code Skills for software engineering workflows - Git automation, testing, and code review"
-    },
-    "huggingface": {
-      "name": "HuggingFace",
-      "repo": "https://github.com/huggingface/skills",
-      "skills_count": 25,
-      "stars": 11151,
-      "description": "Give your agents the power of the Hugging Face ecosystem"
-    },
-    "openai": {
-      "name": "OpenAI",
-      "repo": "https://github.com/openai/skills",
-      "skills_count": 44,
-      "stars": 22795,
-      "description": "Skills Catalog for Codex"
-    },
-    "nginity": {
-      "name": "nginity Enterprise",
-      "repo": "https://github.com/alirezarezvani/claude-skills",
-      "skills_count": 388,
-      "stars": 25079,
-      "description": "380 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents \u2014 engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills."
-    },
-    "google-labs-stitch": {
-      "name": "Google Labs Stitch",
-      "repo": "https://github.com/google-labs-code/stitch-skills",
-      "skills_count": 0,
-      "stars": 8090,
-      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
-    },
-    "move-quality-skill": {
-      "name": "Move Code Quality",
-      "repo": "https://github.com/1NickPappas/move-code-quality-skill",
+    "csv-summarizer-skill": {
+      "name": "CSV Data Summarizer",
+      "repo": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
       "skills_count": 1,
-      "stars": 16,
-      "description": "Claude Code skill for analyzing Move packages against the official Move Book Code Quality Checklist"
-    },
-    "neondatabase": {
-      "name": "Neon Database",
-      "repo": "https://github.com/neondatabase/agent-skills",
-      "skills_count": 8,
-      "stars": 99,
-      "description": "Agent Skills for Neon Severless Postgres"
-    },
-    "family-history-skill": {
-      "name": "Family History Research",
-      "repo": "https://github.com/emaynard/claude-family-history-research-skill",
-      "skills_count": 1,
-      "stars": 44,
-      "description": "A Claude Skill to assist with family history and genealogy research planning."
+      "stars": 276,
+      "description": "A Claude Skill that automatically analyzes uploaded CSV files \u2014 generating summary statistics, detecting missing data, and creating quick visualizations using Python and pandas."
     },
     "ipsw-skill": {
       "name": "IPSW iOS Firmware",
@@ -312,44 +319,1001 @@
       "stars": 89,
       "description": "A SKILL.md for ipsw"
     },
-    "tapestry": {
-      "name": "Tapestry Skills",
-      "repo": "https://github.com/michalparkola/tapestry-skills-for-claude-code",
-      "skills_count": 7,
-      "stars": 276,
-      "description": "Claude Code skills to download sources (articles, PDFs, YouTube video transcripts)"
-    },
-    "better-auth": {
-      "name": "Better Auth",
-      "repo": "https://github.com/better-auth/skills",
-      "skills_count": 5,
-      "stars": 210,
-      "description": null
-    },
-    "stream-coding": {
-      "name": "Stream Coding Methodology",
-      "repo": "https://github.com/frmoretto/stream-coding",
+    "ffuf-skill": {
+      "name": "FFUF Web Fuzzing",
+      "repo": "https://github.com/jthack/ffuf_claude_skill",
       "skills_count": 1,
-      "stars": 60,
-      "description": "Stop \"vibe coding\" and start Stream Coding, the 10-20x velocity methodology for AI-accelerated development. Includes the official SKILL.md for Claude/Cursor/Windsurf and the complete Manifesto."
+      "stars": 121,
+      "description": "This is a \"skill\" for claude to use FFUF."
+    },
+    "vercel": {
+      "name": "Vercel",
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "skills_count": 9,
+      "stars": 30586,
+      "description": "Vercel's official collection of agent skills"
     }
   },
   "categories": [
     "cloud",
-    "creative",
     "data",
     "development",
-    "devops",
     "documents",
     "enterprise",
     "integrations",
     "ml-ai",
-    "other",
-    "security",
-    "testing",
     "web"
   ],
   "skills": [
+    {
+      "id": "cloudflare/agents-sdk",
+      "name": "agents-sdk",
+      "description": "Build, debug, or review Cloudflare Agents SDK applications using the agents package.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/agents-sdk",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/agents-sdk/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "agents",
+        "sdk"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/basin",
+      "name": "basin",
+      "description": "Build and troubleshoot Cloudflare Basin analytics workflows with Basin Pipelines, Basin Catalog, and Basin SQL. Use for streaming data into R2 Iceberg tables, managing catalogs, or querying those tables; also use for requests using the former Data Platform, Pipelines, R2 Data Catalog, or R2 SQL names.",
+      "provider": "cloudflare",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/basin",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/basin/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "basin"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/cloudflare",
+      "name": "cloudflare",
+      "description": "Discover and choose Cloudflare products for apps, APIs, AI agents, storage, networking, and security. Use for architecture and product selection, including when the user describes a need without naming a Cloudflare product; then find the relevant skill or documentation.",
+      "provider": "cloudflare",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-10T19:50:40Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/cloudflare",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/cloudflare/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "document",
+        "cloudflare"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/cloudflare-email-service",
+      "name": "cloudflare-email-service",
+      "description": "Implement or troubleshoot Cloudflare Email Sending and Email Routing integrations and their delivery configuration.",
+      "provider": "cloudflare",
+      "category": "enterprise",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/cloudflare-email-service",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/cloudflare-email-service/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "email",
+        "cloudflare",
+        "service"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/cloudflare-one",
+      "name": "cloudflare-one",
+      "description": "Design, configure, troubleshoot, or review Cloudflare One Zero Trust and SASE deployments. Use cloudflare-one-migrations for migration planning from other vendors.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-08T18:31:22Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/cloudflare-one",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/cloudflare-one/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "design",
+        "cloudflare",
+        "one"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/cloudflare-one-migrations",
+      "name": "cloudflare-one-migrations",
+      "description": "Assess and plan migrations from existing VPN, SWG, or SASE platforms to Cloudflare One, including policy mapping, parity gaps, and rollout.",
+      "provider": "cloudflare",
+      "category": "cloud",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-08T18:30:20Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/cloudflare-one-migrations",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/cloudflare-one-migrations/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "cloudflare",
+        "one",
+        "migrations"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/durable-objects",
+      "name": "durable-objects",
+      "description": "Build, debug, or review Cloudflare Durable Objects code for persistent state and coordination.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/durable-objects",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/durable-objects/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "durable",
+        "objects"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/k2",
+      "name": "k2",
+      "description": "Build and troubleshoot Cloudflare K2 or K2 Streams durable logs. Use for stream setup, producing from Workers or HTTP, configuring retention and inputs, and consuming through subscriptions.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/k2",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/k2/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/nextjs-on-cloudflare",
+      "name": "nextjs-on-cloudflare",
+      "description": "Build, migrate, and deploy Next.js apps on Cloudflare Workers with vinext. Use when starting a Next.js project on Cloudflare, moving an existing app to Workers, choosing between vinext and OpenNext, or setting up vinext for Workers. For setup, migration, or deployment, install vinext's upstream skills with `npx skills add cloudflare/vinext` if missing, then read and follow the applicable skill and docs.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/nextjs-on-cloudflare",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/nextjs-on-cloudflare/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "art",
+        "nextjs",
+        "cloudflare"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/sandbox-migrate-to-next",
+      "name": "sandbox-migrate-to-next",
+      "description": "Migrate Cloudflare Sandbox apps from stable @cloudflare/sandbox to @cloudflare/sandbox@next (SDK 1.0 preview). Use sandbox-next for apps already on the preview.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/sandbox-migrate-to-next",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/sandbox-migrate-to-next/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "sandbox",
+        "migrate",
+        "next"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/sandbox-next",
+      "name": "sandbox-next",
+      "description": "Build or maintain Cloudflare Sandbox apps on @cloudflare/sandbox@next (SDK 1.0 preview). Use sandbox-migrate-to-next when porting a stable app.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/sandbox-next",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/sandbox-next/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "sandbox",
+        "next"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/sandbox-stable",
+      "name": "sandbox-stable",
+      "description": "Build or maintain Cloudflare Sandbox apps on the stable @cloudflare/sandbox package. Use sandbox-next for preview apps and sandbox-migrate-to-next for stable-to-preview migrations.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/sandbox-stable",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/sandbox-stable/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "sandbox",
+        "stable"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/turnstile-spin",
+      "name": "turnstile-spin",
+      "description": "Set up, repair, or migrate to Cloudflare Turnstile bot verification in an existing frontend and backend, including server-side Siteverify.",
+      "provider": "cloudflare",
+      "category": "cloud",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/turnstile-spin",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/turnstile-spin/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "turnstile",
+        "spin"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 90,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/web-perf",
+      "name": "web-perf",
+      "description": "Audit, diagnose, or optimize website loading and interaction performance, Core Web Vitals, and Lighthouse performance scores.",
+      "provider": "cloudflare",
+      "category": "web",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-05T18:53:36Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/web-perf",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/web-perf/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "web",
+        "perf"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 35,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/workers-best-practices",
+      "name": "workers-best-practices",
+      "description": "Cloudflare Workers best practices for production applications. Use when writing, reviewing, or configuring Workers.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/workers-best-practices",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/workers-best-practices/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "workers",
+        "best",
+        "practices"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/workers-profiling",
+      "name": "workers-profiling",
+      "description": "Profile or debug CPU usage and memory allocation in deployed Cloudflare Workers and Durable Objects. Then use this information to optimize your code.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-10T19:49:45Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/workers-profiling",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/workers-profiling/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "workers",
+        "profiling"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "cloudflare/wrangler",
+      "name": "wrangler",
+      "description": "Run or troubleshoot Wrangler CLI commands and configure Worker projects for local development, Previews, deployment, and Cloudflare resource management.",
+      "provider": "cloudflare",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-01T14:24:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/cloudflare/skills",
+        "path": "skills/wrangler",
+        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/wrangler/SKILL.md",
+        "commit_sha": "c430dd965cea3a8faf0ef035e3b3d73b38518081"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "cli",
+        "wrangler"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 3034
+    },
+    {
+      "id": "stripe/connect-recommend",
+      "name": "connect-recommend",
+      "description": "Use this skill when the user asks about Stripe Connect configuration, charge patterns, Dashboard access, or how to get started with Connect, is building a marketplace, platform, multi-vendor store, gig platform, or subscription platform, needs to pay out sellers, vendors, or providers, mentions split payments, revenue sharing, multi-party payments, or similar payment distribution concepts, provides a company URL or business description for a recommendation, builds SaaS that routes money between parties (for example, POS, booking, invoicing \u2014 not operational SaaS without payment routing), asks about onboarding or KYC for merchants, sellers, and vendors, mentions connected account Dashboard or responsibility configurations, or asks about payment flows, white-label payments, or embedded payments.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-10T00:53:56Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/connect-recommend",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-recommend/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "art",
+        "connect",
+        "recommend"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 1,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/connect-required-verification-information",
+      "name": "connect-required-verification-information",
+      "description": "Use this skill when the user asks what information a Stripe Connect connected account must provide for verification, onboarding, KYC, or account requirements; when they need to compare requirements between connected-account setups; or when they ask which verification fields, documents, or business details are required for a particular platform country, account country, business type, dashboard, service agreement, or capability.",
+      "provider": "stripe",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-10T00:53:56Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/connect-required-verification-information",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-required-verification-information/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "art",
+        "document",
+        "connect",
+        "required",
+        "verification",
+        "information"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 1,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/metronome",
+      "name": "metronome",
+      "description": "Guides Metronome usage-based billing integration decisions \u2014 event ingestion (single and batch, idempotency, billable metrics), contract design (rate cards, overrides, dimensional pricing, products), invoicing lifecycle (grace periods, finalization, Stripe sync), credit and commit management (prepaid, postpaid, thresholds, auto-recharge), and Stripe integration (arrears invoicing, tax providers, line item limits). Use when building, modifying, or reviewing any Metronome integration \u2014 including ingesting usage events, creating customers, contracts, or rate cards, designing billable metric group keys, managing credits and commits, configuring invoicing, syncing invoices with Stripe Billing, billing AI applications for token usage, setting up self-serve (PLG) pricing, reviewing customer health, commit burn, portfolios, or renewals, or migrating from Stripe Billing Meters to Metronome.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-30T00:54:50Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/metronome",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/metronome/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "design",
+        "metronome"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 11,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/stripe-apps",
+      "name": "stripe-apps",
+      "description": "Build, modify, or review Stripe Apps and extensions using the relevant documentation and reference guides. Use for custom Stripe Dashboard UI, stripe-app.yaml, @stripe/ui-extension-sdk, @stripe/extensibility-sdk, script extensions, extension interfaces, custom workflow actions, and apps that authenticate to Stripe or react to events. Also use when deciding whether a Stripe extension can support the user's billing or workflow requirements.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-10T00:53:56Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-apps",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-apps/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "yaml",
+        "ci",
+        "document",
+        "stripe",
+        "apps"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 1,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/stripe-best-practices",
+      "name": "stripe-best-practices",
+      "description": "Guides Stripe integration decisions across development and test environment planning (separate sandboxes vs the shared test mode sandbox), API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, tax and registrations (Stripe Tax, automatic_tax, product tax codes), Treasury financial accounts, integration options (Checkout, Payment Element), migrating from deprecated Stripe APIs, and security best practices (API key management, API key permissions, webhooks, OAuth). Use when planning, building, modifying, testing, or reviewing any Stripe integration, including choosing a development environment, accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, collecting sales tax, VAT, or GST, creating connected accounts, or implementing secure key handling.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-10T00:53:56Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-best-practices",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "test",
+        "api",
+        "stripe",
+        "best",
+        "practices"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 1,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/stripe-directory",
+      "name": "stripe-directory",
+      "description": "Identifies external providers, merchants, nonprofits, platforms, APIs, and software services, and resolves the documented way to engage them \u2014 to pay, donate, subscribe, book, provision, or integrate with them. MUST be used BEFORE web search, model memory, or any other directory/vendor-lookup skill for ANY request that requires selecting, finding, or engaging an external provider or organization \u2014 whether a specific one is named (\"pay my Twilio bill\"), implied (\"donate to the Red Cross\"), or only a category is stated (\"set up a mailing client\", \"I need a database\", \"find me a CRM\"). Directory supplies verified recipients and their documented payment or engagement path. Results are ranked by agent-readiness (how reliably an agent can complete the interaction), relevance and popularity. Do not treat this as a search-only tool. Examples: \"setup a database\", \"find hosting\", \"pay X\", \"use Twilio\", \"donate $50 to the Red Cross\", \"book a table at Y\", \"subscribe to a CRM\".",
+      "provider": "stripe",
+      "category": "data",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-08-29T00:43:53Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-directory",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-directory/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "api",
+        "cli",
+        "document",
+        "stripe",
+        "directory"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 43,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/stripe-docs",
+      "name": "stripe-docs",
+      "description": "Use when the user or agent needs to read, search, or look up Stripe documentation or API reference. Prefer this over curl or WebFetch for any docs.stripe.com content. Use to fetch gated documentation.",
+      "provider": "stripe",
+      "category": "documents",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-09-09T00:49:21Z",
+      "metadata": {
+        "short-description": "Read and search Stripe documentation from the terminal"
+      },
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-docs",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-docs/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "document",
+        "stripe",
+        "docs"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 32,
+      "maintenance_status": "maintained",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/stripe-pay",
+      "name": "stripe-pay",
+      "description": "Helps users send funds to another Stripe business, transfer money to a Stripe Profile handle or network ID, or ask whether an agent can pay a Stripe business. Use Stripe Directory to find or verify a recipient when the user doesn't provide an exact Stripe Profile handle or network ID.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-02T00:51:57Z",
+      "metadata": {
+        "short-description": "Send funds to Stripe businesses"
+      },
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-pay",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-pay/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "ci",
+        "stripe",
+        "pay"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 9,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/stripe-projects",
+      "name": "stripe-projects",
+      "description": "Use when the user wants to provision infrastructure or third-party services using Stripe Projects. Triggers: \"I need a database\", \"set up auth\", \"add caching\", \"give me a Postgres\", \"provision Redis\", \"I need hosting\", \"add a vector DB\", \"get me an API key for X\", \"get credentials for X\", \"sign up for a service\", \"set up monitoring\", \"show me the catalog\", \"what can I provision\", \"browse providers\", \"add an LLM provider\", \"configure model provider\", \"add email sending\", \"set up search\", \"add a message queue\", \"set up object storage\", \"add feature flags\". Also trigger when the user asks how to get an API key or credentials for any third-party service \u2014 don't tell them to sign up manually; check the Projects catalog first. Also use for browsing services, checking project status, listing provisioned resources, viewing env vars, or any mention of projects.dev or adding/provisioning/connecting a cloud service.\n",
+      "provider": "stripe",
+      "category": "ml-ai",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-09T00:55:46Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-projects",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "pr",
+        "api",
+        "art",
+        "email",
+        "stripe",
+        "projects"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 2,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
+    {
+      "id": "stripe/upgrade-stripe",
+      "name": "upgrade-stripe",
+      "description": "Guide for upgrading Stripe API versions, webhook endpoints, server-side SDKs, Stripe.js, and mobile SDKs",
+      "provider": "stripe",
+      "category": "integrations",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-11T00:59:15Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/upgrade-stripe",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
+        "commit_sha": "735b42d3952b59fa3d9c42b11e884d988c102c7c"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "upgrade",
+        "stripe"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 70,
+      "skill_type": "full",
+      "requires_mcp": false,
+      "github_stars": 1867
+    },
     {
       "id": "anthropics/academy-guide",
       "name": "academy-guide",
@@ -1056,563 +2020,6 @@
       "github_stars": 180256
     },
     {
-      "id": "cloudflare/agents-sdk",
-      "name": "agents-sdk",
-      "description": "Build, debug, or review Cloudflare Agents SDK applications using the agents package.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/agents-sdk",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/agents-sdk/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "agents",
-        "sdk"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/basin",
-      "name": "basin",
-      "description": "Build and troubleshoot Cloudflare Basin analytics workflows with Basin Pipelines, Basin Catalog, and Basin SQL. Use for streaming data into R2 Iceberg tables, managing catalogs, or querying those tables; also use for requests using the former Data Platform, Pipelines, R2 Data Catalog, or R2 SQL names.",
-      "provider": "cloudflare",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/basin",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/basin/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "basin"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/cloudflare",
-      "name": "cloudflare",
-      "description": "Discover and choose Cloudflare products for apps, APIs, AI agents, storage, networking, and security. Use for architecture and product selection, including when the user describes a need without naming a Cloudflare product; then find the relevant skill or documentation.",
-      "provider": "cloudflare",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-09T20:06:02Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/cloudflare",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/cloudflare/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "document",
-        "cloudflare"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/cloudflare-email-service",
-      "name": "cloudflare-email-service",
-      "description": "Implement or troubleshoot Cloudflare Email Sending and Email Routing integrations and their delivery configuration.",
-      "provider": "cloudflare",
-      "category": "enterprise",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/cloudflare-email-service",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/cloudflare-email-service/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "email",
-        "cloudflare",
-        "service"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/cloudflare-one",
-      "name": "cloudflare-one",
-      "description": "Design, configure, troubleshoot, or review Cloudflare One Zero Trust and SASE deployments. Use cloudflare-one-migrations for migration planning from other vendors.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-08T18:31:22Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/cloudflare-one",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/cloudflare-one/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "design",
-        "cloudflare",
-        "one"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/cloudflare-one-migrations",
-      "name": "cloudflare-one-migrations",
-      "description": "Assess and plan migrations from existing VPN, SWG, or SASE platforms to Cloudflare One, including policy mapping, parity gaps, and rollout.",
-      "provider": "cloudflare",
-      "category": "cloud",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-08T18:30:20Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/cloudflare-one-migrations",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/cloudflare-one-migrations/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "cloudflare",
-        "one",
-        "migrations"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/durable-objects",
-      "name": "durable-objects",
-      "description": "Build, debug, or review Cloudflare Durable Objects code for persistent state and coordination.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/durable-objects",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/durable-objects/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "durable",
-        "objects"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/k2",
-      "name": "k2",
-      "description": "Build and troubleshoot Cloudflare K2 or K2 Streams durable logs. Use for stream setup, producing from Workers or HTTP, configuring retention and inputs, and consuming through subscriptions.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/k2",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/k2/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/nextjs-on-cloudflare",
-      "name": "nextjs-on-cloudflare",
-      "description": "Build, migrate, and deploy Next.js apps on Cloudflare Workers with vinext. Use when starting a Next.js project on Cloudflare, moving an existing app to Workers, choosing between vinext and OpenNext, or setting up vinext for Workers. For setup, migration, or deployment, install vinext's upstream skills with `npx skills add cloudflare/vinext` if missing, then read and follow the applicable skill and docs.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/nextjs-on-cloudflare",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/nextjs-on-cloudflare/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "art",
-        "nextjs",
-        "cloudflare"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/sandbox-migrate-to-next",
-      "name": "sandbox-migrate-to-next",
-      "description": "Migrate Cloudflare Sandbox apps from stable @cloudflare/sandbox to @cloudflare/sandbox@next (SDK 1.0 preview). Use sandbox-next for apps already on the preview.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/sandbox-migrate-to-next",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/sandbox-migrate-to-next/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "sandbox",
-        "migrate",
-        "next"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/sandbox-next",
-      "name": "sandbox-next",
-      "description": "Build or maintain Cloudflare Sandbox apps on @cloudflare/sandbox@next (SDK 1.0 preview). Use sandbox-migrate-to-next when porting a stable app.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/sandbox-next",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/sandbox-next/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "sandbox",
-        "next"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/sandbox-stable",
-      "name": "sandbox-stable",
-      "description": "Build or maintain Cloudflare Sandbox apps on the stable @cloudflare/sandbox package. Use sandbox-next for preview apps and sandbox-migrate-to-next for stable-to-preview migrations.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/sandbox-stable",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/sandbox-stable/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "sandbox",
-        "stable"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/turnstile-spin",
-      "name": "turnstile-spin",
-      "description": "Set up, repair, or migrate to Cloudflare Turnstile bot verification in an existing frontend and backend, including server-side Siteverify.",
-      "provider": "cloudflare",
-      "category": "cloud",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/turnstile-spin",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/turnstile-spin/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "turnstile",
-        "spin"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 90,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/web-perf",
-      "name": "web-perf",
-      "description": "Audit, diagnose, or optimize website loading and interaction performance, Core Web Vitals, and Lighthouse performance scores.",
-      "provider": "cloudflare",
-      "category": "web",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-05T18:53:36Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/web-perf",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/web-perf/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "web",
-        "perf"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 34,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/workers-best-practices",
-      "name": "workers-best-practices",
-      "description": "Cloudflare Workers best practices for production applications. Use when writing, reviewing, or configuring Workers.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/workers-best-practices",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/workers-best-practices/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "workers",
-        "best",
-        "practices"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
-      "id": "cloudflare/wrangler",
-      "name": "wrangler",
-      "description": "Run or troubleshoot Wrangler CLI commands and configure Worker projects for local development, Previews, deployment, and Cloudflare resource management.",
-      "provider": "cloudflare",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-01T14:24:15Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/cloudflare/skills",
-        "path": "skills/wrangler",
-        "skill_md_url": "https://raw.githubusercontent.com/cloudflare/skills/main/skills/wrangler/SKILL.md",
-        "commit_sha": "0871daceb347e3c51693fbe9c77555468df7e410"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "cli",
-        "wrangler"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 3023
-    },
-    {
       "id": "obra-superpowers/brainstorming",
       "name": "brainstorming",
       "description": "You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation).",
@@ -2139,383 +2546,6 @@
       "skill_type": "full",
       "requires_mcp": false,
       "github_stars": 297069
-    },
-    {
-      "id": "stripe/connect-recommend",
-      "name": "connect-recommend",
-      "description": "Use this skill when the user asks about Stripe Connect configuration, charge patterns, Dashboard access, or how to get started with Connect, is building a marketplace, platform, multi-vendor store, gig platform, or subscription platform, needs to pay out sellers, vendors, or providers, mentions split payments, revenue sharing, multi-party payments, or similar payment distribution concepts, provides a company URL or business description for a recommendation, builds SaaS that routes money between parties (for example, POS, booking, invoicing \u2014 not operational SaaS without payment routing), asks about onboarding or KYC for merchants, sellers, and vendors, mentions connected account Dashboard or responsibility configurations, or asks about payment flows, white-label payments, or embedded payments.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-10T00:53:56Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/connect-recommend",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-recommend/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "art",
-        "connect",
-        "recommend"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/connect-required-verification-information",
-      "name": "connect-required-verification-information",
-      "description": "Use this skill when the user asks what information a Stripe Connect connected account must provide for verification, onboarding, KYC, or account requirements; when they need to compare requirements between connected-account setups; or when they ask which verification fields, documents, or business details are required for a particular platform country, account country, business type, dashboard, service agreement, or capability.",
-      "provider": "stripe",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-10T00:53:56Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/connect-required-verification-information",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/connect-required-verification-information/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "art",
-        "document",
-        "connect",
-        "required",
-        "verification",
-        "information"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/metronome",
-      "name": "metronome",
-      "description": "Guides Metronome usage-based billing integration decisions \u2014 event ingestion (single and batch, idempotency, billable metrics), contract design (rate cards, overrides, dimensional pricing, products), invoicing lifecycle (grace periods, finalization, Stripe sync), credit and commit management (prepaid, postpaid, thresholds, auto-recharge), and Stripe integration (arrears invoicing, tax providers, line item limits). Use when building, modifying, or reviewing any Metronome integration \u2014 including ingesting usage events, creating customers, contracts, or rate cards, designing billable metric group keys, managing credits and commits, configuring invoicing, syncing invoices with Stripe Billing, billing AI applications for token usage, setting up self-serve (PLG) pricing, reviewing customer health, commit burn, portfolios, or renewals, or migrating from Stripe Billing Meters to Metronome.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-30T00:54:50Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/metronome",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/metronome/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "design",
-        "metronome"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 10,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/stripe-apps",
-      "name": "stripe-apps",
-      "description": "Build, modify, or review Stripe Apps and extensions using the relevant documentation and reference guides. Use for custom Stripe Dashboard UI, stripe-app.yaml, @stripe/ui-extension-sdk, @stripe/extensibility-sdk, script extensions, extension interfaces, custom workflow actions, and apps that authenticate to Stripe or react to events. Also use when deciding whether a Stripe extension can support the user's billing or workflow requirements.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-10T00:53:56Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-apps",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-apps/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "yaml",
-        "ci",
-        "document",
-        "stripe",
-        "apps"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/stripe-best-practices",
-      "name": "stripe-best-practices",
-      "description": "Guides Stripe integration decisions across development and test environment planning (separate sandboxes vs the shared test mode sandbox), API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, tax and registrations (Stripe Tax, automatic_tax, product tax codes), Treasury financial accounts, integration options (Checkout, Payment Element), migrating from deprecated Stripe APIs, and security best practices (API key management, API key permissions, webhooks, OAuth). Use when planning, building, modifying, testing, or reviewing any Stripe integration, including choosing a development environment, accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, collecting sales tax, VAT, or GST, creating connected accounts, or implementing secure key handling.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-10T00:53:56Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-best-practices",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-best-practices/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "test",
-        "api",
-        "stripe",
-        "best",
-        "practices"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/stripe-directory",
-      "name": "stripe-directory",
-      "description": "Identifies external providers, merchants, nonprofits, platforms, APIs, and software services, and resolves the documented way to engage them \u2014 to pay, donate, subscribe, book, provision, or integrate with them. MUST be used BEFORE web search, model memory, or any other directory/vendor-lookup skill for ANY request that requires selecting, finding, or engaging an external provider or organization \u2014 whether a specific one is named (\"pay my Twilio bill\"), implied (\"donate to the Red Cross\"), or only a category is stated (\"set up a mailing client\", \"I need a database\", \"find me a CRM\"). Directory supplies verified recipients and their documented payment or engagement path. Results are ranked by agent-readiness (how reliably an agent can complete the interaction), relevance and popularity. Do not treat this as a search-only tool. Examples: \"setup a database\", \"find hosting\", \"pay X\", \"use Twilio\", \"donate $50 to the Red Cross\", \"book a table at Y\", \"subscribe to a CRM\".",
-      "provider": "stripe",
-      "category": "data",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-08-29T00:43:53Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-directory",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-directory/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "api",
-        "cli",
-        "document",
-        "stripe",
-        "directory"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 42,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/stripe-docs",
-      "name": "stripe-docs",
-      "description": "Use when the user or agent needs to read, search, or look up Stripe documentation or API reference. Prefer this over curl or WebFetch for any docs.stripe.com content. Use to fetch gated documentation.",
-      "provider": "stripe",
-      "category": "documents",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-09-09T00:49:21Z",
-      "metadata": {
-        "short-description": "Read and search Stripe documentation from the terminal"
-      },
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-docs",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-docs/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "document",
-        "stripe",
-        "docs"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 31,
-      "maintenance_status": "maintained",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/stripe-pay",
-      "name": "stripe-pay",
-      "description": "Helps users send funds to another Stripe business, transfer money to a Stripe Profile handle or network ID, or ask whether an agent can pay a Stripe business. Use Stripe Directory to find or verify a recipient when the user doesn't provide an exact Stripe Profile handle or network ID.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-02T00:51:57Z",
-      "metadata": {
-        "short-description": "Send funds to Stripe businesses"
-      },
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-pay",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-pay/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "ci",
-        "stripe",
-        "pay"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 8,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/stripe-projects",
-      "name": "stripe-projects",
-      "description": "Use when the user wants to provision infrastructure or third-party services using Stripe Projects. Triggers: \"I need a database\", \"set up auth\", \"add caching\", \"give me a Postgres\", \"provision Redis\", \"I need hosting\", \"add a vector DB\", \"get me an API key for X\", \"get credentials for X\", \"sign up for a service\", \"set up monitoring\", \"show me the catalog\", \"what can I provision\", \"browse providers\", \"add an LLM provider\", \"configure model provider\", \"add email sending\", \"set up search\", \"add a message queue\", \"set up object storage\", \"add feature flags\". Also trigger when the user asks how to get an API key or credentials for any third-party service \u2014 don't tell them to sign up manually; check the Projects catalog first. Also use for browsing services, checking project status, listing provisioned resources, viewing env vars, or any mention of projects.dev or adding/provisioning/connecting a cloud service.\n",
-      "provider": "stripe",
-      "category": "ml-ai",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-09T00:55:46Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-projects",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-projects/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "pr",
-        "api",
-        "art",
-        "email",
-        "stripe",
-        "projects"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 1,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
-    },
-    {
-      "id": "stripe/upgrade-stripe",
-      "name": "upgrade-stripe",
-      "description": "Guide for upgrading Stripe API versions, webhook endpoints, server-side SDKs, Stripe.js, and mobile SDKs",
-      "provider": "stripe",
-      "category": "integrations",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-10T00:53:56Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/upgrade-stripe",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md",
-        "commit_sha": "e9deec62821ca59aa6ca18b4d243c9ced389cd54"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "upgrade",
-        "stripe"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 70,
-      "skill_type": "full",
-      "requires_mcp": false,
-      "github_stars": 1865
     },
     {
       "id": "trailofbits/address-sanitizer",
@@ -48559,16 +48589,16 @@
     "probable_duplicates": 0
   },
   "maintenance_summary": {
-    "active": 41,
-    "maintained": 88,
-    "stale": 16,
+    "active": 24,
+    "maintained": 3,
+    "stale": 0,
     "abandoned": 0,
     "unknown": 0,
-    "active_percentage": 28.3,
-    "maintained_percentage": 89.0
+    "active_percentage": 88.9,
+    "maintained_percentage": 100.0
   },
   "skill_type_summary": {
-    "full": 145,
+    "full": 27,
     "integration": 0
   }
 }

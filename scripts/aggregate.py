@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "bulkpublish": {
+        "name": "BulkPublish",
+        "repo": "https://github.com/azeemkafridi/bulkpublish-api",
+        "api_tree_url": "https://api.github.com/repos/azeemkafridi/bulkpublish-api/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/azeemkafridi/bulkpublish-api/main",
+        "skills_path_prefix": "skills/social-media-content-skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

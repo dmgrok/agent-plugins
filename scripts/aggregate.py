@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "sandbase-cli": {
+        "name": "SandBase CLI",
+        "repo": "https://github.com/sandbaseai/cli",
+        "api_tree_url": "https://api.github.com/repos/sandbaseai/cli/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/sandbaseai/cli/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

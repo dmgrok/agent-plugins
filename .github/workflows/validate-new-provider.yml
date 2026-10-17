@@ -1,8 +1,13 @@
 name: Validate and Add New Provider
 
+# Provider submissions arrive as public issues. Validation (which checks out the
+# submitted repository, uses repository secrets and opens a PR) only starts when
+# a maintainer applies the `run-provider-validation` label or dispatches this
+# workflow. Issue-form labels such as `new-source` are applied automatically for
+# any author, so they are not an approval signal. See README "Contributing".
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [opened, labeled]
   workflow_dispatch:
     inputs:
       issue_number:
@@ -10,40 +15,77 @@ on:
         required: true
         type: number
 
-permissions:
-  contents: write
-  issues: write
-  pull-requests: write
+permissions: {}
 
 jobs:
-  validate-provider:
-    # Run when:
-    #   - manually dispatched with an issue_number (workflow_dispatch), OR
-    #   - issue has the 'new-source' label (maintainer-triggered), OR
-    #   - issue body matches the new-provider form template (auto-detect on open/edit), OR
-    #   - legacy code-block format
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      contains(github.event.issue.labels.*.name, 'new-source') ||
-      contains(github.event.issue.body, 'Provider Configuration') ||
-      contains(github.event.issue.body, '### Repository URL')
+  acknowledge:
+    if: >-
+      github.event_name == 'issues' && github.event.action == 'opened' &&
+      (contains(github.event.issue.labels.*.name, 'new-source') ||
+       contains(github.event.issue.body, '### Repository URL'))
     runs-on: ubuntu-latest
-    
+    permissions:
+      issues: write
     steps:
+      - name: Explain the review process
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const author = context.payload.issue.user.login;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: [
+                `Thanks @${author} for submitting a provider! 🙌`,
+                '',
+                'A maintainer will review this submission and then start automated validation',
+                '(gitleaks secrets scan, LGTM skill quality check, prompt-injection check).',
+                'If everything passes, a pull request adding your provider is opened automatically',
+                'and the result is posted here.',
+              ].join('\n'),
+            });
+
+  validate-provider:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'run-provider-validation')
+    runs-on: ubuntu-latest
+    concurrency:
+      group: provider-intake-${{ github.event.issue.number || inputs.issue_number }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Verify maintainer permission
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const login = context.payload.sender.login;
+            const { data } = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              username: login,
+            });
+            if (!['admin', 'maintain', 'write'].includes(data.permission)) {
+              core.setFailed(`@${login} lacks write access; a maintainer must start provider validation.`);
+            }
+
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install Python dependencies
         run: |
           pip install pyyaml requests
-      
+
       - name: Install gitleaks
         run: |
           cd /tmp
@@ -52,165 +94,63 @@ jobs:
           sudo mv gitleaks /usr/local/bin/
           rm -f gitleaks_8.18.1_linux_x64.tar.gz
           gitleaks version
-      
-      - name: Fetch issue body (workflow_dispatch only)
+
+      - name: Fetch issue (workflow_dispatch only)
         if: github.event_name == 'workflow_dispatch'
         uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
         with:
           script: |
-            const issue = await github.rest.issues.get({
+            const issueNumber = Number(process.env.ISSUE_NUMBER);
+            const { data: issue } = await github.rest.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: ${{ inputs.issue_number || 0 }}
+              issue_number: issueNumber,
             });
-            // Inject issue data into env so parse step can access it
-            const body = issue.data.body || '';
-            const labels = issue.data.labels.map(l => l.name);
-            core.exportVariable('DISPATCH_ISSUE_BODY', body);
-            core.exportVariable('DISPATCH_ISSUE_LABELS', JSON.stringify(labels));
-            core.exportVariable('DISPATCH_ISSUE_USER', issue.data.user.login);
-            core.exportVariable('DISPATCH_ISSUE_NUMBER', String(${{ inputs.issue_number || 0 }}));
-            console.log(`Fetched issue #${{ inputs.issue_number }}: ${issue.data.title}`);
+            core.exportVariable('DISPATCH_ISSUE_BODY', issue.body || '');
+            core.exportVariable('DISPATCH_ISSUE_USER', issue.user.login);
+            core.exportVariable('DISPATCH_ISSUE_NUMBER', String(issueNumber));
 
-      - name: Parse issue and extract provider info
+      # All issue fields are validated against strict allowlists and every URL is
+      # regenerated from the validated owner/repo/branch (scripts/provider_intake.py).
+      - name: Parse and validate submission
         id: parse
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+        run: python scripts/provider_intake.py parse
+
+      - name: Comment on issue - Invalid submission
+        if: failure() && steps.parse.outputs.error != ''
         uses: actions/github-script@v7
+        env:
+          PARSE_ERROR: ${{ steps.parse.outputs.error }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
         with:
           script: |
-            // For workflow_dispatch, use the env vars fetched in the previous step
-            const isDispatch = context.eventName === 'workflow_dispatch';
-            const issueBody = isDispatch
-              ? (process.env.DISPATCH_ISSUE_BODY || '')
-              : (context.payload.issue?.body || '');
-            const issueUser = isDispatch
-              ? (process.env.DISPATCH_ISSUE_USER || '')
-              : (context.payload.issue?.user?.login || '');
-            const issueNumber = isDispatch
-              ? (process.env.DISPATCH_ISSUE_NUMBER || '${{ inputs.issue_number }}')
-              : String(context.issue.number);
-
-            const body = issueBody;
-            console.log('Issue body:', body);
-            
-            // Try parsing form template format first
-            const repoUrlMatch = body.match(/### Repository URL\s*\n+\s*(.+?)(?:\n|$)/);
-            const providerNameMatch = body.match(/### Provider Name\s*\n+\s*(.+?)(?:\n|$)/);
-            const providerIdMatch = body.match(/### Provider ID\s*\n+\s*(.+?)(?:\n|$)/);
-            const skillsPathMatch = body.match(/### Skills Location\s*\n+\s*(.+?)(?:\n|$)/);
-            const branchMatch = body.match(/### Default Branch\s*\n+\s*(.+?)(?:\n|$)/);
-            
-            console.log('Matches:', {
-              repoUrl: repoUrlMatch?.[1],
-              providerName: providerNameMatch?.[1],
-              providerId: providerIdMatch?.[1],
-              skillsPath: skillsPathMatch?.[1],
-              branch: branchMatch?.[1]
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number(process.env.ISSUE_NUMBER),
+              body: [
+                '## ❌ Submission could not be validated',
+                '',
+                process.env.PARSE_ERROR,
+                '',
+                'Please edit the issue to fix the fields above. A maintainer will re-run validation.',
+              ].join('\n'),
             });
-            
-            if (repoUrlMatch && providerNameMatch && providerIdMatch && branchMatch) {
-              // Parse form template format
-              const repoUrl = repoUrlMatch[1].trim();
-              const providerName = providerNameMatch[1].trim();
-              const providerId = providerIdMatch[1].trim();
-              const branch = branchMatch[1].trim();
-              
-              // Determine skills path prefix
-              let skillsPathPrefix = 'skills/';
-              if (skillsPathMatch) {
-                const skillsPath = skillsPathMatch[1].trim();
-                if (skillsPath.includes('Root directory')) {
-                  skillsPathPrefix = '';
-                }
-              }
-              
-              // Generate URLs
-              const repoMatch = repoUrl.match(/github\.com\/([^\/]+)\/([^\/\s]+)/);
-              if (!repoMatch) {
-                core.setFailed('Invalid GitHub repository URL');
-                return;
-              }
-              
-              const repoOwner = repoMatch[1];
-              const repoName = repoMatch[2].replace(/\.git$/, '');
-              
-              const apiTreeUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/git/trees/${branch}?recursive=1`;
-              const rawBase = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}`;
-              
-              const config = {
-                [providerId]: {
-                  name: providerName,
-                  repo: repoUrl,
-                  api_tree_url: apiTreeUrl,
-                  raw_base: rawBase,
-                  skills_path_prefix: skillsPathPrefix
-                }
-              };
-              
-              core.setOutput('provider_id', providerId);
-              core.setOutput('provider_name', providerName);
-              core.setOutput('repo_url', repoUrl);
-              core.setOutput('api_tree_url', apiTreeUrl);
-              core.setOutput('raw_base', rawBase);
-              core.setOutput('skills_path_prefix', skillsPathPrefix);
-              core.setOutput('config_json', JSON.stringify(config));
-              core.setOutput('repo_owner', repoOwner);
-              core.setOutput('repo_name', repoName);
-              core.setOutput('issue_number', issueNumber);
-              core.setOutput('issue_user', issueUser);
-              
-              console.log('✅ Parsed form template format:', config);
-              return;
-            }
-            
-            // Fallback: Try parsing code block format (Provider Configuration field)
-            const codeBlockMatch = body.match(/```(?:json|python)?\s*\n([\s\S]*?"repo"[\s\S]*?)\s*\n```/);
-            
-            if (!codeBlockMatch) {
-              core.setFailed('Could not parse issue - missing required fields (Repository URL, Provider Name, Provider ID, Default Branch)');
-              return;
-            }
-            
-            try {
-              // Clean up the config string (wrap in braces if needed, remove trailing commas)
-              let configStr = codeBlockMatch[1].trim();
-              if (!configStr.startsWith('{')) {
-                configStr = '{' + configStr + '}';
-              }
-              configStr = configStr.replace(/,(\s*[}\]])/g, '$1'); // Remove trailing commas
-              
-              const config = JSON.parse(configStr);
-              const providerId = Object.keys(config)[0];
-              const providerData = config[providerId];
-              
-              core.setOutput('provider_id', providerId);
-              core.setOutput('provider_name', providerData.name);
-              core.setOutput('repo_url', providerData.repo);
-              core.setOutput('api_tree_url', providerData.api_tree_url);
-              core.setOutput('raw_base', providerData.raw_base);
-              core.setOutput('skills_path_prefix', providerData.skills_path_prefix || 'skills/');
-              core.setOutput('config_json', JSON.stringify(config));
-              core.setOutput('issue_number', issueNumber);
-              core.setOutput('issue_user', issueUser);
-              
-              // Extract repo owner and name for cloning
-              const repoMatch = providerData.repo.match(/github\.com\/([^\/]+)\/([^\/\s]+)/);
-              if (repoMatch) {
-                core.setOutput('repo_owner', repoMatch[1]);
-                core.setOutput('repo_name', repoMatch[2].replace(/\.git$/, ''));
-              }
-              
-              console.log('✅ Parsed code block format');
-            } catch (error) {
-              core.setFailed(`Failed to parse provider configuration: ${error.message}`);
-            }
-      
+
       - name: Checkout contributor's repository
         if: steps.parse.outputs.repo_owner
         uses: actions/checkout@v4
         with:
           repository: ${{ steps.parse.outputs.repo_owner }}/${{ steps.parse.outputs.repo_name }}
           path: ./contributor-repo
-      
+          persist-credentials: false
+
       - name: Run gitleaks scan on contributor repo
         if: steps.parse.outputs.repo_owner
         id: gitleaks
@@ -223,7 +163,7 @@ jobs:
             echo "gitleaks_passed=false" >> $GITHUB_OUTPUT
             echo "⚠️ Gitleaks detected potential secrets in the repository"
           fi
-      
+
       - name: Validate skills with LGTM Agent Skills
         if: steps.parse.outputs.repo_owner
         id: lgtm
@@ -234,7 +174,7 @@ jobs:
           min-score: 70
           fail-on-error: false
           lakera-api-key: ${{ secrets.LAKERA_GUARD_API_KEY }}
-      
+
       - name: Set LGTM defaults if action failed
         if: steps.lgtm.outcome == 'failure' || steps.lgtm.outcome == 'skipped'
         id: lgtm_defaults
@@ -247,27 +187,26 @@ jobs:
           echo "testing=N/A" >> $GITHUB_OUTPUT
           echo "originality=N/A" >> $GITHUB_OUTPUT
           echo "⚠️ LGTM validation skipped - will require manual review"
-      
+
       - name: Upload validation results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: validation-results
           path: |
-            lgtm-results.json
             /tmp/gitleaks-report.json
-      
+
       - name: Check validation results
         id: check
+        env:
+          LGTM_PASSED: ${{ steps.lgtm.outputs.passed || steps.lgtm_defaults.outputs.passed }}
+          LGTM_SCORE: ${{ steps.lgtm.outputs.score || steps.lgtm_defaults.outputs.score }}
+          GITLEAKS_PASSED: ${{ steps.gitleaks.outputs.gitleaks_passed }}
         run: |
-          LGTM_PASSED="${{ steps.lgtm.outputs.passed || steps.lgtm_defaults.outputs.passed }}"
-          LGTM_SCORE="${{ steps.lgtm.outputs.score || steps.lgtm_defaults.outputs.score }}"
-          GITLEAKS_PASSED="${{ steps.gitleaks.outputs.gitleaks_passed }}"
-          
           echo "LGTM Score: $LGTM_SCORE"
           echo "LGTM Passed: $LGTM_PASSED"
           echo "Gitleaks Passed: $GITLEAKS_PASSED"
-          
+
           # Allow pending LGTM (manual review needed) but require gitleaks to pass
           if ([ "$LGTM_PASSED" = "true" ] || [ "$LGTM_PASSED" = "pending" ]) && [ "$GITLEAKS_PASSED" = "true" ]; then
             echo "validation_passed=true" >> $GITHUB_OUTPUT
@@ -276,61 +215,22 @@ jobs:
             echo "validation_passed=false" >> $GITHUB_OUTPUT
             echo "❌ Validation failed"
           fi
-      
+
       - name: Test provider configuration (lightweight)
         if: steps.check.outputs.validation_passed == 'true'
         id: test_provider
-        run: |
-          pip install requests pyyaml
-          
-          # Test the provider using lightweight script
-          python scripts/test_provider.py '${{ steps.parse.outputs.config_json }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+          PROVIDER_CONFIG_JSON: ${{ steps.parse.outputs.config_json }}
+        run: python scripts/test_provider.py "$PROVIDER_CONFIG_JSON"
+
       - name: Add provider to aggregate.py
         if: steps.test_provider.outcome == 'success'
         id: add_provider
-        run: |
-          python3 << 'EOF'
-          import re
-          import sys
-          
-          provider_id = "${{ steps.parse.outputs.provider_id }}"
-          config = '''    "${{ steps.parse.outputs.provider_id }}": {
-                  "name": "${{ steps.parse.outputs.provider_name }}",
-                  "repo": "${{ steps.parse.outputs.repo_url }}",
-                  "api_tree_url": "${{ steps.parse.outputs.api_tree_url }}",
-                  "raw_base": "${{ steps.parse.outputs.raw_base }}",
-                  "skills_path_prefix": "${{ steps.parse.outputs.skills_path_prefix }}",
-              },'''
-          
-          # Read the aggregate.py file
-          with open('scripts/aggregate.py', 'r') as f:
-              content = f.read()
-          
-          # Check if provider already exists
-          if f'"{provider_id}":' in content:
-              print(f"Provider '{provider_id}' already exists in aggregate.py")
-              sys.exit(0)
-          
-          # Find the PROVIDERS dict and add the new provider before the closing brace
-          # Look for the last provider entry
-          pattern = r'(PROVIDERS = \{.*?)(\n\})'
-          match = re.search(pattern, content, re.DOTALL)
-          
-          if match:
-              new_content = content[:match.end(1)] + '\n' + config + content[match.end(1):]
-              
-              with open('scripts/aggregate.py', 'w') as f:
-                  f.write(new_content)
-              
-              print(f"✅ Added provider '{provider_id}' to aggregate.py")
-          else:
-              print("❌ Could not find PROVIDERS dict in aggregate.py")
-              sys.exit(1)
-          EOF
-      
+        env:
+          PROVIDER_CONFIG_JSON: ${{ steps.parse.outputs.config_json }}
+        run: python scripts/provider_intake.py add-provider
+
       - name: Clean up working directory
         if: steps.check.outputs.validation_passed == 'true'
         run: |
@@ -353,14 +253,14 @@ jobs:
           title: '🤖 Add ${{ steps.parse.outputs.provider_name }} provider'
           body: |
             ## 🎉 Automated Provider Addition
-            
+
             This PR was automatically created from issue #${{ steps.parse.outputs.issue_number }}
-            
+
             ### Provider Details
             - **Name**: ${{ steps.parse.outputs.provider_name }}
             - **Repository**: ${{ steps.parse.outputs.repo_url }}
             - **ID**: `${{ steps.parse.outputs.provider_id }}`
-            
+
             ### Validation Results
             - ✅ LGTM Score: ${{ steps.lgtm.outputs.score || steps.lgtm_defaults.outputs.score }}/100
             - ✅ Security scan passed (gitleaks)
@@ -369,104 +269,129 @@ jobs:
             - ✅ Content quality: ${{ steps.lgtm.outputs.content || steps.lgtm_defaults.outputs.content }}
             - ✅ Testing: ${{ steps.lgtm.outputs.testing || steps.lgtm_defaults.outputs.testing }}
             - ✅ Originality: ${{ steps.lgtm.outputs.originality || steps.lgtm_defaults.outputs.originality }}
-            
-            ${Provider validated successfully (fetches SKILL.md files and parses frontmatter) LGTM validation temporarily unavailable - PR created for manual review' || '' }}
-            
+
+            ${{ steps.lgtm.outcome == 'failure' && '⚠️ LGTM validation was unavailable, so the skills need a manual review.' || '' }}
+
             ### Changes
             - Added provider configuration to `scripts/aggregate.py`
-            - Updated catalog with new skills from this provider
-            
+
             ### Next Steps
             - Review the changes
             - Merge to include provider in daily aggregation runs
-            
+
             ---
             Requested by: @${{ steps.parse.outputs.issue_user }}
             Closes #${{ steps.parse.outputs.issue_number }}
           labels: |
             automated
             new-provider
-      
+
       - name: Comment on issue - Success
         if: steps.check.outputs.validation_passed == 'true' && steps.create_pr.outputs.pull-request-number
         uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ steps.parse.outputs.issue_number }}
+          ISSUE_USER: ${{ steps.parse.outputs.issue_user }}
+          PROVIDER_NAME: ${{ steps.parse.outputs.provider_name }}
+          PROVIDER_ID: ${{ steps.parse.outputs.provider_id }}
+          REPO_URL: ${{ steps.parse.outputs.repo_url }}
+          PR_NUMBER: ${{ steps.create_pr.outputs.pull-request-number }}
+          LGTM_OUTCOME: ${{ steps.lgtm.outcome }}
+          LGTM_SCORE: ${{ steps.lgtm.outputs.score || steps.lgtm_defaults.outputs.score }}
+          LGTM_SPEC: ${{ steps.lgtm.outputs.spec-compliance || steps.lgtm_defaults.outputs.spec-compliance }}
+          LGTM_SECURITY: ${{ steps.lgtm.outputs.security || steps.lgtm_defaults.outputs.security }}
+          LGTM_CONTENT: ${{ steps.lgtm.outputs.content || steps.lgtm_defaults.outputs.content }}
+          LGTM_TESTING: ${{ steps.lgtm.outputs.testing || steps.lgtm_defaults.outputs.testing }}
+          LGTM_ORIGINALITY: ${{ steps.lgtm.outputs.originality || steps.lgtm_defaults.outputs.originality }}
         with:
           script: |
+            const e = process.env;
+            const note = e.LGTM_OUTCOME === 'failure'
+              ? '⚠️ **Note**: LGTM validation temporarily unavailable - needs manual skill review'
+              : '';
             const comment = `## ✅ Validation Successful!
-            
-            Hey @${{ steps.parse.outputs.issue_user }}! Great news - your provider passed all validations! 🎉
-            
+
+            Hey @${e.ISSUE_USER}! Great news - your provider passed all validations! 🎉
+
             ### Validation Results
-            - **LGTM Score**: ${{ steps.lgtm.outputs.score || steps.lgtm_defaults.outputs.score }}/100 ✅
+            - **LGTM Score**: ${e.LGTM_SCORE}/100 ✅
             - **Security Scan**: Passed (gitleaks) ✅
-            - **Spec Compliance**: ${{ steps.lgtm.outputs.spec-compliance || steps.lgtm_defaults.outputs.spec-compliance }}/100
-            - **Security KPI**: ${{ steps.lgtm.outputs.security || steps.lgtm_defaults.outputs.security }}/100
-            - **Content Quality**: ${{ steps.lgtm.outputs.content || steps.lgtm_defaults.outputs.content }}/100
-            - **Testing**: ${{ steps.lgtm.outputs.testing || steps.lgtm_defaults.outputs.testing }}/100
-            - **Originality**: ${{ steps.lgtm.outputs.originality || steps.lgtm_defaults.outputs.originality }}/100
-            
-            ${{ steps.lgtm.outcome == 'failure' && '⚠️ **Note**: LGTM validation temporarily unavailable - needs manual skill review' || '' }}
-            
+            - **Spec Compliance**: ${e.LGTM_SPEC}/100
+            - **Security KPI**: ${e.LGTM_SECURITY}/100
+            - **Content Quality**: ${e.LGTM_CONTENT}/100
+            - **Testing**: ${e.LGTM_TESTING}/100
+            - **Originality**: ${e.LGTM_ORIGINALITY}/100
+
+            ${note}
+
             ### 🚀 Next Steps
-            A pull request has been automatically created: #${{ steps.create_pr.outputs.pull-request-number }}
-            
-            The PR includes:
-            - Provider configuration added to \`scripts/aggregate.py\`
-            - Updated catalog with your skills
-            
+            A pull request has been automatically created: #${e.PR_NUMBER}
+
             Once merged, your skills will be included in the daily aggregation runs and available via CDN.
-            
+
             ### 📦 Provider Details
-            - **Name**: ${{ steps.parse.outputs.provider_name }}
-            - **Repository**: ${{ steps.parse.outputs.repo_url }}
-            - **ID**: \`${{ steps.parse.outputs.provider_id }}\`
-            
+            - **Name**: ${e.PROVIDER_NAME}
+            - **Repository**: ${e.REPO_URL}
+            - **ID**: \`${e.PROVIDER_ID}\`
+
             Thanks for your contribution! 🙏`;
-            
-            github.rest.issues.createComment({
-              issue_number: Number('${{ steps.parse.outputs.issue_number }}'),
+
+            await github.rest.issues.createComment({
+              issue_number: Number(e.ISSUE_NUMBER),
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: comment
+              body: comment,
             });
-      
+
       - name: Comment on issue - Validation Failed
         if: steps.check.outputs.validation_passed != 'true' && steps.lgtm.outputs.score
         uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ steps.parse.outputs.issue_number }}
+          ISSUE_USER: ${{ steps.parse.outputs.issue_user }}
+          GITLEAKS_PASSED: ${{ steps.gitleaks.outputs.gitleaks_passed }}
+          LGTM_SCORE: ${{ steps.lgtm.outputs.score }}
+          LGTM_SPEC: ${{ steps.lgtm.outputs.spec-compliance }}
+          LGTM_SECURITY: ${{ steps.lgtm.outputs.security }}
+          LGTM_CONTENT: ${{ steps.lgtm.outputs.content }}
+          LGTM_TESTING: ${{ steps.lgtm.outputs.testing }}
+          LGTM_ORIGINALITY: ${{ steps.lgtm.outputs.originality }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         with:
           script: |
-            const gitleaksPassed = '${{ steps.gitleaks.outputs.gitleaks_passed }}' === 'true';
-            const lgtmScore = '${{ steps.lgtm.outputs.score }}';
-            
-            let issues = [];
+            const e = process.env;
+            const gitleaksPassed = e.GITLEAKS_PASSED === 'true';
+            const lgtmScore = Number(e.LGTM_SCORE);
+
+            const issues = [];
             if (!gitleaksPassed) {
               issues.push('- ❌ **Gitleaks**: Potential secrets detected in repository');
             }
             if (lgtmScore < 70) {
-              issues.push(`- ❌ **LGTM Score**: ${lgtmScore}/100 (minimum: 70)`);
+              issues.push(`- ❌ **LGTM Score**: ${e.LGTM_SCORE}/100 (minimum: 70)`);
             }
-            
+
             const comment = `## ❌ Validation Issues Detected
-            
-            Hey @${{ steps.parse.outputs.issue_user }}, thanks for your contribution! However, the automated validation found some issues that need to be addressed:
-            
+
+            Hey @${e.ISSUE_USER}, thanks for your contribution! However, the automated validation found some issues that need to be addressed:
+
             ${issues.join('\n')}
-            
+
             ### Detailed Results
-            - **LGTM Score**: ${{ steps.lgtm.outputs.score }}/100 (minimum: 70)
-            - **Spec Compliance**: ${{ steps.lgtm.outputs.spec-compliance }}/100
-            - **Security KPI**: ${{ steps.lgtm.outputs.security }}/100
-            - **Content Quality**: ${{ steps.lgtm.outputs.content }}/100
-            - **Testing**: ${{ steps.lgtm.outputs.testing }}/100
-            - **Originality**: ${{ steps.lgtm.outputs.originality }}/100
+            - **LGTM Score**: ${e.LGTM_SCORE}/100 (minimum: 70)
+            - **Spec Compliance**: ${e.LGTM_SPEC}/100
+            - **Security KPI**: ${e.LGTM_SECURITY}/100
+            - **Content Quality**: ${e.LGTM_CONTENT}/100
+            - **Testing**: ${e.LGTM_TESTING}/100
+            - **Originality**: ${e.LGTM_ORIGINALITY}/100
             - **Gitleaks**: ${gitleaksPassed ? '✅ Passed' : '❌ Failed'}
-            
+
             ### 🔧 How to Fix
-            
+
             ${!gitleaksPassed ? `
             **Secrets Detected**: Please review your repository for hardcoded API keys, tokens, passwords, or other sensitive data. Remove them and use environment variables instead.
             ` : ''}
-            
+
             ${lgtmScore < 70 ? `
             **Low Quality Score**: Your skills need improvement in these areas:
             - Add clear examples and usage instructions
@@ -474,39 +399,60 @@ jobs:
             - Follow the [SKILL.md format](https://github.com/dmgrok/agent-plugins/blob/main/schema/catalog-schema.json)
             - Ensure no security vulnerabilities
             ` : ''}
-            
+
             ### 📊 Validation Reports
-            Full validation reports are available in the [workflow artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}).
-            
-            Please fix the issues and update this issue or create a new one. The validation will run automatically again! 🔄`;
-            
-            github.rest.issues.createComment({
-              issue_number: Number('${{ steps.parse.outputs.issue_number }}'),
+            Full validation reports are available in the [workflow artifacts](${e.RUN_URL}).
+
+            Once you have fixed the issues, comment here and a maintainer will re-run validation. 🔄`;
+
+            await github.rest.issues.createComment({
+              issue_number: Number(e.ISSUE_NUMBER),
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: comment
+              body: comment,
             });
-      
+
       - name: Add validation-failed label
-        if: steps.check.outputs.validation_passed != 'true'
+        if: steps.check.outputs.validation_passed != 'true' && steps.parse.outputs.issue_number
         uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ steps.parse.outputs.issue_number }}
         with:
           script: |
-            github.rest.issues.addLabels({
-              issue_number: Number('${{ steps.parse.outputs.issue_number }}'),
+            await github.rest.issues.addLabels({
+              issue_number: Number(process.env.ISSUE_NUMBER),
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['validation-failed']
+              labels: ['validation-failed'],
             });
-      
+
       - name: Add approved label
         if: steps.check.outputs.validation_passed == 'true'
         uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ steps.parse.outputs.issue_number }}
         with:
           script: |
-            github.rest.issues.addLabels({
-              issue_number: Number('${{ steps.parse.outputs.issue_number }}'),
+            await github.rest.issues.addLabels({
+              issue_number: Number(process.env.ISSUE_NUMBER),
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['approved', 'automated']
+              labels: ['approved', 'automated'],
             });
+
+      # Removing the gate label lets a maintainer re-run validation by applying it again.
+      - name: Remove maintainer approval label
+        if: always() && github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                name: 'run-provider-validation',
+              });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+            }

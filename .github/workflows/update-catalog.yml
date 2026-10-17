@@ -74,7 +74,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add catalog.json catalog.min.json CHANGELOG.md aggregation_state.json docs/catalog.json docs/catalog.min.json docs/bundles.json exports/ docs/exports/
+          git add catalog.json catalog.min.json README.md CHANGELOG.md aggregation_state.json docs/catalog.json docs/catalog.min.json docs/bundles.json exports/ docs/exports/
           git commit -m "Update catalog - ${{ steps.date.outputs.date }}"
           git push
       

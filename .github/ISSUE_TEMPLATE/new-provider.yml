@@ -1,5 +1,5 @@
 name: 🚀 New Provider Submission
-description: Submit a new skills provider repository for automated validation and inclusion
+description: Submit a new skills provider repository for review, automated validation and inclusion
 title: "[New Source] "
 labels: ["new-source"]
 body:
@@ -8,7 +8,7 @@ body:
       value: |
         ## 📦 New Skills Provider Submission
         
-        Submit your repository to be included in the Agent Skills Directory. Our automated system will:
+        Submit your repository to be included in the Agent Plugins catalog. A maintainer reviews each submission and then starts automated validation, which will:
         - ✅ Validate skills using LGTM Agent Skills validator
         - 🔒 Scan for secrets using gitleaks
         - 🛡️ Check for prompt injection attacks using Lakera Guard
@@ -124,13 +124,13 @@ body:
         
         ## 🔧 Provider Configuration (Auto-generated)
         
-        After submitting, our bot will generate the configuration below. **Do not edit manually.**
+        The provider configuration is generated from the fields above. **Leave this field empty.**
   
   - type: textarea
     id: provider_config
     attributes:
       label: Provider Configuration
-      description: Leave this empty - it will be auto-generated
+      description: Leave this empty; it is generated from the fields above
       placeholder: |
         {
           "your-provider-id": {

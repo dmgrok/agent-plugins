@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This repository aggregates agent skills from **41 provider repositories** (Anthropic, OpenAI, GitHub, Vercel, HuggingFace, Stripe, Cloudflare, Supabase, and 33+ community repos) into a unified JSON catalog consumed by MCP servers and AI agents. A GitHub Action runs daily at 06:00 UTC to fetch the latest skills, generating versioned releases with `YYYY.MM.DD` format.
+This repository aggregates agent skills from the provider repositories configured in `PROVIDERS` (Anthropic, OpenAI, GitHub, Vercel, HuggingFace, Stripe, Cloudflare, Supabase, and many community repos) into a unified JSON catalog consumed by MCP servers and AI agents. A GitHub Action runs daily at 06:00 UTC to fetch the latest skills, generating versioned releases with `YYYY.MM.DD` format.
 
-**Current stats:** 250+ skills, 41 providers, 150K+ combined GitHub stars
+**Current stats:** read `total_skills` and `providers` in `catalog.json` (or the README badges); do not hardcode counts in docs.
 
 **Key consumers:** [MCP Mother Skills](https://github.com/dmgrok/mcp_mother_skills) server.
 
@@ -12,11 +12,11 @@ This repository aggregates agent skills from **41 provider repositories** (Anthr
 
 ### Core Components
 
-1. **`scripts/aggregate.py`** - Main aggregation script (425 lines)
+1. **`scripts/aggregate.py`** - Main aggregation script
    - Fetches skills from GitHub API using tree endpoints
    - Parses `SKILL.md` files with YAML frontmatter
    - Generates 2 output formats: `catalog.json`, `catalog.min.json`
-   - Auto-updates `CHANGELOG.md` with version metadata
+   - Regenerates the README plugin table between the `AUTO-GENERATED SKILLS TABLE` markers
    - Uses `GITHUB_TOKEN` env var to avoid rate limits
 
 2. **Provider System** - Extensible provider configuration (lines 35-207 in aggregate.py)
@@ -110,7 +110,7 @@ python scripts/aggregate.py
 python scripts/aggregate.py --incremental
 
 # Outputs: catalog.json, catalog.min.json, 
-#          CHANGELOG.md updated, aggregation_state.json (for incremental mode)
+#          README.md plugin table, aggregation_state.json (for incremental mode)
 ```
 
 ### Incremental Mode (New!)
@@ -118,7 +118,7 @@ The aggregator supports an **incremental mode** that dramatically reduces GitHub
 - Uses `aggregation_state.json` to track last run timestamp and provider commit SHAs
 - Checks each provider's HEAD commit to detect changes
 - Only fetches/processes providers with new commits
-- **Savings**: With 41 providers, typically saves 70-80+ GitHub API requests per run
+- **Savings**: Skips tree and file requests for every provider whose HEAD commit is unchanged
 - **Daily GH Actions runs**: Use `--incremental` by default
 - **Manual full refresh**: Available via workflow_dispatch with `full_refresh: true`
 
@@ -137,14 +137,22 @@ State file structure:
 
 ### Testing
 ```bash
-pytest  # Runs tests/test_aggregate.py
+pip install pyyaml pytest
+python -m pytest -q  # Runs everything in tests/ (same command as .github/workflows/tests.yml)
 ```
 
-### Changelog Generation
-`update_changelog()` function (starting around line 335) automatically:
-- Inserts new version entry after `## [Unreleased]` section
-- Includes total skills, provider breakdown, categories
-- Preserves existing changelog history
+### Changelog
+`CHANGELOG.md` is maintained by hand for tooling, site and workflow changes. Daily catalog
+versions are documented by the GitHub Releases created by `update-catalog.yml`.
+
+### Provider Intake Security
+`.github/workflows/validate-new-provider.yml` handles public "New Provider" issues:
+- Validation starts only when a maintainer applies the `run-provider-validation` label or runs
+  the workflow manually; the first step checks the actor has write, maintain or admin access.
+  Issue-form labels such as `new-source` are applied for every author and are never an approval.
+- `scripts/provider_intake.py` validates every field and rebuilds all GitHub URLs from the
+  validated owner, repository and branch. Keep untrusted values out of `run:` and `script:`
+  blocks: pass them through `env:`. `tests/test_workflows.py` enforces this.
 
 ## Project-Specific Conventions
 
@@ -166,7 +174,7 @@ pytest  # Runs tests/test_aggregate.py
 - **Full refresh option**: workflow_dispatch supports `full_refresh: true` for manual full runs
 - **Commit strategy**: Only commits if `catalog.json` changes
 - **Release strategy**: Creates GitHub release with `vYYYY.MM.DD` tag on changes
-- **Files committed**: `catalog.json`, `catalog.min.json`, `CHANGELOG.md`, `aggregation_state.json`
+- **Files committed**: see the `git add` line in the "Commit changes" step (catalog files, `README.md`, `aggregation_state.json`, `docs/` copies and exports)
 - **Git user**: `github-actions[bot]` (NOT dmgrok) for automated commits
 
 ### CDN Delivery
@@ -202,9 +210,9 @@ Edit `CATEGORY_KEYWORDS` dict or `categorize_skill()` function (line 195).
 ## Anti-Patterns to Avoid
 
 - ❌ Don't hardcode skill data - always fetch from source repos
-- ❌ Don't skip CHANGELOG updates - `update_changelog()` must be called in `main()`
+- ❌ Don't interpolate `${{ github.event.* }}` or step outputs derived from issues into `run:`/`script:` code
 - ❌ Don't commit without testing schema validation
-- ❌ Don't modify GitHub Actions workflow without updating commit file list (currently: catalog.json, catalog.min.json, CHANGELOG.md, aggregation_state.json, exports/, docs/exports/)
+- ❌ Don't modify GitHub Actions workflow without updating commit file list (see the `git add` line in `update-catalog.yml`)
 - ❌ Don't use `dmgrok` as git user in automated workflows - use `github-actions[bot]` instead
 - ❌ **Don't add new features without updating the docs site** - always update `docs/index.html`, `docs/app.js`, and `docs/style.css` when adding user-facing features
 
@@ -223,7 +231,8 @@ When adding a new feature that users can interact with (new JSON files, new data
 
 ## Key Files Reference
 
-- `scripts/aggregate.py`: Core aggregation logic (~1200 lines, 41 providers, incremental mode support)
+- `scripts/aggregate.py`: Core aggregation logic, `PROVIDERS` configuration and incremental mode support
+- `scripts/provider_intake.py`: Validates provider submissions from issues and inserts them into `PROVIDERS`
 - `scripts/analyze_repo.py`: Utility to evaluate potential new provider repos
 - `cli/skills.py`: CLI tool for installing/managing skills (npm-like)
 - `cli/__init__.py`: CLI package init
@@ -232,11 +241,13 @@ When adding a new feature that users can interact with (new JSON files, new data
 - `schema/bundles-schema.json`: Curated skill bundles schema
 - `schema/skill-manifest-schema.json`: skill.json manifest schema (like package.json)
 - `.github/workflows/update-catalog.yml`: Automation pipeline with incremental mode
+- `.github/workflows/validate-new-provider.yml`: Maintainer-gated provider intake
+- `.github/workflows/tests.yml`: Runs the pytest suite on pushes and pull requests
 - `docs/app.js`: Static site catalog, bundles, and exports display logic (shows stars)
 - `docs/index.html`: Static site HTML with tabs for Skills, Bundles, Exports & Badges, CLI, and Help
 - `docs/style.css`: Static site styling (star badges, CLI styles, exports grid, etc.)
-- `tests/test_aggregate.py`: Unit tests for parsing and encoding
-- `CHANGELOG.md`: Auto-generated version history
+- `tests/`: Unit tests for aggregation, validation patterns, provider intake and workflow hardening
+- `CHANGELOG.md`: Hand-maintained history of tooling changes
 - `README.md`: User-facing documentation with provider tables
 - `bundles.json`: Curated skill bundles for common use cases
 - `catalog.json`: Aggregated skills catalog (auto-generated)

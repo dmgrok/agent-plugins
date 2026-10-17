@@ -25,6 +25,9 @@ dist/
 build/
 *.spec
 
+# Local tool logs
+.playwright-mcp/
+
 # Validation artifacts
 gitleaks*
 lgtm-results.json

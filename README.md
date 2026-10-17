@@ -1,10 +1,11 @@
 # Agent Plugins
 
-**Web-based discovery for AI agent plugins.** Browse 1,100+ curated plugins from 46 official providers, build your stack, and install in one command.
+**Web-based discovery for AI agent plugins.** Browse curated plugins from official and community providers, build your stack, and install it with one script. The badges below show the live counts from the daily catalog build.
 
 [![Plugins](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-skills.json)](https://dmgrok.github.io/agent-plugins/)
 [![Providers](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-providers.json)](https://dmgrok.github.io/agent-plugins/)
 [![Quality Tracked](https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/badge-quality.json)](https://dmgrok.github.io/agent-plugins/)
+[![Tests](https://github.com/dmgrok/agent-plugins/actions/workflows/tests.yml/badge.svg)](https://github.com/dmgrok/agent-plugins/actions/workflows/tests.yml)
 
 **[Browse all plugins →](https://dmgrok.github.io/agent-plugins/)**
 
@@ -20,20 +21,26 @@ Plugins already live on marketplaces — you just need to find the right ones. T
 
 ### Install a single plugin
 
-Every plugin has a copy button. The command is:
+Add this catalog as a Claude Code marketplace once:
 
 ```bash
-claude plugin add <plugin-id>
+claude plugin marketplace add https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json
+```
+
+Then every plugin has a copy button. The command is:
+
+```bash
+claude plugin install <plugin-name>
 ```
 
 ### Install your whole stack
 
-Click **Copy Install Script** in the Stack Builder. It produces:
+Click **Copy Install Script** in the Stack Builder. It produces the marketplace line followed by one install line per plugin in your stack:
 
 ```bash
-claude plugin add github-copilot && \
-claude plugin add anthropic-pdf && \
-claude plugin add vercel-deploy
+claude plugin marketplace add https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json
+claude plugin install <first-plugin>
+claude plugin install <second-plugin>
 ```
 
 Paste and run. Done.
@@ -42,7 +49,7 @@ Paste and run. Done.
 
 ## Providers
 
-Plugins are aggregated from **46 providers** across the AI agent ecosystem.
+Plugins are aggregated from every provider configured in [`scripts/aggregate.py`](scripts/aggregate.py); the Providers badge above shows the current count.
 
 **[View all providers →](https://dmgrok.github.io/agent-plugins/)**
 
@@ -819,14 +826,25 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 ### Add your skills to the directory
 
 1. **[Create a New Provider Issue](https://github.com/dmgrok/agent-plugins/issues/new?template=new-provider.yml)** with your repo details
-2. Automated validation runs:
+2. A maintainer reviews the submission and starts automated validation:
    - ✅ SKILL.md format with YAML frontmatter
    - 🔒 Secrets scan (gitleaks)
    - 🛡️ Prompt injection check (Lakera Guard)
    - 📊 Quality score ≥ 70 ([LGTM validation](https://github.com/dmgrok/LGTM_agent_skills))
-3. Auto-PR created on pass → skills appear in the next daily aggregation
+3. Auto-PR created on pass → once merged, skills appear in the next daily aggregation
 
 **See [issue #11](https://github.com/dmgrok/agent-plugins/issues/11) for an example submission.**
+
+#### Maintainer review gate
+
+Validation checks out the submitted repository, uses repository secrets and opens a pull request, so it never starts from an issue alone. Labels set by the issue form (such as `new-source`) are applied for every author and are **not** an approval.
+
+1. Read the issue: the repository is public, the skills path is correct and the content looks legitimate.
+2. Apply the `run-provider-validation` label, or run **Actions → Validate and Add New Provider → Run workflow** with the issue number. The workflow first checks that the person who applied the label or started the run has write, maintain or admin access.
+3. The workflow removes the label when it finishes. To re-run after the contributor edits the issue, apply the label again.
+4. Review the generated `add-provider-<id>` pull request before merging.
+
+All issue fields are validated by [`scripts/provider_intake.py`](scripts/provider_intake.py) and every GitHub URL is rebuilt from the validated owner, repository and branch. Create the `run-provider-validation` label once under **Issues → Labels** and keep it out of issue templates.
 
 ### Contribute to an existing provider
 
@@ -838,9 +856,10 @@ Add skills to repositories accepting contributions:
 ```bash
 git clone https://github.com/dmgrok/agent-plugins.git
 cd agent-plugins
-pip install -e ".[validation]"
-python scripts/aggregate.py   # Test aggregation
-pytest                        # Run tests
+pip install pyyaml pytest        # Test dependencies (same as CI)
+python -m pytest -q              # Run the test suite
+pip install -e ".[validation]"   # Optional: enhanced secret, semver and similarity checks
+python scripts/aggregate.py      # Rebuild the catalog locally (network access, slow)
 ```
 
 ---

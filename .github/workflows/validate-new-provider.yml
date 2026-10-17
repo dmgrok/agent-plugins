@@ -157,7 +157,7 @@ jobs:
         continue-on-error: true
         run: |
           echo "Running gitleaks scan..."
-          if gitleaks detect --source ./contributor-repo --no-git --exit-code 0 --report-path /tmp/gitleaks-report.json; then
+          if gitleaks detect --source ./contributor-repo --no-git --exit-code 1 --report-path /tmp/gitleaks-report.json; then
             echo "gitleaks_passed=true" >> $GITHUB_OUTPUT
           else
             echo "gitleaks_passed=false" >> $GITHUB_OUTPUT

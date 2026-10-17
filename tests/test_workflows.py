@@ -89,3 +89,11 @@ def test_tests_workflow_runs_pytest_with_read_only_token():
     assert {"push", "pull_request"} <= set(workflow["on"])
     runs = " ".join(code for _, code in code_blocks(workflow))
     assert "pytest" in runs
+
+
+def test_gitleaks_scan_fails_when_leaks_are_found():
+    steps = load(INTAKE)["jobs"]["validate-provider"]["steps"]
+    scan = next(s for s in steps if "gitleaks detect" in s.get("run", ""))
+    # `--exit-code 0` makes gitleaks succeed even when it finds secrets, so the
+    # `gitleaks_passed=false` branch could never run.
+    assert not re.search(r"--exit-code[ =]0\b", scan["run"])

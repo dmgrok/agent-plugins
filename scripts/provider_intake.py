@@ -10,6 +10,7 @@ GITHUB_TOKEN in scripts/test_provider.py) or raw text into code.
 Usage (from GitHub Actions):
     ISSUE_BODY=... ISSUE_NUMBER=... ISSUE_USER=... python scripts/provider_intake.py parse
     PROVIDER_CONFIG_JSON=... python scripts/provider_intake.py add-provider
+    SKILLS_PATH_PREFIX=... python scripts/provider_intake.py stage-lgtm --source DIR --dest DIR
 """
 
 from __future__ import annotations
@@ -18,6 +19,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -286,6 +288,39 @@ def add_provider_to_source(source: str, submission: ProviderSubmission) -> str:
     return source[:body_end] + "\n".join(lines) + source[body_end:]
 
 
+SKILL_NAME_RE = re.compile(r"^name:[ \t]*([\"']?)([a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?)\1[ \t]*$", re.MULTILINE)
+
+
+def _root_skill_name(skill_md: Path) -> Optional[str]:
+    try:
+        text = skill_md.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return None
+    parts = text.split("---", 2)
+    if not text.startswith("---") or len(parts) < 3:
+        return None
+    match = SKILL_NAME_RE.search(parts[1])
+    return match.group(2) if match else None
+
+
+def stage_lgtm_input(source: Path, skills_path_prefix: str, dest: Path) -> Path:
+    """Return the directory the skill linter should scan.
+
+    The linter requires each skill's `name` to match its parent directory. A
+    root-level SKILL.md sits in the checkout directory, whose name the workflow
+    chooses, so it is copied into `dest/<name>` first. Symlinks are copied as
+    links so a submission cannot pull runner files into the scanned tree.
+    """
+    prefix = _validate_skills_prefix(skills_path_prefix)
+    if prefix:
+        return source / prefix.rstrip("/")
+    name = _root_skill_name(source / "SKILL.md")
+    if name is None:
+        return source
+    shutil.copytree(source, dest / name, symlinks=True, ignore=shutil.ignore_patterns(".git"))
+    return dest
+
+
 def _env(*names: str) -> str:
     for name in names:
         value = os.environ.get(name)
@@ -335,16 +370,35 @@ def _cmd_add_provider(aggregate: Path) -> int:
     return 0
 
 
+def _cmd_stage_lgtm(source: Path, dest: Path) -> int:
+    try:
+        path = stage_lgtm_input(source, os.environ.get("SKILLS_PATH_PREFIX", ""), dest)
+    except IntakeError as exc:
+        print(f"::error::{exc}")
+        return 1
+    lgtm_path = f"./{path.as_posix().rstrip('/')}/"
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path:
+        write_github_output(output_path, {"lgtm_path": lgtm_path})
+    print(f"LGTM will scan {lgtm_path}")
+    return 0
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[1])
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("parse", help="Parse ISSUE_BODY and write step outputs")
     add = sub.add_parser("add-provider", help="Insert PROVIDER_CONFIG_JSON into aggregate.py")
     add.add_argument("--aggregate", type=Path, default=DEFAULT_AGGREGATE)
+    stage = sub.add_parser("stage-lgtm", help="Prepare the directory scanned by the skill linter")
+    stage.add_argument("--source", type=Path, required=True)
+    stage.add_argument("--dest", type=Path, required=True)
     args = parser.parse_args(argv)
 
     if args.command == "parse":
         return _cmd_parse()
+    if args.command == "stage-lgtm":
+        return _cmd_stage_lgtm(args.source, args.dest)
     return _cmd_add_provider(args.aggregate)
 
 

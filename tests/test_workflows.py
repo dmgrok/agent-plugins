@@ -97,3 +97,36 @@ def test_gitleaks_scan_fails_when_leaks_are_found():
     # `--exit-code 0` makes gitleaks succeed even when it finds secrets, so the
     # `gitleaks_passed=false` branch could never run.
     assert not re.search(r"--exit-code[ =]0\b", scan["run"])
+
+
+def _validate_steps():
+    return load(INTAKE)["jobs"]["validate-provider"]["steps"]
+
+
+def test_lgtm_scans_staged_input_so_root_skills_match_their_directory():
+    steps = _validate_steps()
+    names = [s.get("name", "") for s in steps]
+    stage = next(s for s in steps if "stage-lgtm" in s.get("run", ""))
+    lgtm = next(s for s in steps if str(s.get("uses", "")).startswith("dmgrok/LGTM_agent_skills"))
+    assert names.index(stage["name"]) < names.index(lgtm["name"])
+    assert stage["env"]["SKILLS_PATH_PREFIX"] == "${{ steps.parse.outputs.skills_path_prefix }}"
+    assert lgtm["with"]["path"] == "${{ steps.stage.outputs.lgtm_path }}"
+    assert "min-score" not in lgtm["with"]
+
+
+def test_failure_comment_reports_lgtm_findings_not_obsolete_scores():
+    steps = _validate_steps()
+    failed = next(s for s in steps if s.get("name") == "Comment on issue - Validation Failed")
+    script = failed["with"]["script"]
+    for obsolete in ("LGTM_CONTENT", "LGTM_TESTING", "LGTM_ORIGINALITY", "minimum: 70", "lgtmScore < 70"):
+        assert obsolete not in script
+    assert "validation_passed == 'false'" in failed["if"]
+    for step in steps:
+        text = yaml.safe_dump(step)
+        for output in ("outputs.content", "outputs.testing", "outputs.originality"):
+            assert output not in text, step.get("name")
+
+
+def test_lgtm_results_are_uploaded_with_the_report():
+    upload = next(s for s in _validate_steps() if s.get("name") == "Upload validation results")
+    assert "lgtm-results.json" in upload["with"]["path"]

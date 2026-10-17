@@ -830,7 +830,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
    - ✅ SKILL.md format with YAML frontmatter
    - 🔒 Secrets scan (gitleaks)
    - 🛡️ Prompt injection check (Lakera Guard)
-   - 📊 Quality score ≥ 70 ([LGTM validation](https://github.com/dmgrok/LGTM_agent_skills))
+   - 📊 SKILL.md spec and security checks with no errors ([LGTM validation](https://github.com/dmgrok/LGTM_agent_skills))
 3. Auto-PR created on pass → once merged, skills appear in the next daily aggregation
 
 **See [issue #11](https://github.com/dmgrok/agent-plugins/issues/11) for an example submission.**

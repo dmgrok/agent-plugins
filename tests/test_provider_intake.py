@@ -266,3 +266,62 @@ def test_cli_add_provider_updates_file(tmp_path, monkeypatch):
 
     assert intake.main(["add-provider", "--aggregate", str(target)]) == 0
     assert "acme" in providers_literal(target.read_text(encoding="utf-8"))
+
+
+def _skill_repo(root, name_line="name: tree-ring-memory"):
+    root.mkdir()
+    (root / "SKILL.md").write_text(f"---\n{name_line}\ndescription: d\n---\nbody\n")
+    (root / "references").mkdir()
+    (root / "references" / "notes.md").write_text("notes")
+    (root / ".git").mkdir()
+    (root / ".git" / "HEAD").write_text("ref")
+    return root
+
+
+def test_stage_root_skill_uses_frontmatter_name_as_directory(tmp_path):
+    repo = _skill_repo(tmp_path / "contributor-repo")
+    out = intake.stage_lgtm_input(repo, "", tmp_path / "lgtm-input")
+    assert out == tmp_path / "lgtm-input"
+    staged = out / "tree-ring-memory"
+    assert (staged / "SKILL.md").is_file()
+    assert (staged / "references" / "notes.md").read_text() == "notes"
+    assert not (staged / ".git").exists()
+
+
+def test_stage_root_skill_does_not_follow_symlinks(tmp_path):
+    repo = _skill_repo(tmp_path / "contributor-repo")
+    secret = tmp_path / "secret.txt"
+    secret.write_text("runner secret")
+    (repo / "link.txt").symlink_to(secret)
+    staged = intake.stage_lgtm_input(repo, "", tmp_path / "lgtm-input") / "tree-ring-memory"
+    assert (staged / "link.txt").is_symlink()
+
+
+@pytest.mark.parametrize("name_line", ["name: ../escape", "name: Bad Name", "description: none"])
+def test_stage_root_skill_falls_back_when_name_is_unsafe_or_missing(tmp_path, name_line):
+    repo = _skill_repo(tmp_path / "contributor-repo", name_line)
+    assert intake.stage_lgtm_input(repo, "", tmp_path / "lgtm-input") == repo
+    assert not (tmp_path / "lgtm-input").exists()
+
+
+def test_stage_prefixed_skills_points_at_prefix(tmp_path):
+    repo = tmp_path / "contributor-repo"
+    (repo / "skills" / "a").mkdir(parents=True)
+    out = intake.stage_lgtm_input(repo, "skills/", tmp_path / "lgtm-input")
+    assert out == repo / "skills"
+
+
+def test_cli_stage_lgtm_writes_output(tmp_path, monkeypatch):
+    repo = _skill_repo(tmp_path / "contributor-repo")
+    output = tmp_path / "out.txt"
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("GITHUB_OUTPUT", str(output))
+    monkeypatch.setenv("SKILLS_PATH_PREFIX", "")
+    assert intake.main(["stage-lgtm", "--source", "contributor-repo", "--dest", "lgtm-input"]) == 0
+    assert output.read_text() == "lgtm_path=./lgtm-input/\n"
+
+
+def test_cli_stage_lgtm_rejects_invalid_prefix(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("SKILLS_PATH_PREFIX", "../x/")
+    assert intake.main(["stage-lgtm", "--source", "contributor-repo", "--dest", "lgtm-input"]) == 1

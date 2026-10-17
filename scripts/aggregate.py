@@ -381,6 +381,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/fasuizu-br/brainiall-transcription-skill/main",
         "skills_path_prefix": "skills/",
     },
+    "shotglass": {
+        "name": "ShotGlass",
+        "repo": "https://github.com/jakemanger/shotglass-skills",
+        "api_tree_url": "https://api.github.com/repos/jakemanger/shotglass-skills/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/jakemanger/shotglass-skills/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

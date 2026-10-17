@@ -40,6 +40,8 @@ REPO_URL_RE = re.compile(
 ISSUE_NUMBER_RE = re.compile(r"^[1-9][0-9]{0,9}$")
 ISSUE_USER_RE = re.compile(r"^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})(?:\[bot\])?$")
 
+FENCED_BLOCK_RE = re.compile(r"^[ \t]*```([^\n`]*)\n([\s\S]*?)^[ \t]*```[ \t]*$", re.MULTILINE)
+
 ROOT_LOCATION_MARKER = "Root directory"
 NO_RESPONSE = "_No response_"
 
@@ -230,10 +232,14 @@ def submission_from_config(config: dict) -> ProviderSubmission:
 
 
 def _parse_code_block(body: str) -> Optional[ProviderSubmission]:
-    match = re.search(r"```(?:json|python)?[ \t]*\n([\s\S]*?\"repo\"[\s\S]*?)\s*\n```", body)
-    if not match:
+    # Walk fences in order so the closing fence of an unrelated block (for
+    # example ```text) is never mistaken for the opening of the config block.
+    for match in FENCED_BLOCK_RE.finditer(body):
+        if match.group(1).strip().lower() in ("", "json", "python") and '"repo"' in match.group(2):
+            text = match.group(2).strip()
+            break
+    else:
         return None
-    text = match.group(1).strip()
     if not text.startswith("{"):
         text = "{" + text + "}"
     text = re.sub(r",(\s*[}\]])", r"\1", text)

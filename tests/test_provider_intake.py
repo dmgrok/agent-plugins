@@ -325,3 +325,21 @@ def test_cli_stage_lgtm_rejects_invalid_prefix(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("SKILLS_PATH_PREFIX", "../x/")
     assert intake.main(["stage-lgtm", "--source", "contributor-repo", "--dest", "lgtm-input"]) == 1
+
+
+def test_code_block_after_other_fenced_blocks_is_found():
+    body = """Install:
+
+```text
+npx skills add owner/repo
+```
+
+More text.
+
+```json
+{"later": {"name": "Later", "repo": "https://github.com/owner/repo", "branch": "main", "skills_path_prefix": ""}}
+```
+"""
+    sub = intake.parse_issue_body(body)
+    assert sub.provider_id == "later"
+    assert sub.skills_path_prefix == ""

@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-10-20T11:19:36.577689+00:00",
+  "last_run": "2026-10-21T11:34:50.340859+00:00",
   "provider_commits": {
     "anthropics": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -7,7 +7,7 @@
     "vercel": "063bee94c3f4df8453406c830b0a7df0f2860278",
     "huggingface": "c3ff942be3e07116b475253f0a8fc4f54682c1a8",
     "skillcreatorai": "6d95c788aa22ce39a4807b9a4c31c758a2036dc6",
-    "obra-superpowers": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+    "obra-superpowers": "b739a8af570e10a95898f2bdf6cec97467fa6c12",
     "tapestry": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
     "sanjay-ai-skills": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
     "aws-skills": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
@@ -26,19 +26,19 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "c80722d3f27d65e06b6579add201bf69b99101d0",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "579b067ffb461b82afc845c47b17fc8e8910488c",
+    "stripe": "1bcd18aa0e69b0e4dad9e268b873c7e245d6da5e",
     "cloudflare": "86505e44f87d801aa1864a3c4109e9a8ae5c409f",
-    "trailofbits": "5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0",
-    "expo": "7ddc1f5796996e5c7efe2fc3fa9168eb24e8dac1",
+    "trailofbits": "a3131740a39291e42fd15b9eac07e0b393ad71b1",
+    "expo": "55ec65cd16499f20f14fb10fe99a2e62901b00a1",
     "getsentry": "f57ada2d0b640406ea7e25b11d636c530e77c58b",
     "supabase": "c9be0e931b7930f7d02126d04774d904c381e7d7",
     "google-labs-stitch": "0337446dadde6f8c94210444e2aa9d546126480f",
     "better-auth": "20c9e88a5c007461a703f1c213572b073196113e",
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
-    "neondatabase": "51c7d594c0568d52a15eede61cc43f9f1227607a",
+    "neondatabase": "d814689cbba1506b7a25a7a6df5346258ba8ccf8",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
     "remotion": "039e8a2fc78b67efc228d5645367838b85818a1c",
-    "nginity": "19392f7a08264ed00486a251f5b2098321771f94",
+    "nginity": "405384d46b3cffe0612a9b4a3849d960f43924a8",
     "obsidian-plugin": "97b8002a5e86e57ae199298aed906c737a75671e",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
     "ipsw-skill": "1a797280aa27481e646be89f334784ad04d315c6",
@@ -50,6 +50,6 @@
     "brainiall": "366ca7ec1c08662c45efb9d2cfde81835058083e",
     "shotglass": "2a75999bd1d754255ef733ceec75296c1c974c76"
   },
-  "skills_count": 1289,
-  "version": "2026.10.20"
+  "skills_count": 1305,
+  "version": "2026.10.21"
 }

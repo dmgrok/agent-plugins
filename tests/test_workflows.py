@@ -130,3 +130,13 @@ def test_failure_comment_reports_lgtm_findings_not_obsolete_scores():
 def test_lgtm_results_are_uploaded_with_the_report():
     upload = next(s for s in _validate_steps() if s.get("name") == "Upload validation results")
     assert "lgtm-results.json" in upload["with"]["path"]
+
+
+def test_prompt_injection_check_runs_in_repo_and_not_inside_lgtm_action():
+    steps = _validate_steps()
+    lgtm = next(s for s in steps if str(s.get("uses", "")).startswith("dmgrok/LGTM_agent_skills"))
+    assert "lakera-api-key" not in lgtm["with"]
+    check = next(s for s in steps if "prompt-injection" in s.get("run", ""))
+    assert check["env"]["LAKERA_GUARD_API_KEY"] == "${{ secrets.LAKERA_GUARD_API_KEY }}"
+    gate = next(s for s in steps if s.get("id") == "check")
+    assert "PROMPT_INJECTION" in gate["env"] and '"failed"' in gate["run"]

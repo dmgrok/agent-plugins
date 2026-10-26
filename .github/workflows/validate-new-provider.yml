@@ -181,7 +181,17 @@ jobs:
         with:
           path: ${{ steps.stage.outputs.lgtm_path }}
           fail-on-error: false
-          lakera-api-key: ${{ secrets.LAKERA_GUARD_API_KEY }}
+
+      # The LGTM action reads Lakera Guard's v2 `breakdown` as a mapping, but the API
+      # returns a list, so every detector index was reported as a prompt injection
+      # ("Lakera Guard detected: 15"). The check now runs here and reads the list.
+      - name: Prompt-injection check (Lakera Guard)
+        if: steps.stage.outputs.lgtm_path
+        id: prompt_injection
+        env:
+          LAKERA_GUARD_API_KEY: ${{ secrets.LAKERA_GUARD_API_KEY }}
+          LGTM_PATH: ${{ steps.stage.outputs.lgtm_path }}
+        run: python scripts/provider_intake.py prompt-injection --path "$LGTM_PATH"
 
       - name: Set LGTM defaults if action failed
         if: steps.lgtm.outcome == 'failure' || steps.lgtm.outcome == 'skipped'
@@ -207,12 +217,15 @@ jobs:
         env:
           LGTM_PASSED: ${{ steps.lgtm.outputs.passed || steps.lgtm_defaults.outputs.passed }}
           GITLEAKS_PASSED: ${{ steps.gitleaks.outputs.gitleaks_passed }}
+          PROMPT_INJECTION: ${{ steps.prompt_injection.outputs.status }}
         run: |
           echo "LGTM Passed: $LGTM_PASSED"
           echo "Gitleaks Passed: $GITLEAKS_PASSED"
+          echo "Prompt-injection check: $PROMPT_INJECTION"
 
-          # Allow pending LGTM (manual review needed) but require gitleaks to pass
-          if ([ "$LGTM_PASSED" = "true" ] || [ "$LGTM_PASSED" = "pending" ]) && [ "$GITLEAKS_PASSED" = "true" ]; then
+          # Allow pending LGTM or a skipped prompt-injection check (manual review
+          # needed) but require gitleaks to pass and no prompt attack to be found.
+          if ([ "$LGTM_PASSED" = "true" ] || [ "$LGTM_PASSED" = "pending" ]) && [ "$GITLEAKS_PASSED" = "true" ] && [ "$PROMPT_INJECTION" != "failed" ]; then
             echo "validation_passed=true" >> $GITHUB_OUTPUT
             echo "✅ All validations passed!"
           else
@@ -347,6 +360,7 @@ jobs:
           LGTM_PASSED: ${{ steps.lgtm.outputs.passed || steps.lgtm_defaults.outputs.passed }}
           LGTM_SPEC: ${{ steps.lgtm.outputs.spec-compliance || steps.lgtm_defaults.outputs.spec-compliance }}
           LGTM_SECURITY: ${{ steps.lgtm.outputs.security || steps.lgtm_defaults.outputs.security }}
+          PROMPT_INJECTION: ${{ steps.prompt_injection.outputs.status }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         with:
           script: |
@@ -359,7 +373,10 @@ jobs:
               issues.push('- ❌ **Secrets scan (gitleaks)**: potential secrets were detected. Remove hardcoded keys, tokens or passwords and use environment variables instead.');
             }
             if (!lgtmPassed) {
-              issues.push(`- ❌ **Skill checks (LGTM)**: ${e.LGTM_SPEC} spec finding(s) and ${e.LGTM_SECURITY} security finding(s), which can include the prompt-injection check. See the "Validate skills with LGTM Agent Skills" step in the [run log](${e.RUN_URL}) for each finding.`);
+              issues.push(`- ❌ **Skill checks (LGTM)**: ${e.LGTM_SPEC} spec finding(s) and ${e.LGTM_SECURITY} security finding(s). See the "Validate skills with LGTM Agent Skills" step in the [run log](${e.RUN_URL}) for each finding.`);
+            }
+            if (e.PROMPT_INJECTION === 'failed') {
+              issues.push(`- ❌ **Prompt-injection check (Lakera Guard)**: a prompt attack was detected in at least one SKILL.md. See the "Prompt-injection check" step in the [run log](${e.RUN_URL}) for the file.`);
             }
 
             const comment = [

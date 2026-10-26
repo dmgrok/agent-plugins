@@ -11,6 +11,7 @@ Usage (from GitHub Actions):
     ISSUE_BODY=... ISSUE_NUMBER=... ISSUE_USER=... python scripts/provider_intake.py parse
     PROVIDER_CONFIG_JSON=... python scripts/provider_intake.py add-provider
     SKILLS_PATH_PREFIX=... python scripts/provider_intake.py stage-lgtm --source DIR --dest DIR
+    LAKERA_GUARD_API_KEY=... python scripts/provider_intake.py prompt-injection --path DIR
 """
 
 from __future__ import annotations
@@ -23,7 +24,7 @@ import shutil
 import sys
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_AGGREGATE = ROOT / "scripts" / "aggregate.py"
@@ -327,6 +328,91 @@ def stage_lgtm_input(source: Path, skills_path_prefix: str, dest: Path) -> Path:
     return dest
 
 
+# Lakera Guard v2 returns `breakdown` as a list of detector results, for example
+# {"detector_type": "prompt_attack", "detected": true, ...}. Only prompt attacks
+# block a submission; other detectors in the default policy (unknown links, PII,
+# moderated content) flag ordinary documentation and are reported as notes.
+LAKERA_GUARD_URL = "https://api.lakera.ai/v2/guard"
+BLOCKING_DETECTOR_PREFIXES = ("prompt_attack",)
+MAX_SKILL_FILES = 200
+
+
+def lakera_detections(result: dict) -> List[str]:
+    """Return the detector types that detected something in a /v2/guard response."""
+    breakdown = result.get("breakdown") or []
+    if isinstance(breakdown, dict):  # tolerate the older mapping shape
+        breakdown = [dict(v or {}, detector_type=k) for k, v in breakdown.items()]
+    return sorted(
+        str(item.get("detector_type") or "unknown")
+        for item in breakdown
+        if isinstance(item, dict) and item.get("detected")
+    )
+
+
+def is_blocking_detection(detector_type: str) -> bool:
+    return detector_type.startswith(BLOCKING_DETECTOR_PREFIXES)
+
+
+def _lakera_guard(content: str, api_key: str, timeout: float = 30.0) -> dict:
+    import urllib.request
+
+    request = urllib.request.Request(
+        LAKERA_GUARD_URL,
+        data=json.dumps({"messages": [{"role": "user", "content": content}], "breakdown": True}).encode(),
+        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def scan_prompt_injection(path: Path, api_key: str, guard=_lakera_guard) -> Dict[str, object]:
+    """Send every SKILL.md under `path` to Lakera Guard and summarise the result.
+
+    Returns {"status": "passed" | "failed" | "skipped", "blocking": [...], "notes": [...]}
+    where entries are "<relative file>: <detector type>".
+    """
+    if not api_key:
+        return {"status": "skipped", "reason": "no Lakera Guard API key", "blocking": [], "notes": []}
+    files = sorted(p for p in path.rglob("SKILL.md") if p.is_file() and not p.is_symlink())
+    blocking: List[str] = []
+    notes: List[str] = []
+    errors = 0
+    for skill_md in files[:MAX_SKILL_FILES]:
+        rel = skill_md.relative_to(path).as_posix()
+        try:
+            result = guard(skill_md.read_text(encoding="utf-8", errors="replace"), api_key)
+        except Exception as exc:  # network or API error: do not block, ask for manual review
+            print(f"::warning::Lakera Guard request failed for {rel}: {type(exc).__name__}")
+            errors += 1
+            continue
+        for detector in lakera_detections(result):
+            (blocking if is_blocking_detection(detector) else notes).append(f"{rel}: {detector}")
+    if blocking:
+        status = "failed"
+    elif errors and errors == len(files[:MAX_SKILL_FILES]):
+        status = "skipped"
+    else:
+        status = "passed"
+    return {"status": status, "blocking": blocking, "notes": notes, "files": len(files), "errors": errors}
+
+
+def _cmd_prompt_injection(path: Path) -> int:
+    summary = scan_prompt_injection(path, os.environ.get("LAKERA_GUARD_API_KEY", ""))
+    for entry in summary["blocking"]:
+        print(f"::error::Prompt attack detected by Lakera Guard in {entry}")
+    for entry in summary["notes"]:
+        print(f"Note (not blocking): Lakera Guard detector fired in {entry}")
+    print(f"Prompt-injection check: {summary['status']}")
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path:
+        write_github_output(output_path, {
+            "status": str(summary["status"]),
+            "findings": str(len(summary["blocking"])),
+        })
+    return 0
+
+
 def _env(*names: str) -> str:
     for name in names:
         value = os.environ.get(name)
@@ -399,12 +485,16 @@ def main(argv=None) -> int:
     stage = sub.add_parser("stage-lgtm", help="Prepare the directory scanned by the skill linter")
     stage.add_argument("--source", type=Path, required=True)
     stage.add_argument("--dest", type=Path, required=True)
+    guard = sub.add_parser("prompt-injection", help="Check staged SKILL.md files with Lakera Guard")
+    guard.add_argument("--path", type=Path, required=True)
     args = parser.parse_args(argv)
 
     if args.command == "parse":
         return _cmd_parse()
     if args.command == "stage-lgtm":
         return _cmd_stage_lgtm(args.source, args.dest)
+    if args.command == "prompt-injection":
+        return _cmd_prompt_injection(args.path)
     return _cmd_add_provider(args.aggregate)
 
 

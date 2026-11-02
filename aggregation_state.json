@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-11-01T12:59:08.284845+00:00",
+  "last_run": "2026-11-02T15:27:04.455020+00:00",
   "provider_commits": {
     "anthropics": "ca45fc496a3436251f191354091d557da31c15b5",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
+    "github": "61fa1fa8fcc63d6dbd2f07a75aeb8e214df5acfb",
     "vercel": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
     "huggingface": "25910b3d0ba31a2ba102f901cdc9e008c278a69c",
     "skillcreatorai": "6d95c788aa22ce39a4807b9a4c31c758a2036dc6",
@@ -26,10 +26,10 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "c80722d3f27d65e06b6579add201bf69b99101d0",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "85f3e2f62770ffd7b1739765df926ce2190d1b98",
+    "stripe": "b3ab9149225f837894b7de08c1b14650d7cc64eb",
     "cloudflare": "1a33048817d06df12882cb881dfc754e7039954a",
     "trailofbits": "2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
-    "expo": "05754e71d02abe0d2d7a2fb5259ccac41f5ea59c",
+    "expo": "a9e5bd3fa00b4e61f632e43f85da73aee1942582",
     "getsentry": "d12f250460ffd961f549dbebf7eeb0cf4afd4c2e",
     "supabase": "c9be0e931b7930f7d02126d04774d904c381e7d7",
     "google-labs-stitch": "0337446dadde6f8c94210444e2aa9d546126480f",
@@ -37,8 +37,8 @@
     "tinybird": "19a3ec18b2270fb82cc3489eabf122da0706e6a0",
     "neondatabase": "d3da7cb5436edbb2bc8c00747fafd31ddf0644f4",
     "fal-ai": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
-    "remotion": "30d4553ecd46fbc5212fd0ff006ae43af522158b",
-    "nginity": "e4a1dc3695908dd5a6c811cc76ab7aa4cf95f2f0",
+    "remotion": "c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271",
+    "nginity": "9ef0c3c213932e645cc5cbeeb3c35c3a762a2437",
     "obsidian-plugin": "97b8002a5e86e57ae199298aed906c737a75671e",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
     "ipsw-skill": "1a797280aa27481e646be89f334784ad04d315c6",
@@ -50,6 +50,6 @@
     "brainiall": "366ca7ec1c08662c45efb9d2cfde81835058083e",
     "shotglass": "2a75999bd1d754255ef733ceec75296c1c974c76"
   },
-  "skills_count": 1333,
-  "version": "2026.11.01"
+  "skills_count": 1343,
+  "version": "2026.11.02"
 }

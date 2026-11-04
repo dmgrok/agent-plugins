@@ -1,32 +1,32 @@
 {
   "name": "Agent Skills Directory - Ecosystem Exports",
-  "version": "2026.11.03",
-  "generated_at": "2026-11-03T14:05:09.277317+00:00",
+  "version": "2026.11.04",
+  "generated_at": "2026-11-04T14:15:43.800779+00:00",
   "description": "Pre-filtered skill catalogs for different ecosystems and use cases",
   "exports": {
     "claude-skills.json": {
       "description": "Skills for Claude Code",
-      "total": 1080,
+      "total": 1082,
       "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/claude-skills.json"
     },
     "copilot-skills.json": {
       "description": "Skills for GitHub Copilot",
-      "total": 1080,
+      "total": 1082,
       "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/copilot-skills.json"
     },
     "mcp-compatible.json": {
       "description": "MCP-compatible skills",
-      "total": 73,
+      "total": 74,
       "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/mcp-compatible.json"
     },
     "premium-skills.json": {
       "description": "High-quality skills (score >= 70)",
-      "total": 672,
+      "total": 677,
       "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/premium-skills.json"
     },
     "active-skills.json": {
       "description": "Recently maintained skills",
-      "total": 985,
+      "total": 990,
       "cdn": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/exports/active-skills.json"
     }
   },

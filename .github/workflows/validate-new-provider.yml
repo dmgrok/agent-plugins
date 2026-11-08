@@ -182,16 +182,17 @@ jobs:
           path: ${{ steps.stage.outputs.lgtm_path }}
           fail-on-error: false
 
-      # The LGTM action reads Lakera Guard's v2 `breakdown` as a mapping, but the API
-      # returns a list, so every detector index was reported as a prompt injection
-      # ("Lakera Guard detected: 15"). The check now runs here and reads the list.
-      - name: Prompt-injection check (Lakera Guard)
+      # Local ONNX classifier. A download or inference error sets status=failed.
+      # The gate below accepts only status=passed. See docs/prompt-injection.md.
+      - name: Prompt-injection check
         if: steps.stage.outputs.lgtm_path
         id: prompt_injection
         env:
-          LAKERA_GUARD_API_KEY: ${{ secrets.LAKERA_GUARD_API_KEY }}
           LGTM_PATH: ${{ steps.stage.outputs.lgtm_path }}
-        run: python scripts/provider_intake.py prompt-injection --path "$LGTM_PATH"
+          PROMPT_INJECTION_REPORT: prompt-injection-report.json
+        run: |
+          pip install onnxruntime==1.31.1 tokenizers==0.23.3
+          python scripts/provider_intake.py prompt-injection --path "$LGTM_PATH"
 
       - name: Set LGTM defaults if action failed
         if: steps.lgtm.outcome == 'failure' || steps.lgtm.outcome == 'skipped'
@@ -210,6 +211,7 @@ jobs:
           path: |
             /tmp/gitleaks-report.json
             lgtm-results.json
+            prompt-injection-report.json
           if-no-files-found: ignore
 
       - name: Check validation results
@@ -223,9 +225,10 @@ jobs:
           echo "Gitleaks Passed: $GITLEAKS_PASSED"
           echo "Prompt-injection check: $PROMPT_INJECTION"
 
-          # Allow pending LGTM or a skipped prompt-injection check (manual review
-          # needed) but require gitleaks to pass and no prompt attack to be found.
-          if ([ "$LGTM_PASSED" = "true" ] || [ "$LGTM_PASSED" = "pending" ]) && [ "$GITLEAKS_PASSED" = "true" ] && [ "$PROMPT_INJECTION" != "failed" ]; then
+          # Pending LGTM can proceed to manual review. The prompt-injection check
+          # must be an explicit pass: a skip, an empty status, or a model error
+          # fails closed.
+          if ([ "$LGTM_PASSED" = "true" ] || [ "$LGTM_PASSED" = "pending" ]) && [ "$GITLEAKS_PASSED" = "true" ] && [ "$PROMPT_INJECTION" = "passed" ]; then
             echo "validation_passed=true" >> $GITHUB_OUTPUT
             echo "✅ All validations passed!"
           else
@@ -375,8 +378,8 @@ jobs:
             if (!lgtmPassed) {
               issues.push(`- ❌ **Skill checks (LGTM)**: ${e.LGTM_SPEC} spec finding(s) and ${e.LGTM_SECURITY} security finding(s). See the "Validate skills with LGTM Agent Skills" step in the [run log](${e.RUN_URL}) for each finding.`);
             }
-            if (e.PROMPT_INJECTION === 'failed') {
-              issues.push(`- ❌ **Prompt-injection check (Lakera Guard)**: a prompt attack was detected in at least one SKILL.md. See the "Prompt-injection check" step in the [run log](${e.RUN_URL}) for the file.`);
+            if (e.PROMPT_INJECTION !== 'passed') {
+              issues.push(`- ❌ **Prompt-injection check**: the local classifier did not pass. See the "Prompt-injection check" step in the [run log](${e.RUN_URL}) for each file score, or for a download/inference error. A score at the threshold is not by itself proof the file is hostile; limits are in docs/prompt-injection.md.`);
             }
 
             const comment = [

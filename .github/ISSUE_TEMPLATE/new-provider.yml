@@ -11,7 +11,7 @@ body:
         Submit your repository to be included in the Agent Plugins catalog. A maintainer reviews each submission and then starts automated validation, which will:
         - ✅ Validate skills using LGTM Agent Skills validator
         - 🔒 Scan for secrets using gitleaks
-        - 🛡️ Check for prompt injection attacks using Lakera Guard
+        - 🛡️ Score SKILL.md files with a local prompt-injection classifier
         - 🤖 Automatically create a PR if validation passes
         
         **Requirements:**

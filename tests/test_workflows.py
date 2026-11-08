@@ -132,11 +132,16 @@ def test_lgtm_results_are_uploaded_with_the_report():
     assert "lgtm-results.json" in upload["with"]["path"]
 
 
-def test_prompt_injection_check_runs_in_repo_and_not_inside_lgtm_action():
+def test_prompt_injection_check_is_local_and_fails_closed():
     steps = _validate_steps()
+    rendered = yaml.safe_dump(steps)
     lgtm = next(s for s in steps if str(s.get("uses", "")).startswith("dmgrok/LGTM_agent_skills"))
-    assert "lakera-api-key" not in lgtm["with"]
-    check = next(s for s in steps if "prompt-injection" in s.get("run", ""))
-    assert check["env"]["LAKERA_GUARD_API_KEY"] == "${{ secrets.LAKERA_GUARD_API_KEY }}"
+    assert "lakera" not in yaml.safe_dump(lgtm).lower()
+    assert "LAKERA" not in rendered
+    assert "secrets." not in rendered.split("Prompt-injection check", 1)[-1].split("Set LGTM defaults", 1)[0]
+    check = next(s for s in steps if s.get("id") == "prompt_injection")
+    assert "onnxruntime==1.31.1" in check["run"]
+    assert "tokenizers==0.23.3" in check["run"]
     gate = next(s for s in steps if s.get("id") == "check")
-    assert "PROMPT_INJECTION" in gate["env"] and '"failed"' in gate["run"]
+    assert '[ "$PROMPT_INJECTION" = "passed" ]' in gate["run"]
+    assert "!= \"failed\"" not in gate["run"]

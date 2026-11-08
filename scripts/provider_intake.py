@@ -330,43 +330,89 @@ def stage_lgtm_input(source: Path, skills_path_prefix: str, dest: Path) -> Path:
     return dest
 
 
-def _cmd_prompt_injection(path: Path) -> int:
-    """Run the local classifier. Exit 0 so the workflow gate can read the status.
+def _write_step_summary(text: str) -> None:
+    if os.environ.get("PROMPT_ADVISORY_SUMMARY") != "1":
+        return
+    path = os.environ.get("GITHUB_STEP_SUMMARY", "")
+    if not path:
+        return
+    with open(path, "a", encoding="utf-8") as handle:
+        handle.write("## Prompt-injection advisory\n\n")
+        handle.write(text)
+        handle.write("\n\nThis is a review signal, not a safety guarantee. ")
+        handle.write("A score under the threshold is not proof of safety.\n")
 
-    A model or download failure is status=failed, not a skip. The workflow
-    accepts only status=passed.
-    """
-    from scripts.prompt_injection import PromptInjectionError, format_log, scan_skill_tree, write_report
 
-    report_path = os.environ.get("PROMPT_INJECTION_REPORT", "")
-    try:
-        summary = scan_skill_tree(path)
-    except PromptInjectionError as exc:
-        summary = {
-            "status": "failed",
-            "model_id": "",
-            "revision": "",
-            "threshold": "",
-            "window_body_tokens": "",
-            "window_stride_tokens": "",
-            "blocking": [str(exc)],
-            "files": [],
-            "reason": str(exc),
-        }
-        print(f"::error::{exc}")
+def _emit_advisory(summary: dict) -> None:
+    from scripts.prompt_injection import format_log, write_report
+
     print(format_log(summary))
+    _write_step_summary(str(summary.get("summary") or ""))
+    report_path = os.environ.get("PROMPT_INJECTION_REPORT", "")
     if report_path:
         write_report(summary, Path(report_path))
     output_path = os.environ.get("GITHUB_OUTPUT")
     if output_path:
-        reason = str(summary.get("reason") or "")
-        if not reason and summary.get("blocking"):
-            reason = str(summary["blocking"][0])
         write_github_output(output_path, {
-            "status": str(summary["status"]),
-            "findings": str(len(summary.get("blocking") or [])),
-            "reason": reason.replace("\n", " ")[:500],
+            "status": str(summary.get("status") or ""),
+            "needs_review": "true" if summary.get("needs_review") else "false",
+            "summary": str(summary.get("summary") or ""),
+            "findings": str(len(summary.get("flagged") or [])),
         })
+
+
+def _cmd_prompt_injection(path: Path) -> int:
+    """Score skills and record a review signal. Always exit 0.
+
+    Download, checksum, and inference problems are advisory errors. They do
+    not decide provider validation. LGTM and gitleaks remain the hard gates.
+    """
+    from scripts.prompt_injection import PromptInjectionError, advisory_from_error, scan_skill_tree
+
+    try:
+        summary = scan_skill_tree(path)
+    except PromptInjectionError as exc:
+        summary = advisory_from_error(str(exc))
+    except Exception as exc:
+        summary = advisory_from_error(f"unexpected {type(exc).__name__}")
+    _emit_advisory(summary)
+    return 0
+
+
+def _cmd_validation_gate() -> int:
+    from scripts.prompt_injection import provider_validation_passed
+
+    lgtm = os.environ.get("LGTM_PASSED", "")
+    leaks = os.environ.get("GITLEAKS_PASSED", "")
+    passed = provider_validation_passed(lgtm, leaks)
+    print(f"LGTM Passed: {lgtm}")
+    print(f"Gitleaks Passed: {leaks}")
+    print("Prompt-injection advisory does not affect this decision.")
+    if passed:
+        print("validation_passed=true")
+        print("✅ Provider gates passed")
+    else:
+        print("validation_passed=false")
+        print("❌ Validation failed")
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path:
+        write_github_output(output_path, {"validation_passed": "true" if passed else "false"})
+    return 0
+
+
+def _cmd_prompt_advisory() -> int:
+    """Publish the review signal, including when the scanner step left no output."""
+    from scripts.prompt_injection import resolve_advisory
+
+    expected = os.environ.get("SCAN_EXPECTED", "").strip().lower() in {"1", "true", "yes"}
+    result = resolve_advisory(
+        step_outcome=os.environ.get("STEP_OUTCOME", ""),
+        scan_expected=expected,
+        status=os.environ.get("PROMPT_STATUS", ""),
+        needs_review=os.environ.get("PROMPT_NEEDS_REVIEW", ""),
+        summary=os.environ.get("PROMPT_SUMMARY", ""),
+    )
+    _emit_advisory(result)
     return 0
 
 
@@ -442,8 +488,10 @@ def main(argv=None) -> int:
     stage = sub.add_parser("stage-lgtm", help="Prepare the directory scanned by the skill linter")
     stage.add_argument("--source", type=Path, required=True)
     stage.add_argument("--dest", type=Path, required=True)
-    guard = sub.add_parser("prompt-injection", help="Score staged SKILL.md files with the local classifier")
+    guard = sub.add_parser("prompt-injection", help="Score staged SKILL.md files and record a review signal")
     guard.add_argument("--path", type=Path, required=True)
+    sub.add_parser("validation-gate", help="Decide provider validation from LGTM and gitleaks only")
+    sub.add_parser("prompt-advisory", help="Keep a missing scanner result visible as a review signal")
     args = parser.parse_args(argv)
 
     if args.command == "parse":
@@ -452,6 +500,10 @@ def main(argv=None) -> int:
         return _cmd_stage_lgtm(args.source, args.dest)
     if args.command == "prompt-injection":
         return _cmd_prompt_injection(args.path)
+    if args.command == "validation-gate":
+        return _cmd_validation_gate()
+    if args.command == "prompt-advisory":
+        return _cmd_prompt_advisory()
     return _cmd_add_provider(args.aggregate)
 
 

@@ -346,20 +346,23 @@ More text.
     assert sub.skills_path_prefix == ""
 
 
-def test_prompt_injection_command_fails_closed_without_calling_lakera(tmp_path, monkeypatch):
-    """The CLI must not skip open when the local model cannot run."""
+def test_prompt_injection_command_records_an_advisory_error(tmp_path, monkeypatch):
+    """A missing model is visible and does not become a successful scan."""
     monkeypatch.delenv("LAKERA_GUARD_API_KEY", raising=False)
     monkeypatch.setenv("PROMPT_INJECTION_CACHE", str(tmp_path / "empty-cache"))
+    output = tmp_path / "github-output.txt"
+    monkeypatch.setenv("GITHUB_OUTPUT", str(output))
     skill = tmp_path / "skills"
     skill.mkdir()
-    (skill / "SKILL.md").write_text("---\nname: demo\n---\nOrdinary notes.\n", encoding="utf-8")
+    (skill / "SKILL.md").write_text("---\nname: demo\n---\nOrdinary notes for the agent.\n", encoding="utf-8")
 
     def explode(cache=None):
         raise intake_prompt.PromptInjectionError("model unavailable")
 
     monkeypatch.setattr(intake_prompt, "DebertaOnnxScorer", explode)
     assert intake._cmd_prompt_injection(skill) == 0
-    # status is printed; the workflow gate accepts only an explicit pass.
-    # Re-run through the scanner API to assert the exception path the CLI uses.
-    with pytest.raises(intake_prompt.PromptInjectionError):
-        intake_prompt.scan_skill_tree(skill)
+    written = output.read_text(encoding="utf-8")
+    assert "status=advisory-error" in written
+    assert "needs_review=true" in written
+    assert "advisory error" in written
+    assert intake_prompt.provider_validation_passed("true", "true") is True

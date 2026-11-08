@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Score staged SKILL.md files with a pinned local classifier.
 
-The gate replaces the Lakera Guard API. It downloads one public ONNX model,
-checks its sha256, and fails closed when the download or the runtime fails.
-See docs/prompt-injection.md for the threat model, the threshold, and the
-limits. This module does not execute skill scripts.
+The score is a review signal. It does not decide whether a provider is added.
+A high score, a scanner error, or text the script heuristic does not treat as
+English asks a reviewer to look. A low score is not proof of safety.
+See docs/prompt-injection.md. This module does not execute skill scripts.
 """
 
 from __future__ import annotations
@@ -40,8 +40,13 @@ HUGGINGFACE_BASE = "https://huggingface.co/protectai/deberta-v3-base-prompt-inje
 ScoreFn = Callable[[str], float]
 
 
+REVIEW_LABEL = "needs-review"
+# Letter counts below this are too small for the script heuristic to call the
+# file English. The heuristic is not a language identifier.
+MIN_LETTERS = 40
+
 class PromptInjectionError(RuntimeError):
-    """The check could not produce a score. Callers must fail closed."""
+    """The scorer could not produce a score. The workflow records this; it does not block."""
 
 
 def iter_token_windows(n_tokens: int, width: int, stride: int) -> List[Tuple[int, int]]:
@@ -167,6 +172,118 @@ class DebertaOnnxScorer:
         return best, len(windows)
 
 
+def script_hint(text: str) -> str:
+    """Count letter scripts. Returns english, non_english, mixed, or uncertain.
+
+    This is not a language detector. English source code next to a Chinese
+    explanation counts as mixed, so the Chinese text is not ignored. A file
+    with too few letters is uncertain rather than treated as English.
+    """
+    latin = cjk = other = 0
+    for char in text:
+        if not char.isalpha():
+            continue
+        code = ord(char)
+        if code <= 0x02FF or 0x1E00 <= code <= 0x1EFF:
+            latin += 1
+        elif (
+            0x3400 <= code <= 0x9FFF
+            or 0x3040 <= code <= 0x30FF
+            or 0x31F0 <= code <= 0x31FF
+            or 0xAC00 <= code <= 0xD7AF
+            or 0xF900 <= code <= 0xFAFF
+        ):
+            cjk += 1
+        else:
+            other += 1
+    letters = latin + cjk + other
+    if letters < MIN_LETTERS:
+        return "uncertain"
+    non_latin = cjk + other
+    if non_latin >= MIN_LETTERS and latin >= MIN_LETTERS:
+        return "mixed"
+    if non_latin >= MIN_LETTERS:
+        return "non_english"
+    if latin / letters >= 0.9:
+        return "english"
+    return "uncertain"
+
+
+def classify_advisory(files: Sequence[dict], error: str = "") -> Dict[str, object]:
+    """Turn scores and script hints into a review signal. Never a safety verdict."""
+    flagged = [item for item in files if float(item.get("score") or 0) >= THRESHOLD]
+    outside = [item for item in files if item.get("script_hint") != "english"]
+    if error:
+        reason = f"advisory error: {error}. This is not a completed scan."
+        return {"needs_review": True, "status": "advisory-error", "summary": _one_line(reason)}
+    parts: List[str] = []
+    if flagged:
+        shown = ", ".join(f"{item['path']} {item['score']}" for item in flagged[:5])
+        extra = "" if len(flagged) <= 5 else f" (+{len(flagged) - 5} more)"
+        parts.append(f"{len(flagged)} file(s) at or above {THRESHOLD}: {shown}{extra}")
+    if outside:
+        shown = ", ".join(
+            f"{item['path']} heuristic={item['script_hint']}" for item in outside[:5]
+        )
+        extra = "" if len(outside) <= 5 else f" (+{len(outside) - 5} more)"
+        parts.append(
+            "script heuristic (not a language detector) is outside English on "
+            f"{len(outside)} file(s): {shown}{extra}. Scores there are not evidence"
+        )
+    if parts:
+        return {"needs_review": True, "status": "needs-review", "summary": _one_line(" ".join(parts))}
+    if files:
+        top = max(files, key=lambda item: float(item.get("score") or 0))
+        text = (
+            f"no review signal. Highest score {top['score']} on {top['path']}, under {THRESHOLD}. "
+            "A score under the threshold is not proof of safety."
+        )
+    else:
+        text = "no SKILL.md files were scored. That is not proof of safety."
+    return {"needs_review": False, "status": "no-review-signal", "summary": _one_line(text)}
+
+
+def resolve_advisory(
+    step_outcome: str,
+    scan_expected: bool,
+    status: str = "",
+    needs_review: str = "",
+    summary: str = "",
+) -> Dict[str, object]:
+    """Keep a missing or crashed scan visible. Do not turn it into a clear result."""
+    status = (status or "").strip()
+    summary = (summary or "").strip()
+    flag = (needs_review or "").strip().lower()
+    known = status in {"needs-review", "no-review-signal", "advisory-error"}
+    if known and summary and flag in {"true", "false"}:
+        review = flag == "true" or status in {"needs-review", "advisory-error"}
+        return {"needs_review": review, "status": status, "summary": _one_line(summary)}
+    if scan_expected:
+        why = "failed" if (step_outcome or "").strip() == "failure" else "wrote no usable result"
+        text = (
+            f"advisory error: the prompt-injection step {why}. "
+            "This is not a completed scan."
+        )
+        return {"needs_review": True, "status": "advisory-error", "summary": text}
+    return {
+        "needs_review": False,
+        "status": "not-run",
+        "summary": "Prompt-injection scan did not run because there was no staged skill path.",
+    }
+
+
+def provider_validation_passed(lgtm_passed: str, gitleaks_passed: str) -> bool:
+    """LGTM and gitleaks are the hard gates. The classifier is not one of them."""
+    lgtm = (lgtm_passed or "").strip()
+    leaks = (gitleaks_passed or "").strip()
+    return lgtm in {"true", "pending"} and leaks == "true"
+
+
+def _one_line(text: str) -> str:
+    cleaned = " ".join(str(text).replace("\r", " ").replace("\n", " ").split())
+    return cleaned[:500]
+
+
 def _skill_files(path: Path) -> List[Path]:
     files = sorted(
         candidate
@@ -180,12 +297,23 @@ def _skill_files(path: Path) -> List[Path]:
     return files
 
 
-def scan_skill_tree(path: Path, score_text: Optional[ScoreFn] = None) -> Dict[str, object]:
-    """Return a pass/fail summary. `score_text` is for tests; production loads the model.
+def _record(path: Path, root: Path, text: str, score: float, windows: int) -> Dict[str, object]:
+    raw = path.read_bytes()
+    return {
+        "path": path.relative_to(root).as_posix(),
+        "sha256": hashlib.sha256(raw).hexdigest(),
+        "bytes": len(raw),
+        "score": round(float(score), 6),
+        "windows": windows,
+        "script_hint": script_hint(text),
+    }
 
-    `score_text` returns the injection probability of one whole file. The
-    production scorer windows the file itself. A scorer exception fails the
-    tree. There is no skip status.
+
+def scan_skill_tree(path: Path, score_text: Optional[ScoreFn] = None) -> Dict[str, object]:
+    """Score the tree. Operational failures raise; `annotate` records the review signal.
+
+    `score_text` returns one file's probability and is for tests. The production
+    scorer windows the file itself.
     """
     if not path.is_dir():
         raise PromptInjectionError(f"Scan path is not a directory: {path}")
@@ -194,34 +322,34 @@ def scan_skill_tree(path: Path, score_text: Optional[ScoreFn] = None) -> Dict[st
         scorer = DebertaOnnxScorer()
 
     records: List[Dict[str, object]] = []
-    blocking: List[str] = []
     for skill_md in _skill_files(path):
-        raw = skill_md.read_bytes()
-        text = raw.decode("utf-8", errors="replace")
+        raw_text = skill_md.read_text(encoding="utf-8", errors="replace")
         rel = skill_md.relative_to(path).as_posix()
         try:
             if score_text is not None:
-                score, windows = float(score_text(text)), 1
+                score, windows = float(score_text(raw_text)), 1
             else:
                 assert scorer is not None
-                score, windows = scorer.score(text)
+                score, windows = scorer.score(raw_text)
         except PromptInjectionError:
             raise
         except Exception as exc:
             raise PromptInjectionError(f"Inference failed for {rel}: {type(exc).__name__}") from exc
-        record = {
-            "path": rel,
-            "sha256": hashlib.sha256(raw).hexdigest(),
-            "bytes": len(raw),
-            "score": round(score, 6),
-            "windows": windows,
-        }
-        records.append(record)
-        if score >= THRESHOLD:
-            blocking.append(f"{rel}: {record['score']}")
+        records.append(_record(skill_md, path, raw_text, score, windows))
+    return annotate(records)
 
+
+def annotate(files: Sequence[dict], error: str = "") -> Dict[str, object]:
+    advisory = classify_advisory(files, error)
+    flagged = [
+        f"{item['path']}: {item['score']}"
+        for item in files
+        if float(item.get("score") or 0) >= THRESHOLD
+    ]
     summary: Dict[str, object] = {
-        "status": "failed" if blocking else "passed",
+        "status": advisory["status"],
+        "needs_review": advisory["needs_review"],
+        "summary": advisory["summary"],
         "model_id": MODEL_ID,
         "revision": MODEL_REVISION,
         "license": MODEL_LICENSE,
@@ -230,10 +358,16 @@ def scan_skill_tree(path: Path, score_text: Optional[ScoreFn] = None) -> Dict[st
         "threshold": THRESHOLD,
         "window_body_tokens": WINDOW_BODY_TOKENS,
         "window_stride_tokens": WINDOW_STRIDE_TOKENS,
-        "blocking": blocking,
-        "files": records,
+        "flagged": flagged,
+        "files": list(files),
     }
+    if error:
+        summary["reason"] = error
     return summary
+
+
+def advisory_from_error(reason: str) -> Dict[str, object]:
+    return annotate([], reason)
 
 
 def write_report(summary: Dict[str, object], dest: Path) -> None:
@@ -242,18 +376,26 @@ def write_report(summary: Dict[str, object], dest: Path) -> None:
 
 def format_log(summary: Dict[str, object]) -> str:
     lines = [
-        f"Prompt-injection model: {summary['model_id']}@{summary['revision']}",
-        f"Threshold: {summary['threshold']} (window {summary['window_body_tokens']}/{summary['window_stride_tokens']})",
+        f"Prompt-injection model: {summary.get('model_id', '')}@{summary.get('revision', '')}",
+        (
+            f"Review threshold: {summary.get('threshold', THRESHOLD)} "
+            f"(window {summary.get('window_body_tokens', WINDOW_BODY_TOKENS)}/"
+            f"{summary.get('window_stride_tokens', WINDOW_STRIDE_TOKENS)}). "
+            "This does not block provider validation."
+        ),
     ]
     files = summary.get("files")
     if isinstance(files, Sequence):
         for record in files:
             if isinstance(record, dict):
                 lines.append(
-                    f"file {record['path']} score={record['score']} "
-                    f"windows={record['windows']} sha256={record['sha256']}"
+                    f"file {record.get('path')} score={record.get('score')} "
+                    f"windows={record.get('windows')} script_hint={record.get('script_hint')} "
+                    f"sha256={record.get('sha256')}"
                 )
-    for entry in summary.get("blocking") or []:
-        lines.append(f"::error::Prompt-injection score at or above threshold in {entry}")
-    lines.append(f"Prompt-injection check: {summary['status']}")
+    marker = "::error::" if summary.get("status") == "advisory-error" else "::warning::"
+    if summary.get("needs_review"):
+        lines.append(f"{marker}{summary.get('summary')}")
+    lines.append(f"Prompt-injection advisory: {summary.get('status')}")
+    lines.append("A score under the threshold is not proof of safety.")
     return "\n".join(lines)

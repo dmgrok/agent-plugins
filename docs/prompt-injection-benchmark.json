@@ -1649,5 +1649,28 @@
         }
       ]
     }
-  ]
+  ],
+  "advisory_interpretation": {
+    "note": "Same measured scores. The blocking experiment would have failed issue 136 only. The advisory reading asks for review and does not block.",
+    "needs_review_issues": [
+      136,
+      113,
+      111
+    ],
+    "no_review_signal_issues": [
+      132,
+      130,
+      125,
+      92
+    ],
+    "script_heuristic": {
+      "136": "mixed",
+      "132": "english",
+      "130": "english",
+      "125": "english",
+      "113": "mixed on douyin-research, weibo-research, xiaohongshu-research; english on the other 80",
+      "111": "mixed",
+      "92": "english"
+    }
+  }
 }

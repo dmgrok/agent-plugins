@@ -132,16 +132,30 @@ def test_lgtm_results_are_uploaded_with_the_report():
     assert "lgtm-results.json" in upload["with"]["path"]
 
 
-def test_prompt_injection_check_is_local_and_fails_closed():
+def test_prompt_injection_is_advisory_and_does_not_block_the_provider_gate():
+    """The workflow YAML asks future runs to label review. This test applies no labels."""
     steps = _validate_steps()
     rendered = yaml.safe_dump(steps)
     lgtm = next(s for s in steps if str(s.get("uses", "")).startswith("dmgrok/LGTM_agent_skills"))
     assert "lakera" not in yaml.safe_dump(lgtm).lower()
     assert "LAKERA" not in rendered
-    assert "secrets." not in rendered.split("Prompt-injection check", 1)[-1].split("Set LGTM defaults", 1)[0]
-    check = next(s for s in steps if s.get("id") == "prompt_injection")
-    assert "onnxruntime==1.31.1" in check["run"]
-    assert "tokenizers==0.23.3" in check["run"]
+    scan = next(s for s in steps if s.get("id") == "prompt_injection")
+    assert scan.get("continue-on-error") is True
+    assert "onnxruntime==1.31.1" in scan["run"]
+    assert "tokenizers==0.23.3" in scan["run"]
+    assert "secrets." not in yaml.safe_dump(scan)
     gate = next(s for s in steps if s.get("id") == "check")
-    assert '[ "$PROMPT_INJECTION" = "passed" ]' in gate["run"]
-    assert "!= \"failed\"" not in gate["run"]
+    assert "validation-gate" in gate["run"]
+    assert "PROMPT_INJECTION" not in gate["run"]
+    assert "prompt_injection" not in yaml.safe_dump(gate)
+    review = next(s for s in steps if s.get("id") == "prompt_review")
+    assert review["if"] == "always()"
+    assert "prompt-advisory" in review["run"]
+    issue_label = next(s for s in steps if s.get("name") == "Label submission needs-review")
+    pr_label = next(s for s in steps if s.get("name") == "Label provider pull request needs-review")
+    assert "needs-review" in issue_label["with"]["script"]
+    assert "needs-review" in pr_label["with"]["script"]
+    assert str(issue_label["if"]).startswith("always()")
+    failed = next(s for s in steps if s.get("name") == "Comment on issue - Validation Failed")
+    assert "does not block" in failed["with"]["script"]
+    assert "PROMPT_REVIEW" in failed["env"]

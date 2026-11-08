@@ -1,9 +1,10 @@
 # Prompt-injection check
 
-The provider workflow scores every staged `SKILL.md` on CPU and fails the
-submission when the score reaches the threshold below. Gitleaks and the LGTM
-skill checks are unchanged. This check does not execute files from the
-submission.
+The provider workflow scores every staged `SKILL.md` on CPU and, when the
+result needs a person, adds the `needs-review` label and a one-line summary.
+That signal does not fail validation and does not block the add-provider pull
+request. LGTM and gitleaks remain the hard gates. A score under the threshold
+is not proof of safety. This check does not execute files from the submission.
 
 ## Threat model
 
@@ -133,6 +134,37 @@ not to send the API token to storage. It is under the threshold. The old Lakera
 `prompt_attack` labels on these seven had no spans and no scores, so this run
 does not confirm or dismiss those labels.
 
+## Advisory interpretation
+
+The numbers above are unchanged. They come from the blocking experiment: at
+0.99 used as a hard gate, issue 136 would have failed validation and the other
+six would have passed. David then asked for an advisory detector. The same
+scores now only ask for review.
+
+A file asks for review when its score is at least 0.99, when the scanner
+errors, or when a character-script heuristic does not call the file English.
+The heuristic counts Latin letters against CJK and other letters. It is not a
+language identifier. A Chinese explanation with English code is `mixed`, so
+the Chinese text is not dropped. Too few letters is `uncertain`, not English.
+Non-English, mixed, and uncertain text asks for review even when the score is
+under 0.99, and the summary says the score is not evidence there.
+
+Applied to the same files, without rescoring the model:
+
+| Issue | Max score | Script heuristic | Advisory | Blocks the provider? |
+| --- | --- | --- | --- | --- |
+| 136 | 0.992630 | mixed (Chinese workflow plus English code words) | needs-review | no |
+| 132 | 0.654701 | english on all 22 files | no review signal | no |
+| 130 | 0.046281 | english | no review signal | no |
+| 125 | 0.023205 | english on all 33 files | no review signal | no |
+| 113 | 0.489605 | mixed on `douyin-research`, `weibo-research`, and `xiaohongshu-research`; english on the other 80 | needs-review | no |
+| 111 | 0.488560 | mixed (Chinese reader plus English markup) | needs-review | no |
+| 92 | 0.013054 | english | no review signal | no |
+
+Issues 132, 130, 125, and 92 do not ask for review. That is not an approval
+and not proof of safety. LGTM and gitleaks on the 8 Nov runs had already
+passed; those two gates are what would still block a provider.
+
 ## Limits
 
 This is a single English classifier score. It is not a guarantee.
@@ -149,7 +181,10 @@ This is a single English classifier score. It is not a guarantee.
 
 ## Failure behavior
 
-Missing dependencies, a failed download, a checksum mismatch, an over-long
-file, or an inference error set the step status to `failed`. The workflow
-continues only when the status is exactly `passed`. There is no skip that lets
-the submission through.
+A missing dependency, a failed download, a checksum mismatch, an over-long
+file, an inference error, or a scanner step that crashes before it writes a
+result is an advisory error. The log marks it with `::error::`, the status is
+`advisory-error`, and `needs-review` is still requested. It is not reported as
+a completed scan, and it does not by itself stop the add-provider pull request.
+If gitleaks or LGTM fail, their failure still blocks, and the review signal
+stays on the issue.

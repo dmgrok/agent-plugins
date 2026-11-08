@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-11-08T13:03:00.785908+00:00",
+  "last_run": "2026-11-08T17:11:18.085260+00:00",
   "provider_commits": {
     "anthropics": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -18,7 +18,7 @@
     "epub-skill": "7c0723087b9f6ec2352b42b73f61d224b542e059",
     "d3js-skill": "e198c87d03f1c9811acbff681886fac24baee53d",
     "ffuf-skill": "50fd4af4d8bd60cfc48fd84eda1720fbd718857d",
-    "ios-simulator-skill": "30d2ea43ef88d353f4de560e7b7f132e05c502ab",
+    "ios-simulator-skill": "86fb9ba90a438bd2ee7ab640165bd77da396d941",
     "move-quality-skill": "6813ac55cb3bfcaa35c349da7dd5f9eae745009d",
     "playwright-skill": "dd47a6a023e249eb1b36e9e943eab89d0900865d",
     "pypict-skill": "fbda212bca79dfa7611be12527b102c89cc8faeb",

@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Security
+- The provider prompt-injection check no longer calls Lakera Guard. It scores every
+  SKILL.md with pinned `protectai/deberta-v3-base-prompt-injection-v2` weights on CPU.
+  A high score, a scanner error, or text the script heuristic does not treat as
+  English adds `needs-review` and a summary. It does not block the provider.
+  LGTM and gitleaks remain the hard gates. See `docs/prompt-injection.md`.
 - Provider intake (`validate-new-provider.yml`) now starts only when a maintainer applies the
   `run-provider-validation` label or dispatches the workflow, and it verifies that person's
   repository access first. Issue-form labels such as `new-source` no longer trigger validation.

@@ -1516,7 +1516,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 2. A maintainer reviews the submission and starts automated validation:
    - ✅ SKILL.md format with YAML frontmatter
    - 🔒 Secrets scan (gitleaks)
-   - 🛡️ Prompt injection check (Lakera Guard)
+   - 🛡️ Prompt-injection advisory for reviewers (does not block; see docs/prompt-injection.md)
    - 📊 SKILL.md spec and security checks with no errors ([LGTM validation](https://github.com/dmgrok/LGTM_agent_skills))
 3. Auto-PR created on pass → once merged, skills appear in the next daily aggregation
 

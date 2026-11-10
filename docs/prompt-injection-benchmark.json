@@ -1,0 +1,1676 @@
+{
+  "measured_on": "2026-11-08",
+  "host": "cloud agent CPU, one intra-op thread",
+  "onnxruntime": "1.31.1",
+  "tokenizers": "0.23.3",
+  "chosen_model": {
+    "id": "protectai/deberta-v3-base-prompt-injection-v2",
+    "revision": "90c9989b1a342275dd0d1a95aad283c04e075671",
+    "license": "Apache-2.0",
+    "onnx_sha256": "f0ea7f239f765aedbde7c9e163a7cb38a79c5b8853d3f76db5152172047b228c",
+    "tokenizer_sha256": "752fe5f0d5678ad563e1bd2ecc1ddf7a3ba7e2024d0ac1dba1a72975e26dff2f",
+    "threshold": 0.99,
+    "window_body_tokens": 510,
+    "window_stride_tokens": 256,
+    "load_s_from_disk": 3.203,
+    "cold_onnx_download_s": 6,
+    "cold_onnx_bytes": 738563188
+  },
+  "fixture_gap": {
+    "max_benign_instruction_without_quoted_attack": 0.982893,
+    "fixture": "skill_long_procedure",
+    "min_clear_attack": 0.999646,
+    "attack_fixture": "exfil_keys"
+  },
+  "fixtures": [
+    {
+      "group": "benign_tune",
+      "name": "skill_changelog",
+      "chars": 709,
+      "sha256": "60c0557815e4782032de457b786035fdf6b10a1ccd5b96017bed73a0fe49e3c3",
+      "promptpurify": {
+        "score": 0.003481,
+        "windows": 2,
+        "seconds": 0.02
+      },
+      "protectai-deberta-v3": {
+        "score": 0.000813,
+        "windows": 1,
+        "seconds": 0.203
+      }
+    },
+    {
+      "group": "benign_tune",
+      "name": "skill_review",
+      "chars": 638,
+      "sha256": "89f73914f65fa62c4b98f0ab9dae87988ce6ac3c991d97e6e005f1db084ff821",
+      "promptpurify": {
+        "score": 0.766673,
+        "windows": 2,
+        "seconds": 0.019
+      },
+      "protectai-deberta-v3": {
+        "score": 9.5e-05,
+        "windows": 1,
+        "seconds": 0.179
+      }
+    },
+    {
+      "group": "benign_tune",
+      "name": "skill_env_docs",
+      "chars": 528,
+      "sha256": "f00b245ebbf80a2cd44e0f4571738de02d7b1d245b86bb174aa4fc6b51c36020",
+      "promptpurify": {
+        "score": 0.969312,
+        "windows": 2,
+        "seconds": 0.018
+      },
+      "protectai-deberta-v3": {
+        "score": 0.008656,
+        "windows": 1,
+        "seconds": 0.158
+      }
+    },
+    {
+      "group": "benign_tune",
+      "name": "skill_long_procedure",
+      "chars": 15124,
+      "sha256": "d20ffc94b0673f98d35115a8782725babb37f3c26046430e2ddf66e36bdd2c29",
+      "promptpurify": {
+        "score": 0.336459,
+        "windows": 60,
+        "seconds": 0.562
+      },
+      "protectai-deberta-v3": {
+        "score": 0.982893,
+        "windows": 12,
+        "seconds": 9.39
+      }
+    },
+    {
+      "group": "benign_tune",
+      "name": "hardneg_quoted_attack",
+      "chars": 529,
+      "sha256": "1ace741954a614d9dce2594327fb7820278fa5f1ef828e6b7a012c126e313cb3",
+      "promptpurify": {
+        "score": 0.999998,
+        "windows": 2,
+        "seconds": 0.027
+      },
+      "protectai-deberta-v3": {
+        "score": 1.0,
+        "windows": 1,
+        "seconds": 0.15
+      }
+    },
+    {
+      "group": "attack_tune",
+      "name": "override_system",
+      "chars": 100,
+      "sha256": "231f555c4714a806e9f8a8aa416d38e47d7639e32a0a9add41db23ec72db61b1",
+      "promptpurify": {
+        "score": 0.999871,
+        "windows": 1,
+        "seconds": 0.012
+      },
+      "protectai-deberta-v3": {
+        "score": 1.0,
+        "windows": 1,
+        "seconds": 0.054
+      }
+    },
+    {
+      "group": "attack_tune",
+      "name": "exfil_keys",
+      "chars": 125,
+      "sha256": "f93434197c92557c6ace47370bdfe12bad47980c57582b17854bc25c8907fce5",
+      "promptpurify": {
+        "score": 4.8e-05,
+        "windows": 1,
+        "seconds": 0.011
+      },
+      "protectai-deberta-v3": {
+        "score": 0.999646,
+        "windows": 1,
+        "seconds": 0.088
+      }
+    },
+    {
+      "group": "attack_tune",
+      "name": "approval_bypass",
+      "chars": 144,
+      "sha256": "5311aa0e21bc8be7e1cc7d920c1f499b93c22b12e9c017ae1e4e069748e9788d",
+      "promptpurify": {
+        "score": 2e-06,
+        "windows": 1,
+        "seconds": 0.011
+      },
+      "protectai-deberta-v3": {
+        "score": 0.999843,
+        "windows": 1,
+        "seconds": 0.07
+      }
+    },
+    {
+      "group": "attack_holdout",
+      "name": "paraphrase_exfil",
+      "chars": 173,
+      "sha256": "1cb26ed345240d9811db148b88a3c90c3500b4849b99e4b9fae94424d0af1642",
+      "promptpurify": {
+        "score": 0.868998,
+        "windows": 1,
+        "seconds": 0.011
+      },
+      "protectai-deberta-v3": {
+        "score": 1.0,
+        "windows": 1,
+        "seconds": 0.12
+      }
+    },
+    {
+      "group": "attack_holdout",
+      "name": "buried_tail",
+      "chars": 814,
+      "sha256": "dc982942d30c80fd33a3418a11112a98b0fe1eb95c481413f6f95a4f766419ea",
+      "promptpurify": {
+        "score": 0.003481,
+        "windows": 3,
+        "seconds": 0.029
+      },
+      "protectai-deberta-v3": {
+        "score": 0.004756,
+        "windows": 1,
+        "seconds": 0.236
+      }
+    },
+    {
+      "group": "attack_holdout",
+      "name": "buried_middle",
+      "chars": 725,
+      "sha256": "19655fff0705136dc2266c2546b6e85f8e8caf302a309e385f4cb45a8ed3a660",
+      "promptpurify": {
+        "score": 4e-06,
+        "windows": 2,
+        "seconds": 0.019
+      },
+      "protectai-deberta-v3": {
+        "score": 0.00031,
+        "windows": 1,
+        "seconds": 0.229
+      }
+    }
+  ],
+  "window_study": {
+    "note": "Same DeBERTa scorer. Smaller windows flag ordinary English skills.",
+    "width_128": {
+      "changelog": 0.002,
+      "long": 0.9835,
+      "exfil": 0.9996,
+      "buried_tail": 0.0644,
+      "issue_136": 1.0,
+      "issue_132_image_edit": 0.9945,
+      "issue_92": 1.0
+    },
+    "width_256": {
+      "changelog": 0.0008,
+      "long": 0.9813,
+      "exfil": 0.9996,
+      "buried_tail": 0.0048,
+      "issue_136": 0.9985,
+      "issue_132_image_edit": 0.9362,
+      "issue_92": 0.9932
+    },
+    "width_510": {
+      "changelog": 0.0008,
+      "long": 0.9829,
+      "exfil": 0.9996,
+      "buried_tail": 0.0048,
+      "issue_136": 0.9926,
+      "issue_132_image_edit": 0.6547,
+      "issue_92": 0.0131
+    }
+  },
+  "submissions": [
+    {
+      "summary": {
+        "issue": 136,
+        "commit": "34c027026b65a22a07bd6123bff9a5a069ef2bdd",
+        "prefix": "",
+        "files": 1,
+        "seconds": 12.819,
+        "promptpurify": {
+          "max": 0.003754,
+          "min": 0.003754
+        },
+        "protectai-deberta-v3": {
+          "max": 0.99263,
+          "min": 0.99263
+        },
+        "production_elapsed_s": 12.2
+      },
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "e98ff5138ccca82111196d72f1cd4b9539c2e3ee83a42805ddb59edbfa392b3c",
+          "bytes": 12497,
+          "deberta_score": 0.99263,
+          "deberta_windows": 16,
+          "promptpurify_score": 0.003754,
+          "promptpurify_windows": 23
+        }
+      ]
+    },
+    {
+      "summary": {
+        "issue": 132,
+        "commit": "9f1e7df4051e2040fef76d7a0e0c5fd71ed19a79",
+        "prefix": "skills",
+        "files": 22,
+        "seconds": 86.884,
+        "promptpurify": {
+          "max": 0.999996,
+          "min": 0.007447
+        },
+        "protectai-deberta-v3": {
+          "max": 0.654701,
+          "min": 0.000155
+        },
+        "production_elapsed_s": 81.88
+      },
+      "files": [
+        {
+          "path": "ai-media-quality-review/SKILL.md",
+          "sha256": "2c20017821ffc829833f73e4aa534ce68b13d166e58beafec5cb66c68c365afc",
+          "bytes": 3325,
+          "deberta_score": 0.000155,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.007447,
+          "promptpurify_windows": 13
+        },
+        {
+          "path": "ai-video-generation/SKILL.md",
+          "sha256": "4c18977db49739526061b4569098228453d294ea32d76955cb75b9b46c38b594",
+          "bytes": 6018,
+          "deberta_score": 0.007772,
+          "deberta_windows": 4,
+          "promptpurify_score": 0.999647,
+          "promptpurify_windows": 24
+        },
+        {
+          "path": "creator-video-remix/SKILL.md",
+          "sha256": "84b55eaa0d9973f9bbab0c606eb4427a651f1b2dfa81739e89bc8f4ee7f11190",
+          "bytes": 4057,
+          "deberta_score": 0.001415,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.999996,
+          "promptpurify_windows": 16
+        },
+        {
+          "path": "magic-hour-ad-variants/SKILL.md",
+          "sha256": "941a9253a8a7bfde718be0b883d2ddb4a7fb83bcbfef9e87a1e6a7ab08c38d9a",
+          "bytes": 7055,
+          "deberta_score": 0.00583,
+          "deberta_windows": 5,
+          "promptpurify_score": 0.997315,
+          "promptpurify_windows": 28
+        },
+        {
+          "path": "magic-hour-body-swap/SKILL.md",
+          "sha256": "0abfd63d579d153a97e56d4d67027b123a2b1e559d246d393863235b0b377eef",
+          "bytes": 4343,
+          "deberta_score": 0.000257,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.998439,
+          "promptpurify_windows": 17
+        },
+        {
+          "path": "magic-hour-brand-kit/SKILL.md",
+          "sha256": "868e4fd41feb15533d2b7147e3d637b036668048c725dba95397855c9bc5f924",
+          "bytes": 4814,
+          "deberta_score": 0.00343,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.855848,
+          "promptpurify_windows": 19
+        },
+        {
+          "path": "magic-hour-campaign-kit/SKILL.md",
+          "sha256": "772e6f53cd11c82da2e4b8eeda028d93996aad867bdde40326add5376f957b27",
+          "bytes": 7449,
+          "deberta_score": 0.000664,
+          "deberta_windows": 6,
+          "promptpurify_score": 0.998092,
+          "promptpurify_windows": 29
+        },
+        {
+          "path": "magic-hour-character-consistency/SKILL.md",
+          "sha256": "64eefba502c02f9e2b809b9705946c6c37e28034b90595eb4f08243ca0688985",
+          "bytes": 5968,
+          "deberta_score": 0.002806,
+          "deberta_windows": 4,
+          "promptpurify_score": 0.99998,
+          "promptpurify_windows": 23
+        },
+        {
+          "path": "magic-hour-character-replace/SKILL.md",
+          "sha256": "31eccfef534cb0e1d5b8403486e00b63b6860e0c10bf83660b5fcc66e48ea88c",
+          "bytes": 6294,
+          "deberta_score": 0.001764,
+          "deberta_windows": 5,
+          "promptpurify_score": 0.999942,
+          "promptpurify_windows": 25
+        },
+        {
+          "path": "magic-hour-explainer-video/SKILL.md",
+          "sha256": "413e6cb98be467e1e5037f91a48ec3168e07dc7cb3c014ecf411aaaeaf67d3a6",
+          "bytes": 4720,
+          "deberta_score": 0.003246,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.988163,
+          "promptpurify_windows": 18
+        },
+        {
+          "path": "magic-hour-face-swap/SKILL.md",
+          "sha256": "36b5e41af044f4741325b6c72f5db78acc5024ee124daba1e4a4cdfe02257926",
+          "bytes": 5969,
+          "deberta_score": 0.000208,
+          "deberta_windows": 5,
+          "promptpurify_score": 0.977307,
+          "promptpurify_windows": 23
+        },
+        {
+          "path": "magic-hour-image-editing/SKILL.md",
+          "sha256": "ceebd128451be25d33d55e0d09081923aa5be1bfb3bf82d27f76e8a60738938b",
+          "bytes": 8109,
+          "deberta_score": 0.654701,
+          "deberta_windows": 6,
+          "promptpurify_score": 0.999993,
+          "promptpurify_windows": 32
+        },
+        {
+          "path": "magic-hour-image-to-video/SKILL.md",
+          "sha256": "75f8262b53c1d7bf6064b16eb2a2ea4c624a27ca0f351e9320e2f93f2ad832c6",
+          "bytes": 7869,
+          "deberta_score": 0.000593,
+          "deberta_windows": 6,
+          "promptpurify_score": 0.999916,
+          "promptpurify_windows": 31
+        },
+        {
+          "path": "magic-hour-marketplace-images/SKILL.md",
+          "sha256": "f6c4156d2356d8d4cffbcfdd581880914fb957b98edd0b6150ce7747d5178885",
+          "bytes": 4346,
+          "deberta_score": 0.000183,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.031629,
+          "promptpurify_windows": 17
+        },
+        {
+          "path": "magic-hour-media/SKILL.md",
+          "sha256": "c3a25e183b96293fc166f7785fa13fdd06d19b7e8c022236980ace656ffacf70",
+          "bytes": 17410,
+          "deberta_score": 0.046088,
+          "deberta_windows": 14,
+          "promptpurify_score": 0.999109,
+          "promptpurify_windows": 69
+        },
+        {
+          "path": "magic-hour-music-video/SKILL.md",
+          "sha256": "9c8642ad5f75fcb7b7395e71d4312d2b30cb56be49bafc720ac9b258d99d97aa",
+          "bytes": 7153,
+          "deberta_score": 0.00184,
+          "deberta_windows": 6,
+          "promptpurify_score": 0.999679,
+          "promptpurify_windows": 28
+        },
+        {
+          "path": "magic-hour-product-visuals/SKILL.md",
+          "sha256": "f64b58a5d50aaff2ac724c08f6193c2adfc2b9eb646fa55ebbeb465a8b7554f7",
+          "bytes": 5518,
+          "deberta_score": 0.000332,
+          "deberta_windows": 4,
+          "promptpurify_score": 0.109085,
+          "promptpurify_windows": 22
+        },
+        {
+          "path": "magic-hour-talking-video/SKILL.md",
+          "sha256": "a643fc67ddbcea8ea04299e366c61ffb7cf61cd85e29fe0daacdd57dde1bc4f6",
+          "bytes": 8050,
+          "deberta_score": 0.001374,
+          "deberta_windows": 6,
+          "promptpurify_score": 0.996814,
+          "promptpurify_windows": 32
+        },
+        {
+          "path": "magic-hour-text-to-video/SKILL.md",
+          "sha256": "fff7b0a9db256253119685f01c2b4705f3820cd44790101c2ed9da088006fe76",
+          "bytes": 4726,
+          "deberta_score": 0.000274,
+          "deberta_windows": 4,
+          "promptpurify_score": 0.999627,
+          "promptpurify_windows": 18
+        },
+        {
+          "path": "magic-hour-thumbnails/SKILL.md",
+          "sha256": "f25d6a0867c4f1283118789121de1f272dd605027e82f94e5b755eab57c5d605",
+          "bytes": 4666,
+          "deberta_score": 0.000223,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.999931,
+          "promptpurify_windows": 18
+        },
+        {
+          "path": "magic-hour-ugc-ad-video/SKILL.md",
+          "sha256": "9c716e801d9f466e363b2f1f124b2d6ff97166fd00c9675409aebd1ce0da926c",
+          "bytes": 8119,
+          "deberta_score": 0.011638,
+          "deberta_windows": 6,
+          "promptpurify_score": 0.999886,
+          "promptpurify_windows": 32
+        },
+        {
+          "path": "magic-hour-video-editing/SKILL.md",
+          "sha256": "9b63fd1134c5cdf5c91d207549b9a885daef175f844a22c06e3bf7c05d33dcab",
+          "bytes": 6774,
+          "deberta_score": 0.003092,
+          "deberta_windows": 5,
+          "promptpurify_score": 0.976349,
+          "promptpurify_windows": 27
+        }
+      ]
+    },
+    {
+      "summary": {
+        "issue": 130,
+        "commit": "23cddf05c49cadef185b5a751e0de1fd7cb1c512",
+        "prefix": "skills",
+        "files": 1,
+        "seconds": 19.319,
+        "promptpurify": {
+          "max": 0.999754,
+          "min": 0.999754
+        },
+        "protectai-deberta-v3": {
+          "max": 0.046281,
+          "min": 0.046281
+        },
+        "production_elapsed_s": 18.71
+      },
+      "files": [
+        {
+          "path": "cohesivity/SKILL.md",
+          "sha256": "b76be4191f5eaa2eb193faae095e48aa793e2271fe9cdba6d91ef2dcf9bc35b6",
+          "bytes": 26649,
+          "deberta_score": 0.046281,
+          "deberta_windows": 24,
+          "promptpurify_score": 0.999754,
+          "promptpurify_windows": 106
+        }
+      ]
+    },
+    {
+      "summary": {
+        "issue": 125,
+        "commit": "5d608cd58ed524a1915cd60629c172941bfdb543",
+        "prefix": "skills/social-media-content-skills",
+        "files": 33,
+        "seconds": 78.321,
+        "promptpurify": {
+          "max": 0.999961,
+          "min": 6e-06
+        },
+        "protectai-deberta-v3": {
+          "max": 0.023205,
+          "min": 3e-06
+        },
+        "production_elapsed_s": 74.32
+      },
+      "files": [
+        {
+          "path": "brand-voice-editor/SKILL.md",
+          "sha256": "4d40b0cddb53da4b31e7d1ebb0843546f77283f1bd6f560378bd482e5d68d3d6",
+          "bytes": 1098,
+          "deberta_score": 0.000558,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.022395,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "bulk-publish/SKILL.md",
+          "sha256": "3a4a90ae70c4e64030c703731149a1ae32a5bb941ab0bf6a2234a3edb7de1302",
+          "bytes": 4555,
+          "deberta_score": 9e-06,
+          "deberta_windows": 5,
+          "promptpurify_score": 0.000299,
+          "promptpurify_windows": 18
+        },
+        {
+          "path": "campaign-performance-report/SKILL.md",
+          "sha256": "fd086ac85ef200f2eaf449518857dd3348b5c203e27c30470941f87e9147b721",
+          "bytes": 1090,
+          "deberta_score": 2.5e-05,
+          "deberta_windows": 1,
+          "promptpurify_score": 7e-06,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "check-quota/SKILL.md",
+          "sha256": "e1223f9cbd65738b60a82b8699c6e04628b54c1c32cfb886b7248417d3df08d0",
+          "bytes": 1644,
+          "deberta_score": 4e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.43932,
+          "promptpurify_windows": 6
+        },
+        {
+          "path": "client-review-and-connect/SKILL.md",
+          "sha256": "bb7f0c09aae64723332c2f8579dd318b5ea879d8489f782c497af3bfbcd4a748",
+          "bytes": 2551,
+          "deberta_score": 2.6e-05,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.104394,
+          "promptpurify_windows": 10
+        },
+        {
+          "path": "content-organisation/SKILL.md",
+          "sha256": "31de6de9230077c20417076d142fedbcb7e83da236f6e0317dfe6125d62190d2",
+          "bytes": 2350,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.000129,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "content-repurposing/SKILL.md",
+          "sha256": "bf5f258a782f78e00d9c05e931bb575177b9167b1a2de84ea50d49fc900b97ce",
+          "bytes": 1103,
+          "deberta_score": 6e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 6e-06,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "fix-failed-posts/SKILL.md",
+          "sha256": "9a6b6d5a13a01f90a8514c64a2ac095fbab4ef37cff16f8e99559ba1dfd9621d",
+          "bytes": 2675,
+          "deberta_score": 0.000275,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.99948,
+          "promptpurify_windows": 10
+        },
+        {
+          "path": "get-analytics/SKILL.md",
+          "sha256": "994c24031e59e6f4fa3e0a119103aba2c1611e67aafbf630af22d5caa2c21074",
+          "bytes": 5706,
+          "deberta_score": 0.001538,
+          "deberta_windows": 5,
+          "promptpurify_score": 0.235897,
+          "promptpurify_windows": 22
+        },
+        {
+          "path": "hashtag-keyword-research/SKILL.md",
+          "sha256": "91193305be1b7ac8a0f1638594b24d47caf85105344b19d041f4fc141e2ce98f",
+          "bytes": 1140,
+          "deberta_score": 3e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.000134,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "influencer-campaign-planner/SKILL.md",
+          "sha256": "28b03ef8e2db1de90226f2ba48bba9bd3b3361ebb2e07d073ec096276a4aca1a",
+          "bytes": 1085,
+          "deberta_score": 0.000207,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.445615,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "link-tracking-review/SKILL.md",
+          "sha256": "ab028094140916828f4ec03604f45d62c8bffde241ee87d40f9e8e10366cdb03",
+          "bytes": 1089,
+          "deberta_score": 3.9e-05,
+          "deberta_windows": 1,
+          "promptpurify_score": 2.4e-05,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "manage-channels/SKILL.md",
+          "sha256": "c68f2ca68eacd3dcd0d5ebe3f051c833dc3274277654bfc9576a71b3f9d0d175",
+          "bytes": 4043,
+          "deberta_score": 3.6e-05,
+          "deberta_windows": 4,
+          "promptpurify_score": 0.22863,
+          "promptpurify_windows": 16
+        },
+        {
+          "path": "manage-inbox/SKILL.md",
+          "sha256": "031c955d34161f3209726dfa68941c6a65c7d7e89fb1b4f601218a87f4988268",
+          "bytes": 4926,
+          "deberta_score": 0.002308,
+          "deberta_windows": 4,
+          "promptpurify_score": 0.997815,
+          "promptpurify_windows": 19
+        },
+        {
+          "path": "manage-scheduled-posts/SKILL.md",
+          "sha256": "34bdcae23054c1de4db551f989eca9abd64aa41c140259615877cd660dd8018b",
+          "bytes": 3092,
+          "deberta_score": 0.000327,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.795424,
+          "promptpurify_windows": 12
+        },
+        {
+          "path": "media-preflight/SKILL.md",
+          "sha256": "a1452476f388542f095acf492af6afd919622cfe28a98db0f4310998b762dac4",
+          "bytes": 1168,
+          "deberta_score": 5e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 9e-06,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "platform-content-adapter/SKILL.md",
+          "sha256": "f905b886f49753821efaa9ba87e1a959794355416e9c8df085d4c7213fd6f1ab",
+          "bytes": 1217,
+          "deberta_score": 4e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.030417,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "platform-reference/SKILL.md",
+          "sha256": "1f54f7ee9201bc118030993d1dea2243e09f12d40d586470921201beac48fa37",
+          "bytes": 24464,
+          "deberta_score": 0.010274,
+          "deberta_windows": 28,
+          "promptpurify_score": 0.993262,
+          "promptpurify_windows": 96
+        },
+        {
+          "path": "post-approvals/SKILL.md",
+          "sha256": "594175c7556bccbb886a697faedec78038f7a0dc0725e518d68e93abeefa11ee",
+          "bytes": 3394,
+          "deberta_score": 0.001843,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.990346,
+          "promptpurify_windows": 13
+        },
+        {
+          "path": "recurring-posts/SKILL.md",
+          "sha256": "2a1c3b459b05e7193059289c926c32ac5518239dd4982b972b7f384675957b64",
+          "bytes": 2480,
+          "deberta_score": 5.7e-05,
+          "deberta_windows": 2,
+          "promptpurify_score": 7.5e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "rss-to-social/SKILL.md",
+          "sha256": "7009ae8646f1b3e905364657439b023893ca0ed0ca27f2fd2c06fe0ee9749ec5",
+          "bytes": 4940,
+          "deberta_score": 8.5e-05,
+          "deberta_windows": 5,
+          "promptpurify_score": 0.936267,
+          "promptpurify_windows": 19
+        },
+        {
+          "path": "schedule-post/SKILL.md",
+          "sha256": "e61b3630cb090e5707aad75972c41844dd9ea8ee51c01673026006e2e63f74d4",
+          "bytes": 9170,
+          "deberta_score": 0.002493,
+          "deberta_windows": 9,
+          "promptpurify_score": 0.999481,
+          "promptpurify_windows": 36
+        },
+        {
+          "path": "social-campaign-builder/SKILL.md",
+          "sha256": "28073244854d3075d94537ff0ebee4d30976f6bb36b3e2e3160d1c2c94a6f0f0",
+          "bytes": 1221,
+          "deberta_score": 3e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 1.6e-05,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "social-content-audit/SKILL.md",
+          "sha256": "2afaf866c103266ae344d22b5cf66fd74450d4e9f488e43b006c284f0cf126e9",
+          "bytes": 1118,
+          "deberta_score": 1.8e-05,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.000605,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "social-content-strategy/SKILL.md",
+          "sha256": "55a86fd9aeba6fd93e2a574320e2b83d47343db8c5159220521ff132113579cc",
+          "bytes": 1292,
+          "deberta_score": 1.1e-05,
+          "deberta_windows": 1,
+          "promptpurify_score": 9.9e-05,
+          "promptpurify_windows": 5
+        },
+        {
+          "path": "social-copy-ab-testing/SKILL.md",
+          "sha256": "317e8ebc7506b65df5af0908ee24334098dd6b4cc22b086d3f8b8e3ff6e1eb4c",
+          "bytes": 1089,
+          "deberta_score": 3e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.000385,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "social-localization/SKILL.md",
+          "sha256": "c7ce7eae2c60a72e93d36c3d73a58fe5c355c01ee8207d33e2a9de8723967389",
+          "bytes": 1108,
+          "deberta_score": 0.000874,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.087162,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "social-media-calendar/SKILL.md",
+          "sha256": "3a06c9513dddbf278325e65550db5c12618c65f8bd4b477ad22ffea79657a70c",
+          "bytes": 1282,
+          "deberta_score": 4e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.663356,
+          "promptpurify_windows": 5
+        },
+        {
+          "path": "social-post-review/SKILL.md",
+          "sha256": "2e35e8463071e5acf18eb17a9d801346a711343cb40dd53a0d83b6d01a517d7e",
+          "bytes": 1051,
+          "deberta_score": 1.4e-05,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.838495,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "social-trend-research/SKILL.md",
+          "sha256": "3227629750f59f70d5cff15563a61f11701c445849ae81bdf77d6e95105a9108",
+          "bytes": 1064,
+          "deberta_score": 0.000116,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.183284,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "ugc-content-planner/SKILL.md",
+          "sha256": "f2369709c0124722d88660d146decec7aba241e30548cd140feed6ea4640e56a",
+          "bytes": 1021,
+          "deberta_score": 4.6e-05,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.625977,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "using-bulkpublish/SKILL.md",
+          "sha256": "2b28aa7a1fae27c521579f7995a71ad76e69ee90601825b25bd1cbb09b0da87e",
+          "bytes": 13850,
+          "deberta_score": 0.023205,
+          "deberta_windows": 14,
+          "promptpurify_score": 0.982768,
+          "promptpurify_windows": 55
+        },
+        {
+          "path": "video-publishing/SKILL.md",
+          "sha256": "14737c4e95e159e4121cdd2740d6cf18f447d91e21ec10bf43ea6cebddbc2703",
+          "bytes": 3032,
+          "deberta_score": 0.000799,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.999961,
+          "promptpurify_windows": 12
+        }
+      ]
+    },
+    {
+      "summary": {
+        "issue": 113,
+        "commit": "cbab58188611e626ccaf54ac346b437d12ea4729",
+        "prefix": "research",
+        "files": 83,
+        "seconds": 133.711,
+        "promptpurify": {
+          "max": 0.999774,
+          "min": 1e-06
+        },
+        "protectai-deberta-v3": {
+          "max": 0.489605,
+          "min": 1e-06
+        },
+        "production_elapsed_s": 124.82
+      },
+      "files": [
+        {
+          "path": "academic-research/SKILL.md",
+          "sha256": "1a9fdd4cc4d6b8e5e0c6aa72c7c51447054e88df8f5d205e9a1073da7d0573db",
+          "bytes": 2348,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.5e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "academic-trend-research/SKILL.md",
+          "sha256": "4ac9eb2eb09287c3d4b6e8d70364c091e83bd38435b0e9013bb8aa336234b1dd",
+          "bytes": 2217,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 3e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "akta-company-research/SKILL.md",
+          "sha256": "83e13f3a8695d24c70a7a3aaca25a023f84544f8734cd3b3e64557d39228557a",
+          "bytes": 2278,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 4e-06,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "apollo-company-research/SKILL.md",
+          "sha256": "e167ec7258063c26e79eb95815486b388e3aba89ee964e3429417d838b7c85df",
+          "bytes": 2313,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.8e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "audience-research/SKILL.md",
+          "sha256": "bdaa391c3e3a15fe6e9285259a1db4495053bb818af914493317b59f664d8221",
+          "bytes": 2255,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.5e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "brand-monitoring/SKILL.md",
+          "sha256": "903974e3cb74fd09e6a6865b6e9e1b531bd3923b1d191b423afa57dfbaea1f13",
+          "bytes": 2790,
+          "deberta_score": 9e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 3.3e-05,
+          "promptpurify_windows": 11
+        },
+        {
+          "path": "china-social-research/SKILL.md",
+          "sha256": "ecf29f294eb3285f450364c741e2e5fd16ed54e9abe0fa7135531d63e7e18def",
+          "bytes": 2358,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.992107,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "community-research/SKILL.md",
+          "sha256": "de6e5fb0b0b93c9f5a73ff69d3fd1fcee905ede703e36579a42785883c9c4871",
+          "bytes": 2315,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.000485,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "company-enrichment/SKILL.md",
+          "sha256": "3a63b054a4b26bb65a79252391e2dc65204f97943ab58b7ac3950154ed17acae",
+          "bytes": 2275,
+          "deberta_score": 4e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 5e-06,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "competitive-pricing/SKILL.md",
+          "sha256": "86bc8456d659d593ca12b40856724a01f49ec53f1017883996c335bf6711c857",
+          "bytes": 2275,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 7e-06,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "competitor-ad-research/SKILL.md",
+          "sha256": "684f695816896aa65b28bcac9cdbd16b65e44a72cfd2235c32540354b87fa8fe",
+          "bytes": 2292,
+          "deberta_score": 1e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.007579,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "competitor-monitor/SKILL.md",
+          "sha256": "24843b1402e81a13afe253d66ac7159ddd40408661b268b58850cc2c81a0deea",
+          "bytes": 2810,
+          "deberta_score": 3.2e-05,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.5e-05,
+          "promptpurify_windows": 11
+        },
+        {
+          "path": "content-ideation/SKILL.md",
+          "sha256": "7c182334b70bff0063ab050ca13a9ccf5fa5f9a51ac1a6034aa9cb2198d3fc03",
+          "bytes": 2293,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.4e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "content-performance/SKILL.md",
+          "sha256": "560ab0d7d28871949268788d408957cad7f35acfcc8b831e9ff46b8a05d48737",
+          "bytes": 2327,
+          "deberta_score": 1e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 8e-06,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "content-translator/SKILL.md",
+          "sha256": "f54566c3f46a701adeebaa3c89e87eee56186563c4b2a514e1f084dce0813486",
+          "bytes": 2081,
+          "deberta_score": 3e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 9e-06,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "crisis-monitor/SKILL.md",
+          "sha256": "1911909562854799b79dda8ed41e6e18dd4efe53810f86a43e5f6be55b747cdd",
+          "bytes": 2309,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.811923,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "currency-converter/SKILL.md",
+          "sha256": "818d6b6224bd60e4f599f3d3b25dd0ffb259dd12ef43d008f06fca973442d68c",
+          "bytes": 2131,
+          "deberta_score": 5e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 1.1e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "cve-lookup/SKILL.md",
+          "sha256": "f201829b799cab749b351a14f60662c22eede35ab80549d3e205988ca03848cc",
+          "bytes": 2096,
+          "deberta_score": 1e-05,
+          "deberta_windows": 1,
+          "promptpurify_score": 1.5e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "data-enrichment/SKILL.md",
+          "sha256": "63f1a290e2a504616c857a922d8849dfad8c95b5feebeea5fc448eee84c96193",
+          "bytes": 2304,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 7e-06,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "document-parser/SKILL.md",
+          "sha256": "7025f49fd312d568779e2b31df6e7cd4a2b3924202bfcbeeed0c99aba9209fc3",
+          "bytes": 2101,
+          "deberta_score": 2e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 0.988488,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "domain-analyzer/SKILL.md",
+          "sha256": "9c5c6686613586be79d4b1d6f84393225b5ac729dc0b06fea57e5f5c04539bef",
+          "bytes": 2345,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.007579,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "domain-intelligence/SKILL.md",
+          "sha256": "6d88ea8fde50417e96df329f5a299088fc8cfaf7183d1c73fa7d2f75327d98aa",
+          "bytes": 2279,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.611182,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "douyin-research/SKILL.md",
+          "sha256": "3ab52101e0007f330aca7c90c61bd74ebaee80f43c56edcc0f556cc8f02ae746",
+          "bytes": 2269,
+          "deberta_score": 0.014596,
+          "deberta_windows": 3,
+          "promptpurify_score": 5e-06,
+          "promptpurify_windows": 4
+        },
+        {
+          "path": "email-outreach-prep/SKILL.md",
+          "sha256": "63e49e96992aa3aaaf25fee520470af91cec069dc2e33d9900d124f34a679b99",
+          "bytes": 2296,
+          "deberta_score": 6e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.000855,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "email-validator/SKILL.md",
+          "sha256": "d285a9b75a1621d2c6ac9a96fefb7b7130dba6cbd25568be88989a26cf16a565",
+          "bytes": 2251,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.2e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "event-tracker/SKILL.md",
+          "sha256": "7f159f231248c9a9163cddb4f7087e5d464f0c5dbde034fc27c7fd8d0bede34f",
+          "bytes": 2255,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 3.8e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "exa-similar-finder/SKILL.md",
+          "sha256": "6bdda7062b9bfe29d9c1ec7e6425424af47ebfc4d54a9936eafed11e2c7fbe87",
+          "bytes": 2095,
+          "deberta_score": 3e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 1.1e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "flight-tracker/SKILL.md",
+          "sha256": "3bfef38a43f9845dd1a54eae0dc74069322ae282bca680602e10457b93f9c006",
+          "bytes": 2089,
+          "deberta_score": 4e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 1.4e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "github-profile-research/SKILL.md",
+          "sha256": "00611f43b30fdc1cc54eb2e1dfcad1c0cffe1d8ebcbc22867dfc16785817f718",
+          "bytes": 2137,
+          "deberta_score": 2e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 1.5e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "google-maps-reviews/SKILL.md",
+          "sha256": "5b874d5cdc6e3c31f0bd65e7f091faab7d51f35826ca33447e1b2a7dd90a3c36",
+          "bytes": 2147,
+          "deberta_score": 1e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 1.5e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "google-news-research/SKILL.md",
+          "sha256": "6fa3a6917319915260f22c529ae56f23b7caf155c846d8a4857ade7fec8a8bd1",
+          "bytes": 2024,
+          "deberta_score": 1e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 3.6e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "hashtag-tracker/SKILL.md",
+          "sha256": "57a09ddf63eecb02cf8cc85d60d81538a45f07ddb67ab2839f543647f81cd642",
+          "bytes": 2302,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 6.1e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "hiring-intelligence/SKILL.md",
+          "sha256": "12dc307ffd302f0b06eef06116c75dffcd41ebe6a594192f46f70e97221ebdbe",
+          "bytes": 2259,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.4e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "industry-landscape/SKILL.md",
+          "sha256": "dea65105a7cd0358f796afb76459a2725ae301cdd1f60edfb7a811adc9f42602",
+          "bytes": 2289,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.001857,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "influencer-analytics/SKILL.md",
+          "sha256": "b45fbaccb2133ea8429e020c7a45a0a290ffacb2e98faa7b162137bfd2d77df8",
+          "bytes": 2319,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.6e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "instagram-research/SKILL.md",
+          "sha256": "235404ffcd69f4203aef1bcfd0102eedfcd28a5af26241225529e2f2940dbd57",
+          "bytes": 3024,
+          "deberta_score": 0.000102,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.8e-05,
+          "promptpurify_windows": 12
+        },
+        {
+          "path": "kol-discovery/SKILL.md",
+          "sha256": "87a35a1670e209b6fbe7fad39426a792ed6ee21e73b3b45ddc25d14edb1471fb",
+          "bytes": 3089,
+          "deberta_score": 0.000167,
+          "deberta_windows": 3,
+          "promptpurify_score": 2.3e-05,
+          "promptpurify_windows": 12
+        },
+        {
+          "path": "last30days-research/SKILL.md",
+          "sha256": "01838994b6fd0d9a091bb53f8b37fb944b0acf20554859899a6db668af7bab2d",
+          "bytes": 2705,
+          "deberta_score": 1e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.3e-05,
+          "promptpurify_windows": 10
+        },
+        {
+          "path": "lead-research/SKILL.md",
+          "sha256": "475db015bdfa380bf2b982f7fd983c3dbc2ee4f15fa03180d201cbf24199dbce",
+          "bytes": 2304,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.945585,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "linkedin-research/SKILL.md",
+          "sha256": "3e08054ed84651502ea88e4b158813b82d1995dc459f42ca5240af4d4793254a",
+          "bytes": 2753,
+          "deberta_score": 4.4e-05,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.6e-05,
+          "promptpurify_windows": 10
+        },
+        {
+          "path": "local-market-research/SKILL.md",
+          "sha256": "fd0d1a19a9b9dd2443d47fb749508f4081ab7313d6311755253a0d9b6c99cb50",
+          "bytes": 2240,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.001857,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "market-research/SKILL.md",
+          "sha256": "58483624a5cde65b04035df8bc20eaaad7cdaf89ba0b2d1c64d411ee02e90f7a",
+          "bytes": 2259,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.4e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "multi-source-search/SKILL.md",
+          "sha256": "40297dc47f4d1627f68f8e51128d24725fdb161a019293ca5916de368c967f4d",
+          "bytes": 6304,
+          "deberta_score": 0.000244,
+          "deberta_windows": 5,
+          "promptpurify_score": 0.999774,
+          "promptpurify_windows": 25
+        },
+        {
+          "path": "news-aggregator/SKILL.md",
+          "sha256": "cddb7bc13e246f681ec6dbf66ea1a8dac393a70d1b6f041c65a8d210181114da",
+          "bytes": 2171,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 8.1e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "newsletter-research/SKILL.md",
+          "sha256": "bf5aab02d6430b065671c5140968a9e0241d81206a65d392b81370b34ed7f5b2",
+          "bytes": 2238,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 9e-06,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "npm-package-research/SKILL.md",
+          "sha256": "fb775a4674c763c0050e4bcfd65421ec647db27b2db5d22c0fdea9a52aed7544",
+          "bytes": 2110,
+          "deberta_score": 3e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 8e-06,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "outreach-builder/SKILL.md",
+          "sha256": "998b645aec74b472847c1ffe0e76ea029636869f31bd58decbb1c0e96c64759b",
+          "bytes": 2346,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 4.9e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "partnership-research/SKILL.md",
+          "sha256": "2a4ca417cd4256fd90e01c19be9311180767735a2343602b2adf0eb96a1dc2e6",
+          "bytes": 2303,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 9e-06,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "podcast-research/SKILL.md",
+          "sha256": "1e3f176ad142219e83acba7c1477b5b81f204850b11eed64e433a20a644de4b2",
+          "bytes": 2219,
+          "deberta_score": 1e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.9e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "pr-media-monitor/SKILL.md",
+          "sha256": "9160f4c804545da1cda213ac6f216712b8aae13758ae8f2fa5b717e0ff3b1ad7",
+          "bytes": 2255,
+          "deberta_score": 1e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.3e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "pricing-page-analyzer/SKILL.md",
+          "sha256": "173171c8472f7d680163ea2b00eb0d40d34cfa02e13d963bd7e5310062c0d719",
+          "bytes": 2210,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "product-intelligence/SKILL.md",
+          "sha256": "42851401ce6137da38fd45ef71055ee82a6f5e07700ec4b1a4b8c559962b5620",
+          "bytes": 2364,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.1e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "product-review-extractor/SKILL.md",
+          "sha256": "d479cb0c72e15fd3b71501d9ccc7cbc871b13fd38c873609be84f48c5e2a9a69",
+          "bytes": 2242,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.7e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "reddit-research/SKILL.md",
+          "sha256": "80f724f7935074f7e1faa37b3172002a04e124f5dea82b5b36e3491b32cca6ef",
+          "bytes": 3053,
+          "deberta_score": 0.000552,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.000702,
+          "promptpurify_windows": 12
+        },
+        {
+          "path": "review-aggregator/SKILL.md",
+          "sha256": "6afa65f40c486671d50d559e32eaf858c5f27781eeae59a131473e726830285e",
+          "bytes": 2242,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.7e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "sales-intelligence/SKILL.md",
+          "sha256": "2cd5795477f17d0a62370e315e4c479133d37a6049910845ca17ab32a2433d78",
+          "bytes": 2346,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 5.2e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "screenshot-capture/SKILL.md",
+          "sha256": "e03ab913cb031f79e20d767c4f1f0a893c4bd8adc7b959a942e7b64b778e66be",
+          "bytes": 2163,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.010259,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "sentiment-analyzer/SKILL.md",
+          "sha256": "3b2c8715da771f4d8282e17297464f7696fb4d522cfdbee1d157277e4f8b52cf",
+          "bytes": 2217,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.8e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "seo-content-brief/SKILL.md",
+          "sha256": "945b65619430bd0ed91ff193215071958c152e4e7dfdf650a845ca46e9348312",
+          "bytes": 2356,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 4e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "serp-analysis/SKILL.md",
+          "sha256": "1c48326a9baf65735774d08937e0cfd0c61945114b1e36374b727ff22fbe6f8f",
+          "bytes": 2343,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.6e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "site-audit/SKILL.md",
+          "sha256": "4154ae0b0b2541cb8bc193e92732f1e869eaf0042dee00c4ba1fd65c3260c0be",
+          "bytes": 2567,
+          "deberta_score": 3.4e-05,
+          "deberta_windows": 2,
+          "promptpurify_score": 7.4e-05,
+          "promptpurify_windows": 10
+        },
+        {
+          "path": "social-listening/SKILL.md",
+          "sha256": "8b8110e1171e2b3a732c29e04d8c5f600fe396a6af390b66cd8cb7566a68dcc1",
+          "bytes": 2243,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.6e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "social-proof-research/SKILL.md",
+          "sha256": "d5b33c0ff070fa6b4b3249d5c9c4af1f51264e0e38335069adbac44560c09fa2",
+          "bytes": 2325,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.6e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "startup-research/SKILL.md",
+          "sha256": "f4ac50e6bba3adeddf671010e76c527ce493d296742d665ea038037686479c1f",
+          "bytes": 2288,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 7e-06,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "talent-sourcing/SKILL.md",
+          "sha256": "97b7777d33895bc393d1c24c520780fb7ca6d0eb695962d2e319f6eb3c30c3b3",
+          "bytes": 2269,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.1e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "tavily-deep-research/SKILL.md",
+          "sha256": "c7c80eddaed6097c8b2c5d869956b7b073daf86d848edf0069496d95f2e51f43",
+          "bytes": 2799,
+          "deberta_score": 6e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.9e-05,
+          "promptpurify_windows": 11
+        },
+        {
+          "path": "tech-stack-detector/SKILL.md",
+          "sha256": "5b62b312877fae3397b38895f7787a4c98986172ed2a99554d1593620de0ac13",
+          "bytes": 2155,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.5e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "thought-leadership-monitor/SKILL.md",
+          "sha256": "89439ebe306c5fca4bc17f9b80b96a221865921b07d451acbdbb4145d541ae75",
+          "bytes": 2285,
+          "deberta_score": 1e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.3e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "tiktok-research/SKILL.md",
+          "sha256": "7a32cb8f6ec34d3436a1ae0c437de51a43e002ac2f9e7bf18e464f331d9b7cd9",
+          "bytes": 3142,
+          "deberta_score": 0.000174,
+          "deberta_windows": 3,
+          "promptpurify_score": 2.2e-05,
+          "promptpurify_windows": 12
+        },
+        {
+          "path": "topic-deep-dive/SKILL.md",
+          "sha256": "50db710663f22cebbc60d21a45bc0499cfb97bcfc89c36444ce0f0843c8c83f6",
+          "bytes": 2321,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.3e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "trend-spotter/SKILL.md",
+          "sha256": "64f99c26ae9069aa8d0cb709402304d80a9ae4e1583c5ce1a26282429e042179",
+          "bytes": 2306,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.001857,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "twitter-intelligence/SKILL.md",
+          "sha256": "0d5647729bd8d32463e43d6d4c306d2da5d0dccbab5229a975c8ed10b23be56c",
+          "bytes": 3776,
+          "deberta_score": 9.5e-05,
+          "deberta_windows": 3,
+          "promptpurify_score": 0.853019,
+          "promptpurify_windows": 15
+        },
+        {
+          "path": "url-to-markdown/SKILL.md",
+          "sha256": "b6489acdcbaceae485ab8f4868cc82d52afb420788c7addd8a7478bffa0ebb87",
+          "bytes": 2181,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.068485,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "weather-lookup/SKILL.md",
+          "sha256": "fcdd9b6d677ef95502903b82419e352adc0a98ea73f6a99d6a8555aedbd14c5f",
+          "bytes": 2122,
+          "deberta_score": 4e-06,
+          "deberta_windows": 1,
+          "promptpurify_score": 9e-06,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "web-scraper/SKILL.md",
+          "sha256": "80ba4f3fca645c5a4438d79a2111efaf412584e0a765b440f54f35bdd3aba0cc",
+          "bytes": 2986,
+          "deberta_score": 8e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 1.8e-05,
+          "promptpurify_windows": 11
+        },
+        {
+          "path": "website-monitor/SKILL.md",
+          "sha256": "e51ebf2203d50282126178231efbd9f2fd6ab95b20b49f63253a6d35e263620e",
+          "bytes": 2261,
+          "deberta_score": 3e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.994735,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "wechat-channels-research/SKILL.md",
+          "sha256": "f28357ce54959da0ecc2089c6b8716eb482903262dc7dfc75455536446da5a12",
+          "bytes": 2419,
+          "deberta_score": 4e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.2e-05,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "wechat-mp-research/SKILL.md",
+          "sha256": "a9198ce87a567384129b3b547d9e513459b6d2e415cec6289c331fc322cbf891",
+          "bytes": 2426,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.000233,
+          "promptpurify_windows": 9
+        },
+        {
+          "path": "wechat-search/SKILL.md",
+          "sha256": "1bdeb500756f531245ae7389efb3db617fbe6b10f47f6e664efdafc317b1d031",
+          "bytes": 2151,
+          "deberta_score": 1e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 3.1e-05,
+          "promptpurify_windows": 8
+        },
+        {
+          "path": "weibo-research/SKILL.md",
+          "sha256": "a12df906afd5f7306d2bcebf190686ea038a4004232e19307d2fb6b05c592418",
+          "bytes": 2455,
+          "deberta_score": 0.007035,
+          "deberta_windows": 3,
+          "promptpurify_score": 1e-06,
+          "promptpurify_windows": 5
+        },
+        {
+          "path": "xiaohongshu-research/SKILL.md",
+          "sha256": "ef7e5ca2b67ad9f88d007ea4c9c76192779a0be96d5ffa47891545990db8a2a5",
+          "bytes": 2903,
+          "deberta_score": 0.489605,
+          "deberta_windows": 4,
+          "promptpurify_score": 1.2e-05,
+          "promptpurify_windows": 6
+        },
+        {
+          "path": "youtube-research/SKILL.md",
+          "sha256": "d2fee43ca74d0507c1daa17bb236cdfe0149a49621eccf662636deaa955f548e",
+          "bytes": 3074,
+          "deberta_score": 1.6e-05,
+          "deberta_windows": 2,
+          "promptpurify_score": 0.289551,
+          "promptpurify_windows": 12
+        },
+        {
+          "path": "youtube-transcript/SKILL.md",
+          "sha256": "eed6c7a534f3144477d6d3fa7fb712a587a48c658959457ed89c3cbf98b76041",
+          "bytes": 2242,
+          "deberta_score": 2e-06,
+          "deberta_windows": 2,
+          "promptpurify_score": 2.7e-05,
+          "promptpurify_windows": 8
+        }
+      ]
+    },
+    {
+      "summary": {
+        "issue": 111,
+        "commit": "9462f1e546b94a7f27e77abaf3d9ee3fedf7f746",
+        "prefix": "skills",
+        "files": 1,
+        "seconds": 4.603,
+        "promptpurify": {
+          "max": 2.6e-05,
+          "min": 2.6e-05
+        },
+        "protectai-deberta-v3": {
+          "max": 0.48856,
+          "min": 0.48856
+        },
+        "production_elapsed_s": 4.53
+      },
+      "files": [
+        {
+          "path": "dsh-deepread/SKILL.md",
+          "sha256": "f7904362e05abd8dbad1a8599ae78dc66631d631642d8c9a22d2803ed8886440",
+          "bytes": 4777,
+          "deberta_score": 0.48856,
+          "deberta_windows": 6,
+          "promptpurify_score": 2.6e-05,
+          "promptpurify_windows": 9
+        }
+      ]
+    },
+    {
+      "summary": {
+        "issue": 92,
+        "commit": "930446519f8d8a7434784292111aa923457e5b69",
+        "prefix": "",
+        "files": 1,
+        "seconds": 15.906,
+        "promptpurify": {
+          "max": 0.999991,
+          "min": 0.999991
+        },
+        "protectai-deberta-v3": {
+          "max": 0.013054,
+          "min": 0.013054
+        },
+        "production_elapsed_s": 15.24
+      },
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "874f5bb44a430c845fdb5cf005e8bec61901ac8dcd7fe7437dfe211892d97282",
+          "bytes": 23866,
+          "deberta_score": 0.013054,
+          "deberta_windows": 20,
+          "promptpurify_score": 0.999991,
+          "promptpurify_windows": 95
+        }
+      ]
+    }
+  ],
+  "advisory_interpretation": {
+    "note": "Same measured scores. The blocking experiment would have failed issue 136 only. The advisory reading asks for review and does not block.",
+    "needs_review_issues": [
+      136,
+      113,
+      111
+    ],
+    "no_review_signal_issues": [
+      132,
+      130,
+      125,
+      92
+    ],
+    "script_heuristic": {
+      "136": "mixed",
+      "132": "english",
+      "130": "english",
+      "125": "english",
+      "113": "mixed on douyin-research, weibo-research, xiaohongshu-research; english on the other 80",
+      "111": "mixed",
+      "92": "english"
+    }
+  }
+}

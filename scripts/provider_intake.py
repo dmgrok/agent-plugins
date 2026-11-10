@@ -11,7 +11,7 @@ Usage (from GitHub Actions):
     ISSUE_BODY=... ISSUE_NUMBER=... ISSUE_USER=... python scripts/provider_intake.py parse
     PROVIDER_CONFIG_JSON=... python scripts/provider_intake.py add-provider
     SKILLS_PATH_PREFIX=... python scripts/provider_intake.py stage-lgtm --source DIR --dest DIR
-    LAKERA_GUARD_API_KEY=... python scripts/provider_intake.py prompt-injection --path DIR
+    python scripts/provider_intake.py prompt-injection --path DIR
 """
 
 from __future__ import annotations
@@ -27,6 +27,8 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 DEFAULT_AGGREGATE = ROOT / "scripts" / "aggregate.py"
 
 PROVIDER_ID_RE = re.compile(r"^[a-z0-9](?:[a-z0-9-]{0,48}[a-z0-9])?$")
@@ -328,88 +330,89 @@ def stage_lgtm_input(source: Path, skills_path_prefix: str, dest: Path) -> Path:
     return dest
 
 
-# Lakera Guard v2 returns `breakdown` as a list of detector results, for example
-# {"detector_type": "prompt_attack", "detected": true, ...}. Only prompt attacks
-# block a submission; other detectors in the default policy (unknown links, PII,
-# moderated content) flag ordinary documentation and are reported as notes.
-LAKERA_GUARD_URL = "https://api.lakera.ai/v2/guard"
-BLOCKING_DETECTOR_PREFIXES = ("prompt_attack",)
-MAX_SKILL_FILES = 200
+def _write_step_summary(text: str) -> None:
+    if os.environ.get("PROMPT_ADVISORY_SUMMARY") != "1":
+        return
+    path = os.environ.get("GITHUB_STEP_SUMMARY", "")
+    if not path:
+        return
+    with open(path, "a", encoding="utf-8") as handle:
+        handle.write("## Prompt-injection advisory\n\n")
+        handle.write(text)
+        handle.write("\n\nThis is a review signal, not a safety guarantee. ")
+        handle.write("A score under the threshold is not proof of safety.\n")
 
 
-def lakera_detections(result: dict) -> List[str]:
-    """Return the detector types that detected something in a /v2/guard response."""
-    breakdown = result.get("breakdown") or []
-    if isinstance(breakdown, dict):  # tolerate the older mapping shape
-        breakdown = [dict(v or {}, detector_type=k) for k, v in breakdown.items()]
-    return sorted(
-        str(item.get("detector_type") or "unknown")
-        for item in breakdown
-        if isinstance(item, dict) and item.get("detected")
-    )
+def _emit_advisory(summary: dict) -> None:
+    from scripts.prompt_injection import format_log, write_report
 
-
-def is_blocking_detection(detector_type: str) -> bool:
-    return detector_type.startswith(BLOCKING_DETECTOR_PREFIXES)
-
-
-def _lakera_guard(content: str, api_key: str, timeout: float = 30.0) -> dict:
-    import urllib.request
-
-    request = urllib.request.Request(
-        LAKERA_GUARD_URL,
-        data=json.dumps({"messages": [{"role": "user", "content": content}], "breakdown": True}).encode(),
-        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-        method="POST",
-    )
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return json.loads(response.read().decode("utf-8"))
-
-
-def scan_prompt_injection(path: Path, api_key: str, guard=_lakera_guard) -> Dict[str, object]:
-    """Send every SKILL.md under `path` to Lakera Guard and summarise the result.
-
-    Returns {"status": "passed" | "failed" | "skipped", "blocking": [...], "notes": [...]}
-    where entries are "<relative file>: <detector type>".
-    """
-    if not api_key:
-        return {"status": "skipped", "reason": "no Lakera Guard API key", "blocking": [], "notes": []}
-    files = sorted(p for p in path.rglob("SKILL.md") if p.is_file() and not p.is_symlink())
-    blocking: List[str] = []
-    notes: List[str] = []
-    errors = 0
-    for skill_md in files[:MAX_SKILL_FILES]:
-        rel = skill_md.relative_to(path).as_posix()
-        try:
-            result = guard(skill_md.read_text(encoding="utf-8", errors="replace"), api_key)
-        except Exception as exc:  # network or API error: do not block, ask for manual review
-            print(f"::warning::Lakera Guard request failed for {rel}: {type(exc).__name__}")
-            errors += 1
-            continue
-        for detector in lakera_detections(result):
-            (blocking if is_blocking_detection(detector) else notes).append(f"{rel}: {detector}")
-    if blocking:
-        status = "failed"
-    elif errors and errors == len(files[:MAX_SKILL_FILES]):
-        status = "skipped"
-    else:
-        status = "passed"
-    return {"status": status, "blocking": blocking, "notes": notes, "files": len(files), "errors": errors}
-
-
-def _cmd_prompt_injection(path: Path) -> int:
-    summary = scan_prompt_injection(path, os.environ.get("LAKERA_GUARD_API_KEY", ""))
-    for entry in summary["blocking"]:
-        print(f"::error::Prompt attack detected by Lakera Guard in {entry}")
-    for entry in summary["notes"]:
-        print(f"Note (not blocking): Lakera Guard detector fired in {entry}")
-    print(f"Prompt-injection check: {summary['status']}")
+    print(format_log(summary))
+    _write_step_summary(str(summary.get("summary") or ""))
+    report_path = os.environ.get("PROMPT_INJECTION_REPORT", "")
+    if report_path:
+        write_report(summary, Path(report_path))
     output_path = os.environ.get("GITHUB_OUTPUT")
     if output_path:
         write_github_output(output_path, {
-            "status": str(summary["status"]),
-            "findings": str(len(summary["blocking"])),
+            "status": str(summary.get("status") or ""),
+            "needs_review": "true" if summary.get("needs_review") else "false",
+            "summary": str(summary.get("summary") or ""),
+            "findings": str(len(summary.get("flagged") or [])),
         })
+
+
+def _cmd_prompt_injection(path: Path) -> int:
+    """Score skills and record a review signal. Always exit 0.
+
+    Download, checksum, and inference problems are advisory errors. They do
+    not decide provider validation. LGTM and gitleaks remain the hard gates.
+    """
+    from scripts.prompt_injection import PromptInjectionError, advisory_from_error, scan_skill_tree
+
+    try:
+        summary = scan_skill_tree(path)
+    except PromptInjectionError as exc:
+        summary = advisory_from_error(str(exc))
+    except Exception as exc:
+        summary = advisory_from_error(f"unexpected {type(exc).__name__}")
+    _emit_advisory(summary)
+    return 0
+
+
+def _cmd_validation_gate() -> int:
+    from scripts.prompt_injection import provider_validation_passed
+
+    lgtm = os.environ.get("LGTM_PASSED", "")
+    leaks = os.environ.get("GITLEAKS_PASSED", "")
+    passed = provider_validation_passed(lgtm, leaks)
+    print(f"LGTM Passed: {lgtm}")
+    print(f"Gitleaks Passed: {leaks}")
+    print("Prompt-injection advisory does not affect this decision.")
+    if passed:
+        print("validation_passed=true")
+        print("✅ Provider gates passed")
+    else:
+        print("validation_passed=false")
+        print("❌ Validation failed")
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path:
+        write_github_output(output_path, {"validation_passed": "true" if passed else "false"})
+    return 0
+
+
+def _cmd_prompt_advisory() -> int:
+    """Publish the review signal, including when the scanner step left no output."""
+    from scripts.prompt_injection import resolve_advisory
+
+    expected = os.environ.get("SCAN_EXPECTED", "").strip().lower() in {"1", "true", "yes"}
+    result = resolve_advisory(
+        step_outcome=os.environ.get("STEP_OUTCOME", ""),
+        scan_expected=expected,
+        status=os.environ.get("PROMPT_STATUS", ""),
+        needs_review=os.environ.get("PROMPT_NEEDS_REVIEW", ""),
+        summary=os.environ.get("PROMPT_SUMMARY", ""),
+    )
+    _emit_advisory(result)
     return 0
 
 
@@ -485,8 +488,10 @@ def main(argv=None) -> int:
     stage = sub.add_parser("stage-lgtm", help="Prepare the directory scanned by the skill linter")
     stage.add_argument("--source", type=Path, required=True)
     stage.add_argument("--dest", type=Path, required=True)
-    guard = sub.add_parser("prompt-injection", help="Check staged SKILL.md files with Lakera Guard")
+    guard = sub.add_parser("prompt-injection", help="Score staged SKILL.md files and record a review signal")
     guard.add_argument("--path", type=Path, required=True)
+    sub.add_parser("validation-gate", help="Decide provider validation from LGTM and gitleaks only")
+    sub.add_parser("prompt-advisory", help="Keep a missing scanner result visible as a review signal")
     args = parser.parse_args(argv)
 
     if args.command == "parse":
@@ -495,6 +500,10 @@ def main(argv=None) -> int:
         return _cmd_stage_lgtm(args.source, args.dest)
     if args.command == "prompt-injection":
         return _cmd_prompt_injection(args.path)
+    if args.command == "validation-gate":
+        return _cmd_validation_gate()
+    if args.command == "prompt-advisory":
+        return _cmd_prompt_advisory()
     return _cmd_add_provider(args.aggregate)
 
 

@@ -182,16 +182,19 @@ jobs:
           path: ${{ steps.stage.outputs.lgtm_path }}
           fail-on-error: false
 
-      # The LGTM action reads Lakera Guard's v2 `breakdown` as a mapping, but the API
-      # returns a list, so every detector index was reported as a prompt injection
-      # ("Lakera Guard detected: 15"). The check now runs here and reads the list.
-      - name: Prompt-injection check (Lakera Guard)
+      # Advisory only. continue-on-error keeps a crash from skipping the
+      # review-signal step below. LGTM and gitleaks stay the hard gates.
+      # See docs/prompt-injection.md.
+      - name: Prompt-injection check
         if: steps.stage.outputs.lgtm_path
         id: prompt_injection
+        continue-on-error: true
         env:
-          LAKERA_GUARD_API_KEY: ${{ secrets.LAKERA_GUARD_API_KEY }}
           LGTM_PATH: ${{ steps.stage.outputs.lgtm_path }}
-        run: python scripts/provider_intake.py prompt-injection --path "$LGTM_PATH"
+          PROMPT_INJECTION_REPORT: prompt-injection-report.json
+        run: |
+          pip install onnxruntime==1.31.1 tokenizers==0.23.3
+          python scripts/provider_intake.py prompt-injection --path "$LGTM_PATH"
 
       - name: Set LGTM defaults if action failed
         if: steps.lgtm.outcome == 'failure' || steps.lgtm.outcome == 'skipped'
@@ -210,28 +213,29 @@ jobs:
           path: |
             /tmp/gitleaks-report.json
             lgtm-results.json
+            prompt-injection-report.json
           if-no-files-found: ignore
+
+      # Runs even when an earlier step failed, so a scanner crash or a
+      # gitleaks/LGTM failure cannot drop the review signal.
+      - name: Record prompt-injection advisory
+        id: prompt_review
+        if: always()
+        env:
+          PROMPT_ADVISORY_SUMMARY: "1"
+          SCAN_EXPECTED: ${{ steps.stage.outputs.lgtm_path != '' }}
+          STEP_OUTCOME: ${{ steps.prompt_injection.outcome }}
+          PROMPT_STATUS: ${{ steps.prompt_injection.outputs.status }}
+          PROMPT_NEEDS_REVIEW: ${{ steps.prompt_injection.outputs.needs_review }}
+          PROMPT_SUMMARY: ${{ steps.prompt_injection.outputs.summary }}
+        run: python scripts/provider_intake.py prompt-advisory
 
       - name: Check validation results
         id: check
         env:
           LGTM_PASSED: ${{ steps.lgtm.outputs.passed || steps.lgtm_defaults.outputs.passed }}
           GITLEAKS_PASSED: ${{ steps.gitleaks.outputs.gitleaks_passed }}
-          PROMPT_INJECTION: ${{ steps.prompt_injection.outputs.status }}
-        run: |
-          echo "LGTM Passed: $LGTM_PASSED"
-          echo "Gitleaks Passed: $GITLEAKS_PASSED"
-          echo "Prompt-injection check: $PROMPT_INJECTION"
-
-          # Allow pending LGTM or a skipped prompt-injection check (manual review
-          # needed) but require gitleaks to pass and no prompt attack to be found.
-          if ([ "$LGTM_PASSED" = "true" ] || [ "$LGTM_PASSED" = "pending" ]) && [ "$GITLEAKS_PASSED" = "true" ] && [ "$PROMPT_INJECTION" != "failed" ]; then
-            echo "validation_passed=true" >> $GITHUB_OUTPUT
-            echo "✅ All validations passed!"
-          else
-            echo "validation_passed=false" >> $GITHUB_OUTPUT
-            echo "❌ Validation failed"
-          fi
+        run: python scripts/provider_intake.py validation-gate
 
       - name: Test provider configuration (lightweight)
         if: steps.check.outputs.validation_passed == 'true'
@@ -286,6 +290,11 @@ jobs:
 
             ${{ steps.lgtm.outcome == 'failure' && '⚠️ LGTM validation was unavailable, so the skills need a manual review.' || '' }}
 
+            ### Prompt-injection advisory
+            ${{ steps.prompt_review.outputs.summary }}
+
+            This is a review signal from an English-only classifier, not a safety guarantee. A score under the threshold does not prove the skill is safe. The embedded-attack blind spot is described in docs/prompt-injection.md.
+
             ### Changes
             - Added provider configuration to `scripts/aggregate.py`
 
@@ -300,6 +309,33 @@ jobs:
             automated
             new-provider
 
+      - name: Label provider pull request needs-review
+        if: steps.create_pr.outputs.pull-request-number && steps.prompt_review.outputs.needs_review == 'true'
+        uses: actions/github-script@v7
+        env:
+          PR_NUMBER: ${{ steps.create_pr.outputs.pull-request-number }}
+        with:
+          script: |
+            const number = Number(process.env.PR_NUMBER);
+            const name = 'needs-review';
+            try {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name,
+                color: 'fbca04',
+                description: 'Prompt-injection advisory asked a human to read the skill. Not a safety verdict.',
+              });
+            } catch (error) {
+              if (error.status !== 422) throw error;
+            }
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: number,
+              labels: [name],
+            });
+
       - name: Comment on issue - Success
         if: steps.check.outputs.validation_passed == 'true' && steps.create_pr.outputs.pull-request-number
         uses: actions/github-script@v7
@@ -313,15 +349,20 @@ jobs:
           LGTM_OUTCOME: ${{ steps.lgtm.outcome }}
           LGTM_SPEC: ${{ steps.lgtm.outputs.spec-compliance || steps.lgtm_defaults.outputs.spec-compliance }}
           LGTM_SECURITY: ${{ steps.lgtm.outputs.security || steps.lgtm_defaults.outputs.security }}
+          PROMPT_REVIEW: ${{ steps.prompt_review.outputs.needs_review }}
+          PROMPT_SUMMARY: ${{ steps.prompt_review.outputs.summary }}
         with:
           script: |
             const e = process.env;
             const note = e.LGTM_OUTCOME === 'failure'
               ? '⚠️ **Note**: LGTM validation temporarily unavailable - needs manual skill review'
               : '';
+            const review = e.PROMPT_REVIEW === 'true'
+              ? e.PROMPT_SUMMARY
+              : (e.PROMPT_SUMMARY || 'The classifier did not request review. A score under the threshold is not proof of safety.');
             const comment = `## ✅ Validation Successful!
 
-            Hey @${e.ISSUE_USER}! Great news - your provider passed all validations! 🎉
+            Hey @${e.ISSUE_USER}! The provider passed the LGTM and gitleaks gates.
 
             ### Validation Results
             - **Skill checks (LGTM)**: Passed ✅
@@ -330,6 +371,11 @@ jobs:
             - **Skill security findings**: ${e.LGTM_SECURITY}
 
             ${note}
+
+            ### Prompt-injection advisory
+            ${review}
+
+            The classifier does not approve the skill. A low score is not proof of safety.
 
             ### 🚀 Next Steps
             A pull request has been automatically created: #${e.PR_NUMBER}
@@ -360,7 +406,8 @@ jobs:
           LGTM_PASSED: ${{ steps.lgtm.outputs.passed || steps.lgtm_defaults.outputs.passed }}
           LGTM_SPEC: ${{ steps.lgtm.outputs.spec-compliance || steps.lgtm_defaults.outputs.spec-compliance }}
           LGTM_SECURITY: ${{ steps.lgtm.outputs.security || steps.lgtm_defaults.outputs.security }}
-          PROMPT_INJECTION: ${{ steps.prompt_injection.outputs.status }}
+          PROMPT_REVIEW: ${{ steps.prompt_review.outputs.needs_review }}
+          PROMPT_SUMMARY: ${{ steps.prompt_review.outputs.summary }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         with:
           script: |
@@ -375,8 +422,8 @@ jobs:
             if (!lgtmPassed) {
               issues.push(`- ❌ **Skill checks (LGTM)**: ${e.LGTM_SPEC} spec finding(s) and ${e.LGTM_SECURITY} security finding(s). See the "Validate skills with LGTM Agent Skills" step in the [run log](${e.RUN_URL}) for each finding.`);
             }
-            if (e.PROMPT_INJECTION === 'failed') {
-              issues.push(`- ❌ **Prompt-injection check (Lakera Guard)**: a prompt attack was detected in at least one SKILL.md. See the "Prompt-injection check" step in the [run log](${e.RUN_URL}) for the file.`);
+            if (e.PROMPT_REVIEW === 'true') {
+              issues.push(`- ⚠️ **Prompt-injection advisory (does not block)**: ${e.PROMPT_SUMMARY}`);
             }
 
             const comment = [
@@ -411,6 +458,32 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['validation-failed'],
+            });
+
+      - name: Label submission needs-review
+        if: always() && steps.prompt_review.outputs.needs_review == 'true' && steps.parse.outputs.issue_number
+        uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ steps.parse.outputs.issue_number }}
+        with:
+          script: |
+            const name = 'needs-review';
+            try {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name,
+                color: 'fbca04',
+                description: 'Prompt-injection advisory asked a human to read the skill. Not a safety verdict.',
+              });
+            } catch (error) {
+              if (error.status !== 422) throw error;
+            }
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number(process.env.ISSUE_NUMBER),
+              labels: [name],
             });
 
       - name: Add approved label

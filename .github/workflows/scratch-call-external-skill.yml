@@ -1,0 +1,13 @@
+name: Scratch external skill call
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    uses: ./.github/workflows/validate-external-skill.yml
+    with:
+      skill-path: skills/sample-skill

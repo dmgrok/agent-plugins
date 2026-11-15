@@ -94,6 +94,10 @@ Every skill gets a quality score (0–100) based on three factors:
 
 A pull request that adds or changes a skill runs [skills-ci](https://github.com/dmgrok/skills-ci) at `56aafbb7fc938b0bec4d6375438842da55e97ceb`. Lint, trigger routing, injection, licences, and malicious-file checks fail that workflow when they find a problem. Branch protection is what would make the check required before merge. This repository does not set that.
 
+External skill repositories call [validate-external-skill.yml](.github/workflows/validate-external-skill.yml) with `workflow_call` and `skill-path`.
+That input is passed to skills-ci at the same pin, with contents read and no secrets.
+On success the job summary includes the directory badge and `skillsdir publish --submit`.
+
 Provider intake is unchanged. It still uses the prompt-injection advisory in [`scripts/prompt_injection.py`](scripts/prompt_injection.py), which does not block.
 
 ---

@@ -1,0 +1,53 @@
+name: Validate External Skill
+
+# Reusable workflow that skill authors can reference in their repos.
+# Usage in your repo's .github/workflows/validate.yml:
+#
+#   name: Validate Skill
+#   on: [push, pull_request]
+#   jobs:
+#     validate:
+#       uses: dmgrok/agent-plugins/.github/workflows/validate-external-skill.yml@main
+#       with:
+#         skill-path: '.'
+
+on:
+  workflow_call:
+    inputs:
+      skill-path:
+        description: 'Path to the skill directory (default: root)'
+        required: false
+        default: '.'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  skills:
+    permissions:
+      contents: read
+    uses: dmgrok/skills-ci/.github/workflows/skills-ci.yml@56aafbb7fc938b0bec4d6375438842da55e97ceb
+    with:
+      skills-dir: ${{ inputs.skill-path }}
+
+  summary:
+    needs: skills
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate badge data
+        run: |
+          echo "## ✅ Skill Validation Passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Your skill meets the [Agent Skills Directory](https://github.com/dmgrok/agent-plugins) standards." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Add a badge to your README:" >> $GITHUB_STEP_SUMMARY
+          echo '```markdown' >> $GITHUB_STEP_SUMMARY
+          echo '[![Listed on Agent Skills Directory](https://img.shields.io/badge/Listed_on-Agent_Skills_Directory-6366f1?style=flat)](https://dmgrok.github.io/agent-plugins/)' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Submit to the directory:" >> $GITHUB_STEP_SUMMARY
+          echo '```bash' >> $GITHUB_STEP_SUMMARY
+          echo 'skillsdir publish --submit' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY

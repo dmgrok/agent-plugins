@@ -179,3 +179,15 @@ def test_validate_skill_calls_pinned_skills_ci_for_changed_dirs():
     text = (WORKFLOWS / "validate-skill.yml").read_text(encoding="utf-8")
     assert "pyyaml" not in text
     assert CHECKOUT_SHA in text
+
+
+def test_external_skill_workflow_is_reusable_pinned_and_has_no_secrets():
+    path = WORKFLOWS / "validate-external-skill.yml"
+    workflow = load(path)
+    assert "workflow_call" in workflow["on"]
+    job = workflow["jobs"]["skills"]
+    assert job["uses"] == (
+        f"dmgrok/skills-ci/.github/workflows/skills-ci.yml@{SKILLS_CI_SHA}"
+    )
+    text = path.read_text(encoding="utf-8")
+    assert "secrets" not in text

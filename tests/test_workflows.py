@@ -159,3 +159,41 @@ def test_prompt_injection_is_advisory_and_does_not_block_the_provider_gate():
     failed = next(s for s in steps if s.get("name") == "Comment on issue - Validation Failed")
     assert "does not block" in failed["with"]["script"]
     assert "PROMPT_REVIEW" in failed["env"]
+
+
+SKILLS_CI_SHA = "56aafbb7fc938b0bec4d6375438842da55e97ceb"
+CODEQL_SHA = "33d7b85da1a04171e211befe2c739303b9a4c066"
+CHECKOUT_SHA = "11d5960a326750d5838078e36cf38b85af677262"
+
+
+def test_validate_skill_calls_pinned_skills_ci_for_changed_dirs():
+    workflow = load(WORKFLOWS / "validate-skill.yml")
+    assert set(workflow["on"]) == {"pull_request"}
+    assert "workflow_call" not in workflow["on"]
+    job = workflow["jobs"]["skills"]
+    assert job["uses"] == (
+        f"dmgrok/skills-ci/.github/workflows/skills-ci.yml@{SKILLS_CI_SHA}"
+    )
+    assert job["with"]["skills-dir"] == "${{ matrix.dir }}"
+    assert "allowlist" not in job["with"]
+    assert job["if"] == "needs.changed-skills.outputs.count != '0'"
+    text = (WORKFLOWS / "validate-skill.yml").read_text(encoding="utf-8")
+    assert "pyyaml" not in text
+    assert CHECKOUT_SHA in text
+
+
+def test_codeql_workflow_pins_and_covers_python_and_javascript():
+    workflow = load(WORKFLOWS / "codeql.yml")
+    assert workflow["permissions"] == {
+        "security-events": "write",
+        "contents": "read",
+        "actions": "read",
+    }
+    assert "pull_request" in workflow["on"]
+    assert workflow["on"]["push"]["branches"] == ["main"]
+    assert workflow["on"]["schedule"]
+    languages = workflow["jobs"]["analyze"]["strategy"]["matrix"]["language"]
+    assert languages == ["python", "javascript-typescript"]
+    text = (WORKFLOWS / "codeql.yml").read_text(encoding="utf-8")
+    assert CODEQL_SHA in text
+    assert CHECKOUT_SHA in text

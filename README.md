@@ -90,6 +90,16 @@ Every skill gets a quality score (0–100) based on three factors:
 
 ---
 
+## CI
+
+A pull request that adds or changes a skill runs [skills-ci](https://github.com/dmgrok/skills-ci) at `56aafbb7fc938b0bec4d6375438842da55e97ceb`. Lint, trigger routing, injection, licences, and malicious-file checks fail that workflow when they find a problem. Branch protection is what would make the check required before merge. This repository does not set that.
+
+CodeQL runs on pull requests, on pushes to `main`, and weekly, for Python and JavaScript. The CodeQL CLI is under the GitHub CodeQL Terms and Conditions, which are not an OSI open source licence. The CodeQL queries and the CodeQL Action are MIT.
+
+Provider intake is unchanged. It still uses the prompt-injection advisory in [`scripts/prompt_injection.py`](scripts/prompt_injection.py), which does not block.
+
+---
+
 ## API & Exports
 
 The catalog is updated daily at 06:00 UTC and available via CDN:

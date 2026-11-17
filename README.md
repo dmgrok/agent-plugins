@@ -134,7 +134,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 ## Plugins Listing
 
 <!-- AUTO-GENERATED SKILLS TABLE START -->
-## 📋 All Skills — 1384 skills across 48 providers · v2026.11.16
+## 📋 All Skills — 1395 skills across 48 providers · v2026.11.17
 
 > Auto-generated daily · [Browse interactively →](https://dmgrok.github.io/agent-plugins/)  
 > Legend: 🔒 Secrets scan · 🛡️ Injection check · 📝 Content · 🔄 No duplicate · ✅ Full skill · S=Scripts · R=References · A=Assets
@@ -175,6 +175,8 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [chaos-engineering](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/chaos-engineering/skills/chaos-engineering/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [chaos-engineering](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/chaos-engineering/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/chaos-engineering |
 | [clinical-research](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/research-ops/skills/clinical-research/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [cloud-finops](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/cloud-finops/skills/cloud-finops/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [cloud-finops](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/cloud-finops/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/cloud-finops |
 | [cmmc-readiness](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/cmmc-readiness/skills/cmmc-readiness/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [cmmc-readiness](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/cmmc-readiness/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/cmmc-readiness |
 | [code-to-prd](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/product-team/code-to-prd/skills/code-to-prd/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
@@ -198,6 +200,8 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [design-qa](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/product-team/skills/design-qa/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/design-qa |
 | [design-system](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/markdown-html/skills/design-system/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [diagramming-code](https://raw.githubusercontent.com/trailofbits/skills/main/plugins/trailmark/skills/diagramming-code/SKILL.md) | trailofbits | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [dora-readiness](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/dora-readiness/skills/dora-readiness/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [dora-readiness](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/dora-readiness/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/dora-readiness |
 | [excalidraw-diagram-generator](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/excalidraw-diagram-generator/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟡 maintained |  |
 | [expo-ui](https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-ui/SKILL.md) | expo | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 90/100 | 🟢 active |  |
 | [feature-flags-architect](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/feature-flags-architect/skills/feature-flags-architect/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
@@ -241,8 +245,12 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [memory-engineering](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/memory-engineering/skills/memory-engineering/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [microsoft-store-publisher](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/microsoft-store-publisher/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟡 maintained |  |
 | [migration-architect](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/migration-architect/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [mobile-release](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/mobile-release/skills/mobile-release/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [mobile-release](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/mobile-release/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/mobile-release |
 | [month-end-close](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/finance/month-end-close/skills/month-end-close/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [month-end-close](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/finance/skills/month-end-close/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/month-end-close |
+| [nis2-readiness](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/nis2-readiness/skills/nis2-readiness/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [nis2-readiness](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/nis2-readiness/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/nis2-readiness |
 | [observability-designer](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/observability-designer/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [partnerships-architect](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/commercial/skills/partnerships-architect/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [playwright](https://raw.githubusercontent.com/openai/skills/main/skills/.curated/playwright/SKILL.md) | openai | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟡 maintained |  |
@@ -272,6 +280,8 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [social-media-analyzer](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/marketing-skill/skills/social-media-analyzer/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [speech](https://raw.githubusercontent.com/openai/skills/main/skills/.curated/speech/SKILL.md) | openai | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟡 maintained |  |
 | [supabase](https://raw.githubusercontent.com/supabase/agent-skills/main/skills/supabase/SKILL.md) | supabase | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [support-ops](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/business-growth/skills/support-ops/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
+| [support-ops](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/business-growth/support-ops/skills/support-ops/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/support-ops |
 | [tdd-guide](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering-team/skills/tdd-guide/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [tech-debt-tracker](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/tech-debt-tracker/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [tech-stack-evaluator](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering-team/skills/tech-stack-evaluator/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
@@ -515,6 +525,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [quality-documentation-manager](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/quality-documentation-manager/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [quality-manager-qmr](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/quality-manager-qmr/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [quality-manager-qms-iso13485](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/quality-manager-qms-iso13485/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
+| [readme-polish](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/readme-polish/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [realitykit-visionos-developer](https://raw.githubusercontent.com/tomkrikorian/visionOSAgents/main/skills/realitykit-visionos-developer/SKILL.md) | visionos-agents | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | 80/100 | 🟢 active |  |
 | [red-team](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering-team/skills/red-team/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [reels-creator](https://raw.githubusercontent.com/fal-ai-community/skills/main/skills/reels-creator/SKILL.md) | fal-ai | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
@@ -717,11 +728,11 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [grade-iterate](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/agent-launcher/skills/grade-iterate/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
 | [hf-cli](https://raw.githubusercontent.com/huggingface/skills/main/skills/hf-cli/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
 | [hf-cloud-python-env-setup](https://raw.githubusercontent.com/huggingface/skills/main/skills/hf-cloud-python-env-setup/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 70/100 | 🟡 maintained |  |
+| [hf-mem](https://raw.githubusercontent.com/huggingface/skills/main/skills/hf-mem/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
 | [huggingface-lora-space-builder](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-lora-space-builder/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [huggingface-paper-publisher](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-paper-publisher/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 70/100 | 🟠 stale |  |
 | [huggingface-spaces](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-spaces/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [huggingface-trackio](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-trackio/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
-| [huggingface-zerogpu](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-zerogpu/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [interview](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/agent-launcher/skills/interview/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
 | [intl-expansion](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/c-level-advisor/skills/intl-expansion/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟢 active |  |
 | [ios-simulator-skill](https://raw.githubusercontent.com/conorluddy/ios-simulator-skill/main/ios-simulator-skill/skills/ios-simulator-skill/SKILL.md) | ios-simulator-skill | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
@@ -818,7 +829,6 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [tm7-threat-model](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/tm7-threat-model/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ✅ | 70/100 | 🟡 maintained |  |
 | [trailmark-review-gate](https://raw.githubusercontent.com/trailofbits/skills/main/plugins/trailmark/skills/trailmark-review-gate/SKILL.md) | trailofbits | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | 70/100 | 🟡 maintained |  |
 | [trailmark-variant-neighborhood](https://raw.githubusercontent.com/trailofbits/skills/main/plugins/trailmark/skills/trailmark-variant-neighborhood/SKILL.md) | trailofbits | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | 70/100 | 🟡 maintained |  |
-| [trl-training](https://raw.githubusercontent.com/huggingface/skills/main/skills/trl-training/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
 | [two-factor-authentication-best-practices](https://raw.githubusercontent.com/better-auth/skills/main/better-auth/twoFactor/SKILL.md) | better-auth | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
 | [upgrade-stripe](https://raw.githubusercontent.com/stripe/ai/main/skills/upgrade-stripe/SKILL.md) | stripe | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
 | [variant-analysis](https://raw.githubusercontent.com/trailofbits/skills/main/plugins/variant-analysis/skills/variant-analysis/SKILL.md) | trailofbits | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | 70/100 | 🟡 maintained |  |
@@ -964,7 +974,6 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [harness-writing](https://raw.githubusercontent.com/trailofbits/skills/main/plugins/testing-handbook-skills/skills/harness-writing/SKILL.md) | trailofbits | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ✅ | 60/100 | 🟡 maintained |  |
 | [hf-cloud-aws-context-discovery](https://raw.githubusercontent.com/huggingface/skills/main/skills/hf-cloud-aws-context-discovery/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟡 maintained |  |
 | [hf-cloud-sagemaker-deployment-planner](https://raw.githubusercontent.com/huggingface/skills/main/skills/hf-cloud-sagemaker-deployment-planner/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟡 maintained |  |
-| [hf-mem](https://raw.githubusercontent.com/huggingface/skills/main/skills/hf-mem/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟡 maintained |  |
 | [hub-init](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/agenthub/skills/hub-init/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟢 active |  |
 | [hub-run](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/agenthub/skills/hub-run/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟢 active |  |
 | [hub-status](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/agenthub/skills/hub-status/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟢 active |  |
@@ -1096,6 +1105,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [trailmark-structural](https://raw.githubusercontent.com/trailofbits/skills/main/plugins/trailmark/skills/trailmark-structural/SKILL.md) | trailofbits | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ✅ | 60/100 | 🟡 maintained |  |
 | [trailmark-summary](https://raw.githubusercontent.com/trailofbits/skills/main/plugins/trailmark/skills/trailmark-summary/SKILL.md) | trailofbits | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ✅ | 60/100 | 🟡 maintained |  |
 | [triage-frontend-issues](https://raw.githubusercontent.com/getsentry/skills/main/skills/triage-frontend-issues/SKILL.md) | getsentry | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 60/100 | 🟡 maintained |  |
+| [trl-training](https://raw.githubusercontent.com/huggingface/skills/main/skills/trl-training/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟡 maintained |  |
 | [tugboat](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/tugboat/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟡 maintained |  |
 | [typescript-mcp-server-generator](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/typescript-mcp-server-generator/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟡 maintained |  |
 | [ui-screenshots](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/ui-screenshots/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 60/100 | 🟡 maintained |  |
@@ -1175,6 +1185,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [huggingface-community-evals](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-community-evals/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 50/100 | 🟠 stale |  |
 | [huggingface-local-models](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-local-models/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 50/100 | 🟠 stale |  |
 | [huggingface-tool-builder](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-tool-builder/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 50/100 | 🟠 stale |  |
+| [huggingface-zerogpu](https://raw.githubusercontent.com/huggingface/skills/main/skills/huggingface-zerogpu/SKILL.md) | huggingface | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 50/100 | 🟠 stale |  |
 | [impediment-prioritization](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/impediment-prioritization/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 50/100 | 🟠 stale |  |
 | [install-from-remote-library](https://raw.githubusercontent.com/skillcreatorai/Ai-Agent-Skills/main/skills/install-from-remote-library/SKILL.md) | skillcreatorai | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 50/100 | 🟡 maintained |  |
 | [issue-fields-migration](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/issue-fields-migration/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 50/100 | 🟠 stale |  |
@@ -1247,8 +1258,8 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [using-git-worktrees](https://raw.githubusercontent.com/obra/superpowers/main/skills/using-git-worktrees/SKILL.md) | obra-superpowers | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 50/100 | 🟡 maintained |  |
 | [verification-before-completion](https://raw.githubusercontent.com/obra/superpowers/main/skills/verification-before-completion/SKILL.md) | obra-superpowers | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 50/100 | 🟡 maintained |  |
 | [web-artifacts-builder](https://raw.githubusercontent.com/anthropics/skills/main/skills/web-artifacts-builder/SKILL.md) | anthropics | Claude+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 50/100 | 🟠 stale |  |
+| [webapp-testing](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/webapp-testing/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ✅ | 50/100 | 🟠 stale |  |
 | [webapp-testing](https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/SKILL.md) | anthropics | Claude+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 50/100 | 🟠 stale |  |
-| [webapp-testing](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/webapp-testing/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ✅ | 50/100 | 🟠 stale | 🔄 → anthropics/webapp-testing |
 | [winmd-api-search](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/winmd-api-search/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 50/100 | 🟠 stale |  |
 | [writing-plans](https://raw.githubusercontent.com/obra/superpowers/main/skills/writing-plans/SKILL.md) | obra-superpowers | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 50/100 | 🟡 maintained |  |
 | [youtube-transcript](https://raw.githubusercontent.com/michalparkola/tapestry-skills-for-claude-code/main/youtube-transcript/SKILL.md) | tapestry | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | 50/100 | 🟡 maintained |  |

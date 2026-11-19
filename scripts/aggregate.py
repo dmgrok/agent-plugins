@@ -388,6 +388,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/jakemanger/shotglass-skills/main",
         "skills_path_prefix": "skills/",
     },
+    "ghost-qa": {
+        "name": "Ghost-QA",
+        "repo": "https://github.com/avivgerz-hue/ghost-qa",
+        "api_tree_url": "https://api.github.com/repos/avivgerz-hue/ghost-qa/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/avivgerz-hue/ghost-qa/main",
+        "skills_path_prefix": "",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

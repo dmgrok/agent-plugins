@@ -1,7 +1,7 @@
 {
   "name": "Agent Skills Directory - Ecosystem Exports",
-  "version": "2026.11.19",
-  "generated_at": "2026-11-19T15:35:57.056364+00:00",
+  "version": "2026.11.20",
+  "generated_at": "2026-11-20T15:13:47.039597+00:00",
   "description": "Pre-filtered skill catalogs for different ecosystems and use cases",
   "exports": {
     "claude-skills.json": {

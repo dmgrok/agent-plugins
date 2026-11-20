@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-11-19T15:35:57.247475+00:00",
+  "last_run": "2026-11-20T15:13:47.265918+00:00",
   "provider_commits": {
     "anthropics": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
-    "github": "1683f50e94c9fd489191f73d7c8f7e2bd871bd0c",
+    "github": "f10fdb8b2660ce85c98f220b2f1ca24653768a5c",
     "vercel": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
     "huggingface": "5291c2b9365e06b175dc04817610c778623f4836",
     "skillcreatorai": "6d95c788aa22ce39a4807b9a4c31c758a2036dc6",
@@ -26,10 +26,10 @@
     "family-history-skill": "7334d3d400740fda3de1c54c90e186307f8f1176",
     "notebooklm-skill": "c80722d3f27d65e06b6579add201bf69b99101d0",
     "aiqualitylab": "0321527eebbb39ed4ae7673c2917c6032cf2a050",
-    "stripe": "801ec2174acd581f71f99cf8df5383063824a1bc",
+    "stripe": "119bc4a8de4eb4370db1f5838275bc9e7a0d8e4a",
     "cloudflare": "5108325ecceabc899c761e07aa617b09c02445ee",
     "trailofbits": "149d7b21f4067765b82e67029730b42d228ef4b4",
-    "expo": "85a340bc5374edb88e5d80be294e6f98c99c5c78",
+    "expo": "88d9bd79f3fa8452a778fbac65bae162c0b32ce4",
     "getsentry": "a582c51ee29d0f35e6ac321340796f77d43da733",
     "supabase": "c9be0e931b7930f7d02126d04774d904c381e7d7",
     "google-labs-stitch": "4cf4db8e4143b09e40f9bc887429d81f41ab3947",
@@ -50,5 +50,5 @@
     "shotglass": "2a75999bd1d754255ef733ceec75296c1c974c76"
   },
   "skills_count": 1396,
-  "version": "2026.11.19"
+  "version": "2026.11.20"
 }

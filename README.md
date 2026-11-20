@@ -134,7 +134,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 ## Plugins Listing
 
 <!-- AUTO-GENERATED SKILLS TABLE START -->
-## 📋 All Skills — 1396 skills across 48 providers · v2026.11.19
+## 📋 All Skills — 1396 skills across 48 providers · v2026.11.20
 
 > Auto-generated daily · [Browse interactively →](https://dmgrok.github.io/agent-plugins/)  
 > Legend: 🔒 Secrets scan · 🛡️ Injection check · 📝 Content · 🔄 No duplicate · ✅ Full skill · S=Scripts · R=References · A=Assets
@@ -202,6 +202,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [diagramming-code](https://raw.githubusercontent.com/trailofbits/skills/main/plugins/trailmark/skills/diagramming-code/SKILL.md) | trailofbits | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [dora-readiness](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/dora-readiness/skills/dora-readiness/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
 | [dora-readiness](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/dora-readiness/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active | 🔄 → nginity/dora-readiness |
+| [eas-app-stores](https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-app-stores/SKILL.md) | expo | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 90/100 | 🟢 active |  |
 | [excalidraw-diagram-generator](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/excalidraw-diagram-generator/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟡 maintained |  |
 | [expo-ui](https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-ui/SKILL.md) | expo | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 90/100 | 🟢 active |  |
 | [feature-flags-architect](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/feature-flags-architect/skills/feature-flags-architect/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 90/100 | 🟢 active |  |
@@ -390,7 +391,6 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [docx](https://raw.githubusercontent.com/anthropics/skills/main/skills/docx/SKILL.md) | anthropics | Claude+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 80/100 | 🟢 active |  |
 | [dossier](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/research/dossier/skills/dossier/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [durable-objects](https://raw.githubusercontent.com/cloudflare/skills/main/skills/durable-objects/SKILL.md) | cloudflare | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
-| [eas-app-stores](https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-app-stores/SKILL.md) | expo | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [eas-observe](https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-observe/SKILL.md) | expo | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [eas-simulator](https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-simulator/SKILL.md) | expo | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [eas-update-insights](https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/eas-update-insights/SKILL.md) | expo | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
@@ -468,9 +468,6 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [isms-audit-expert](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/isms-audit-expert/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [iso42001-specialist](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/compliance-team-iso42001/skills/iso42001-specialist/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [iso42001-specialist](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/ra-qm-team/skills/iso42001-specialist/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ⬜ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active | 🔄 → nginity/iso42001-specialist |
-| [java-add-graalvm-native-image-support](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-add-graalvm-native-image-support/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
-| [java-debugging](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-debugging/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
-| [java-junit](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-junit/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [jira-expert](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/project-management/skills/jira-expert/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [k2](https://raw.githubusercontent.com/cloudflare/skills/main/skills/k2/SKILL.md) | cloudflare | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 80/100 | 🟢 active |  |
 | [karpathy-coder](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/karpathy-coder/skills/karpathy-coder/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 80/100 | 🟢 active |  |
@@ -737,9 +734,12 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 | [interview](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/agent-launcher/skills/interview/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
 | [intl-expansion](https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/c-level-advisor/skills/intl-expansion/SKILL.md) | nginity | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟢 active |  |
 | [ios-simulator-skill](https://raw.githubusercontent.com/conorluddy/ios-simulator-skill/main/ios-simulator-skill/skills/ios-simulator-skill/SKILL.md) | ios-simulator-skill | Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ | 70/100 | 🟢 active |  |
+| [java-add-graalvm-native-image-support](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-add-graalvm-native-image-support/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
+| [java-debugging](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-debugging/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [java-development](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-development/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [java-diagnostics](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-diagnostics/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [java-hibernate-jpa](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-hibernate-jpa/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
+| [java-junit](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-junit/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [java-mcp-server-generator](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-mcp-server-generator/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [java-springboot](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-springboot/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |
 | [java-testcontainers](https://raw.githubusercontent.com/github/awesome-copilot/main/skills/java-testcontainers/SKILL.md) | github | Copilot+Universal | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ | ⬜ | 70/100 | 🟡 maintained |  |

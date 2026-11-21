@@ -1,13 +1,272 @@
 {
   "name": "MCP-Compatible Skills",
   "description": "Skills with MCP integration support, filtered from Agent Skills Directory",
-  "version": "2026.11.20",
-  "generated_at": "2026-11-20T15:13:47.039597+00:00",
+  "version": "2026.11.21",
+  "generated_at": "2026-11-21T14:31:29.078669+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
   "total_skills": 77,
   "skills": [
+    {
+      "id": "nginity/coding-agent-rollout",
+      "name": "coding-agent-rollout",
+      "description": "Roll out Claude Code to a team: shared or managed settings, MCP and plugin approval, layered CLAUDE.md, adoption. Use whenever the user sets up Claude Code for their team or org, or asks if a rollout or settings file is right.",
+      "provider": "nginity",
+      "category": "development",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-11-03T09:11:02Z",
+      "metadata": {
+        "version": "1.0.0",
+        "build_pattern": "Four-phase rollout (guardrails, inventory, instructions, adoption) with 4 deterministic stdlib scripts and blocking exit codes; every settings key and path verified against code.claude.com/docs",
+        "distinct_from": "claude-coach (coaches one person's usage); skill-retro (grades sessions to improve installed skills); security-guidance (a hook that warns on risky code patterns); prompt-governance (prompts in production apps, not the coding agent's configuration)"
+      },
+      "source": {
+        "repo": "https://github.com/alirezarezvani/claude-skills",
+        "path": "engineering/coding-agent-rollout/skills/coding-agent-rollout",
+        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/coding-agent-rollout/skills/coding-agent-rollout/SKILL.md",
+        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": true,
+      "tags": [
+        "pr",
+        "mcp",
+        "coding",
+        "agent",
+        "rollout"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 18,
+      "maintenance_status": "active",
+      "quality_score": 90,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 30221,
+      "similar_skills": [
+        {
+          "id": "nginity/coding-agent-rollout",
+          "provider": "nginity",
+          "similarity": 0.97
+        }
+      ]
+    },
+    {
+      "id": "nginity/coding-agent-rollout",
+      "name": "coding-agent-rollout",
+      "description": "Roll out Claude Code to a team: shared or managed settings, MCP and plugin approval, layered CLAUDE.md, adoption. Use whenever the user sets up Claude Code for their team or org, or asks if a rollout or settings file is right.",
+      "provider": "nginity",
+      "category": "development",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-11-03T09:11:02Z",
+      "metadata": {
+        "version": "1.0.0",
+        "build_pattern": "Four-phase rollout (guardrails, inventory, instructions, adoption) with 4 deterministic stdlib scripts and blocking exit codes; every settings key and path verified against code.claude.com/docs",
+        "distinct_from": "claude-coach (coaches one person's usage); skill-retro (grades sessions to improve installed skills); security-guidance (a hook that warns on risky code patterns); prompt-governance (prompts in production apps, not the coding agent's configuration)"
+      },
+      "source": {
+        "repo": "https://github.com/alirezarezvani/claude-skills",
+        "path": "engineering/skills/coding-agent-rollout",
+        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/coding-agent-rollout/SKILL.md",
+        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": true,
+      "tags": [
+        "pr",
+        "mcp",
+        "coding",
+        "agent",
+        "rollout"
+      ],
+      "duplicate_status": "mirror",
+      "duplicate_annotation": "Complete mirror of nginity/coding-agent-rollout",
+      "duplicate_of": "nginity/coding-agent-rollout",
+      "duplicate_similarity": 0.97,
+      "days_since_update": 18,
+      "maintenance_status": "active",
+      "quality_score": 90,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 30221,
+      "similar_skills": [
+        {
+          "id": "nginity/coding-agent-rollout",
+          "provider": "nginity",
+          "similarity": 0.97
+        }
+      ]
+    },
+    {
+      "id": "nginity/engineering-advanced-skills",
+      "name": "engineering-advanced-skills",
+      "description": "Pick the right advanced engineering skill: agents, RAG, MCP, CI/CD, databases, observability, release. Use whenever the user asks which skill fits a task.",
+      "provider": "nginity",
+      "category": "development",
+      "license": "MIT",
+      "compatibility": null,
+      "last_updated_at": "2026-11-17T08:26:05Z",
+      "metadata": {
+        "version": "2.9.0",
+        "author": "Alireza Rezvani",
+        "tags": [
+          "engineering",
+          "architecture",
+          "agents",
+          "rag",
+          "mcp",
+          "ci-cd",
+          "observability"
+        ],
+        "agents": [
+          "claude-code",
+          "codex-cli",
+          "openclaw"
+        ]
+      },
+      "source": {
+        "repo": "https://github.com/alirezarezvani/claude-skills",
+        "path": "engineering/skills/engineering-advanced-skills",
+        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/engineering-advanced-skills/SKILL.md",
+        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+      },
+      "has_scripts": false,
+      "has_references": false,
+      "has_assets": false,
+      "tags": [
+        "ci",
+        "cd",
+        "mcp",
+        "engineering",
+        "advanced",
+        "skills"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 4,
+      "maintenance_status": "active",
+      "quality_score": 60,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 30221
+    },
+    {
+      "id": "nginity/mcp-oauth-triage",
+      "name": "mcp-oauth-triage",
+      "description": "Use when an MCP connector that used to authenticate now fails (tool calls 401 after a good token exchange, breaks after refresh, returns another account's data), before changing code. Classifies the fault with oauth_triage.py.",
+      "provider": "nginity",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-30T17:23:53Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/alirezarezvani/claude-skills",
+        "path": "engineering/skills/mcp-oauth-triage",
+        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/mcp-oauth-triage/SKILL.md",
+        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": true,
+      "tags": [
+        "mcp",
+        "oauth",
+        "triage"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 21,
+      "maintenance_status": "active",
+      "quality_score": 90,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 30221
+    },
+    {
+      "id": "nginity/mcp-server-builder",
+      "name": "mcp-server-builder",
+      "description": "Use when exposing an API as an MCP server or scaffolding a new MCP server in Python or TypeScript, before hand-writing tool wrappers. Generates tools from OpenAPI with openapi_to_mcp.py and validates them with mcp_validator.py.",
+      "provider": "nginity",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-10-30T17:23:53Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/alirezarezvani/claude-skills",
+        "path": "engineering/skills/mcp-server-builder",
+        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/mcp-server-builder/SKILL.md",
+        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+      },
+      "has_scripts": true,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "api",
+        "mcp",
+        "server",
+        "builder"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 21,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 30221
+    },
+    {
+      "id": "stripe/stripe-bfcm-dashboard",
+      "name": "stripe-bfcm-dashboard",
+      "description": "Builds a Black Friday and Cyber Monday (BFCM) season dashboard of payments, customers, and recurring revenue from the connected Stripe MCP account, as a hosted dashboard or artifact where the agent's tools support one, otherwise as one HTML file. For the 2026 BFCM season only. Use when a merchant asks for a BFCM, Black Friday, Cyber Monday, holiday, holiday sales, or peak-season dashboard, such as \"build me a holiday dashboard\" or \"build me a Cyber Monday dashboard,\" even without the word BFCM.",
+      "provider": "stripe",
+      "category": "development",
+      "license": null,
+      "compatibility": null,
+      "last_updated_at": "2026-11-20T23:48:10Z",
+      "metadata": {},
+      "source": {
+        "repo": "https://github.com/stripe/ai",
+        "path": "skills/stripe-bfcm-dashboard",
+        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-bfcm-dashboard/SKILL.md",
+        "commit_sha": "1bb486909cc36ce608181c2af62c4716ba9cd7c7"
+      },
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "tags": [
+        "mcp",
+        "art",
+        "stripe",
+        "bfcm",
+        "dashboard"
+      ],
+      "duplicate_status": null,
+      "duplicate_annotation": null,
+      "duplicate_of": null,
+      "duplicate_similarity": null,
+      "days_since_update": 0,
+      "maintenance_status": "active",
+      "quality_score": 80,
+      "skill_type": "full",
+      "requires_mcp": true,
+      "github_stars": 2076
+    },
     {
       "id": "expo/eas-observe",
       "name": "eas-observe",
@@ -1797,43 +2056,6 @@
       "github_stars": 41386
     },
     {
-      "id": "stripe/stripe-bfcm-dashboard",
-      "name": "stripe-bfcm-dashboard",
-      "description": "Builds a Black Friday and Cyber Monday (BFCM) season dashboard of payments, customers, and recurring revenue from the connected Stripe MCP account, as a hosted dashboard or artifact where the agent's tools support one, otherwise as one HTML file. For the 2026 BFCM season only. Use when a merchant asks for a BFCM, Black Friday, Cyber Monday, holiday, holiday sales, or peak-season dashboard, such as \"build me a holiday dashboard\" or \"build me a Cyber Monday dashboard,\" even without the word BFCM.",
-      "provider": "stripe",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-11-20T00:28:31Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/stripe/ai",
-        "path": "skills/stripe-bfcm-dashboard",
-        "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-bfcm-dashboard/SKILL.md",
-        "commit_sha": "119bc4a8de4eb4370db1f5838275bc9e7a0d8e4a"
-      },
-      "has_scripts": false,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "mcp",
-        "art",
-        "stripe",
-        "bfcm",
-        "dashboard"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 2075
-    },
-    {
       "id": "neondatabase/neon",
       "name": "neon",
       "description": "Overview of Neon, a complete set of cloud backend primitives around Lakebase Postgres: Auth, Object Storage, Functions, the AI Gateway, and Realtime. Start here to choose Neon for undecided login, files, APIs, and LLM calls, set up the CLI or MCP server, and follow the branch-first workflow. Use when building an app or backend on Neon, or when \"Neon\" or \"Lakebase Postgres\" is mentioned. Child skill neon-postgres wins for an existing DATABASE_URL, SQL, schema, inspect, or search. Child skill neon-auth wins for login, users, sessions, identity routing, and Managed Better Auth setup. Child skill neon-realtime wins for live queries in reactive apps and agents. Also use for object storage, S3, buckets, serverless functions, function triggers, cron, AI gateway, LLM calls, realtime, logs, Loki, Grafana, observability, postgres, database, backend, Claimable Neon, neon.new, a no-signup database, or pairing Neon with Upstash for cache, Redis, rate limiting, queues, or background jobs.",
@@ -1955,228 +2177,6 @@
       "skill_type": "full",
       "requires_mcp": true,
       "github_stars": 116
-    },
-    {
-      "id": "nginity/coding-agent-rollout",
-      "name": "coding-agent-rollout",
-      "description": "Roll out Claude Code to a team: shared or managed settings, MCP and plugin approval, layered CLAUDE.md, adoption. Use whenever the user sets up Claude Code for their team or org, or asks if a rollout or settings file is right.",
-      "provider": "nginity",
-      "category": "development",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-11-03T09:11:02Z",
-      "metadata": {
-        "version": "1.0.0",
-        "build_pattern": "Four-phase rollout (guardrails, inventory, instructions, adoption) with 4 deterministic stdlib scripts and blocking exit codes; every settings key and path verified against code.claude.com/docs",
-        "distinct_from": "claude-coach (coaches one person's usage); skill-retro (grades sessions to improve installed skills); security-guidance (a hook that warns on risky code patterns); prompt-governance (prompts in production apps, not the coding agent's configuration)"
-      },
-      "source": {
-        "repo": "https://github.com/alirezarezvani/claude-skills",
-        "path": "engineering/coding-agent-rollout/skills/coding-agent-rollout",
-        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/coding-agent-rollout/skills/coding-agent-rollout/SKILL.md",
-        "commit_sha": "f8593c4941210a621a6629ce1da9e07897976d5f"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": true,
-      "tags": [
-        "pr",
-        "mcp",
-        "coding",
-        "agent",
-        "rollout"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 14,
-      "maintenance_status": "active",
-      "quality_score": 90,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 29968,
-      "similar_skills": [
-        {
-          "id": "nginity/coding-agent-rollout",
-          "provider": "nginity",
-          "similarity": 0.97
-        }
-      ]
-    },
-    {
-      "id": "nginity/coding-agent-rollout",
-      "name": "coding-agent-rollout",
-      "description": "Roll out Claude Code to a team: shared or managed settings, MCP and plugin approval, layered CLAUDE.md, adoption. Use whenever the user sets up Claude Code for their team or org, or asks if a rollout or settings file is right.",
-      "provider": "nginity",
-      "category": "development",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-11-03T09:11:02Z",
-      "metadata": {
-        "version": "1.0.0",
-        "build_pattern": "Four-phase rollout (guardrails, inventory, instructions, adoption) with 4 deterministic stdlib scripts and blocking exit codes; every settings key and path verified against code.claude.com/docs",
-        "distinct_from": "claude-coach (coaches one person's usage); skill-retro (grades sessions to improve installed skills); security-guidance (a hook that warns on risky code patterns); prompt-governance (prompts in production apps, not the coding agent's configuration)"
-      },
-      "source": {
-        "repo": "https://github.com/alirezarezvani/claude-skills",
-        "path": "engineering/skills/coding-agent-rollout",
-        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/coding-agent-rollout/SKILL.md",
-        "commit_sha": "f8593c4941210a621a6629ce1da9e07897976d5f"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": true,
-      "tags": [
-        "pr",
-        "mcp",
-        "coding",
-        "agent",
-        "rollout"
-      ],
-      "duplicate_status": "mirror",
-      "duplicate_annotation": "Complete mirror of nginity/coding-agent-rollout",
-      "duplicate_of": "nginity/coding-agent-rollout",
-      "duplicate_similarity": 0.97,
-      "days_since_update": 14,
-      "maintenance_status": "active",
-      "quality_score": 90,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 29968,
-      "similar_skills": [
-        {
-          "id": "nginity/coding-agent-rollout",
-          "provider": "nginity",
-          "similarity": 0.97
-        }
-      ]
-    },
-    {
-      "id": "nginity/engineering-advanced-skills",
-      "name": "engineering-advanced-skills",
-      "description": "Pick the right advanced engineering skill: agents, RAG, MCP, CI/CD, databases, observability, release. Use whenever the user asks which skill fits a task.",
-      "provider": "nginity",
-      "category": "development",
-      "license": "MIT",
-      "compatibility": null,
-      "last_updated_at": "2026-11-17T08:26:05Z",
-      "metadata": {
-        "version": "2.9.0",
-        "author": "Alireza Rezvani",
-        "tags": [
-          "engineering",
-          "architecture",
-          "agents",
-          "rag",
-          "mcp",
-          "ci-cd",
-          "observability"
-        ],
-        "agents": [
-          "claude-code",
-          "codex-cli",
-          "openclaw"
-        ]
-      },
-      "source": {
-        "repo": "https://github.com/alirezarezvani/claude-skills",
-        "path": "engineering/skills/engineering-advanced-skills",
-        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/engineering-advanced-skills/SKILL.md",
-        "commit_sha": "f8593c4941210a621a6629ce1da9e07897976d5f"
-      },
-      "has_scripts": false,
-      "has_references": false,
-      "has_assets": false,
-      "tags": [
-        "ci",
-        "cd",
-        "mcp",
-        "engineering",
-        "advanced",
-        "skills"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 0,
-      "maintenance_status": "active",
-      "quality_score": 60,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 29968
-    },
-    {
-      "id": "nginity/mcp-oauth-triage",
-      "name": "mcp-oauth-triage",
-      "description": "Use when an MCP connector that used to authenticate now fails (tool calls 401 after a good token exchange, breaks after refresh, returns another account's data), before changing code. Classifies the fault with oauth_triage.py.",
-      "provider": "nginity",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-30T17:23:53Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/alirezarezvani/claude-skills",
-        "path": "engineering/skills/mcp-oauth-triage",
-        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/mcp-oauth-triage/SKILL.md",
-        "commit_sha": "f8593c4941210a621a6629ce1da9e07897976d5f"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": true,
-      "tags": [
-        "mcp",
-        "oauth",
-        "triage"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 17,
-      "maintenance_status": "active",
-      "quality_score": 90,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 29968
-    },
-    {
-      "id": "nginity/mcp-server-builder",
-      "name": "mcp-server-builder",
-      "description": "Use when exposing an API as an MCP server or scaffolding a new MCP server in Python or TypeScript, before hand-writing tool wrappers. Generates tools from OpenAPI with openapi_to_mcp.py and validates them with mcp_validator.py.",
-      "provider": "nginity",
-      "category": "development",
-      "license": null,
-      "compatibility": null,
-      "last_updated_at": "2026-10-30T17:23:53Z",
-      "metadata": {},
-      "source": {
-        "repo": "https://github.com/alirezarezvani/claude-skills",
-        "path": "engineering/skills/mcp-server-builder",
-        "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/mcp-server-builder/SKILL.md",
-        "commit_sha": "f8593c4941210a621a6629ce1da9e07897976d5f"
-      },
-      "has_scripts": true,
-      "has_references": true,
-      "has_assets": false,
-      "tags": [
-        "api",
-        "mcp",
-        "server",
-        "builder"
-      ],
-      "duplicate_status": null,
-      "duplicate_annotation": null,
-      "duplicate_of": null,
-      "duplicate_similarity": null,
-      "days_since_update": 17,
-      "maintenance_status": "active",
-      "quality_score": 80,
-      "skill_type": "full",
-      "requires_mcp": true,
-      "github_stars": 29968
     },
     {
       "id": "anthropics/academy-guide",

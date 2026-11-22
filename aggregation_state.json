@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-11-21T14:31:29.313012+00:00",
+  "last_run": "2026-11-22T14:23:01.756004+00:00",
   "provider_commits": {
     "anthropics": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -50,5 +50,5 @@
     "shotglass": "2a75999bd1d754255ef733ceec75296c1c974c76"
   },
   "skills_count": 1402,
-  "version": "2026.11.21"
+  "version": "2026.11.22"
 }

@@ -29,5 +29,15 @@ jobs:
       - name: Install test dependencies
         run: pip install pyyaml pytest
 
+      - name: Install gitleaks
+        run: |
+          # Same version as .github/workflows/validate-new-provider.yml
+          cd /tmp
+          wget -q https://github.com/gitleaks/gitleaks/releases/download/v8.18.1/gitleaks_8.18.1_linux_x64.tar.gz
+          tar -xzf gitleaks_8.18.1_linux_x64.tar.gz
+          sudo mv gitleaks /usr/local/bin/
+          rm -f gitleaks_8.18.1_linux_x64.tar.gz
+          gitleaks version
+
       - name: Run tests
         run: python -m pytest -q

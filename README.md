@@ -1555,7 +1555,7 @@ quality_skills = [s for s in catalog["skills"] if s["quality_score"] >= 80]
 1. **[Create a New Provider Issue](https://github.com/dmgrok/agent-plugins/issues/new?template=new-provider.yml)** with your repo details
 2. A maintainer reviews the submission and starts automated validation:
    - ✅ SKILL.md format with YAML frontmatter
-   - 🔒 Secrets scan (gitleaks)
+   - 🔒 Secrets scan (gitleaks). File-integrity hashes and checksum or lock manifests are ignored; token rules stay active. If a finding is a false positive, comment on the issue with the rule, the file and why it is not a secret.
    - 🛡️ Prompt-injection advisory for reviewers (does not block; see docs/prompt-injection.md)
    - 📊 SKILL.md spec and security checks with no errors ([LGTM validation](https://github.com/dmgrok/LGTM_agent_skills))
 3. Auto-PR created on pass → once merged, skills appear in the next daily aggregation

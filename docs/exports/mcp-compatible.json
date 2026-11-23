@@ -1,8 +1,8 @@
 {
   "name": "MCP-Compatible Skills",
   "description": "Skills with MCP integration support, filtered from Agent Skills Directory",
-  "version": "2026.11.22",
-  "generated_at": "2026-11-22T14:23:01.551047+00:00",
+  "version": "2026.11.23",
+  "generated_at": "2026-11-23T17:52:27.730814+00:00",
   "source": "https://github.com/dmgrok/agent-plugins",
   "catalog_url": "https://cdn.jsdelivr.net/gh/dmgrok/agent-plugins@main/catalog.json",
   "website": "https://dmgrok.github.io/agent-plugins/",
@@ -26,7 +26,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "engineering/coding-agent-rollout/skills/coding-agent-rollout",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/coding-agent-rollout/skills/coding-agent-rollout/SKILL.md",
-        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+        "commit_sha": "ea7b5ab8da93bbba8880152d9ccb8c9979f12252"
       },
       "has_scripts": true,
       "has_references": true,
@@ -42,12 +42,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 18,
+      "days_since_update": 20,
       "maintenance_status": "active",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 30221,
+      "github_stars": 30340,
       "similar_skills": [
         {
           "id": "nginity/coding-agent-rollout",
@@ -74,7 +74,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "engineering/skills/coding-agent-rollout",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/coding-agent-rollout/SKILL.md",
-        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+        "commit_sha": "ea7b5ab8da93bbba8880152d9ccb8c9979f12252"
       },
       "has_scripts": true,
       "has_references": true,
@@ -90,12 +90,12 @@
       "duplicate_annotation": "Complete mirror of nginity/coding-agent-rollout",
       "duplicate_of": "nginity/coding-agent-rollout",
       "duplicate_similarity": 0.97,
-      "days_since_update": 18,
+      "days_since_update": 20,
       "maintenance_status": "active",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 30221,
+      "github_stars": 30340,
       "similar_skills": [
         {
           "id": "nginity/coding-agent-rollout",
@@ -135,7 +135,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "engineering/skills/engineering-advanced-skills",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/engineering-advanced-skills/SKILL.md",
-        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+        "commit_sha": "ea7b5ab8da93bbba8880152d9ccb8c9979f12252"
       },
       "has_scripts": false,
       "has_references": false,
@@ -152,12 +152,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 4,
+      "days_since_update": 6,
       "maintenance_status": "active",
       "quality_score": 60,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 30221
+      "github_stars": 30340
     },
     {
       "id": "nginity/mcp-oauth-triage",
@@ -173,7 +173,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "engineering/skills/mcp-oauth-triage",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/mcp-oauth-triage/SKILL.md",
-        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+        "commit_sha": "ea7b5ab8da93bbba8880152d9ccb8c9979f12252"
       },
       "has_scripts": true,
       "has_references": true,
@@ -187,12 +187,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 21,
+      "days_since_update": 24,
       "maintenance_status": "active",
       "quality_score": 90,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 30221
+      "github_stars": 30340
     },
     {
       "id": "nginity/mcp-server-builder",
@@ -208,7 +208,7 @@
         "repo": "https://github.com/alirezarezvani/claude-skills",
         "path": "engineering/skills/mcp-server-builder",
         "skill_md_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/engineering/skills/mcp-server-builder/SKILL.md",
-        "commit_sha": "5909a72e62b5fbb809935fb6a55b58bdbe175074"
+        "commit_sha": "ea7b5ab8da93bbba8880152d9ccb8c9979f12252"
       },
       "has_scripts": true,
       "has_references": true,
@@ -223,12 +223,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 21,
+      "days_since_update": 24,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 30221
+      "github_stars": 30340
     },
     {
       "id": "stripe/stripe-bfcm-dashboard",
@@ -244,7 +244,7 @@
         "repo": "https://github.com/stripe/ai",
         "path": "skills/stripe-bfcm-dashboard",
         "skill_md_url": "https://raw.githubusercontent.com/stripe/ai/main/skills/stripe-bfcm-dashboard/SKILL.md",
-        "commit_sha": "1bb486909cc36ce608181c2af62c4716ba9cd7c7"
+        "commit_sha": "2815b93e2c54a87bd9b146df62704a0e84930929"
       },
       "has_scripts": false,
       "has_references": true,
@@ -260,12 +260,12 @@
       "duplicate_annotation": null,
       "duplicate_of": null,
       "duplicate_similarity": null,
-      "days_since_update": 0,
+      "days_since_update": 2,
       "maintenance_status": "active",
       "quality_score": 80,
       "skill_type": "full",
       "requires_mcp": true,
-      "github_stars": 2076
+      "github_stars": 2084
     },
     {
       "id": "expo/eas-observe",

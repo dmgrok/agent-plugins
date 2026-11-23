@@ -12,6 +12,7 @@ Usage (from GitHub Actions):
     PROVIDER_CONFIG_JSON=... python scripts/provider_intake.py add-provider
     SKILLS_PATH_PREFIX=... python scripts/provider_intake.py stage-lgtm --source DIR --dest DIR
     python scripts/provider_intake.py prompt-injection --path DIR
+    python scripts/provider_intake.py gitleaks-summary --report FILE --output FILE
 """
 
 from __future__ import annotations
@@ -379,6 +380,113 @@ def _cmd_prompt_injection(path: Path) -> int:
     return 0
 
 
+
+GITLEAKS_SOURCE_PREFIXES = ("contributor-repo/", "./contributor-repo/")
+HEX_SECRET_RE = re.compile(r"^[0-9a-fA-F]+$")
+SAFE_RULE_RE = re.compile(r"^[A-Za-z0-9_./-]{1,80}$")
+SAFE_PATH_RE = re.compile(r"^[A-Za-z0-9._/-]{1,240}$")
+MAX_GITLEAKS_FINDINGS = 20
+
+
+def redact_gitleaks_secret(value: str) -> str:
+    """Describe a finding without writing the secret itself into a comment."""
+    secret = (value or "").strip()
+    if not secret:
+        return "(empty)"
+    if HEX_SECRET_RE.fullmatch(secret) and len(secret) in {40, 64}:
+        return f"{secret[:4]}…{secret[-4:]} ({len(secret)}-char hex)"
+    if re.fullmatch(r"(?i)sha256:[0-9a-f]{64}", secret):
+        return "sha256:… (integrity hash)"
+    if re.fullmatch(r"(?i)sha512-[A-Za-z0-9+/]+=*", secret):
+        return "sha512-… (integrity hash)"
+    for prefix in ("github_pat_", "gho_", "ghu_", "ghs_", "ghr_", "ghp_", "AKIA", "sk-"):
+        if secret.startswith(prefix):
+            return f"{prefix}… (redacted)"
+    return f"(redacted, {len(secret)} chars)"
+
+
+def _safe_rule_id(value: str) -> str:
+    text = (value or "").strip() or "unknown"
+    return text if SAFE_RULE_RE.fullmatch(text) else "unknown"
+
+
+def _safe_finding_path(value: str) -> str:
+    path = (value or "").replace("\\", "/").strip()
+    for prefix in GITLEAKS_SOURCE_PREFIXES:
+        if path.startswith(prefix):
+            path = path[len(prefix):]
+            break
+    path = path.lstrip("./")
+    if not path or ".." in path.split("/") or not SAFE_PATH_RE.fullmatch(path):
+        return "unknown"
+    return path
+
+
+def format_gitleaks_findings(report) -> str:
+    """Markdown for the validation-failed comment. Secrets are redacted."""
+    findings = report if isinstance(report, list) else []
+    lines = [
+        f"- ❌ **Secrets scan (gitleaks)**: {len(findings)} potential secret(s) were detected.",
+        "",
+    ]
+    shown = findings[:MAX_GITLEAKS_FINDINGS]
+    for item in shown:
+        rule = _safe_rule_id(str(item.get("RuleID") or item.get("Rule") or ""))
+        path = _safe_finding_path(str(item.get("File") or ""))
+        try:
+            line_no = int(item.get("StartLine") or 0)
+        except (TypeError, ValueError):
+            line_no = 0
+        location = f"{path}:{line_no}" if line_no > 0 else path
+        redacted = redact_gitleaks_secret(str(item.get("Secret") or ""))
+        lines.append(f"  - `{rule}` in `{location}` — {redacted}")
+    remaining = len(findings) - len(shown)
+    if remaining > 0:
+        lines.append(f"  - …and {remaining} more (see the report attached to the workflow run).")
+    lines.extend(
+        [
+            "",
+            "Remove hardcoded keys, tokens or passwords and use environment variables instead.",
+            "If a finding is a false positive (for example a SHA-256 file-integrity hash or a "
+            "checksum or lock manifest), comment on this issue with the rule, the file and why "
+            "it is not a secret. A maintainer will review and re-run validation.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def summarise_gitleaks_report(report_path: Path) -> str:
+    if not report_path.is_file():
+        return "\n".join(
+            [
+                "- ❌ **Secrets scan (gitleaks)**: potential secrets were detected, but the report could not be read.",
+                "",
+                "See the report attached to the workflow run. If you believe this is a false positive, "
+                "comment on this issue with the file and why it is not a secret. A maintainer will review "
+                "and re-run validation.",
+            ]
+        )
+    try:
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return "\n".join(
+            [
+                "- ❌ **Secrets scan (gitleaks)**: potential secrets were detected, but the report could not be parsed.",
+                "",
+                "See the report attached to the workflow run. If you believe this is a false positive, "
+                "comment on this issue with the file and why it is not a secret. A maintainer will review "
+                "and re-run validation.",
+            ]
+        )
+    return format_gitleaks_findings(report)
+
+
+def _cmd_gitleaks_summary(report: Path, output: Path) -> int:
+    output.write_text(summarise_gitleaks_report(report), encoding="utf-8")
+    print(f"Wrote gitleaks summary to {output}")
+    return 0
+
+
 def _cmd_validation_gate() -> int:
     from scripts.prompt_injection import provider_validation_passed
 
@@ -492,6 +600,9 @@ def main(argv=None) -> int:
     guard.add_argument("--path", type=Path, required=True)
     sub.add_parser("validation-gate", help="Decide provider validation from LGTM and gitleaks only")
     sub.add_parser("prompt-advisory", help="Keep a missing scanner result visible as a review signal")
+    summary = sub.add_parser("gitleaks-summary", help="Write a redacted gitleaks comment from a report")
+    summary.add_argument("--report", type=Path, required=True)
+    summary.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
 
     if args.command == "parse":
@@ -504,6 +615,8 @@ def main(argv=None) -> int:
         return _cmd_validation_gate()
     if args.command == "prompt-advisory":
         return _cmd_prompt_advisory()
+    if args.command == "gitleaks-summary":
+        return _cmd_gitleaks_summary(args.report, args.output)
     return _cmd_add_provider(args.aggregate)
 
 

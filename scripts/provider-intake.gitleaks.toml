@@ -1,0 +1,24 @@
+# Provider-intake secrets scan (gitleaks v8.18.1).
+# Extends the default rule set so AWS, GitHub and other token rules stay active.
+# The allowlist only ignores checksum / integrity hash shapes and well-known
+# hash or lock manifest paths. It is not a per-contributor exclusion.
+title = "agent-plugins provider intake"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "File integrity hashes and checksum, hash or lock manifests are not secrets"
+paths = [
+  '''(?i)(^|/)[^/]*hashes[^/]*\.json$''',
+  '''(?i)\.sha(1|256|512)$''',
+  '''(?i)(^|/)(checksums|sha256sums|sha256sum|shasums)(\.txt)?$''',
+  '''(?i)(^|/)package-lock\.json$''',
+  '''(?i)(^|/)(yarn\.lock|pnpm-lock\.yaml|poetry\.lock|cargo\.lock|composer\.lock|gemfile\.lock|go\.sum)$''',
+]
+regexes = [
+  '''(?i)^[0-9a-f]{64}$''',
+  '''(?i)^[0-9a-f]{40}$''',
+  '''(?i)^sha256:[0-9a-f]{64}$''',
+  '''(?i)^sha512-[A-Za-z0-9+/]+=*$''',
+]

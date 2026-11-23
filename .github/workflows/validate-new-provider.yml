@@ -157,12 +157,16 @@ jobs:
         continue-on-error: true
         run: |
           echo "Running gitleaks scan..."
-          if gitleaks detect --source ./contributor-repo --no-git --exit-code 1 --report-path /tmp/gitleaks-report.json; then
+          if gitleaks detect --source ./contributor-repo --no-git --exit-code 1 --config scripts/provider-intake.gitleaks.toml --report-path /tmp/gitleaks-report.json; then
             echo "gitleaks_passed=true" >> $GITHUB_OUTPUT
           else
             echo "gitleaks_passed=false" >> $GITHUB_OUTPUT
             echo "⚠️ Gitleaks detected potential secrets in the repository"
           fi
+
+      - name: Summarise gitleaks findings
+        if: always() && steps.gitleaks.outputs.gitleaks_passed == 'false'
+        run: python scripts/provider_intake.py gitleaks-summary --report /tmp/gitleaks-report.json --output /tmp/gitleaks-summary.md
 
       # The linter requires a skill's name to match its directory; a root-level
       # SKILL.md would otherwise be checked against the name "contributor-repo".
@@ -212,6 +216,7 @@ jobs:
           name: validation-results
           path: |
             /tmp/gitleaks-report.json
+            /tmp/gitleaks-summary.md
             lgtm-results.json
             prompt-injection-report.json
           if-no-files-found: ignore
@@ -415,9 +420,20 @@ jobs:
             const gitleaksPassed = e.GITLEAKS_PASSED === 'true';
             const lgtmPassed = e.LGTM_PASSED === 'true' || e.LGTM_PASSED === 'pending';
 
+            const fs = require('fs');
             const issues = [];
             if (!gitleaksPassed) {
-              issues.push('- ❌ **Secrets scan (gitleaks)**: potential secrets were detected. Remove hardcoded keys, tokens or passwords and use environment variables instead.');
+              let details = '- ❌ **Secrets scan (gitleaks)**: potential secrets were detected. Remove hardcoded keys, tokens or passwords and use environment variables instead.';
+              try {
+                details = fs.readFileSync('/tmp/gitleaks-summary.md', 'utf8').trim();
+              } catch (error) {
+                details = [
+                  details,
+                  '',
+                  'If a finding is a false positive (for example a SHA-256 file-integrity hash or a checksum or lock manifest), comment on this issue with the rule, the file and why it is not a secret. A maintainer will review and re-run validation.',
+                ].join('\n');
+              }
+              issues.push(details);
             }
             if (!lgtmPassed) {
               issues.push(`- ❌ **Skill checks (LGTM)**: ${e.LGTM_SPEC} spec finding(s) and ${e.LGTM_SECURITY} security finding(s). See the "Validate skills with LGTM Agent Skills" step in the [run log](${e.RUN_URL}) for each finding.`);

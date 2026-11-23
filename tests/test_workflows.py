@@ -97,6 +97,27 @@ def test_gitleaks_scan_fails_when_leaks_are_found():
     # `--exit-code 0` makes gitleaks succeed even when it finds secrets, so the
     # `gitleaks_passed=false` branch could never run.
     assert not re.search(r"--exit-code[ =]0\b", scan["run"])
+    assert "--config scripts/provider-intake.gitleaks.toml" in scan["run"]
+    config = ROOT / "scripts" / "provider-intake.gitleaks.toml"
+    assert config.is_file()
+    text = config.read_text(encoding="utf-8")
+    assert "useDefault = true" in text
+    assert "[allowlist]" in text
+    assert "[[allowlists]]" not in text
+
+
+def test_failure_comment_lists_redacted_gitleaks_findings_and_false_positive_path():
+    steps = load(INTAKE)["jobs"]["validate-provider"]["steps"]
+    summarise = next(s for s in steps if s.get("name") == "Summarise gitleaks findings")
+    assert "gitleaks-summary" in summarise["run"]
+    assert "/tmp/gitleaks-report.json" in summarise["run"]
+    assert "/tmp/gitleaks-summary.md" in summarise["run"]
+    failed = next(s for s in steps if s.get("name") == "Comment on issue - Validation Failed")
+    script = failed["with"]["script"]
+    assert "gitleaks-summary.md" in script
+    assert "false positive" in script
+    upload = next(s for s in steps if s.get("name") == "Upload validation results")
+    assert "/tmp/gitleaks-summary.md" in upload["with"]["path"]
 
 
 def _validate_steps():

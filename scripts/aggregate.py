@@ -402,6 +402,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/avivgerz-hue/unslop/main",
         "skills_path_prefix": "",
     },
+    "geekist": {
+        "name": "Geekist",
+        "repo": "https://github.com/theGeekist/skills",
+        "api_tree_url": "https://api.github.com/repos/theGeekist/skills/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/theGeekist/skills/main",
+        "skills_path_prefix": "skills/",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

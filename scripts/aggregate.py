@@ -395,6 +395,13 @@ PROVIDERS = {
         "raw_base": "https://raw.githubusercontent.com/avivgerz-hue/ghost-qa/main",
         "skills_path_prefix": "",
     },
+    "unslop": {
+        "name": "Unslop",
+        "repo": "https://github.com/avivgerz-hue/unslop",
+        "api_tree_url": "https://api.github.com/repos/avivgerz-hue/unslop/git/trees/main?recursive=1",
+        "raw_base": "https://raw.githubusercontent.com/avivgerz-hue/unslop/main",
+        "skills_path_prefix": "",
+    },
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")

@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-11-26T16:45:25.699614+00:00",
+  "last_run": "2026-11-27T16:30:24.544830+00:00",
   "provider_commits": {
     "anthropics": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
     "openai": "49f948faa9258a0c61caceaf225e179651397431",
@@ -29,7 +29,7 @@
     "stripe": "d4b19a989bf12bdbd4d42de1f9bfd3aec56fd9da",
     "cloudflare": "ff191de7d903788eceaf516a514ae7d3b56b924a",
     "trailofbits": "149d7b21f4067765b82e67029730b42d228ef4b4",
-    "expo": "6d0506afe7df9334b60ad4b1ceb35969836f01a0",
+    "expo": "8f2b6c0c65533e695243aa401eaa1cb6f1fe86c2",
     "getsentry": "a582c51ee29d0f35e6ac321340796f77d43da733",
     "supabase": "c9be0e931b7930f7d02126d04774d904c381e7d7",
     "google-labs-stitch": "75f4696f162000fb69fca6a31489b5b21d47a506",
@@ -38,7 +38,7 @@
     "neondatabase": "d3601d9e1f9398b96a1ee25047bafba5f04199eb",
     "fal-ai": "ca79376d624d244e601f9182fa80b5bf66efec9c",
     "remotion": "a3f4098a2afd0e13f6a6f8c8760e275f75457ea9",
-    "nginity": "f565e664952b3d5b7ef2b1e6a50e2314b100e472",
+    "nginity": "d3cc4c620288c571a95efc898edc91f522acaa7f",
     "obsidian-plugin": "1cd4466f9a88d89457a72f136eb77a217bc758f1",
     "stream-coding": "42a7cb5ceec5611040d6f2764ee7943e4984345d",
     "ipsw-skill": "360889c17184d2ad7bd2a70d6bf05f524f333d38",
@@ -53,5 +53,5 @@
     "geekist": "5a897079ed9b5e230c4b268fa1652cf5b2cae605"
   },
   "skills_count": 1417,
-  "version": "2026.11.26"
+  "version": "2026.11.27"
 }
